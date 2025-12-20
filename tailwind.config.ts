@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom детский центр colors
+        'sky-light': 'hsl(var(--sky-light))',
+        'sky-medium': 'hsl(var(--sky-medium))',
+        'sky-blue': 'hsl(var(--sky-blue))',
+        'sun-yellow': 'hsl(var(--sun-yellow))',
+        'sun-orange': 'hsl(var(--sun-orange))',
+        'cta-yellow': 'hsl(var(--cta-yellow))',
+        'cta-yellow-hover': 'hsl(var(--cta-yellow-hover))',
+        'cloud': 'hsl(var(--cloud-white))',
+        'text-navy': 'hsl(var(--text-navy))',
+        'text-dark': 'hsl(var(--text-dark))',
+        'text-muted-custom': 'hsl(var(--text-muted))',
+        'ladybug-red': 'hsl(var(--ladybug-red))',
+        'bee-yellow': 'hsl(var(--bee-yellow))',
+        'bee-brown': 'hsl(var(--bee-brown))',
       },
       borderRadius: {
         lg: "var(--radius)",
