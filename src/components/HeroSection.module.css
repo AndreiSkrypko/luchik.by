@@ -1,0 +1,221 @@
+/* Основной заголовок под облаком, как на макете */
+.mainTitleSection {
+  margin-top: -350px; /* поднимаем ещё выше, под шапку */
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .mainTitleSection {
+    margin-top: 20px;
+  }
+}
+
+.mainTitleImage {
+  width: 873px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: saturate(0.8) brightness(1.05); /* чуть более пастельный оттенок */
+}
+
+/* Подзаголовок текстом и божья коровка */
+.subtitleSection {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.subtitleText {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #272727;
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+
+.ladybug {
+  position: absolute;
+  width: 72px;
+  height: auto;
+  left: calc(50% + 200px);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.ladybug:hover {
+  animation: ladybugFly 1.2s ease-in-out forwards, ladybugWings 0.15s ease-in-out infinite;
+}
+
+/* Божья коровка взлетает при наведении */
+@keyframes ladybugFly {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-50%) translateX(5px) rotate(10deg);
+  }
+  30% {
+    transform: translateY(calc(-50% - 20px)) translateX(10px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(calc(-50% - 35px)) translateX(0) rotate(8deg);
+  }
+  70% {
+    transform: translateY(calc(-50% - 20px)) translateX(-10px) rotate(-8deg);
+  }
+  85% {
+    transform: translateY(-50%) translateX(-5px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+/* Крылышки божьей коровки трепещут */
+@keyframes ladybugWings {
+  0%, 100% {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  }
+  50% {
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+  }
+}
+
+/* Кнопка «Оставить заявку» под подзаголовком */
+.ctaSection {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.ctaButton {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 41px;
+  /* Пульсация для привлечения внимания */
+  animation: ctaPulse 2.5s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  animation: none;
+  transform: scale(1.05);
+}
+
+.ctaButton:active {
+  transform: scale(0.98);
+}
+
+.ctaButtonImage {
+  display: block;
+  width: 371px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Пульсация кнопки CTA */
+@keyframes ctaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.45);
+  }
+}
+
+/* Блестящий эффект на кнопке */
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: ctaShineEffect 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes ctaShineEffect {
+  0%, 100% {
+    left: -100%;
+  }
+  50%, 55% {
+    left: 150%;
+  }
+}
+
+.ctaButtonText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4D3A10;
+}
+
+@media (max-width: 768px) {
+  .ladybug {
+    left: calc(50% + 120px);
+    width: 60px;
+  }
+  
+  .subtitleText {
+    font-size: 18px;
+  }
+  
+  .ctaButtonImage {
+    width: 280px;
+  }
+  
+  .ctaButtonText {
+    font-size: 16px;
+  }
+}
+

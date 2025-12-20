@@ -1,119 +1,190 @@
 import { useState } from 'react';
-import { Menu, X, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface HeaderProps {
+  onContactsClick?: () => void;
+}
 
-  const navLinks = [
-    { name: 'О нас', href: '#about' },
-    { name: 'Направления', href: '#directions' },
-    { name: 'Галерея', href: '#gallery' },
-    { name: 'Тренажеры', href: '#trainers' },
-    { name: 'Контакты', href: '#contacts' },
-  ];
+const Header = ({ onContactsClick }: HeaderProps) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleContactsClick = () => {
+    if (onContactsClick) {
+      onContactsClick();
+    }
+    closeMobileMenu();
+  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cloud/80 backdrop-blur-md shadow-sm">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex flex-col">
-          <span className="text-xs font-semibold text-sun-orange tracking-wide uppercase">
-            Детский центр современных знаний
-          </span>
-          <span className="text-2xl md:text-3xl font-black text-sun-yellow tracking-tight">
-            «ЛУЧИК»
-          </span>
-        </div>
+    <header className={styles.header}>
+      <div className={styles.headerBackground}>
+        {/* Логотип слева сверху */}
+        <Link to="/" className={styles.logoLink} aria-label="На главную">
+          <div className={styles.logo}>
+            <img
+              src="/img/main/logo.webp"
+              alt="Логотип «Лучик»"
+              width={260}
+              height={80}
+            />
+          </div>
+        </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="nav-link text-base"
-            >
-              {link.name}
+        {/* Навигация и кнопка «Контакты» */}
+        <nav className={styles.navbarRow} aria-label="Основная навигация">
+          <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
+            <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
+              О нас
             </a>
-          ))}
-        </nav>
+            <a href="#directions" className={styles.navTextLink} onClick={closeMobileMenu}>
+              Направления
+            </a>
+            <Link to="/gallery" className={styles.navTextLink} onClick={closeMobileMenu}>
+              Галерея
+            </Link>
+            <Link to="/trainers" className={styles.navTextLink} onClick={closeMobileMenu}>
+              Тренажеры
+            </Link>
+            <button
+              onClick={handleContactsClick}
+              className={styles.navTextLink}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+            >
+              Контакты
+            </button>
+          </div>
 
-        {/* Social Icons - Desktop */}
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center text-cloud hover:scale-110 transition-transform"
-          >
-            <Instagram className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-sky-blue flex items-center justify-center text-cloud hover:scale-110 transition-transform"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.57 4 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.847 2.472 2.27 4.64 2.846 4.64.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.372 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.14-3.574 2.14-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z" />
-            </svg>
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-sun-orange flex items-center justify-center text-cloud hover:scale-110 transition-transform"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.2-.054-.31-.346-.11l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.126-.89l10.782-4.156c.5-.18.94.12.778.89z" />
-            </svg>
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 text-text-navy"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-cloud border-t border-border">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
+          <div className={styles.navbarRight}>
+            <div className={styles.socials}>
               <a
-                key={link.name}
-                href={link.href}
-                className="nav-link text-lg py-2"
-                onClick={() => setIsMenuOpen(false)}
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialIconLink}
+                aria-label="Мы в Instagram"
               >
-                {link.name}
-              </a>
-            ))}
-            <div className="flex items-center gap-3 pt-4 border-t border-border">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center text-cloud"
-              >
-                <Instagram className="w-5 h-5" />
+                <img
+                  src="/img/socseti/inst.svg"
+                  alt="Instagram"
+                  width={32}
+                  height={32}
+                  className={styles.socialIcon}
+                />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-sky-blue flex items-center justify-center text-cloud"
+                href="https://vk.com"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialIconLink}
+                aria-label="Мы во ВКонтакте"
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.57 4 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.847 2.472 2.27 4.64 2.846 4.64.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.372 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.14-3.574 2.14-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z" />
-                </svg>
+                <img
+                  src="/img/socseti/vk.svg"
+                  alt="ВКонтакте"
+                  width={32}
+                  height={32}
+                  className={styles.socialIcon}
+                />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-sun-orange flex items-center justify-center text-cloud"
+                href="https://ok.ru"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.socialIconLink}
+                aria-label="Мы в Одноклассниках"
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.2-.054-.31-.346-.11l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.126-.89l10.782-4.156c.5-.18.94.12.778.89z" />
-                </svg>
+                <img
+                  src="/img/socseti/ok.svg"
+                  alt="Одноклассники"
+                  width={32}
+                  height={32}
+                  className={styles.socialIcon}
+                />
               </a>
             </div>
-          </nav>
+          </div>
+        </nav>
+
+        {/* Бургер меню справа вверху */}
+        <button
+          className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Overlay для закрытия меню */}
+        {isMobileMenuOpen && (
+          <div
+            className={styles.mobileMenuOverlay}
+            onClick={closeMobileMenu}
+          />
+        )}
+
+        {/* Большие тучи по низу шапки */}
+        <div className={styles.clouds}>
+          <img
+            src="/img/main/clouds.webp"
+            alt="Тучи"
+            width={1480}
+            height={338}
+            className={styles.cloudsImage}
+          />
         </div>
-      )}
+
+        {/* Маленькое облако под логотипом */}
+        <div className={styles.cloudOne}>
+          <img
+            src="/img/main/cloud-1.webp"
+            alt="Облако"
+            width={174}
+            height={138}
+          />
+        </div>
+
+        {/* Пчела слева внизу */}
+        <div className={styles.bee}>
+          <img
+            src="/img/main/bee.webp"
+            alt="Пчела"
+            width={88}
+            height={92}
+          />
+        </div>
+
+        {/* Облако 2 справа внизу */}
+        <div className={styles.cloudTwo}>
+          <img
+            src="/img/main/cloud-2.webp"
+            alt="Облако"
+            width={200}
+            height={120}
+          />
+        </div>
+
+        {/* Солнце */}
+        <div className={styles.sunContainer}>
+          <img
+            src="/img/main/sun.webp"
+            alt="Солнце"
+            width={100}
+            height={100}
+            className={styles.sun}
+          />
+        </div>
+      </div>
     </header>
   );
 };

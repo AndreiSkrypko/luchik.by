@@ -1,0 +1,440 @@
+/* Header - на всю ширину с голубым фоном */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background: transparent;
+  overflow: visible;
+  padding: 20px 0 0;
+  padding-bottom: 0;
+}
+
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible;
+}
+
+/* Облака */
+.clouds {
+  position: absolute;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  min-height: 338px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cloudsImage {
+  width: 100%;
+  height: auto;
+  min-height: 338px;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+  opacity: 1;
+  animation: bigCloudsDrift 20s ease-in-out infinite;
+}
+
+@keyframes bigCloudsDrift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+/* Солнце */
+.sunContainer {
+  position: absolute;
+  top: -155px;
+  right: -135px;
+  z-index: 5;
+  width: 600px;
+  height: 600px;
+}
+
+.sun {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  animation: sunGlow 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255, 200, 0, 0.25));
+}
+
+@keyframes sunGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 40px rgba(255, 200, 0, 0.25)) 
+            drop-shadow(0 0 60px rgba(255, 180, 0, 0.18))
+            drop-shadow(0 0 80px rgba(255, 160, 0, 0.12));
+  }
+  50% {
+    filter: drop-shadow(0 0 45px rgba(255, 220, 100, 0.3)) 
+            drop-shadow(0 0 65px rgba(255, 200, 80, 0.22))
+            drop-shadow(0 0 85px rgba(255, 180, 60, 0.15));
+  }
+}
+
+.sunContainer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 220, 100, 0.15) 0%,
+    rgba(255, 200, 50, 0.1) 30%,
+    rgba(255, 180, 30, 0.06) 60%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  animation: sunRipple 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes sunRipple {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+}
+
+/* Плавное покачивание облаков */
+@keyframes cloudDrift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(8px) translateY(-3px);
+  }
+  50% {
+    transform: translateX(15px) translateY(0);
+  }
+  75% {
+    transform: translateX(8px) translateY(3px);
+  }
+}
+
+@keyframes cloudDriftReverse {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-6px) translateY(2px);
+  }
+  50% {
+    transform: translateX(-12px) translateY(0);
+  }
+  75% {
+    transform: translateX(-6px) translateY(-2px);
+  }
+}
+
+/* Пчела жужжит и летает */
+@keyframes beeBuzz {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+  20% {
+    transform: translateY(1px) rotate(-1deg);
+  }
+  30% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+  40% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(0deg);
+  }
+  60% {
+    transform: translateY(2px) rotate(2deg);
+  }
+  70% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(1px) rotate(1deg);
+  }
+  90% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+}
+
+/* Облако №1 слева */
+.cloudOne {
+  position: absolute;
+  top: 180px;
+  left: 120px;
+  z-index: 4;
+  pointer-events: none;
+  animation: cloudDrift 8s ease-in-out infinite;
+}
+
+/* Пчела слева внизу */
+.bee {
+  position: absolute;
+  bottom: calc(60px - 6cm);
+  left: 80px;
+  z-index: 4;
+  pointer-events: none;
+  animation: beeBuzz 2s ease-in-out infinite;
+}
+
+/* Облако 2 справа внизу */
+.cloudTwo {
+  position: absolute;
+  bottom: calc(60px - 8cm);
+  right: 60px;
+  z-index: 4;
+  pointer-events: none;
+  animation: cloudDriftReverse 10s ease-in-out infinite;
+}
+
+/* Логотип в левом верхнем углу */
+.logoLink {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  z-index: 10;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .logoLink {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+}
+
+.logo {
+  position: relative;
+}
+
+.logo img {
+  width: 260px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 180px;
+  }
+}
+
+/* Навигация в шапке */
+.navbarRow {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 36px auto 0;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .navbarRow {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+}
+
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 100;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: flex;
+  }
+}
+
+.mobileMenuButton span {
+  width: 25px;
+  height: 3px;
+  background: #4A5568;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.mobileMenuButton:hover span {
+  background: #FF6B35;
+}
+
+.mobileMenuButtonOpen span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobileMenuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButtonOpen span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 98;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuOverlay {
+    display: block;
+  }
+}
+
+.navLinks {
+  display: flex;
+  gap: 48px;
+  margin-left: 240px;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(229, 245, 255, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 99;
+    margin-left: 0;
+    padding: 80px 20px 20px;
+  }
+  
+  .navLinksOpen {
+    display: flex !important;
+  }
+}
+
+.navTextLink {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4A5568;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.navTextLink:hover {
+  color: #FF6B35;
+  transform: translateY(-3px) scale(1.05);
+  text-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.navTextLink::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6B35, #FFD700);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navTextLink:hover::after {
+  transform: scaleX(1);
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Блок соцсетей справа в шапке */
+.socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.socialIconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.socialIconLink:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.socialIconLink:active {
+  transform: scale(0.95);
+}
+
+.socialIcon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+  object-fit: contain;
+}
+

@@ -1,15 +1,29 @@
+import { useState } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
+import ContactsPanel from '@/components/ContactsPanel';
+import styles from './Index.module.css';
 
 const Index = () => {
+  const [isContactsOpen, setIsContactsOpen] = useState(false);
+
+  const toggleContacts = () => {
+    setIsContactsOpen(!isContactsOpen);
+  };
+
+  const closeContacts = () => {
+    setIsContactsOpen(false);
+  };
+
   return (
-    <div className="min-h-screen">
-      <Header />
+    <div className={styles.page}>
+      <Header onContactsClick={toggleContacts} />
       <main>
         <HeroSection />
       </main>
-      <Footer />
+      <Footer onContactsClick={toggleContacts} />
+      <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
     </div>
   );
 };

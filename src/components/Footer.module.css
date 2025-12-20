@@ -1,0 +1,650 @@
+/* Полоса-разделитель перед футером */
+.footerDivider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 40px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.dividerImage {
+  width: 100%;
+  max-width: 1303px;
+  height: 2px;
+  display: block;
+  min-height: 2px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* Футер */
+.footer {
+  width: 100%;
+  padding: 20px 40px 0;
+  box-sizing: border-box;
+  background: transparent;
+  position: relative;
+}
+
+.footerContent {
+  max-width: 1303px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 0;
+  position: relative;
+  gap: 60px;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.footerLogoImage {
+  width: 240px;
+  height: auto;
+  display: block;
+  margin-top: 0;
+}
+
+.footerBee {
+  position: absolute;
+  width: 50px;
+  height: auto;
+  top: -20px;
+  left: 300px;
+  z-index: 2;
+  transform: scaleX(-1);
+}
+
+.footerCloud {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  bottom: -85px;
+  left: 180px;
+  z-index: 1;
+}
+
+.footerCloud2 {
+  position: absolute;
+  top: 70px;
+  right: -40px;
+  width: 120px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: brightness(0.94);
+}
+
+.footerCloud3 {
+  position: absolute;
+  top: 0;
+  right: -150px;
+  width: 180px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footerNav {
+  display: flex;
+  flex: 1;
+  padding: 0 20px;
+  gap: 0;
+  background: white;
+  border-top: none;
+  position: relative;
+  justify-content: center;
+  min-width: 0;
+}
+
+.footerNavLeft {
+  flex: 0 0 auto;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 372px;
+}
+
+.footerBurger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-bottom: 15px;
+  z-index: 10;
+}
+
+.footerBurger span {
+  width: 25px;
+  height: 3px;
+  background: #4A5568;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.footerBurger:hover span {
+  background: #FF6B35;
+}
+
+.footerNavRight {
+  flex: 0 0 auto;
+  padding-left: 0;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  min-width: 220px;
+}
+
+.footerNavDivider {
+  width: 1px;
+  background: #DADADA;
+  margin: 0 30px 0 90px;
+  align-self: stretch;
+}
+
+.footerNavItem {
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footerNavItemWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 372px;
+  height: 34px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footerNavItemFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 372px;
+  height: 34px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footerNavItemContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.footerNavItem:hover {
+  transform: translateX(2px);
+}
+
+.footerNavItem:hover .footerNavItemFrame rect {
+  stroke: #B8D9F0;
+}
+
+.footerNavLinks {
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+  width: 372px;
+  justify-content: center;
+}
+
+.footerNavLinksColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.footerNavLinksOpen {
+  display: flex !important;
+}
+
+.footerNavIcon {
+  width: 20px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+.footerNavText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.footerNavLink {
+  padding: 6px 0;
+  padding-left: 0;
+  font-size: 14px;
+  color: #777777;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: left;
+  display: block;
+  background: none;
+  border: none;
+}
+
+.footerNavLink::before {
+  content: '•';
+  position: absolute;
+  left: -15px;
+  color: #DADADA;
+}
+
+.footerNavLink:hover {
+  color: #333;
+}
+
+.footerAddress {
+  font-size: 14px;
+  color: #777777;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.footerSchedule {
+  font-size: 14px;
+  color: #777777;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footerSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.footerSocialLink:hover {
+  transform: scale(1.1);
+}
+
+.footerSocialIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footerGrass {
+  width: 100vw;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: visible;
+  margin-top: 40px;
+  margin-left: 0;
+  margin-right: 0;
+  height: 80px;
+}
+
+.footerGrassImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.footerBushLeft {
+  position: absolute;
+  bottom: 5px;
+  left: 20%;
+  z-index: 2;
+  width: 178px;
+  height: auto;
+  object-fit: contain;
+  top: auto;
+}
+
+.footerBushRight {
+  position: absolute;
+  bottom: 25px;
+  right: 20%;
+  z-index: 2;
+  width: 178px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footerGrassText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 440px;
+  height: 16px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+  .footerContent {
+    gap: 40px;
+  }
+
+  .footerLogoImage {
+    width: 200px;
+  }
+
+  .footerBee {
+    left: 250px;
+    width: 45px;
+  }
+
+  .footerCloud {
+    left: 150px;
+    width: 80px;
+  }
+
+  .footerNav {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .footerNavLeft {
+    width: 100%;
+    max-width: 372px;
+  }
+
+  .footerCloud2 {
+    right: -20px;
+    width: 100px;
+  }
+
+  .footerCloud3 {
+    right: -100px;
+    width: 150px;
+  }
+
+  .footerNavRight {
+    min-width: 200px;
+  }
+}
+
+/* Адаптация для средних экранов */
+@media (max-width: 900px) {
+  .footerContent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footerNav {
+    order: 2;
+    width: 100%;
+  }
+
+  .footerNavRight {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .footerNavDivider {
+    display: none;
+  }
+
+  .footerCloud2,
+  .footerCloud3 {
+    display: none;
+  }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footerLogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .footerLogoImage {
+    width: 160px;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  }
+
+  .footerBee {
+    display: none;
+  }
+
+  .footerCloud {
+    display: none;
+  }
+
+  .footerNav {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerNavLeft {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerBurger {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .footerNavItem {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footerNavItemWrapper {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footerNavItemFrame {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .footerNavItemContent {
+    justify-content: center;
+  }
+
+  .footerNavLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 12px;
+    margin-top: 15px;
+    align-items: center;
+  }
+
+  .footerNavLinksOpen {
+    display: flex !important;
+  }
+
+  .footerNavLinksColumn {
+    width: 100%;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerNavLink {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .footerNavDivider {
+    display: none;
+  }
+
+  .footerNavRight {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .footerAddress {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .footerSchedule {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .footerSocials {
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    display: flex;
+  }
+
+  .footerGrass {
+    margin-top: 20px;
+    width: 100vw;
+    height: 60px;
+  }
+
+  .footerGrassImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .footerBushLeft,
+  .footerBushRight {
+    width: 100px;
+    height: auto;
+  }
+
+  .footerGrassText {
+    width: 85%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .footerDivider {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+
+  .dividerImage {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,9 @@
+/* Main Container с правильным градиентным фоном */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  background: linear-gradient(180deg, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 700px, #ffffff 700px);
+}
+
