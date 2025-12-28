@@ -9,129 +9,35 @@
 .whyUsContainer {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.whyUsContent {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  background: #FFE5F0;
-  border-radius: 30px;
-  padding: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.whyUsContent::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
-  background: url('/img/main/cloud-1.webp') no-repeat center;
-  background-size: contain;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.whyUsText {
-  flex: 1;
-  z-index: 2;
-}
-
-.whyUsTitle {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  color: #1A1A1A;
-  margin: 0 0 32px 0;
-  line-height: 1.2;
-}
-
-.whyUsParagraphs {
-  margin-bottom: 40px;
-}
-
-.whyUsParagraph {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #4A4A4A;
-  margin: 0 0 20px 0;
-  line-height: 1.7;
-  position: relative;
-  padding-left: 40px;
-}
-
-.whyUsParagraph:last-of-type {
-  margin-bottom: 0;
-}
-
-.ladybugIcon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.ctaButton {
-  background: linear-gradient(135deg, #FF6B9D 0%, #FF8FB3 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: 50px;
-  padding: 18px 40px;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
-}
-
-.ctaButton:active {
-  transform: translateY(0);
-}
-
-.whyUsImage {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 
-.childImage {
+.whyUsContent {
+  position: relative;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 1024px) {
-  .whyUsContent {
-    flex-direction: column;
-    gap: 40px;
-    padding: 40px;
-  }
+.whyUsCards {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
 
-  .whyUsTitle {
-    font-size: 36px;
-  }
-
-  .whyUsParagraph {
-    font-size: 16px;
-  }
+.whyUsBoy {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  z-index: 2;
+  right: 8%;
+  bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -139,35 +45,10 @@
     padding: 40px 15px;
   }
 
-  .whyUsContent {
-    padding: 30px 20px;
-    border-radius: 20px;
-  }
-
-  .whyUsTitle {
-    font-size: 28px;
-    margin-bottom: 24px;
-  }
-
-  .whyUsParagraph {
-    font-size: 15px;
-    padding-left: 35px;
-    margin-bottom: 16px;
-  }
-
-  .ladybugIcon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .ctaButton {
-    padding: 14px 30px;
-    font-size: 14px;
-    width: 100%;
-  }
-
-  .childImage {
-    max-width: 100%;
+  .whyUsBoy {
+    width: 28%;
+    right: 5%;
+    bottom: 0;
   }
 }
 

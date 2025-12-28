@@ -4,29 +4,36 @@ const InfoBlocks = () => {
   return (
     <section className={styles.infoBlocksSection} id="about">
       <div className={styles.infoBlocksContainer}>
-        <div className={`${styles.infoBlock} ${styles.infoBlockPink}`}>
-          <h3 className={styles.infoBlockTitle}>от 1 года до 12 лет</h3>
-          <p className={styles.infoBlockText}>
-            Комплексные занятия для малышей и школьников, подготовка к школе и интенсивы
-          </p>
+        <div className={styles.infoBlock}>
+          <img
+            src="/img/cards/first.svg"
+            alt="от 1 года до 12 лет"
+            className={styles.infoBlockImage}
+          />
         </div>
 
-        <div className={`${styles.infoBlock} ${styles.infoBlockGreen}`}>
-          <h3 className={styles.infoBlockTitle}>Педагоги с опытом</h3>
-          <p className={styles.infoBlockText}>
-            Команда логопедов, педагогов раннего развития, наставников по STEM-направлениям
-          </p>
+        <div className={styles.infoBlock}>
+          <img
+            src="/img/cards/second.svg"
+            alt="Педагоги с опытом"
+            className={styles.infoBlockImage}
+          />
         </div>
 
-        <div className={`${styles.infoBlock} ${styles.infoBlockGrey}`}>
-          {/* Пустой блок для будущего контента */}
+        <div className={styles.infoBlock}>
+          <img
+            src="/img/cards/third.svg"
+            alt=""
+            className={styles.infoBlockImage}
+          />
         </div>
 
-        <div className={`${styles.infoBlock} ${styles.infoBlockBlue}`}>
-          <h3 className={styles.infoBlockTitle}>Семейная атмосфера</h3>
-          <p className={styles.infoBlockText}>
-            Теплое пространство, где детям спокойно, интересно и безопасно каждый день
-          </p>
+        <div className={styles.infoBlock}>
+          <img
+            src="/img/cards/fouth.svg"
+            alt="Семейная атмосфера"
+            className={styles.infoBlockImage}
+          />
         </div>
       </div>
     </section>
