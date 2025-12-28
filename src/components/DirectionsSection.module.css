@@ -12,172 +12,37 @@
 }
 
 .directionsTitle {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 42px;
-  font-weight: 800;
-  color: #1A1A1A;
-  text-align: center;
-  margin: 0 0 60px 0;
-  line-height: 1.2;
+  width: 100%;
+  max-width: 613px;
+  height: auto;
+  display: block;
+  margin: 0 auto 60px;
 }
 
 .directionsCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  margin-top: 60px;
 }
 
 .directionCard {
-  background: #ffffff;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #E5E5E5;
-}
-
-.directionCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.cardImageWrapper {
-  position: relative;
   width: 100%;
-  height: 300px;
-  overflow: hidden;
-  background: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cardCloud {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  width: 120px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  filter: blur(20px);
-  z-index: 1;
-}
-
-.cardDaisy {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cardDaisy::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: #FFD700;
-  border-radius: 50%;
-}
-
-.cardDaisy::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 
-    0 -15px 0 -5px #ffffff,
-    0 15px 0 -5px #ffffff,
-    -15px 0 0 -5px #ffffff,
-    15px 0 0 -5px #ffffff;
-}
-
-.cardBee {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cardBee::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 30px;
-  height: 30px;
-  background: #000000;
-  border-radius: 50%;
-}
-
-.cardBee::after {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  width: 20px;
-  height: 8px;
-  background: #000000;
-  border-radius: 10px;
-}
-
-.cardContent {
-  padding: 24px;
-}
-
-.cardAge {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #4A4A4A;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.cardAgeHighlight {
-  color: #FF6B9D;
-  font-weight: 700;
-}
-
-.cardAgeHighlightBlue {
-  color: #5B9BD5;
-  font-weight: 700;
-}
-
-.cardAgeHighlightGreen {
-  color: #4ECB71;
-  font-weight: 700;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 1024px) {
   .directionsCards {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-  }
-
-  .directionsTitle {
-    font-size: 36px;
   }
 }
 
@@ -187,25 +52,14 @@
   }
 
   .directionsTitle {
-    font-size: 28px;
+    max-width: 100%;
     margin-bottom: 40px;
   }
 
   .directionsCards {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .cardImageWrapper {
-    height: 250px;
-  }
-
-  .cardContent {
-    padding: 20px;
-  }
-
-  .cardAge {
-    font-size: 15px;
+    margin-top: 40px;
   }
 }
 
