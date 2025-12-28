@@ -25,7 +25,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <InfoBlocks />
-        <WhyUsSection />
+        <WhyUsSection onContactsClick={toggleContacts} />
         <DirectionsSection />
       </main>
       <Footer onContactsClick={toggleContacts} />

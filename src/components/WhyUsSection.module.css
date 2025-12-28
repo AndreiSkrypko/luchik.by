@@ -40,6 +40,51 @@
   bottom: 0;
 }
 
+.ctaButton {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.ctaButtonImage {
+  width: 438px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+}
+
+.ctaButtonText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .whyUsSection {
     padding: 40px 15px;
@@ -49,6 +94,14 @@
     width: 28%;
     right: 5%;
     bottom: 0;
+  }
+
+  .ctaButton {
+    bottom: 40px;
+  }
+
+  .ctaButtonText {
+    font-size: 12px;
   }
 }
 
