@@ -28,15 +28,40 @@
 
 .directionCard {
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cardImage {
+.cardBase {
   width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.cardDecoration {
+  width: 85%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.cardCloud {
+  width: auto;
+  height: auto;
+  max-width: 30%;
+  display: block;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  z-index: 3;
 }
 
 @media (max-width: 1024px) {
