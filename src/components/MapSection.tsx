@@ -88,7 +88,15 @@ const MapSection = () => {
   return (
     <section className={styles.mapSection}>
       <div className={styles.mapContainer}>
-        <h2 className={styles.mapTitle}>Мы на карте</h2>
+        <div className={styles.titleWrapper}>
+          <h2 className={styles.mapTitle}>Мы на карте</h2>
+          <img
+            src="/img/airplane.svg"
+            alt="Самолет"
+            className={styles.airplane}
+            onError={handleImageError}
+          />
+        </div>
         <div ref={mapRef} className={styles.map} />
         <div className={styles.mapOverlay}>
           <img
