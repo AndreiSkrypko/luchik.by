@@ -96,9 +96,10 @@
 }
 
 .ageText2 {
-  width: 193px;
+  width: auto;
   height: auto;
   display: block;
+  max-width: 232px;
 }
 
 .directionCard {

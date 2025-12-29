@@ -65,6 +65,22 @@ const DirectionsSection = () => {
                 onError={handleImageError}
               />
             </div>
+            <div className={styles.ageTextWrapper}>
+              <img
+                src="/img/directions/age-1-5.svg"
+                alt="1-5 лет"
+                className={styles.ageText}
+                onError={handleImageError}
+              />
+            </div>
+            <div className={styles.ageTextWrapper2}>
+              <img
+                src="/img/5-10.svg"
+                alt="5-10 лет"
+                className={styles.ageText2}
+                onError={handleImageError}
+              />
+            </div>
             <img
               src="/img/directions/card-base.svg"
               alt=""
@@ -85,6 +101,22 @@ const DirectionsSection = () => {
                 src="/img/vzik.svg"
                 alt="Взъик"
                 className={styles.vzik}
+                onError={handleImageError}
+              />
+            </div>
+            <div className={styles.ageTextWrapper}>
+              <img
+                src="/img/directions/age-1-5.svg"
+                alt="1-5 лет"
+                className={styles.ageText}
+                onError={handleImageError}
+              />
+            </div>
+            <div className={styles.ageTextWrapper2}>
+              <img
+                src="/img/10-17.svg"
+                alt="10-17 лет"
+                className={styles.ageText2}
                 onError={handleImageError}
               />
             </div>
