@@ -44,13 +44,6 @@ const DirectionsSection = () => {
               onError={handleImageError}
               loading="lazy"
             />
-            <img
-              src="/img/2card/3.svg"
-              alt=""
-              className={styles.cardCloud}
-              onError={handleImageError}
-              loading="lazy"
-            />
           </div>
           <div className={styles.directionCard}>
             <img

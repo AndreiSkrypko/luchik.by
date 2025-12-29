@@ -4,6 +4,7 @@
   min-height: 100vh;
   margin: 0;
   position: relative;
+  overflow-x: hidden;
   background: linear-gradient(180deg, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 700px, #ffffff 700px);
 }
 

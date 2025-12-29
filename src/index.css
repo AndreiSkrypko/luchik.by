@@ -110,6 +110,12 @@
     @apply border-border;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   body {
     font-family: 'Nunito', sans-serif;
     @apply bg-background text-foreground;

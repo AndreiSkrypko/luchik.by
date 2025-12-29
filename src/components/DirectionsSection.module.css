@@ -53,17 +53,6 @@
   z-index: 2;
 }
 
-.cardCloud {
-  width: auto;
-  height: auto;
-  max-width: 30%;
-  display: block;
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  z-index: 3;
-}
-
 @media (max-width: 1024px) {
   .directionsCards {
     grid-template-columns: repeat(2, 1fr);
