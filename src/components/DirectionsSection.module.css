@@ -43,6 +43,64 @@
   opacity: 0.8;
 }
 
+.romashkaWrapper {
+  position: absolute;
+  top: 300px;
+  left: 235px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.romashka {
+  width: 119px;
+  height: auto;
+  display: block;
+}
+
+.vzikWrapper {
+  position: absolute;
+  top: 300px;
+  left: 320px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.vzik {
+  width: 71px;
+  height: auto;
+  display: block;
+}
+
+.ageTextWrapper {
+  position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ageText {
+  width: 233px;
+  height: auto;
+  display: block;
+}
+
+.ageTextWrapper2 {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ageText2 {
+  width: 193px;
+  height: auto;
+  display: block;
+}
+
 .directionCard {
   width: 100%;
   position: relative;

@@ -26,6 +26,22 @@ const DirectionsSection = () => {
             />
           </div>
           <div className={styles.directionCard}>
+            <div className={styles.ageTextWrapper}>
+              <img
+                src="/img/directions/age-1-5.svg"
+                alt="1-5 лет"
+                className={styles.ageText}
+                onError={handleImageError}
+              />
+            </div>
+            <div className={styles.ageTextWrapper2}>
+              <img
+                src="/img/1-5.svg"
+                alt="1-5 лет"
+                className={styles.ageText2}
+                onError={handleImageError}
+              />
+            </div>
             <img
               src="/img/directions/card-base.svg"
               alt=""
@@ -41,6 +57,14 @@ const DirectionsSection = () => {
             />
           </div>
           <div className={styles.directionCard}>
+            <div className={styles.romashkaWrapper}>
+              <img
+                src="/img/romashka.svg"
+                alt="Ромашка"
+                className={styles.romashka}
+                onError={handleImageError}
+              />
+            </div>
             <img
               src="/img/directions/card-base.svg"
               alt=""
@@ -56,6 +80,14 @@ const DirectionsSection = () => {
             />
           </div>
           <div className={styles.directionCard}>
+            <div className={styles.vzikWrapper}>
+              <img
+                src="/img/vzik.svg"
+                alt="Взъик"
+                className={styles.vzik}
+                onError={handleImageError}
+              />
+            </div>
             <img
               src="/img/directions/card-base.svg"
               alt=""
