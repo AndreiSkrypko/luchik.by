@@ -88,6 +88,7 @@ const MapSection = () => {
   return (
     <section className={styles.mapSection}>
       <div className={styles.mapContainer}>
+        <h2 className={styles.mapTitle}>Мы на карте</h2>
         <div ref={mapRef} className={styles.map} />
         <div className={styles.mapOverlay}>
           <img

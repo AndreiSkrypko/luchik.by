@@ -12,6 +12,17 @@
   position: relative;
 }
 
+.mapTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #3D61AC;
+  text-align: center;
+  margin: 0 auto 60px;
+  max-width: 613px;
+  line-height: 1.2;
+}
+
 .map {
   width: 100%;
   height: 500px;
