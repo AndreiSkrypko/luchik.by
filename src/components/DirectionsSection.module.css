@@ -24,6 +24,22 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 60px;
+  position: relative;
+}
+
+.cloudWrapper {
+  position: absolute;
+  top: 350px;
+  left: 250px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cloud {
+  width: 160px;
+  height: auto;
+  display: block;
+  opacity: 0.8;
 }
 
 .directionCard {

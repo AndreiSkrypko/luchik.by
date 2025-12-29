@@ -15,6 +15,16 @@ const DirectionsSection = () => {
           onError={handleImageError}
         />
         <div className={styles.directionsCards}>
+          <div className={styles.cloudWrapper}>
+            <img
+              src="/img/footer/oblako1.webp"
+              alt="Облако"
+              width={80}
+              height={50}
+              className={styles.cloud}
+              onError={handleImageError}
+            />
+          </div>
           <div className={styles.directionCard}>
             <img
               src="/img/directions/card-base.svg"
