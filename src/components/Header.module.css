@@ -21,12 +21,12 @@
 /* Облака */
 .clouds {
   position: absolute;
-  bottom: -200px;
+  bottom: -250px;
   left: -30px;
   right: -30px;
   width: calc(100% + 60px);
   height: auto;
-  min-height: 338px;
+  min-height: 438px;
   overflow: visible;
   pointer-events: none;
   z-index: 1;
@@ -41,10 +41,10 @@
 
 .cloudsImage {
   width: 100%;
-  height: auto;
-  min-height: 338px;
+  height: 100%;
+  min-height: 438px;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center top;
   display: block;
   opacity: 1;
   animation: bigCloudsDrift 20s ease-in-out infinite;
