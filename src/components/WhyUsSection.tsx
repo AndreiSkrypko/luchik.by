@@ -1,16 +1,6 @@
 import styles from './WhyUsSection.module.css';
 
-interface WhyUsSectionProps {
-  onContactsClick?: () => void;
-}
-
-const WhyUsSection = ({ onContactsClick }: WhyUsSectionProps) => {
-  const handleButtonClick = () => {
-    if (onContactsClick) {
-      onContactsClick();
-    }
-  };
-
+const WhyUsSection = () => {
   return (
     <section className={styles.whyUsSection}>
       <div className={styles.whyUsContainer}>
@@ -25,19 +15,6 @@ const WhyUsSection = ({ onContactsClick }: WhyUsSectionProps) => {
             alt="Мальчик"
             className={styles.whyUsBoy}
           />
-          <button
-            className={styles.ctaButton}
-            type="button"
-            onClick={handleButtonClick}
-            aria-label="Записаться на пробное занятие"
-          >
-            <img
-              src="/img/why_we/button.svg"
-              alt=""
-              className={styles.ctaButtonImage}
-            />
-            <span className={styles.ctaButtonText}>ЗАПИСАТЬСЯ НА ПРОБНОЕ ЗАНЯТИЕ</span>
-          </button>
         </div>
       </div>
     </section>
