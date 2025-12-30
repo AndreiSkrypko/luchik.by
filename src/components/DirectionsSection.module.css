@@ -173,6 +173,43 @@
     gap: 20px;
     margin-top: 40px;
   }
+
+  /* Облако для первой карточки */
+  .cloudWrapper {
+    display: block;
+    top: 360px;
+    left: calc(50% + 90px);
+    transform: translateX(-50%);
+    clip-path: none;
+  }
+
+  .cloud {
+    width: 100px;
+  }
+
+  /* Ромашка для второй карточки */
+  .romashkaWrapper {
+    display: block;
+    top: 280px;
+    left: calc(50% + 130px);
+    transform: translateX(-50%);
+  }
+
+  .romashka {
+    width: 80px;
+  }
+
+  /* Пчелка для третьей карточки */
+  .vzikWrapper {
+    display: block;
+    top: 360px;
+    left: calc(50% + 130px);
+    transform: translateX(-50%);
+  }
+
+  .vzik {
+    width: 50px;
+  }
 }
 
 /* Маленькие мобильные (до 480px) */
