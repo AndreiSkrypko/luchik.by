@@ -270,9 +270,9 @@
   }
 
   .ladybug {
-    left: calc(50% + 100px);
+    left: calc(50% + 120px);
     width: 55px;
-    top: 50%;
+    top: calc(50% + 20px);
     transform: translateY(-50%);
   }
 
@@ -342,9 +342,9 @@
   }
 
   .ladybug {
-    left: calc(50% + 90px);
+    left: calc(50% + 110px);
     width: 45px;
-    top: 50%;
+    top: calc(50% + 20px);
     transform: translateY(-50%);
   }
 
