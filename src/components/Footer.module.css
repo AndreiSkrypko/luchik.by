@@ -500,8 +500,7 @@
   }
 
   .footerBurger {
-    display: flex;
-    margin-bottom: 20px;
+    display: none !important;
   }
 
   .footerNavItem {

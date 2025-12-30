@@ -7,6 +7,7 @@
   overflow: visible;
   padding: 20px 0 0;
   padding-bottom: 0;
+  z-index: 1;
 }
 
 .headerBackground {
@@ -17,6 +18,7 @@
   bottom: 0;
   overflow: visible;
   width: 100%;
+  z-index: 1;
 }
 
 /* Облака */
@@ -415,6 +417,15 @@
   .cloudTwo {
     display: block !important;
   }
+
+  .navLinks {
+    display: flex !important;
+    position: static !important;
+  }
+
+  .navbarRight {
+    position: static;
+  }
 }
 
 /* Планшеты и меньше (до 1024px) */
@@ -480,14 +491,16 @@
   .header {
     min-height: 120px;
     padding: 10px 0 0;
-    overflow: visible;
+    overflow: visible !important;
     background: transparent;
     position: relative;
+    z-index: 1;
   }
 
   .headerBackground {
-    overflow: visible;
+    overflow: visible !important;
     background: transparent;
+    z-index: 1;
   }
 
   .logoLink {
@@ -546,7 +559,8 @@
     padding: 0;
     justify-content: flex-start;
     position: relative;
-    z-index: 10;
+    z-index: 1;
+    overflow: visible;
   }
 
   .navbarRight {
@@ -574,7 +588,7 @@
     display: flex;
     top: 16px;
     right: 16px;
-    z-index: 25;
+    z-index: 10001;
   }
 
   .mobileMenuOverlay {
@@ -583,24 +597,40 @@
 
   .navLinks {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(229, 245, 255, 0.98);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(229, 245, 255, 0.98) !important;
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 24px;
-    z-index: 99;
-    margin-left: 0;
+    z-index: 999999 !important;
+    margin: 0 !important;
     padding: 80px 20px 20px;
+    overflow-y: auto;
+    isolation: isolate;
   }
 
   .navLinksOpen {
     display: flex !important;
+    z-index: 999999 !important;
+  }
+
+  .navTextLink {
+    font-size: 18px;
+    padding: 12px 24px;
+    width: auto;
+    text-align: center;
+    position: relative;
+    z-index: 1000000;
+    color: #4A5568 !important;
+    pointer-events: auto;
   }
 }
 

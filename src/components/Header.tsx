@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -8,6 +9,16 @@ interface HeaderProps {
 
 const Header = ({ onContactsClick }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -23,6 +34,30 @@ const Header = ({ onContactsClick }: HeaderProps) => {
     }
     closeMobileMenu();
   };
+
+  const navLinksContent = (
+    <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
+      <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
+        О нас
+      </a>
+      <a href="#directions" className={styles.navTextLink} onClick={closeMobileMenu}>
+        Направления
+      </a>
+      <Link to="/gallery" className={styles.navTextLink} onClick={closeMobileMenu}>
+        Галерея
+      </Link>
+      <Link to="/trainers" className={styles.navTextLink} onClick={closeMobileMenu}>
+        Тренажеры
+      </Link>
+      <button
+        onClick={handleContactsClick}
+        className={styles.navTextLink}
+        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+      >
+        Контакты
+      </button>
+    </div>
+  );
 
   return (
     <header className={styles.header}>
@@ -41,27 +76,7 @@ const Header = ({ onContactsClick }: HeaderProps) => {
 
         {/* Навигация и кнопка «Контакты» */}
         <nav className={styles.navbarRow} aria-label="Основная навигация">
-          <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
-            <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
-              О нас
-            </a>
-            <a href="#directions" className={styles.navTextLink} onClick={closeMobileMenu}>
-              Направления
-            </a>
-            <Link to="/gallery" className={styles.navTextLink} onClick={closeMobileMenu}>
-              Галерея
-            </Link>
-            <Link to="/trainers" className={styles.navTextLink} onClick={closeMobileMenu}>
-              Тренажеры
-            </Link>
-            <button
-              onClick={handleContactsClick}
-              className={styles.navTextLink}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-            >
-              Контакты
-            </button>
-          </div>
+          {isMobile && typeof window !== 'undefined' ? createPortal(navLinksContent, document.body) : navLinksContent}
 
           <div className={styles.navbarRight}>
             <div className={styles.socials}>
