@@ -85,6 +85,35 @@
   pointer-events: none;
 }
 
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .whyUsSection {
+    padding: 60px 25px;
+  }
+
+  .whyUsBoy {
+    width: 32%;
+    right: 7%;
+  }
+
+  .ctaButton {
+    bottom: 50px;
+  }
+
+  .ctaButtonImage {
+    width: 350px;
+  }
+
+  .ctaButtonText {
+    font-size: 15px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .whyUsSection {
     padding: 40px 15px;
@@ -100,8 +129,36 @@
     bottom: 40px;
   }
 
+  .ctaButtonImage {
+    width: 280px;
+  }
+
   .ctaButtonText {
     font-size: 12px;
   }
 }
 
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .whyUsSection {
+    padding: 30px 12px;
+  }
+
+  .whyUsBoy {
+    width: 26%;
+    right: 4%;
+  }
+
+  .ctaButton {
+    bottom: 35px;
+  }
+
+  .ctaButtonImage {
+    width: 250px;
+  }
+
+  .ctaButtonText {
+    font-size: 11px;
+    letter-spacing: 0.03em;
+  }
+}

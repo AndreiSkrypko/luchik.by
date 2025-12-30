@@ -1,6 +1,6 @@
 /* Основной заголовок под облаком, как на макете */
 .mainTitleSection {
-  margin-top: -350px; /* поднимаем ещё выше, под шапку */
+  margin-top: -350px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -11,31 +11,13 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .mainTitleSection {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    margin-top: 0;
-    padding: 0 20px;
-    z-index: 12;
-  }
-  
-  .mainTitleImage {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 .mainTitleImage {
   width: 873px;
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
-  filter: saturate(0.8) brightness(1.05); /* чуть более пастельный оттенок */
+  filter: saturate(0.8) brightness(1.05);
 }
 
 /* Подзаголовок текстом и божья коровка */
@@ -136,7 +118,6 @@
   display: block;
   overflow: hidden;
   border-radius: 41px;
-  /* Пульсация для привлечения внимания */
   animation: ctaPulse 2.5s ease-in-out infinite;
   transition: transform 0.2s ease;
 }
@@ -212,22 +193,137 @@
   color: #4D3A10;
 }
 
-@media (max-width: 768px) {
-  .ladybug {
-    left: calc(50% + 120px);
-    width: 60px;
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .mainTitleSection {
+    margin-top: -280px;
+    padding: 0 30px;
   }
-  
+
+  .mainTitleImage {
+    width: 600px;
+  }
+
+  .subtitleSection {
+    margin-top: 28px;
+    padding: 0 30px;
+  }
+
+  .subtitleText {
+    font-size: 19px;
+  }
+
+  .ladybug {
+    width: 65px;
+    left: calc(50% + 150px);
+  }
+
+  .ctaSection {
+    margin-top: 28px;
+    padding: 0 30px;
+  }
+
+  .ctaButtonImage {
+    width: 300px;
+  }
+
+  .ctaButtonText {
+    font-size: 17px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .mainTitleSection {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    padding: 0 20px;
+    z-index: 12;
+  }
+
+  .mainTitleImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .subtitleSection {
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+
   .subtitleText {
     font-size: 18px;
+    line-height: 1.4;
   }
-  
+
+  .ladybug {
+    left: calc(50% + 100px);
+    width: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ctaSection {
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+
   .ctaButtonImage {
     width: 280px;
+    max-width: 90%;
   }
-  
+
   .ctaButtonText {
     font-size: 16px;
   }
 }
 
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .mainTitleSection {
+    position: relative;
+    top: 0;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .subtitleSection {
+    margin-top: 18px;
+    padding: 0 15px;
+  }
+
+  .subtitleText {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .ladybug {
+    left: calc(50% + 90px);
+    width: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ctaSection {
+    margin-top: 18px;
+    padding: 0 15px;
+  }
+
+  .ctaButtonImage {
+    width: 240px;
+    max-width: 85%;
+  }
+
+  .ctaButtonText {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+}

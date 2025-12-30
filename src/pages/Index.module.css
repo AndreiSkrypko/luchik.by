@@ -5,6 +5,24 @@
   margin: 0;
   position: relative;
   overflow-x: hidden;
+  overflow-y: visible;
   background: linear-gradient(180deg, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 700px, #ffffff 700px);
+}
+
+/* Предотвращение обрезания декоративных элементов на десктопе */
+@media (min-width: 1025px) {
+  .page {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+}
+
+/* Мобильная версия - убираем синий фон, который создает полосу */
+@media (max-width: 768px) {
+  .page {
+    background: linear-gradient(180deg, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 300px, #ffffff 300px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 

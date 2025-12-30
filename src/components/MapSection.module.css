@@ -83,6 +83,42 @@
   display: block;
 }
 
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .mapSection {
+    padding: 60px 25px;
+  }
+
+  .mapTitle {
+    font-size: 40px;
+  }
+
+  .airplane {
+    width: 130px;
+    right: -60px;
+  }
+
+  .map {
+    height: 420px;
+  }
+
+  .mapOverlay {
+    width: 350px;
+    bottom: 28%;
+  }
+
+  .boyWrapper {
+    width: 320px;
+    bottom: -14%;
+    right: 80%;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .mapSection {
     padding: 40px 15px;
@@ -109,5 +145,47 @@
     transform: none;
     margin-top: 15px;
   }
+
+  .mapOverlay {
+    width: 300px;
+    bottom: 25%;
+  }
+
+  .boyWrapper {
+    width: 280px;
+    bottom: -14%;
+    right: 82%;
+  }
 }
 
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .mapSection {
+    padding: 30px 12px;
+  }
+
+  .mapTitle {
+    font-size: 28px;
+  }
+
+  .map {
+    height: 320px;
+  }
+
+  .airplane {
+    width: 80px;
+    margin-top: 10px;
+  }
+
+  .mapOverlay {
+    width: 200px;
+    bottom: 20%;
+    left: 5%;
+  }
+
+  .boyWrapper {
+    width: 200px;
+    bottom: -12%;
+    right: 88%;
+  }
+}

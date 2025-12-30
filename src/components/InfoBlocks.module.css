@@ -35,15 +35,30 @@
   max-width: 100%;
 }
 
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
 @media (max-width: 1024px) {
+  .infoBlocksSection {
+    margin-top: 150px;
+    padding: 0 30px 60px;
+    padding-top: 40px;
+  }
+
   .infoBlocksContainer {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
+/* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .infoBlocksSection {
     padding: 40px 15px;
+    margin-top: 40px;
+    padding-top: 30px;
   }
 
   .infoBlocksContainer {
@@ -55,14 +70,22 @@
     padding: 24px 20px;
     min-height: 160px;
   }
-
-  .infoBlockTitle {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .infoBlockText {
-    font-size: 14px;
-  }
 }
 
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .infoBlocksSection {
+    padding: 30px 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+  }
+
+  .infoBlocksContainer {
+    gap: 14px;
+  }
+
+  .infoBlock {
+    padding: 20px 15px;
+    min-height: 140px;
+  }
+}

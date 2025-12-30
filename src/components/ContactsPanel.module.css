@@ -470,3 +470,150 @@
   }
 }
 
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .contactsPanel {
+    width: 400px;
+    max-width: 85vw;
+  }
+
+  .contactsCloud {
+    width: 220px;
+  }
+
+  .contactsPanelTitle {
+    width: 105px;
+    height: 20px;
+  }
+
+  .smallCloud {
+    width: 95px;
+  }
+
+  .contactsFrame {
+    width: 270px;
+    height: 210px;
+  }
+
+  .contactsFrameImage {
+    width: 270px;
+    height: 210px;
+  }
+
+  .contactsCow {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .contactsPanel {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .contactsPanelHeader {
+    padding: 30px 24px 20px;
+  }
+
+  .contactsCloud {
+    width: 200px;
+  }
+
+  .contactsPanelTitle {
+    width: 100px;
+    height: 19px;
+    margin-top: 65px;
+  }
+
+  .smallCloud {
+    width: 85px;
+    right: calc(50% - 110px + 15px);
+  }
+
+  .contactsPanelContent {
+    padding: 24px;
+  }
+
+  .contactsFrame {
+    width: 260px;
+    height: 200px;
+    margin-top: 15px;
+  }
+
+  .contactsFrameImage {
+    width: 260px;
+    height: 200px;
+  }
+
+  .contactsCow {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .contactsPanelHeader {
+    padding: 20px 16px 15px;
+  }
+
+  .contactsCloud {
+    width: 160px;
+  }
+
+  .contactsPanelTitle {
+    width: 80px;
+    height: 15px;
+    margin-top: 55px;
+  }
+
+  .smallCloud {
+    width: 65px;
+    right: calc(50% - 90px + 10px);
+    top: 8px;
+  }
+
+  .contactsPanelContent {
+    padding: 20px 16px;
+  }
+
+  .contactsFrame {
+    width: 220px;
+    height: 180px;
+    margin-top: 12px;
+  }
+
+  .contactsFrameImage {
+    width: 220px;
+    height: 180px;
+  }
+
+  .contactsCow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contactItem {
+    gap: 10px;
+  }
+
+  .contactIcon {
+    width: 20px;
+    height: 22px;
+  }
+
+  .contactIcon img {
+    max-width: 20px;
+    max-height: 22px;
+  }
+
+  .contactSvgText {
+    font-size: 12px;
+  }
+}

@@ -16,6 +16,7 @@
   right: 0;
   bottom: 0;
   overflow: visible;
+  width: 100%;
 }
 
 /* Облака */
@@ -30,13 +31,6 @@
   overflow: visible;
   pointer-events: none;
   z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .clouds {
-    bottom: -150px;
-    min-height: 200px;
-  }
 }
 
 .cloudsImage {
@@ -67,6 +61,8 @@
   z-index: 5;
   width: 600px;
   height: 600px;
+  overflow: visible;
+  pointer-events: none;
 }
 
 .sun {
@@ -196,12 +192,7 @@
   z-index: 4;
   pointer-events: none;
   animation: cloudDrift 8s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-  .cloudOne {
-    display: none;
-  }
+  display: block;
 }
 
 /* Пчела слева внизу */
@@ -212,6 +203,7 @@
   z-index: 4;
   pointer-events: none;
   animation: beeBuzz 2s ease-in-out infinite;
+  display: block;
 }
 
 /* Облако 2 справа внизу */
@@ -222,6 +214,7 @@
   z-index: 4;
   pointer-events: none;
   animation: cloudDriftReverse 10s ease-in-out infinite;
+  display: block;
 }
 
 /* Логотип в левом верхнем углу */
@@ -233,20 +226,6 @@
   display: inline-block;
 }
 
-@media (max-width: 768px) {
-  .header {
-    min-height: 120px;
-    padding: 10px 0 0;
-  }
-  
-  .logoLink {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    z-index: 15;
-  }
-}
-
 .logo {
   position: relative;
 }
@@ -255,12 +234,6 @@
   width: 260px;
   height: auto;
   display: block;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    width: 180px;
-  }
 }
 
 /* Навигация в шапке */
@@ -275,125 +248,10 @@
   justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-  .navbarRow {
-    margin: 0;
-    padding: 0;
-    justify-content: flex-start;
-  }
-  
-  .navbarRight {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    z-index: 15;
-  }
-  
-  .socials {
-    gap: 6px;
-  }
-  
-  .socialIconLink {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .socialIcon {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-.mobileMenuButton {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 100;
-  position: fixed;
-  top: 24px;
-  right: 24px;
-}
-
-@media (max-width: 768px) {
-  .mobileMenuButton {
-    display: flex;
-  }
-}
-
-.mobileMenuButton span {
-  width: 25px;
-  height: 3px;
-  background: #4A5568;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-  display: block;
-}
-
-.mobileMenuButton:hover span {
-  background: #FF6B35;
-}
-
-.mobileMenuButtonOpen span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-}
-
-.mobileMenuButtonOpen span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobileMenuButtonOpen span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-
-.mobileMenuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 98;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobileMenuOverlay {
-    display: block;
-  }
-}
-
 .navLinks {
   display: flex;
   gap: 48px;
   margin-left: 240px;
-}
-
-@media (max-width: 768px) {
-  .navLinks {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(229, 245, 255, 0.98);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    z-index: 99;
-    margin-left: 0;
-    padding: 80px 20px 20px;
-  }
-  
-  .navLinksOpen {
-    display: flex !important;
-  }
 }
 
 .navTextLink {
@@ -478,3 +336,330 @@
   object-fit: contain;
 }
 
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 100;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+}
+
+.mobileMenuButton span {
+  width: 25px;
+  height: 3px;
+  background: #4A5568;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.mobileMenuButton:hover span {
+  background: #FF6B35;
+}
+
+.mobileMenuButtonOpen span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobileMenuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButtonOpen span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 98;
+  display: none;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Десктоп (больше 1024px) - все элементы видны */
+@media (min-width: 1025px) {
+  .header {
+    overflow: visible;
+  }
+
+  .headerBackground {
+    overflow: visible;
+  }
+
+  .clouds {
+    overflow: visible;
+  }
+
+  .cloudOne {
+    display: block !important;
+  }
+
+  .bee {
+    display: block !important;
+  }
+
+  .cloudTwo {
+    display: block !important;
+  }
+}
+
+/* Планшеты и меньше (до 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    min-height: 400px;
+    overflow: visible;
+  }
+
+  .headerBackground {
+    overflow: visible;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  .sunContainer {
+    width: 450px;
+    height: 450px;
+    top: -140px;
+    right: -120px;
+  }
+
+  .clouds {
+    bottom: -180px;
+    min-height: 300px;
+    overflow: visible;
+  }
+
+  .cloudOne {
+    left: 40px;
+    top: 150px;
+    display: block;
+  }
+
+  .bee {
+    left: 30px;
+    display: block;
+  }
+
+  .cloudTwo {
+    right: 20px;
+    display: block;
+  }
+
+  .navbarRow {
+    padding: 0 30px;
+  }
+
+  .navLinks {
+    gap: 32px;
+    margin-left: 200px;
+  }
+
+  .navTextLink {
+    font-size: 15px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .header {
+    min-height: 100px;
+    padding: 10px 0 0;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .headerBackground {
+    overflow: hidden;
+  }
+
+  .logoLink {
+    top: 10px;
+    left: 15px;
+    z-index: 15;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .sunContainer {
+    width: 250px;
+    height: 250px;
+    top: -80px;
+    right: -60px;
+    opacity: 0.6;
+  }
+
+  .clouds {
+    bottom: -100px;
+    min-height: 150px;
+    opacity: 0.7;
+    left: -20px;
+    right: -20px;
+    width: calc(100% + 40px);
+  }
+
+  .cloudsImage {
+    min-height: 150px;
+  }
+
+  .cloudOne {
+    display: none;
+  }
+
+  .bee {
+    display: none;
+  }
+
+  .cloudTwo {
+    display: none;
+  }
+
+  .navbarRow {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .navbarRight {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 15;
+  }
+
+  .socials {
+    gap: 6px;
+  }
+
+  .socialIconLink {
+    width: 28px;
+    height: 28px;
+  }
+
+  .socialIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    top: 16px;
+    right: 16px;
+  }
+
+  .mobileMenuOverlay {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(229, 245, 255, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 99;
+    margin-left: 0;
+    padding: 80px 20px 20px;
+  }
+
+  .navLinksOpen {
+    display: flex !important;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .header {
+    min-height: 80px;
+    padding: 8px 0 0;
+    overflow: hidden;
+  }
+
+  .headerBackground {
+    overflow: hidden;
+  }
+
+  .logoLink {
+    top: 8px;
+    left: 12px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .sunContainer {
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    right: -50px;
+    opacity: 0.5;
+  }
+
+  .clouds {
+    bottom: -80px;
+    min-height: 120px;
+    opacity: 0.6;
+    left: -15px;
+    right: -15px;
+    width: calc(100% + 30px);
+  }
+
+  .cloudsImage {
+    min-height: 120px;
+  }
+
+  .navbarRight {
+    top: 8px;
+    right: 12px;
+  }
+
+  .socials {
+    gap: 4px;
+  }
+
+  .socialIconLink {
+    width: 24px;
+    height: 24px;
+  }
+
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobileMenuButton {
+    top: 12px;
+    right: 12px;
+    padding: 6px;
+  }
+
+  .mobileMenuButton span {
+    width: 22px;
+    height: 2px;
+  }
+}

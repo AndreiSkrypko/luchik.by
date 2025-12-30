@@ -360,7 +360,11 @@
   height: 16px;
 }
 
-/* Адаптация для планшетов */
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
 @media (max-width: 1024px) {
   .footerContent {
     gap: 40px;
@@ -405,7 +409,7 @@
   }
 }
 
-/* Адаптация для средних экранов */
+/* Средние экраны (до 900px) */
 @media (max-width: 900px) {
   .footerContent {
     flex-wrap: wrap;
@@ -645,6 +649,55 @@
 
   .dividerImage {
     width: 100%;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 25px 15px 0;
+  }
+
+  .footerLogoImage {
+    width: 140px;
+  }
+
+  .footerNavItemWrapper {
+    max-width: 300px;
+  }
+
+  .footerNavItemFrame {
+    max-width: 300px;
+  }
+
+  .footerNavLinks {
+    max-width: 300px;
+  }
+
+  .footerAddress,
+  .footerSchedule {
+    max-width: 300px;
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .footerSocials {
+    max-width: 300px;
+    padding: 14px;
+  }
+
+  .footerGrass {
+    height: 50px;
+  }
+
+  .footerBushLeft,
+  .footerBushRight {
+    width: 80px;
+  }
+
+  .footerGrassText {
+    width: 90%;
+    max-width: 300px;
   }
 }
 
