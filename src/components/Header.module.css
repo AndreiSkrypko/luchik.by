@@ -478,20 +478,20 @@
 /* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .header {
-    min-height: 100px;
+    min-height: 120px;
     padding: 10px 0 0;
-    overflow: hidden;
+    overflow: visible;
     background: transparent;
   }
 
   .headerBackground {
-    overflow: hidden;
+    overflow: visible;
   }
 
   .logoLink {
     top: 10px;
     left: 15px;
-    z-index: 15;
+    z-index: 20;
   }
 
   .logo img {
@@ -503,20 +503,24 @@
     height: 250px;
     top: -80px;
     right: -60px;
-    opacity: 0.6;
+    opacity: 0.5;
+    z-index: 1;
   }
 
   .clouds {
-    bottom: -100px;
-    min-height: 150px;
-    opacity: 0.7;
+    bottom: -120px;
+    min-height: 180px;
+    opacity: 0.8;
     left: -20px;
     right: -20px;
     width: calc(100% + 40px);
+    display: block;
+    z-index: 1;
   }
 
   .cloudsImage {
-    min-height: 150px;
+    min-height: 180px;
+    display: block;
   }
 
   .cloudOne {
@@ -535,13 +539,15 @@
     margin: 0;
     padding: 0;
     justify-content: flex-start;
+    position: relative;
+    z-index: 10;
   }
 
   .navbarRight {
     position: absolute;
     top: 10px;
-    right: 15px;
-    z-index: 15;
+    right: 50px;
+    z-index: 20;
   }
 
   .socials {
@@ -562,6 +568,7 @@
     display: flex;
     top: 16px;
     right: 16px;
+    z-index: 25;
   }
 
   .mobileMenuOverlay {
@@ -594,18 +601,19 @@
 /* Маленькие мобильные (до 480px) */
 @media (max-width: 480px) {
   .header {
-    min-height: 80px;
+    min-height: 100px;
     padding: 8px 0 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .headerBackground {
-    overflow: hidden;
+    overflow: visible;
   }
 
   .logoLink {
     top: 8px;
     left: 12px;
+    z-index: 20;
   }
 
   .logo img {
@@ -617,25 +625,30 @@
     height: 200px;
     top: -60px;
     right: -50px;
-    opacity: 0.5;
+    opacity: 0.4;
+    z-index: 1;
   }
 
   .clouds {
-    bottom: -80px;
-    min-height: 120px;
-    opacity: 0.6;
+    bottom: -100px;
+    min-height: 150px;
+    opacity: 0.7;
     left: -15px;
     right: -15px;
     width: calc(100% + 30px);
+    display: block;
+    z-index: 1;
   }
 
   .cloudsImage {
-    min-height: 120px;
+    min-height: 150px;
+    display: block;
   }
 
   .navbarRight {
     top: 8px;
-    right: 12px;
+    right: 45px;
+    z-index: 20;
   }
 
   .socials {
