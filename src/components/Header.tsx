@@ -37,6 +37,14 @@ const Header = ({ onContactsClick }: HeaderProps) => {
 
   const navLinksContent = (
     <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
+      <button
+        className={styles.closeButton}
+        onClick={closeMobileMenu}
+        aria-label="Закрыть меню"
+      >
+        <span></span>
+        <span></span>
+      </button>
       <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
         О нас
       </a>
@@ -52,7 +60,6 @@ const Header = ({ onContactsClick }: HeaderProps) => {
       <button
         onClick={handleContactsClick}
         className={styles.navTextLink}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
         Контакты
       </button>
