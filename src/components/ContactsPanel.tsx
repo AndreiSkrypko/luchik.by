@@ -15,21 +15,21 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
         <div className={styles.contactsPanelHeader}>
           <div className={styles.contactsCloudContainer}>
             <img
-              src="/img/main/облако-белое.webp"
+              src={encodeURI("/img/main/облако-белое.webp")}
               alt="Облако"
               width={250}
               height={125}
               className={styles.contactsCloud}
             />
             <img
-              src="/img/main/слово-контакты.webp"
+              src={encodeURI("/img/main/слово-контакты.webp")}
               alt="Контакты"
               width={122}
               height={23}
               className={styles.contactsPanelTitle}
             />
             <img
-              src="/img/main/малое-облако.webp"
+              src={encodeURI("/img/main/малое-облако.webp")}
               alt="Малое облако"
               width={110}
               height={60}
@@ -50,7 +50,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <rect opacity="0.65" width="291" height="225" rx="22" fill="white" />
             </svg>
             <img
-              src="/img/conacts/коровка.webp"
+              src={encodeURI("/img/conacts/коровка.webp")}
               alt="Коровка"
               width={78}
               height={78}
@@ -108,7 +108,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
           </div>
         </div>
         <img
-          src="/img/conacts/лист1.webp"
+          src={encodeURI("/img/conacts/лист1.webp")}
           alt="Листик"
           width={61}
           height={75}
@@ -191,7 +191,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <div className={styles.contactsScheduleLine}>Сб,Вс с 10.00 до 18.00</div>
             </div>
             <img
-              src="/img/conacts/лист2.webp"
+              src={encodeURI("/img/conacts/лист2.webp")}
               alt="Лист"
               width={78}
               height={68}
