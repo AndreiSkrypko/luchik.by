@@ -62,13 +62,13 @@
   }
 
   .infoBlocksContainer {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .infoBlock {
-    padding: 24px 20px;
-    min-height: 160px;
+    padding: 20px 15px;
+    min-height: 140px;
   }
 }
 
