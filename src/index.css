@@ -118,7 +118,8 @@
 
   body {
     font-family: 'Nunito', sans-serif;
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: transparent !important;
   }
 }
 
