@@ -206,7 +206,8 @@
 }
 
 .footerNavItem:hover .footerNavItemFrame rect {
-  stroke: #B8D9F0;
+  stroke: #4665a1;
+  stroke-width: 2;
 }
 
 .footerNavLinks {
@@ -235,21 +236,23 @@
 }
 
 .footerNavText {
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  font-weight: 600;
+  color: #4665a1;
 }
 
 .footerNavLink {
   padding: 6px 0;
   padding-left: 0;
   font-size: 14px;
-  color: #777777;
+  color: #666;
   cursor: pointer;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
   text-align: left;
   display: block;
   background: none;
@@ -264,20 +267,25 @@
 }
 
 .footerNavLink:hover {
-  color: #333;
+  color: #4665a1;
+  transform: translateX(3px);
 }
 
 .footerAddress {
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
-  color: #777777;
-  line-height: 1.5;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.6;
   white-space: nowrap;
 }
 
 .footerSchedule {
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
-  color: #777777;
-  line-height: 1.5;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.6;
   white-space: nowrap;
 }
 
@@ -366,6 +374,11 @@
 
 /* Планшеты (до 1024px) */
 @media (max-width: 1024px) {
+  .footerDivider {
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+
   .footerContent {
     gap: 40px;
   }
@@ -407,13 +420,25 @@
   .footerNavRight {
     min-width: 200px;
   }
+
+  .footerAddress,
+  .footerSchedule {
+    white-space: normal;
+    font-size: 13px;
+  }
 }
 
 /* Средние экраны (до 900px) */
 @media (max-width: 900px) {
+  .footerDivider {
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
+
   .footerContent {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
   }
 
   .footerNav {
@@ -437,10 +462,21 @@
   .footerCloud3 {
     display: none;
   }
+
+  .footerAddress,
+  .footerSchedule {
+    white-space: normal;
+  }
 }
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
+  .footerDivider {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
   .footer {
     padding: 30px 20px 0;
     width: 100%;
@@ -504,11 +540,7 @@
   }
 
   .footerNavItem {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    display: none !important;
   }
 
   .footerNavItemWrapper {
@@ -555,6 +587,12 @@
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+  }
+
+  .footerNavLink:hover {
+    transform: translateY(-2px);
   }
 
   .footerNavDivider {
@@ -575,41 +613,50 @@
   }
 
   .footerAddress {
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.6;
     margin-bottom: 0;
     padding: 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(255, 249, 230, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(70, 101, 161, 0.1);
+    border: 1px solid rgba(70, 101, 161, 0.1);
     width: 100%;
     max-width: 320px;
     box-sizing: border-box;
+    color: #4665a1;
   }
 
   .footerSchedule {
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.6;
     margin-bottom: 0;
     padding: 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(255, 249, 230, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(70, 101, 161, 0.1);
+    border: 1px solid rgba(70, 101, 161, 0.1);
     width: 100%;
     max-width: 320px;
     box-sizing: border-box;
+    color: #4665a1;
   }
 
   .footerSocials {
     justify-content: center;
     gap: 12px;
     padding: 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(229, 245, 255, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(255, 249, 230, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(70, 101, 161, 0.1);
+    border: 1px solid rgba(70, 101, 161, 0.1);
     width: 100%;
     max-width: 320px;
     box-sizing: border-box;
@@ -640,12 +687,6 @@
     height: auto;
   }
 
-  .footerDivider {
-    margin-top: 60px;
-    margin-bottom: 30px;
-    padding: 0 20px;
-  }
-
   .dividerImage {
     width: 100%;
   }
@@ -653,6 +694,12 @@
 
 /* Маленькие мобильные (до 480px) */
 @media (max-width: 480px) {
+  .footerDivider {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
   .footer {
     padding: 25px 15px 0;
   }
@@ -678,6 +725,7 @@
     max-width: 300px;
     font-size: 13px;
     padding: 14px;
+    font-family: 'Nunito', sans-serif;
   }
 
   .footerSocials {
