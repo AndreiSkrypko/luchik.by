@@ -151,8 +151,8 @@
 
 .boyWrapper {
   position: absolute;
-  bottom: -73.5px;
-  right: 79%;
+  bottom: -41px;
+  right: 78%;
   z-index: 11;
   pointer-events: none;
   width: 380px;
