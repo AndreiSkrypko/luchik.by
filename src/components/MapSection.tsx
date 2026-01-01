@@ -137,12 +137,21 @@ const MapSection = () => {
         </div>
         <div ref={mapRef} className={styles.map}>
           <div className={styles.mapOverlay}>
-            <img
-              src="/img/map/overlay.svg"
-              alt=""
-              className={styles.overlayImage}
-              onError={handleImageError}
-            />
+            <div className={styles.overlayCard}>
+              <div className={styles.locationIcon}>
+                <img
+                  src="/img/map/location-icon.svg"
+                  alt="Локация"
+                  className={styles.locationIconImage}
+                  onError={handleImageError}
+                />
+              </div>
+              <div className={styles.cityName}>г. Лида</div>
+              <div className={styles.addressFields}>
+                <div className={styles.addressField}>ул. Замковая, 4</div>
+                <div className={styles.addressField}>ул. Кооперативная, 36</div>
+              </div>
+            </div>
           </div>
           <div className={styles.cowWrapper}>
             <img
