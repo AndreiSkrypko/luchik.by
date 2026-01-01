@@ -72,6 +72,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  pointer-events: auto;
 }
 
 .locationIcon {
@@ -113,6 +114,22 @@
   color: #333;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.addressField:hover {
+  background: #FFF9E6;
+  color: #4665a1;
+  box-shadow: 0 4px 12px rgba(70, 101, 161, 0.2);
+  transform: translateY(-2px);
+}
+
+.addressField:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(70, 101, 161, 0.15);
 }
 
 .cowWrapper {

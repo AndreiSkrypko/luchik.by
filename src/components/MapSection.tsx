@@ -4,14 +4,51 @@ import styles from './MapSection.module.css';
 // API ключ Яндекс.Карт из переменных окружения или используйте свой
 const YANDEX_MAP_API_KEY = import.meta.env.VITE_YANDEX_MAP_API_KEY || '';
 
-// Адрес центра
-const MAP_ADDRESS = 'Замковая улица, 4, Лида, Гродненская область, Беларусь';
-// Точные координаты для Замковой, 4, Лида
-const FALLBACK_CENTER: [number, number] = [53.887889, 25.301733];
+// Адреса
+const ADDRESS_1 = 'Замковая улица, 4, Лида, Гродненская область, Беларусь';
+const ADDRESS_2 = 'Кооперативная улица, 36, Лида, Гродненская область, Беларусь';
+
+// Точные координаты
+const COORDINATES_1: [number, number] = [53.887889, 25.301733]; // Замковая, 4
+const COORDINATES_2: [number, number] = [53.902119, 25.252918]; // Кооперативная, 36
+
+// Адрес центра (по умолчанию)
+const MAP_ADDRESS = ADDRESS_1;
+const FALLBACK_CENTER: [number, number] = COORDINATES_1;
 
 const MapSection = () => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
+  const placemarkRef = useRef<any>(null);
+
+  // Функция для перехода к адресу и установки маркера
+  const goToAddress = (coordinates: [number, number], address: string) => {
+    if (!mapInstanceRef.current) return;
+
+    // Удаляем предыдущий маркер, если есть
+    if (placemarkRef.current) {
+      mapInstanceRef.current.geoObjects.remove(placemarkRef.current);
+    }
+
+    // Перемещаем карту к координатам
+    mapInstanceRef.current.setCenter(coordinates, 17, {
+      duration: 500,
+    });
+
+    // Создаем новый маркер
+    const placemark = new window.ymaps.Placemark(
+      coordinates,
+      {
+        balloonContent: `Детский центр "Лучик"<br>${address}`,
+      },
+      {
+        preset: 'islands#redIcon',
+      }
+    );
+
+    mapInstanceRef.current.geoObjects.add(placemark);
+    placemarkRef.current = placemark;
+  };
 
   useEffect(() => {
     const initMap = (coordinates: [number, number]) => {
@@ -34,6 +71,7 @@ const MapSection = () => {
         );
 
         mapInstanceRef.current.geoObjects.add(placemark);
+        placemarkRef.current = placemark;
       }
     };
 
@@ -87,6 +125,7 @@ const MapSection = () => {
               );
 
               mapInstanceRef.current.geoObjects.add(placemark);
+              placemarkRef.current = placemark;
             }
           };
 
@@ -116,8 +155,30 @@ const MapSection = () => {
         mapInstanceRef.current.destroy();
         mapInstanceRef.current = null;
       }
+      placemarkRef.current = null;
     };
   }, []);
+
+  // Обработчики кликов на адреса
+  const handleAddress1Click = () => {
+    if (window.ymaps && mapInstanceRef.current) {
+      window.ymaps.ready(() => {
+        goToAddress(COORDINATES_1, ADDRESS_1);
+      });
+    } else if (mapInstanceRef.current) {
+      goToAddress(COORDINATES_1, ADDRESS_1);
+    }
+  };
+
+  const handleAddress2Click = () => {
+    if (window.ymaps && mapInstanceRef.current) {
+      window.ymaps.ready(() => {
+        goToAddress(COORDINATES_2, ADDRESS_2);
+      });
+    } else if (mapInstanceRef.current) {
+      goToAddress(COORDINATES_2, ADDRESS_2);
+    }
+  };
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.error('Failed to load image:', e.currentTarget.src);
@@ -148,8 +209,18 @@ const MapSection = () => {
               </div>
               <div className={styles.cityName}>г. Лида</div>
               <div className={styles.addressFields}>
-                <div className={styles.addressField}>ул. Замковая, 4</div>
-                <div className={styles.addressField}>ул. Кооперативная, 36</div>
+                <div 
+                  className={styles.addressField}
+                  onClick={handleAddress1Click}
+                >
+                  ул. Замковая, 4
+                </div>
+                <div 
+                  className={styles.addressField}
+                  onClick={handleAddress2Click}
+                >
+                  ул. Кооперативная, 36
+                </div>
               </div>
             </div>
           </div>
