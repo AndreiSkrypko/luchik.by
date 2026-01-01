@@ -19,6 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .mapTitle {
@@ -155,19 +157,26 @@
 
   .titleWrapper {
     padding: 0 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .mapTitle {
     font-size: 36px;
+    text-align: center;
+    margin: 0;
   }
 
   .airplane {
-    width: 120px;
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    margin-top: 15px;
+    width: 60px;
+    height: auto;
+    position: absolute;
+    left: calc(50% + 120px);
+    top: 50%;
+    transform: translateY(-50%);
+    flex-shrink: 0;
   }
 
   .mapOverlay {
@@ -194,8 +203,17 @@
     overflow: visible;
   }
 
+  .titleWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .mapTitle {
     font-size: 28px;
+    text-align: center;
+    margin: 0;
   }
 
   .map {
@@ -204,8 +222,13 @@
   }
 
   .airplane {
-    width: 80px;
-    margin-top: 10px;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: calc(50% + 90px);
+    top: 50%;
+    transform: translateY(-50%);
+    flex-shrink: 0;
   }
 
   .mapOverlay {
