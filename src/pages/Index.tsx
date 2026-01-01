@@ -7,6 +7,7 @@ import DirectionsSection from '@/components/DirectionsSection';
 import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
+import ScrollToTop from '@/components/ScrollToTop';
 import styles from './Index.module.css';
 
 const Index = () => {
@@ -32,6 +33,7 @@ const Index = () => {
       </main>
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
+      <ScrollToTop />
     </div>
   );
 };

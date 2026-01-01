@@ -1,0 +1,89 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFF9E6 0%, #ffffff 100%);
+  border: 3px solid #4665a1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(70, 101, 161, 0.25), 
+              0 0 0 4px rgba(255, 249, 230, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.scrollToTop:hover {
+  background: linear-gradient(135deg, #4665a1 0%, #5a7bb8 100%);
+  border-color: #4665a1;
+  box-shadow: 0 6px 30px rgba(70, 101, 161, 0.4),
+              0 0 0 6px rgba(70, 101, 161, 0.1);
+  transform: translateY(-6px) scale(1.08);
+}
+
+.scrollToTop:hover .arrowIcon {
+  color: #ffffff;
+}
+
+.scrollToTop:active {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 20px rgba(70, 101, 161, 0.35);
+}
+
+.scrollToTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.arrowIcon {
+  width: 28px;
+  height: 28px;
+  color: #4665a1;
+  transition: all 0.3s ease;
+}
+
+.scrollToTop:hover .arrowIcon {
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .scrollToTop {
+    width: 54px;
+    height: 54px;
+    bottom: 20px;
+    right: 20px;
+    border-width: 2.5px;
+  }
+
+  .arrowIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollToTop {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    border-width: 2px;
+  }
+
+  .arrowIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
