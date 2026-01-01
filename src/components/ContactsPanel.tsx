@@ -8,6 +8,17 @@ interface ContactsPanelProps {
 const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
   if (!isOpen) return null;
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const img = e.currentTarget;
+    console.error('Failed to load image:', img.src);
+    console.error('Image natural dimensions:', img.naturalWidth, 'x', img.naturalHeight);
+    console.error('Image complete:', img.complete);
+  };
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.log('Successfully loaded image:', e.currentTarget.src);
+  };
+
   return (
     <>
       <div className={styles.contactsOverlay} onClick={onClose} />
@@ -15,21 +26,21 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
         <div className={styles.contactsPanelHeader}>
           <div className={styles.contactsCloudContainer}>
             <img
-              src={encodeURI("/img/main/облако-белое.webp")}
+              src="/img/main/cloud-white.webp"
               alt="Облако"
               width={250}
               height={125}
               className={styles.contactsCloud}
             />
             <img
-              src={encodeURI("/img/main/слово-контакты.webp")}
+              src="/img/main/contacts-title.webp"
               alt="Контакты"
               width={122}
               height={23}
               className={styles.contactsPanelTitle}
             />
             <img
-              src={encodeURI("/img/main/малое-облако.webp")}
+              src="/img/main/cloud-small.webp"
               alt="Малое облако"
               width={110}
               height={60}
@@ -50,7 +61,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <rect opacity="0.65" width="291" height="225" rx="22" fill="white" />
             </svg>
             <img
-              src={encodeURI("/img/conacts/коровка.webp")}
+              src="/img/contacts/cow.webp"
               alt="Коровка"
               width={78}
               height={78}
@@ -60,7 +71,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
                   <img
-                    src="/img/conacts/adress2.webp"
+                    src="/img/contacts/adress2.webp"
                     alt="Адрес"
                     width={20}
                     height={26}
@@ -76,7 +87,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
                   <img
-                    src="/img/conacts/adress2.webp"
+                    src="/img/contacts/adress2.webp"
                     alt="Адрес"
                     width={20}
                     height={26}
@@ -92,7 +103,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
                   <img
-                    src="/img/conacts/mail.webp"
+                    src="/img/contacts/mail.webp"
                     alt="Email"
                     width={25}
                     height={25}
@@ -108,7 +119,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
           </div>
         </div>
         <img
-          src={encodeURI("/img/conacts/лист1.webp")}
+          src="/img/contacts/leaf-1.webp"
           alt="Листик"
           width={61}
           height={75}
@@ -133,6 +144,9 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   width={32}
                   height={32}
                   className={styles.contactsSocialIcon}
+                  onError={handleImageError}
+                  onLoad={handleImageLoad}
+                  loading="eager"
                 />
               </a>
             </div>
@@ -153,6 +167,9 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   width={32}
                   height={32}
                   className={styles.contactsSocialIcon}
+                  onError={handleImageError}
+                  onLoad={handleImageLoad}
+                  loading="eager"
                 />
               </a>
               <a
@@ -168,6 +185,9 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   width={32}
                   height={32}
                   className={styles.contactsSocialIcon}
+                  onError={handleImageError}
+                  onLoad={handleImageLoad}
+                  loading="eager"
                 />
               </a>
             </div>
@@ -191,7 +211,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <div className={styles.contactsScheduleLine}>Сб,Вс с 10.00 до 18.00</div>
             </div>
             <img
-              src={encodeURI("/img/conacts/лист2.webp")}
+              src="/img/contacts/leaf-2.webp"
               alt="Лист"
               width={78}
               height={68}
