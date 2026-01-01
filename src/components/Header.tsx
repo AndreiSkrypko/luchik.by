@@ -137,15 +137,30 @@ const Header = ({ onContactsClick }: HeaderProps) => {
         </nav>
 
         {/* Бургер меню справа вверху */}
-        <button
-          className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ''}`}
-          onClick={toggleMobileMenu}
-          aria-label="Меню"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        {isMobile && typeof window !== 'undefined' ? (
+          createPortal(
+            <button
+              className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ''}`}
+              onClick={toggleMobileMenu}
+              aria-label="Меню"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>,
+            document.body
+          )
+        ) : (
+          <button
+            className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Меню"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        )}
 
         {/* Overlay для закрытия меню */}
         {isMobileMenuOpen && (
