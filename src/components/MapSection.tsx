@@ -144,6 +144,14 @@ const MapSection = () => {
               onError={handleImageError}
             />
           </div>
+          <div className={styles.cowWrapper}>
+            <img
+              src="/img/map/korovka.svg"
+              alt=""
+              className={styles.cowImage}
+              onError={handleImageError}
+            />
+          </div>
           <div className={styles.boyWrapper}>
             <img
               src="/img/map/boy.svg"

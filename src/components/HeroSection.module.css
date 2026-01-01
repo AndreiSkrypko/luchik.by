@@ -276,7 +276,7 @@
   .ladybug {
     left: calc(50% + 120px);
     width: 55px;
-    top: calc(50% + 55px);
+    top: calc(50% + 20px);
     transform: translateY(-50%);
   }
 
@@ -354,7 +354,7 @@
   .ladybug {
     left: calc(50% + 110px);
     width: 45px;
-    top: calc(50% + 50px);
+    top: calc(50% + 20px);
     transform: translateY(-50%);
   }
 
