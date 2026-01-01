@@ -5,13 +5,11 @@ const HeroSection = () => {
     <>
       {/* Основной заголовок */}
       <section className={styles.mainTitleSection}>
-        <img
-          src="/img/main/title.webp"
-          alt="Детский центр современных знаний"
-          width={873}
-          height={176}
-          className={styles.mainTitleImage}
-        />
+        <h1 className={styles.mainTitleText}>
+          Детский центр
+          <br />
+          современных знаний
+        </h1>
       </section>
 
       {/* Подзаголовок с божьей коровкой */}
