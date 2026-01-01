@@ -69,7 +69,7 @@
 
 .boyWrapper {
   position: absolute;
-  bottom: -14.7%;
+  bottom: -73.5px;
   right: 79%;
   z-index: 11;
   pointer-events: none;
@@ -107,8 +107,11 @@
   }
 
   .mapOverlay {
-    width: 350px;
-    bottom: 28%;
+    display: none !important;
+  }
+
+  .boyWrapper {
+    display: none !important;
   }
 }
 
@@ -147,15 +150,11 @@
   }
 
   .mapOverlay {
-    width: 300px;
-    max-width: 85%;
-    bottom: 25%;
-    left: 0 !important;
-    right: auto;
+    display: none !important;
   }
 
   .boyWrapper {
-    bottom: -14.7%;
+    display: none !important;
   }
 }
 
@@ -185,14 +184,10 @@
   }
 
   .mapOverlay {
-    width: 200px;
-    max-width: 80%;
-    bottom: 20%;
-    left: 0 !important;
-    right: auto;
+    display: none !important;
   }
 
   .boyWrapper {
-    bottom: -14.7%;
+    display: none !important;
   }
 }
