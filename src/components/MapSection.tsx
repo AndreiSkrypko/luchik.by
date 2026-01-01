@@ -4,37 +4,57 @@ import styles from './MapSection.module.css';
 // API ключ Яндекс.Карт из переменных окружения или используйте свой
 const YANDEX_MAP_API_KEY = import.meta.env.VITE_YANDEX_MAP_API_KEY || '';
 
-// Координаты центра карты (замените на координаты вашего центра)
-const MAP_CENTER: [number, number] = [53.9045, 27.5615]; // Минск, Беларусь
+// Адрес центра
+const MAP_ADDRESS = 'Замковая улица, 4, Лида, Гродненская область, Беларусь';
+// Точные координаты для Замковой, 4, Лида
+const FALLBACK_CENTER: [number, number] = [53.887889, 25.301733];
 
 const MapSection = () => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
 
   useEffect(() => {
+    const initMap = (coordinates: [number, number]) => {
+      if (mapRef.current && !mapInstanceRef.current) {
+        mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
+          center: coordinates,
+          zoom: 16,
+          controls: ['zoomControl', 'fullscreenControl'],
+        });
+
+        // Добавляем маркер
+        const placemark = new window.ymaps.Placemark(
+          coordinates,
+          {
+            balloonContent: `Детский центр "Лучик"<br>${MAP_ADDRESS}`,
+          },
+          {
+            preset: 'islands#redIcon',
+          }
+        );
+
+        mapInstanceRef.current.geoObjects.add(placemark);
+      }
+    };
+
     // Проверяем, загружена ли уже библиотека Яндекс.Карт
     if (window.ymaps) {
       window.ymaps.ready(() => {
-        if (mapRef.current && !mapInstanceRef.current) {
-          mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
-            center: MAP_CENTER,
-            zoom: 15,
-            controls: ['zoomControl', 'fullscreenControl'],
-          });
-
-          // Добавляем маркер
-          const placemark = new window.ymaps.Placemark(
-            MAP_CENTER,
-            {
-              balloonContent: 'Детский центр "Лучик"',
-            },
-            {
-              preset: 'islands#redIcon',
+        // Пытаемся геокодировать адрес
+        window.ymaps.geocode(MAP_ADDRESS)
+          .then((result: any) => {
+            const firstGeoObject = result.geoObjects.get(0);
+            if (firstGeoObject) {
+              const coordinates = firstGeoObject.geometry.getCoordinates();
+              initMap(coordinates);
+            } else {
+              initMap(FALLBACK_CENTER);
             }
-          );
-
-          mapInstanceRef.current.geoObjects.add(placemark);
-        }
+          })
+          .catch(() => {
+            // Если геокодирование не сработало, используем запасные координаты
+            initMap(FALLBACK_CENTER);
+          });
       });
       return;
     }
@@ -47,26 +67,44 @@ const MapSection = () => {
     script.onload = () => {
       if (window.ymaps && mapRef.current) {
         window.ymaps.ready(() => {
-          if (mapRef.current && !mapInstanceRef.current) {
-            mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
-              center: MAP_CENTER,
-              zoom: 15,
-              controls: ['zoomControl', 'fullscreenControl'],
-            });
+          const initMap = (coordinates: [number, number]) => {
+            if (mapRef.current && !mapInstanceRef.current) {
+              mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
+                center: coordinates,
+                zoom: 16,
+                controls: ['zoomControl', 'fullscreenControl'],
+              });
 
-            // Добавляем маркер
-            const placemark = new window.ymaps.Placemark(
-              MAP_CENTER,
-              {
-                balloonContent: 'Детский центр "Лучик"',
-              },
-              {
-                preset: 'islands#redIcon',
+              // Добавляем маркер
+              const placemark = new window.ymaps.Placemark(
+                coordinates,
+                {
+                  balloonContent: `Детский центр "Лучик"<br>${MAP_ADDRESS}`,
+                },
+                {
+                  preset: 'islands#redIcon',
+                }
+              );
+
+              mapInstanceRef.current.geoObjects.add(placemark);
+            }
+          };
+
+          // Пытаемся геокодировать адрес
+          window.ymaps.geocode(MAP_ADDRESS)
+            .then((result: any) => {
+              const firstGeoObject = result.geoObjects.get(0);
+              if (firstGeoObject) {
+                const coordinates = firstGeoObject.geometry.getCoordinates();
+                initMap(coordinates);
+              } else {
+                initMap(FALLBACK_CENTER);
               }
-            );
-
-            mapInstanceRef.current.geoObjects.add(placemark);
-          }
+            })
+            .catch(() => {
+              // Если геокодирование не сработало, используем запасные координаты
+              initMap(FALLBACK_CENTER);
+            });
         });
       }
     };
