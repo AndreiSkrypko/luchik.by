@@ -12,11 +12,15 @@
 }
 
 .directionsTitle {
-  width: 100%;
-  max-width: 613px;
-  height: auto;
-  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
   margin: 0 auto 60px;
+  line-height: 1.2;
+  display: block;
+  max-width: 100%;
 }
 
 .directionsCards {
@@ -142,6 +146,7 @@
   .directionsTitle {
     max-width: 100%;
     margin-bottom: 50px;
+    font-size: 40px;
   }
 
   .directionsCards {
@@ -166,6 +171,7 @@
   .directionsTitle {
     max-width: 100%;
     margin-bottom: 40px;
+    font-size: 36px;
   }
 
   .directionsCards {
@@ -220,6 +226,7 @@
 
   .directionsTitle {
     margin-bottom: 30px;
+    font-size: 28px;
   }
 
   .directionsCards {

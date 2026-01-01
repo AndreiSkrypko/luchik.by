@@ -8,12 +8,7 @@ const DirectionsSection = () => {
   return (
     <section className={styles.directionsSection} id="directions">
       <div className={styles.directionsContainer}>
-        <img
-          src="/img/directions/title.svg"
-          alt="Направления обучения"
-          className={styles.directionsTitle}
-          onError={handleImageError}
-        />
+        <h2 className={styles.directionsTitle}>Направления обучения</h2>
         <div className={styles.directionsCards}>
           <div className={styles.cloudWrapper}>
             <img
