@@ -15,7 +15,9 @@ const HeroSection = () => {
       {/* Подзаголовок с божьей коровкой */}
       <section className={styles.subtitleSection}>
         <p className={styles.subtitleText}>
-          Детский центр "Лучик" - вместе с нами в школе и в жизни
+          Детский центр "Лучик"
+          <br />
+          ваш надёжный спутник в школе и в жизни
         </p>
         <img
           src="/img/main/ladybug.webp"
