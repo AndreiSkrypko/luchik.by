@@ -97,22 +97,23 @@ const MapSection = () => {
             onError={handleImageError}
           />
         </div>
-        <div ref={mapRef} className={styles.map} />
-        <div className={styles.mapOverlay}>
-          <img
-            src="/img/map/overlay.svg"
-            alt=""
-            className={styles.overlayImage}
-            onError={handleImageError}
-          />
-        </div>
-        <div className={styles.boyWrapper}>
-          <img
-            src="/img/map/boy.svg"
-            alt=""
-            className={styles.boyImage}
-            onError={handleImageError}
-          />
+        <div ref={mapRef} className={styles.map}>
+          <div className={styles.mapOverlay}>
+            <img
+              src="/img/map/overlay.svg"
+              alt=""
+              className={styles.overlayImage}
+              onError={handleImageError}
+            />
+          </div>
+          <div className={styles.boyWrapper}>
+            <img
+              src="/img/map/boy.svg"
+              alt=""
+              className={styles.boyImage}
+              onError={handleImageError}
+            />
+          </div>
         </div>
       </div>
     </section>
