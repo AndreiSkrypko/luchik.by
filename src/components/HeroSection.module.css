@@ -248,8 +248,7 @@
     right: 0;
     margin-top: 20px;
     padding: 0 20px;
-    z-index: 200;
-    isolation: isolate;
+    z-index: 12;
   }
 
   .mainTitleText {
@@ -277,7 +276,7 @@
   .ladybug {
     left: calc(50% + 120px);
     width: 55px;
-    top: calc(50% + 20px);
+    top: calc(50% + 55px);
     transform: translateY(-50%);
   }
 
@@ -328,8 +327,6 @@
     top: 0;
     margin-top: 15px;
     padding: 0 15px;
-    z-index: 200;
-    isolation: isolate;
   }
 
   .mainTitleText {
@@ -357,7 +354,7 @@
   .ladybug {
     left: calc(50% + 110px);
     width: 45px;
-    top: calc(50% + 20px);
+    top: calc(50% + 50px);
     transform: translateY(-50%);
   }
 
