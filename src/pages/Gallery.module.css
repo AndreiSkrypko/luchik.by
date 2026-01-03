@@ -67,29 +67,6 @@
     height: 190px;
   }
   }
-
-/* Небольшой дополнительный отступ для InfoBlocks в галерее */
-.galleryPage main > section:first-child {
-  margin-top: 240px !important;
-}
-
-@media (max-width: 1024px) {
-  .galleryPage main > section:first-child {
-    margin-top: 210px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .galleryPage main > section:first-child {
-    margin-top: 150px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .galleryPage main > section:first-child {
-    margin-top: 140px !important;
-  }
-}
   
 .galleryMain {
   padding: 120px 20px 60px;
