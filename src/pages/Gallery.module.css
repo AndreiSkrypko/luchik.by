@@ -99,12 +99,14 @@
   justify-content: center;
   position: relative;
   background: #ffffff;
+  margin-top: 240px;
 }
 
 /* Планшеты */
 @media (min-width: 769px) and (max-width: 1024px) {
   .galleryMain {
     padding: 100px 15px 40px;
+    margin-top: 210px;
   }
 }
 
@@ -112,6 +114,13 @@
 @media (max-width: 768px) {
   .galleryMain {
     padding: 90px 12px 30px;
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryMain {
+    margin-top: 140px;
   }
 }
 
