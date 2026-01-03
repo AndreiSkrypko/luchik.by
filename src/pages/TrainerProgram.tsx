@@ -19,7 +19,7 @@ const TrainerProgram = () => {
 
   return (
     <div className={styles.trainerProgramPage}>
-      <Header onContactsClick={toggleContacts} />
+      <Header onContactsClick={toggleContacts} hideDecorations={true} />
       <main>
         <div className={styles.trainerProgramMain}>
           <TrainerList />

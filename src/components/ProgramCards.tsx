@@ -43,6 +43,26 @@ const ProgramCards = () => {
             Каждый тренажер помогает развивать важные навыки: скорость чтения, 
             концентрацию внимания, память и математические способности.
           </p>
+          </div>
+        <div className={styles.decorations}>
+          <div className={styles.beeWrapper}>
+            <img
+              src="/img/main/bee.webp"
+              alt="Пчела"
+              width={88}
+              height={92}
+              className={styles.bee}
+            />
+          </div>
+          <div className={styles.cloudWrapper}>
+            <img
+              src="/img/main/cloud-2.webp"
+              alt="Облако"
+              width={200}
+              height={120}
+              className={styles.cloud}
+            />
+          </div>
         </div>
         <div className={styles.programsGrid}>
           {programs.map((program) => (
