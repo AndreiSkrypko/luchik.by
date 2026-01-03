@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -11,6 +11,8 @@ interface HeaderProps {
 const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -34,6 +36,25 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
       onContactsClick();
     }
     closeMobileMenu();
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Если мы уже на главной странице, просто скроллим наверх
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Очищаем hash из URL если есть
+      if (window.location.hash) {
+        window.history.replaceState(null, '', '/');
+      }
+    } else {
+      // Если на другой странице, переходим на главную
+      navigate('/', { replace: true });
+      // Скроллим наверх после перехода
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 100);
+    }
   };
 
   const navLinksContent = (
@@ -71,7 +92,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     <header className={styles.header}>
       <div className={styles.headerBackground}>
         {/* Логотип слева сверху */}
-        <Link to="/" className={styles.logoLink} aria-label="На главную">
+        <Link to="/" className={styles.logoLink} aria-label="На главную" onClick={handleLogoClick}>
           <div className={styles.logo}>
             <img
               src="/img/main/logo.webp"

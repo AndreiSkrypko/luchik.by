@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import InfoBlocks from '@/components/InfoBlocks';
@@ -12,6 +13,14 @@ import styles from './Index.module.css';
 
 const Index = () => {
   const [isContactsOpen, setIsContactsOpen] = useState(false);
+  const location = useLocation();
+
+  // Скроллим наверх при загрузке главной страницы, если нет hash
+  useEffect(() => {
+    if (location.pathname === '/' && !location.hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [location.pathname, location.hash]);
 
   const toggleContacts = () => {
     setIsContactsOpen(!isContactsOpen);

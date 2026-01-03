@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 interface FooterProps {
@@ -8,12 +8,33 @@ interface FooterProps {
 
 const Footer = ({ onContactsClick }: FooterProps) => {
   const [isFooterMenuOpen, setIsFooterMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleContactsClick = () => {
     if (onContactsClick) {
       onContactsClick();
     }
     setIsFooterMenuOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Если мы уже на главной странице, просто скроллим наверх
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Очищаем hash из URL если есть
+      if (window.location.hash) {
+        window.history.replaceState(null, '', '/');
+      }
+    } else {
+      // Если на другой странице, переходим на главную
+      navigate('/', { replace: true });
+      // Скроллим наверх после перехода
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 100);
+    }
   };
 
   return (
@@ -28,16 +49,17 @@ const Footer = ({ onContactsClick }: FooterProps) => {
       {/* Футер */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <div className={styles.footerLogo}>
-            <img
-              src="/img/footer/logo.webp"
-              alt="Логотип Лучик"
-              width={240}
-              height={80}
-              className={styles.footerLogoImage}
-              loading="lazy"
-              decoding="async"
-            />
+          <Link to="/" className={styles.footerLogoLink} aria-label="На главную" onClick={handleLogoClick}>
+            <div className={styles.footerLogo}>
+              <img
+                src="/img/footer/logo.webp"
+                alt="Логотип Лучик"
+                width={240}
+                height={80}
+                className={styles.footerLogoImage}
+                loading="lazy"
+                decoding="async"
+              />
             <img
               src="/img/footer/pchela.webp"
               alt="Пчела"
@@ -52,7 +74,8 @@ const Footer = ({ onContactsClick }: FooterProps) => {
               height={50}
               className={styles.footerCloud}
             />
-          </div>
+            </div>
+          </Link>
           <div className={styles.footerNav}>
             <div className={styles.footerNavLeft}>
               <button

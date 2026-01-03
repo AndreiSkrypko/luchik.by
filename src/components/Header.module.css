@@ -231,18 +231,28 @@
   position: absolute;
   top: 24px;
   left: 40px;
-  z-index: 10;
+  z-index: 100;
   display: inline-block;
+  cursor: pointer;
+  pointer-events: auto;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
 }
 
 .logo {
   position: relative;
+  pointer-events: none;
 }
 
 .logo img {
   width: 260px;
   height: auto;
   display: block;
+  pointer-events: none;
 }
 
 /* Навигация в шапке */
@@ -552,7 +562,8 @@
   .logoLink {
     top: 10px;
     left: 15px;
-    z-index: 20;
+    z-index: 100;
+    pointer-events: auto;
   }
 
   .logo img {
@@ -861,7 +872,8 @@
   .logoLink {
     top: 8px;
     left: 12px;
-    z-index: 20;
+    z-index: 100;
+    pointer-events: auto;
   }
 
   .logo img {
