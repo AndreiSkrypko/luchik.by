@@ -214,7 +214,7 @@ const TrainerList = () => {
       <div className={styles.trainerListContainer}>
         <div className={styles.headerSection}>
           <button className={styles.backButton} onClick={handleBackClick}>
-            ← Назад к направлениям
+            ← К выбору тренажера
           </button>
           <div className={styles.titleSection}>
             <h2 className={styles.trainerListTitle}>{programName}</h2>
