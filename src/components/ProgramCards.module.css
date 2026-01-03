@@ -1,0 +1,296 @@
+.programsSection {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+  position: relative;
+  z-index: 3;
+}
+
+.programsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titleSection {
+  margin-top: -750px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.programsTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 auto 24px;
+  line-height: 1.2;
+  display: block;
+  max-width: 100%;
+}
+
+.programsDescription {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.programCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  border: 2px solid #E5F5FF;
+  box-shadow: 0 4px 20px rgba(70, 101, 161, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.programCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FF6B35;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.programCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(70, 101, 161, 0.2);
+  border-color: #FF6B35;
+}
+
+.programCard:hover::before {
+  transform: scaleX(1);
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #E5F5FF 0%, #C3E1FF 100%);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardImage {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.programCard:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #4665a1;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cardFooter {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E5F5FF;
+}
+
+.cardButton {
+  display: inline-block;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FF6B35;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.programCard:hover .cardButton {
+  color: #FF6B35;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .programsSection {
+    padding: 50px 25px;
+  }
+
+  .titleSection {
+    margin-top: -600px;
+    padding: 0 30px;
+  }
+
+  .programsTitle {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .programsDescription {
+    font-size: 17px;
+  }
+
+  .programsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .programCard {
+    padding: 32px;
+  }
+
+  .cardImageWrapper {
+    height: 180px;
+  }
+
+  .cardImage {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .programsSection {
+    padding: 40px 15px;
+  }
+
+  .titleSection {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    padding: 0 20px;
+    z-index: 12;
+  }
+
+  .programsTitle {
+    font-size: 36px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .programsDescription {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .programsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .programCard {
+    padding: 28px;
+  }
+
+  .cardImageWrapper {
+    height: 160px;
+    margin-bottom: 20px;
+  }
+
+  .cardImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .programsSection {
+    padding: 30px 12px;
+  }
+
+  .titleSection {
+    position: relative;
+    top: 0;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .programsTitle {
+    font-size: 28px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .programsDescription {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .programCard {
+    padding: 24px;
+  }
+
+  .cardImageWrapper {
+    height: 140px;
+  }
+
+  .cardImage {
+    width: 90px;
+    height: 90px;
+  }
+}
+

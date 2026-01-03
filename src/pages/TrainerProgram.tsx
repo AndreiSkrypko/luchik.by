@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
-import ProgramCards from '@/components/ProgramCards';
+import TrainerList from '@/components/TrainerList';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
-import styles from './Trainers.module.css';
+import styles from './TrainerProgram.module.css';
 
-const Trainers = () => {
+const TrainerProgram = () => {
   const [isContactsOpen, setIsContactsOpen] = useState(false);
 
   const toggleContacts = () => {
@@ -18,11 +18,11 @@ const Trainers = () => {
   };
 
   return (
-    <div className={styles.trainersPage}>
+    <div className={styles.trainerProgramPage}>
       <Header onContactsClick={toggleContacts} />
       <main>
-        <div className={styles.trainersMain}>
-          <ProgramCards />
+        <div className={styles.trainerProgramMain}>
+          <TrainerList />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />
@@ -32,5 +32,5 @@ const Trainers = () => {
   );
 };
 
-export default Trainers;
+export default TrainerProgram;
 
