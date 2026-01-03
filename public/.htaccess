@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Принудительное перенаправление на HTTPS (раскомментируйте при необходимости)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Перенаправление всех запросов на index.html для SPA
+  # Если запрашивается существующий файл или директория, используем его
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Перенаправляем все остальные запросы на index.html
+  RewriteRule . /index.html [L]
+</IfModule>
+
