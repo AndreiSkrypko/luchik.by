@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
+import InfoBlocks from '@/components/InfoBlocks';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -19,8 +20,11 @@ const Gallery = () => {
   return (
     <div className={styles.galleryPage}>
       <Header onContactsClick={toggleContacts} />
-      <main className={styles.galleryMain}>
-        {/* Контент галереи будет здесь */}
+      <main>
+        <InfoBlocks />
+        <div className={styles.galleryMain}>
+          {/* Контент галереи будет здесь */}
+        </div>
       </main>
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
