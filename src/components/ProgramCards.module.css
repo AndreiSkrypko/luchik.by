@@ -286,10 +286,7 @@
 
   .titleSection {
     position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 20px;
+    margin-top: -280px !important;
     padding: 0 20px;
     z-index: 12;
   }

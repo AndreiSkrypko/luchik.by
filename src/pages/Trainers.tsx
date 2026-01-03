@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import ProgramCards from '@/components/ProgramCards';
 import Footer from '@/components/Footer';
@@ -8,6 +9,11 @@ import styles from './Trainers.module.css';
 
 const Trainers = () => {
   const [isContactsOpen, setIsContactsOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   const toggleContacts = () => {
     setIsContactsOpen(!isContactsOpen);
