@@ -35,6 +35,8 @@ const Footer = ({ onContactsClick }: FooterProps) => {
               width={240}
               height={80}
               className={styles.footerLogoImage}
+              loading="lazy"
+              decoding="async"
             />
             <img
               src="/img/footer/pchela.webp"
@@ -177,6 +179,8 @@ const Footer = ({ onContactsClick }: FooterProps) => {
             src="/img/footer/grass.webp"
             alt="Трава"
             width={1440}
+            loading="lazy"
+            decoding="async"
             height={100}
             className={styles.footerGrassImage}
           />

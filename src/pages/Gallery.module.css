@@ -1,5 +1,5 @@
-/* Main Container с правильным градиентным фоном */
-.page {
+/* Main Container с правильным градиентным фоном, как на главной */
+.galleryPage {
   width: 100%;
   min-height: 100vh;
   margin: 0;
@@ -13,7 +13,7 @@
 
 /* Предотвращение обрезания декоративных элементов на десктопе */
 @media (min-width: 1025px) {
-  .page {
+  .galleryPage {
     overflow-x: hidden;
     overflow-y: visible;
     background: #ffffff;
@@ -24,7 +24,7 @@
 
 /* Планшеты */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .page {
+  .galleryPage {
     background: #ffffff;
     background-image: 
       linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(320px), #ffffff calc(320px));
@@ -33,12 +33,12 @@
 
 /* Мобильная версия - градиент покрывает облака, белый фон после */
 @media (max-width: 768px) {
-  .page {
+  .galleryPage {
     background: #ffffff !important;
     background-image: none !important;
   }
   
-  .page::before {
+  .galleryPage::before {
     content: '';
     position: absolute;
     top: 0;
@@ -50,12 +50,12 @@
     pointer-events: none;
   }
   
-  .page > * {
+  .galleryPage > * {
     position: relative;
     z-index: 1;
   }
   
-  .page {
+  .galleryPage {
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -63,7 +63,31 @@
 
 /* Маленькие мобильные */
 @media (max-width: 480px) {
-  .page::before {
+  .galleryPage::before {
     height: 190px;
   }
 }
+
+.galleryMain {
+  padding: 120px 20px 60px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .galleryMain {
+    padding: 100px 15px 40px;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .galleryMain {
+    padding: 90px 12px 30px;
+  }
+}
+

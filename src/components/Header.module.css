@@ -44,6 +44,9 @@
   display: block;
   opacity: 1;
   animation: bigCloudsDrift 20s ease-in-out infinite;
+  /* Оптимизация загрузки фона */
+  loading: lazy;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 @keyframes bigCloudsDrift {
@@ -74,6 +77,10 @@
   display: block;
   animation: sunGlow 8s ease-in-out infinite;
   filter: drop-shadow(0 0 40px rgba(255, 200, 0, 0.25));
+  /* Оптимизация загрузки */
+  loading: lazy;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 @keyframes sunGlow {
@@ -484,6 +491,11 @@
     right: -120px;
   }
 
+  .sun {
+    /* Уменьшаем эффекты для планшетов */
+    filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.2));
+  }
+
   .clouds {
     bottom: -180px;
     min-height: 300px;
@@ -554,6 +566,11 @@
     right: -60px;
     opacity: 0.5;
     z-index: 1;
+  }
+
+  .sun {
+    /* Минимальные эффекты для мобильных */
+    filter: drop-shadow(0 0 20px rgba(255, 200, 0, 0.15));
   }
 
   .clouds {
@@ -858,6 +875,11 @@
     right: -50px;
     opacity: 0.4;
     z-index: 1;
+  }
+
+  .sun {
+    /* Минимальные эффекты для маленьких мобильных */
+    filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.1));
   }
 
   .clouds {

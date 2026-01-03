@@ -5,9 +5,10 @@ import styles from './Header.module.css';
 
 interface HeaderProps {
   onContactsClick?: () => void;
+  hideDecorations?: boolean;
 }
 
-const Header = ({ onContactsClick }: HeaderProps) => {
+const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -77,6 +78,8 @@ const Header = ({ onContactsClick }: HeaderProps) => {
               alt="Логотип «Лучик»"
               width={260}
               height={80}
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </Link>
@@ -178,38 +181,46 @@ const Header = ({ onContactsClick }: HeaderProps) => {
             width={1480}
             height={338}
             className={styles.cloudsImage}
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
         {/* Маленькое облако под логотипом */}
-        <div className={styles.cloudOne}>
-          <img
-            src="/img/main/cloud-1.webp"
-            alt="Облако"
-            width={174}
-            height={138}
-          />
-        </div>
+        {!hideDecorations && (
+          <div className={styles.cloudOne}>
+            <img
+              src="/img/main/cloud-1.webp"
+              alt="Облако"
+              width={174}
+              height={138}
+            />
+          </div>
+        )}
 
         {/* Пчела слева внизу */}
-        <div className={styles.bee}>
-          <img
-            src="/img/main/bee.webp"
-            alt="Пчела"
-            width={88}
-            height={92}
-          />
-        </div>
+        {!hideDecorations && (
+          <div className={styles.bee}>
+            <img
+              src="/img/main/bee.webp"
+              alt="Пчела"
+              width={88}
+              height={92}
+            />
+          </div>
+        )}
 
         {/* Облако 2 справа внизу */}
-        <div className={styles.cloudTwo}>
-          <img
-            src="/img/main/cloud-2.webp"
-            alt="Облако"
-            width={200}
-            height={120}
-          />
-        </div>
+        {!hideDecorations && (
+          <div className={styles.cloudTwo}>
+            <img
+              src="/img/main/cloud-2.webp"
+              alt="Облако"
+              width={200}
+              height={120}
+            />
+          </div>
+        )}
 
         {/* Солнце */}
         <div className={styles.sunContainer}>
@@ -219,6 +230,8 @@ const Header = ({ onContactsClick }: HeaderProps) => {
             width={100}
             height={100}
             className={styles.sun}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

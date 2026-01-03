@@ -335,6 +335,9 @@
   display: block;
   object-fit: cover;
   object-position: top;
+  /* Оптимизация загрузки фона */
+  loading: lazy;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .footerBushLeft {
