@@ -308,7 +308,7 @@
   align-items: center;
   justify-content: center;
   padding: clamp(18px, 4vw, 36px);
-  z-index: 100;
+  z-index: 10000;
   animation: overlayFadeIn 0.3s ease;
 }
 
@@ -761,8 +761,49 @@
     line-height: 1.4;
   }
 
-  .settingsForm {
+  .settingsForm,
+  .answerCard,
+  .resultCard {
+    padding: 18px;
+  }
+
+  .formGroup {
+    padding: 14px 16px;
+  }
+
+  .answerInput {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .startButton {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .resultActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .resultActions .primaryButton,
+  .resultActions .secondaryButton {
+    width: 100%;
+  }
+
+  .countdownContent,
+  .numberContent {
     padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .currentNumber {
+    font-size: clamp(8rem, 50vw, 20rem);
+    margin: 30px 0;
   }
 }
 

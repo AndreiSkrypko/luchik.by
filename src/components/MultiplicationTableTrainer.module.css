@@ -260,7 +260,7 @@
   align-items: center;
   justify-content: center;
   padding: clamp(18px, 4vw, 36px);
-  z-index: 100;
+  z-index: 10000;
   animation: overlayFadeIn 0.3s ease;
 }
 
@@ -690,11 +690,39 @@
 
   .resultActions {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .resultActions .primaryButton,
+  .resultActions .secondaryButton {
+    width: 100%;
   }
 
   .answersGrid,
   .resultsGrid {
     max-height: 300px;
+  }
+
+  .answerRow,
+  .resultRow {
+    flex-wrap: wrap;
+  }
+
+  .questionText {
+    font-size: 1rem;
+    min-width: auto;
+  }
+
+  .answerInput {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .startButton {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -722,8 +750,60 @@
     line-height: 1.4;
   }
 
-  .settingsForm {
-    padding: 20px;
+  .settingsForm,
+  .answerCard,
+  .resultCard {
+    padding: 18px;
+  }
+
+  .formGroup {
+    padding: 14px 16px;
+  }
+
+  .answerInput {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .startButton {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .formActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .formActions .primaryButton,
+  .formActions .secondaryButton {
+    width: 100%;
+  }
+
+  .answersGrid,
+  .resultsGrid {
+    max-height: 250px;
+  }
+
+  .answerRow,
+  .resultRow {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .questionText {
+    min-width: auto;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .answerInput {
+    max-width: 100%;
+    flex: 1;
+    min-width: 0;
   }
 }
 
