@@ -190,8 +190,13 @@ const TrainerList = () => {
     if (trainer.external_url) {
       window.open(trainer.external_url, '_blank');
     } else {
-      // Позже будет навигация на страницу тренажера
-      console.log('Navigate to trainer:', trainer.slug);
+      // Навигация на страницу тренажера
+      if (trainer.slug === 'fading-text' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/fading-text');
+      } else {
+        // Для других тренажеров - пока заглушка
+        console.log('Navigate to trainer:', trainer.slug);
+      }
     }
   };
 
