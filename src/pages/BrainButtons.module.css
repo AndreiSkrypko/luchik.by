@@ -1,0 +1,104 @@
+/* Main Container с правильным градиентным фоном, как на главной */
+.brainButtonsPage {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: #ffffff;
+  background-image: 
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+}
+
+/* Предотвращение обрезания декоративных элементов на десктопе */
+@media (min-width: 1025px) {
+  .brainButtonsPage {
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #ffffff;
+    background-image: 
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+  }
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .brainButtonsPage {
+    background: #ffffff;
+    background-image: 
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(320px), #ffffff calc(320px));
+  }
+}
+
+/* Мобильная версия - градиент покрывает облака, белый фон после */
+@media (max-width: 768px) {
+  .brainButtonsPage {
+    background: #ffffff !important;
+    background-image: none !important;
+  }
+  
+  .brainButtonsPage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 210px;
+    background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .brainButtonsPage > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .brainButtonsPage {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .brainButtonsPage::before {
+    height: 190px;
+  }
+}
+  
+.brainButtonsMain {
+  padding: 120px 20px 60px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+  margin-top: 240px;
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .brainButtonsMain {
+    padding: 100px 15px 40px;
+    margin-top: 210px;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .brainButtonsMain {
+    padding: 20px 12px 30px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .brainButtonsMain {
+    padding: 15px 12px 30px;
+    margin-top: 0;
+  }
+}
+

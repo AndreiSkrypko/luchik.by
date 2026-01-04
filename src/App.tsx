@@ -9,6 +9,11 @@ import About from "./pages/About";
 import Trainers from "./pages/Trainers";
 import TrainerProgram from "./pages/TrainerProgram";
 import FadingText from "./pages/FadingText";
+import SchulteTable from "./pages/SchulteTable";
+import StroopTest from "./pages/StroopTest";
+import FlashWords from "./pages/FlashWords";
+import DistributeWords from "./pages/DistributeWords";
+import BrainButtons from "./pages/BrainButtons";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +31,11 @@ const App = () => (
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/trainers/:program" element={<TrainerProgram />} />
           <Route path="/trainers/speed-reading/fading-text" element={<FadingText />} />
+          <Route path="/trainers/speed-reading/schulte-table" element={<SchulteTable />} />
+          <Route path="/trainers/speed-reading/stroop-test" element={<StroopTest />} />
+          <Route path="/trainers/speed-reading/flash-words" element={<FlashWords />} />
+          <Route path="/trainers/speed-reading/distribute-words" element={<DistributeWords />} />
+          <Route path="/trainers/speed-reading/brain-buttons" element={<BrainButtons />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

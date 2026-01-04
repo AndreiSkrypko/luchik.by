@@ -193,6 +193,16 @@ const TrainerList = () => {
       // Навигация на страницу тренажера
       if (trainer.slug === 'fading-text' && program === 'speed-reading') {
         navigate('/trainers/speed-reading/fading-text');
+      } else if (trainer.slug === 'schulte-table' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/schulte-table');
+      } else if (trainer.slug === 'stroop-test' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/stroop-test');
+      } else if (trainer.slug === 'flash-words' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/flash-words');
+      } else if (trainer.slug === 'distribute-words' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/distribute-words');
+      } else if (trainer.slug === 'brain-buttons' && program === 'speed-reading') {
+        navigate('/trainers/speed-reading/brain-buttons');
       } else {
         // Для других тренажеров - пока заглушка
         console.log('Navigate to trainer:', trainer.slug);

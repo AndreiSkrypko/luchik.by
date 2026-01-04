@@ -1,0 +1,920 @@
+.trainerSection {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+  position: relative;
+  z-index: 3;
+}
+
+.trainerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerSection {
+  margin-top: -750px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.backButton {
+  background: transparent;
+  border: none;
+  color: #4665a1;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.backButton:hover {
+  color: #FF6B35;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.trainerTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+  display: block;
+  max-width: 100%;
+}
+
+.trainerSubtitle {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  text-align: center;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.trainerSubtitle:last-of-type {
+  margin-bottom: 50px;
+}
+
+.configSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.sectionLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.settingsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selectedDeckBanner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: rgba(92, 120, 214, 0.08);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+  box-shadow: 0 12px 24px rgba(92, 120, 214, 0.12);
+}
+
+.selectedDeckLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(92, 120, 214, 0.88);
+  font-weight: 700;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.selectedDeckBanner strong {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(1rem, 2.6vw, 1.28rem);
+  color: #264077;
+}
+
+.selectedDeckMeta {
+  font-size: 0.82rem;
+  color: rgba(38, 64, 119, 0.72);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.settingsPanel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.settingsPlaceholder {
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px dashed rgba(92, 120, 214, 0.24);
+  color: rgba(38, 64, 119, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.speedControl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  box-shadow: 0 16px 32px rgba(92, 120, 214, 0.08);
+}
+
+.speedLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.speedValue {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(92, 120, 214, 0.14);
+  color: #5c78d6;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.speedSlider {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(92, 120, 214, 0.35) 0%, rgba(233, 106, 18, 0.35) 100%);
+  outline: none;
+  cursor: pointer;
+}
+
+.speedSlider:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.speedSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  box-shadow: 0 4px 12px rgba(92, 120, 214, 0.3);
+}
+
+.speedSlider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  box-shadow: 0 4px 12px rgba(92, 120, 214, 0.3);
+}
+
+.speedScale {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(38, 64, 119, 0.55);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.actionPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  box-shadow: 0 16px 32px rgba(92, 120, 214, 0.08);
+}
+
+.levelsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.difficultyList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  grid-auto-rows: 1fr;
+}
+
+.difficultyCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  box-shadow: 0 18px 34px rgba(92, 120, 214, 0.16);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.difficultyCardActive {
+  border-color: rgba(92, 120, 214, 0.32);
+  box-shadow: 0 22px 40px rgba(92, 120, 214, 0.2);
+}
+
+.difficultyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 44px rgba(92, 120, 214, 0.18);
+}
+
+.difficultyHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.difficultyHeading h3 {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #264077;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.difficultyHeading span {
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: rgba(92, 120, 214, 0.88);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.difficultySample {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(38, 64, 119, 0.82);
+  background: rgba(229, 236, 255, 0.6);
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.difficultyActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.startButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(233, 106, 18, 0.95) 0%, rgba(255, 180, 95, 0.95) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(233, 106, 18, 0.5);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.startButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.startButton:hover:not(:disabled),
+.startButton:focus-visible:not(:disabled) {
+  transform: translateY(-1px);
+  background: linear-gradient(90deg, #5c78d6 0%, #e96a12 100%);
+  box-shadow: 0 16px 32px rgba(92, 120, 214, 0.22);
+}
+
+.startButton:focus-visible {
+  outline: 3px solid rgba(92, 120, 214, 0.28);
+  outline-offset: 3px;
+}
+
+.stage {
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  box-shadow: 0 20px 40px rgba(22, 36, 74, 0.2);
+  padding: clamp(20px, 4vw, 32px);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.stagePlaceholder {
+  text-align: center;
+  font-size: 0.95rem;
+  color: rgba(38, 64, 119, 0.7);
+  line-height: 1.6;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.trainingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 32, 62, 0.78);
+  z-index: 140;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 4vw, 36px);
+}
+
+.trainingModal {
+  width: min(960px, 95vw);
+  max-height: 94vh;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 28px;
+  border: 1px solid rgba(92, 120, 214, 0.18);
+  box-shadow: 0 48px 96px rgba(22, 36, 74, 0.34);
+  padding: clamp(28px, 3.4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2vw, 28px);
+  position: relative;
+  overflow: hidden;
+}
+
+.trainingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.trainingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(92, 120, 214, 0.12);
+  color: #5c78d6;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+}
+
+.trainingHeader h2 {
+  margin: 8px 0 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: #264077;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.trainingMeta {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(38, 64, 119, 0.6);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.trainingClose {
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: rgba(38, 64, 119, 0.5);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.trainingClose:hover,
+.trainingClose:focus-visible {
+  color: #5c78d6;
+  transform: scale(1.05);
+}
+
+.trainingBody {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.trainingBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.trainingBody::-webkit-scrollbar-thumb {
+  background: rgba(92, 120, 214, 0.3);
+  border-radius: 999px;
+}
+
+.showStage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.showHint {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(38, 64, 119, 0.6);
+  font-weight: 700;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.wordDisplay {
+  min-width: clamp(220px, 40vw, 420px);
+  min-height: clamp(120px, 28vw, 220px);
+  border-radius: 28px;
+  border: 2px dashed rgba(92, 120, 214, 0.26);
+  background: rgba(92, 120, 214, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(40px, 8vw, 72px);
+  color: #264077;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.showFooter {
+  margin: 0;
+  font-size: 0.88rem;
+  color: rgba(38, 64, 119, 0.6);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.recallStage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.recallStage h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: #264077;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recallStage p {
+  margin: 0;
+  color: rgba(38, 64, 119, 0.68);
+  font-size: 0.92rem;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.recallGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.recallCard {
+  border-radius: 20px;
+  padding: 1.1rem 1rem;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #264077;
+  background: rgba(92, 120, 214, 0.1);
+  border: 2px solid transparent;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  cursor: pointer;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.recallCard_idle:hover,
+.recallCard_idle:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 26px rgba(92, 120, 214, 0.2);
+  border-color: rgba(92, 120, 214, 0.35);
+}
+
+.recallCard_correct {
+  background: rgba(24, 162, 160, 0.14);
+  border-color: rgba(24, 162, 160, 0.45);
+  color: #137271;
+  cursor: default;
+  box-shadow: none;
+}
+
+.recallCard_incorrect {
+  background: rgba(233, 106, 18, 0.16);
+  border-color: rgba(233, 106, 18, 0.42);
+  color: #b24900;
+}
+
+.resultStage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.resultStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+  box-shadow: 0 16px 26px rgba(22, 36, 74, 0.12);
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(38, 64, 119, 0.6);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.statValue {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  color: #264077;
+}
+
+.sequenceTitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #264077;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sequenceList {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sequenceList li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sequenceList span {
+  color: #5c78d6;
+  font-weight: 700;
+}
+
+.resultActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.controlButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(233, 106, 18, 0.95) 0%, rgba(255, 180, 95, 0.95) 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.controlButton:hover,
+.controlButton:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(92, 120, 214, 0.22);
+}
+
+.flashControlSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.4rem;
+  border-radius: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  cursor: pointer;
+  border: 1px solid rgba(92, 120, 214, 0.26);
+  background: linear-gradient(120deg, rgba(92, 120, 214, 0.14) 0%, rgba(255, 255, 255, 0.95) 100%);
+  color: #3a4f9b;
+  box-shadow: 0 10px 20px rgba(58, 79, 155, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.flashControlSecondary:hover,
+.flashControlSecondary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(58, 79, 155, 0.22);
+  background: linear-gradient(120deg, rgba(92, 120, 214, 0.26) 0%, rgba(255, 255, 255, 0.98) 100%);
+  border-color: rgba(92, 120, 214, 0.38);
+  color: #264077;
+}
+
+.flashControlSecondary:focus-visible {
+  outline: 3px solid rgba(92, 120, 214, 0.28);
+  outline-offset: 3px;
+}
+
+.trainingSettings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.trainingControl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(92, 120, 214, 0.06);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+}
+
+.trainingControl input[type='range'] {
+  width: 100%;
+  appearance: none;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(92, 120, 214, 0.35) 0%, rgba(233, 106, 18, 0.35) 100%);
+  cursor: pointer;
+}
+
+.trainingControl input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 8px rgba(92, 120, 214, 0.24);
+}
+
+.trainingControl input[type='range']::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 8px rgba(92, 120, 214, 0.24);
+}
+
+.trainingLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: rgba(38, 64, 119, 0.75);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.trainingValue {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 0.9rem;
+  color: #264077;
+  letter-spacing: 0.04em;
+}
+
+.trainingActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(92, 120, 214, 0.06);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+}
+
+.trainingActions button {
+  width: 100%;
+}
+
+.setupPlaceholder {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.setupDetails {
+  font-weight: 600;
+  color: #264077;
+}
+
+.error {
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(233, 106, 18, 0.3);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+  color: #b24900;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.speedHint {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(38, 64, 119, 0.7);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .trainerSection {
+    padding: 50px 25px;
+  }
+
+  .headerSection {
+    margin-top: -600px;
+    padding: 0 30px;
+  }
+
+  .trainerTitle {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .trainerSubtitle {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainerSection {
+    padding: 40px 15px;
+  }
+
+  .headerSection {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: -280px !important;
+    padding: 0 20px;
+    z-index: 12;
+  }
+
+  .trainerTitle {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  .trainerSubtitle {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .settingsPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .speedControl,
+  .actionPanel {
+    padding: 14px 16px;
+  }
+
+  .wordDisplay {
+    min-width: 200px;
+    min-height: 160px;
+  }
+
+  .difficultyList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainerSection {
+    padding: 30px 12px;
+  }
+
+  .headerSection {
+    position: relative;
+    top: 0;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .trainerTitle {
+    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .trainerSubtitle {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+}
+
