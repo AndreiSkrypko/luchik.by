@@ -14,6 +14,7 @@ import StroopTest from "./pages/StroopTest";
 import FlashWords from "./pages/FlashWords";
 import DistributeWords from "./pages/DistributeWords";
 import BrainButtons from "./pages/BrainButtons";
+import Prosto from "./pages/Prosto";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/trainers/speed-reading/flash-words" element={<FlashWords />} />
           <Route path="/trainers/speed-reading/distribute-words" element={<DistributeWords />} />
           <Route path="/trainers/speed-reading/brain-buttons" element={<BrainButtons />} />
+          <Route path="/trainers/mental-arithmetic/prosto" element={<Prosto />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

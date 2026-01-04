@@ -203,6 +203,8 @@ const TrainerList = () => {
         navigate('/trainers/speed-reading/distribute-words');
       } else if (trainer.slug === 'brain-buttons' && program === 'speed-reading') {
         navigate('/trainers/speed-reading/brain-buttons');
+      } else if (trainer.slug === 'prosto' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/prosto');
       } else {
         // Для других тренажеров - пока заглушка
         console.log('Navigate to trainer:', trainer.slug);
