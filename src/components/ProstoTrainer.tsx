@@ -2,15 +2,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ProstoTrainer.module.css';
 
-type Stage = 'settings' | 'countdown' | 'play' | 'answer' | 'result' | 'error';
+type Stage = 'settings' | 'countdown' | 'play' | 'answer' | 'result';
 
 type SimplySettings = {
   range_key: number;
-  range_label: string;
   num_examples: number;
   speed: number;
   max_digit: number;
-  max_sum: number;
 };
 
 type SimplyNumber = {
@@ -33,36 +31,384 @@ const RANGE_OPTIONS = [
 
 const formatNumber = (value: number) => (value > 0 ? `+${value}` : value.toString());
 
-// Генерация последовательности чисел на фронтенде
-const generateSequence = (settings: Omit<SimplySettings, 'range_label' | 'max_sum'>): SimplySession => {
-  const range = RANGE_OPTIONS.find(opt => opt.key === settings.range_key) || RANGE_OPTIONS[1];
-  const numbers: SimplyNumber[] = [];
-  let total = 0;
-
-  for (let i = 0; i < settings.num_examples; i++) {
-    // Генерируем число в диапазоне
-    const value = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+// Генерация чисел согласно логике абакуса (для однозначных чисел с max_digit >= 5)
+const generateAbacusNumbers = (maxDigit: number, numExamples: number): number[] => {
+  const numbers: number[] = [];
+  let currentSum = 0;
+  let positiveCount = 0;
+  let negativeCount = 0;
+  
+  // Состояние абакуса: [есть_ли_пятерка, количество_единиц]
+  let abacusState: [boolean, number] = [false, 0];
+  
+  // Возможные операции согласно правилам абакуса
+  const getValidOperations = (currentState: [boolean, number]): Array<['+' | '-', number]> => {
+    const operations: Array<['+' | '-', number]> = [];
+    const [hasFive, units] = currentState;
     
-    // Ограничиваем максимальной цифрой (для простоты используем последнюю цифру)
-    const lastDigit = value % 10;
-    const adjustedValue = lastDigit <= settings.max_digit 
-      ? value 
-      : Math.floor(value / 10) * 10 + settings.max_digit;
+    // Операции с пятеркой (если max_digit >= 5)
+    if (maxDigit >= 5) {
+      if (!hasFive) {
+        operations.push(['+', 5]);
+      } else {
+        operations.push(['-', 5]);
+      }
+    }
     
-    numbers.push({
-      index: i + 1,
-      value: adjustedValue,
+    // Операции с единицами (от 1 до 4)
+    const maxUnits = maxDigit < 5 ? maxDigit : 4;
+    for (let i = 1; i <= maxUnits; i++) {
+      if (units + i <= 4) {
+        operations.push(['+', i]);
+      }
+      if (units - i >= 0) {
+        operations.push(['-', i]);
+      }
+    }
+    
+    // Для чисел 6-9 (если max_digit > 5)
+    if (maxDigit > 5) {
+      operations.push(['+', maxDigit]);
+      operations.push(['-', maxDigit]);
+    }
+    
+    // Фильтруем операции, чтобы промежуточный результат был от 0 до 9
+    return operations.filter(([sign, value]) => {
+      const newSum = currentSum + (sign === '+' ? value : -value);
+      return newSum >= 0 && newSum <= 9;
     });
-    total += adjustedValue;
+  };
+  
+  // Генерируем последовательность операций
+  for (let i = 0; i < numExamples; i++) {
+    const validOps = getValidOperations(abacusState);
+    
+    if (validOps.length === 0) {
+      // Если нет допустимых операций, сбрасываем состояние
+      abacusState = [false, 0];
+      currentSum = 0;
+      const newOps = getValidOperations(abacusState);
+      if (newOps.length > 0) {
+        const [sign, value] = newOps[Math.floor(Math.random() * newOps.length)];
+        const finalNumber = sign === '+' ? value : -value;
+        numbers.push(finalNumber);
+        currentSum += finalNumber;
+        
+        // Обновляем состояние абакуса
+        if (value === 5) {
+          abacusState[0] = sign === '+';
+        } else if (value <= 4) {
+          abacusState[1] += sign === '+' ? value : -value;
+        }
+      }
+    } else {
+      // Взвешиваем операции для более частого использования max_digit
+      const weightedOps: Array<['+' | '-', number]> = [];
+      validOps.forEach(([sign, value]) => {
+        if (value === maxDigit) {
+          const weight = maxDigit === 9 ? 6 : maxDigit === 4 ? 5 : 4;
+          for (let j = 0; j < weight; j++) {
+            weightedOps.push([sign, value]);
+          }
+        } else if (value === 5 && maxDigit >= 5) {
+          for (let j = 0; j < 2; j++) {
+            weightedOps.push([sign, value]);
+          }
+        } else {
+          weightedOps.push([sign, value]);
+        }
+      });
+      
+      let selectedOp: ['+' | '-', number];
+      
+      // Гарантируем баланс положительных и отрицательных чисел
+      const positiveOps = weightedOps.filter(([sign]) => sign === '+');
+      const negativeOps = weightedOps.filter(([sign]) => sign === '-');
+      
+      if (negativeCount < positiveCount && negativeOps.length > 0) {
+        // Предпочитаем отрицательные, если их меньше
+        selectedOp = negativeOps[Math.floor(Math.random() * negativeOps.length)];
+      } else if (positiveCount < negativeCount && positiveOps.length > 0) {
+        // Предпочитаем положительные, если их меньше
+        selectedOp = positiveOps[Math.floor(Math.random() * positiveOps.length)];
+      } else {
+        // Случайный выбор
+        selectedOp = weightedOps[Math.floor(Math.random() * weightedOps.length)];
+      }
+      
+      const [sign, value] = selectedOp;
+      const finalNumber = sign === '+' ? value : -value;
+      numbers.push(finalNumber);
+      currentSum += finalNumber;
+      if (sign === '+') positiveCount++;
+      else negativeCount++;
+      
+      // Обновляем состояние абакуса
+      if (value === 5) {
+        abacusState[0] = sign === '+';
+      } else if (value <= 4) {
+        abacusState[1] += sign === '+' ? value : -value;
+      }
+    }
   }
+  
+  // Корректируем итоговую сумму, если она превышает max_digit
+  const totalSum = numbers.reduce((sum, num) => sum + num, 0);
+  if (totalSum > maxDigit) {
+    const correction = maxDigit - totalSum;
+    if (correction !== 0) {
+      numbers.push(correction);
+    }
+  }
+  
+  return numbers;
+};
 
+// Генерация чисел для многоразрядных чисел
+const generateMultiDigitNumbers = (
+  rangeKey: number,
+  numExamples: number,
+  maxDigit: number
+): number[] => {
+  const numbers: number[] = [];
+  
+  // Определяем диапазон и количество разрядов
+  let minNum: number, maxNum: number, numDigits: number, maxSum: number;
+  
+  if (rangeKey === 1) {
+    minNum = 1;
+    maxNum = 10;
+    numDigits = 1;
+    maxSum = maxDigit;
+  } else if (rangeKey === 2) {
+    minNum = 10;
+    maxNum = 100;
+    numDigits = 2;
+    const actualMaxNum = parseInt(String(maxDigit) + String(maxDigit));
+    maxNum = Math.min(maxNum, actualMaxNum);
+    maxSum = actualMaxNum;
+  } else if (rangeKey === 3) {
+    minNum = 100;
+    maxNum = 1000;
+    numDigits = 3;
+    const actualMaxNum = parseInt(String(maxDigit) + String(maxDigit) + String(maxDigit));
+    maxNum = Math.min(maxNum, actualMaxNum);
+    maxSum = actualMaxNum;
+  } else if (rangeKey === 4) {
+    minNum = 1000;
+    maxNum = 10000;
+    numDigits = 4;
+    const actualMaxNum = parseInt(
+      String(maxDigit) + String(maxDigit) + String(maxDigit) + String(maxDigit)
+    );
+    maxNum = Math.min(maxNum, actualMaxNum);
+    maxSum = actualMaxNum;
+  } else {
+    minNum = 10;
+    maxNum = 100;
+    numDigits = 2;
+    const actualMaxNum = parseInt(String(maxDigit) + String(maxDigit));
+    maxNum = Math.min(maxNum, actualMaxNum);
+    maxSum = actualMaxNum;
+  }
+  
+  // Генерируем целевую сумму (не в самом начале, чтобы была возможность использовать отрицательные числа)
+  const targetSum = Math.floor(Math.random() * (maxSum * 0.7 + 1)); // Ограничиваем целевую сумму
+  let currentSum = 0;
+  let attempts = 0;
+  const maxAttempts = 1000;
+  let positiveCount = 0;
+  let negativeCount = 0;
+  
+  for (let i = 0; i < numExamples; i++) {
+    attempts = 0;
+    let found = false;
+    
+    while (attempts < maxAttempts && !found) {
+      attempts++;
+      
+      // Генерируем число по разрядам с учетом ограничений max_digit
+      let number = 0;
+      let validNumber = true;
+      
+      for (let digitPos = 0; digitPos < numDigits; digitPos++) {
+        const availableDigits = Array.from({ length: maxDigit }, (_, i) => i + 1);
+        if (availableDigits.length === 0) {
+          validNumber = false;
+          break;
+        }
+        const digit = availableDigits[Math.floor(Math.random() * availableDigits.length)];
+        number += digit * Math.pow(10, numDigits - 1 - digitPos);
+      }
+      
+      if (!validNumber) continue;
+      
+      // Проверяем, что число попадает в нужный диапазон
+      if (number < minNum || number > maxNum) continue;
+      
+      const remainingNumbers = numExamples - i - 1;
+      
+      if (i === numExamples - 1) {
+        // Последнее число должно точно дать нужную сумму
+        const neededValue = targetSum - currentSum;
+        if (Math.abs(neededValue) === number) {
+          const sign = neededValue > 0 ? 1 : -1;
+          const tempSum = currentSum + number * sign;
+          if (tempSum >= 0 && tempSum <= maxSum) {
+            const finalNumber = number * sign;
+            numbers.push(finalNumber);
+            currentSum += finalNumber;
+            found = true;
+          }
+        }
+      } else {
+        // Для промежуточных чисел выбираем знак
+        const possibleSigns: number[] = [];
+        
+        // Проверяем положительный знак
+        const tempSumPos = currentSum + number;
+        if (tempSumPos >= 0 && tempSumPos <= maxSum) {
+          const remainingRange = remainingNumbers * maxNum;
+          if (
+            tempSumPos - remainingRange <= targetSum &&
+            targetSum <= tempSumPos + remainingRange
+          ) {
+            possibleSigns.push(1);
+          }
+        }
+        
+        // Проверяем отрицательный знак
+        const tempSumNeg = currentSum - number;
+        if (tempSumNeg >= 0 && tempSumNeg <= maxSum) {
+          const remainingRange = remainingNumbers * maxNum;
+          if (
+            tempSumNeg - remainingRange <= targetSum &&
+            targetSum <= tempSumNeg + remainingRange
+          ) {
+            possibleSigns.push(-1);
+          }
+        }
+        
+        if (possibleSigns.length > 0) {
+          let sign: number;
+          
+          // Гарантируем баланс положительных и отрицательных чисел
+          // Если отрицательных меньше, предпочитаем отрицательный знак
+          if (possibleSigns.includes(-1) && possibleSigns.includes(1)) {
+            if (negativeCount < positiveCount || (negativeCount === 0 && i < numExamples - 2)) {
+              // Предпочитаем отрицательный знак, если отрицательных меньше
+              sign = -1;
+            } else if (positiveCount < negativeCount) {
+              // Предпочитаем положительный знак, если положительных меньше
+              sign = 1;
+            } else {
+              // Случайный выбор, если баланс примерно равный
+              sign = possibleSigns[Math.floor(Math.random() * possibleSigns.length)];
+            }
+          } else {
+            sign = possibleSigns[Math.floor(Math.random() * possibleSigns.length)];
+          }
+          
+          const finalNumber = number * sign;
+          numbers.push(finalNumber);
+          currentSum += finalNumber;
+          if (sign > 0) positiveCount++;
+          else negativeCount++;
+          found = true;
+        }
+      }
+    }
+    
+    // Если не удалось найти подходящее число, используем простую генерацию
+    if (!found) {
+      let number = 0;
+      for (let digitPos = 0; digitPos < numDigits; digitPos++) {
+        const availableDigits = Array.from({ length: maxDigit }, (_, i) => i + 1);
+        const digit = availableDigits.length > 0
+          ? availableDigits[Math.floor(Math.random() * availableDigits.length)]
+          : 1;
+        number += digit * Math.pow(10, numDigits - 1 - digitPos);
+      }
+      
+      number = Math.max(minNum, Math.min(number, maxNum));
+      
+      const possibleSigns: number[] = [];
+      if (currentSum + number <= maxSum) {
+        possibleSigns.push(1);
+      }
+      if (currentSum - number >= 0) {
+        possibleSigns.push(-1);
+      }
+      
+      let sign: number;
+      if (possibleSigns.length > 0) {
+        // Гарантируем баланс положительных и отрицательных чисел
+        if (possibleSigns.includes(-1) && possibleSigns.includes(1)) {
+          if (negativeCount < positiveCount || (negativeCount === 0 && i < numExamples - 2)) {
+            sign = -1;
+          } else if (positiveCount < negativeCount) {
+            sign = 1;
+          } else {
+            sign = possibleSigns[Math.floor(Math.random() * possibleSigns.length)];
+          }
+        } else {
+          sign = possibleSigns[Math.floor(Math.random() * possibleSigns.length)];
+        }
+      } else {
+        sign = 1;
+      }
+      
+      let finalNumber = number * sign;
+      if (currentSum + finalNumber > maxSum) {
+        finalNumber = maxSum - currentSum;
+        if (finalNumber < minNum) {
+          finalNumber = minNum;
+        }
+      }
+      
+      numbers.push(finalNumber);
+      currentSum += finalNumber;
+      if (sign > 0) positiveCount++;
+      else negativeCount++;
+      
+      if (currentSum < 0) {
+        currentSum = 0;
+      } else if (currentSum > maxSum) {
+        currentSum = maxSum;
+      }
+    }
+  }
+  
+  return numbers;
+};
+
+// Генерация последовательности чисел на фронтенде
+const generateSequence = (settings: SimplySettings): SimplySession => {
+  let numbers: number[];
+  
+  // Для однозначных чисел (range_key=1) и max_digit>=5 используем логику абакуса
+  if (settings.range_key === 1 && settings.max_digit >= 5) {
+    numbers = generateAbacusNumbers(settings.max_digit, settings.num_examples);
+  } else {
+    numbers = generateMultiDigitNumbers(
+      settings.range_key,
+      settings.num_examples,
+      settings.max_digit
+    );
+  }
+  
+  // Вычисляем итоговую сумму
+  const total = numbers.reduce((sum, num) => sum + num, 0);
+  
+  // Преобразуем в формат SimplyNumber
+  const simplyNumbers: SimplyNumber[] = numbers.map((value, index) => ({
+    index: index + 1,
+    value,
+  }));
+  
   return {
-    settings: {
-      ...settings,
-      range_label: range.label,
-      max_sum: total,
-    },
-    numbers,
+    settings,
+    numbers: simplyNumbers,
     total,
   };
 };
@@ -73,7 +419,7 @@ const ProstoTrainer = () => {
   const [formState, setFormState] = useState({
     range_key: 2,
     num_examples: 10,
-    speed: 1.5,
+    speed: 1.0,
     max_digit: 9,
   });
   const [session, setSession] = useState<SimplySession | null>(null);
@@ -82,9 +428,9 @@ const ProstoTrainer = () => {
   const [userAnswer, setUserAnswer] = useState('');
   const [userIsCorrect, setUserIsCorrect] = useState<boolean | null>(null);
   const [showBreakdown, setShowBreakdown] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [audioEnabled, setAudioEnabled] = useState(true);
   const timerRef = useRef<number | null>(null);
+  const countdownIntervalRef = useRef<number | null>(null);
 
   const currentNumber = session?.numbers[currentIndex];
   const totalNumbers = session?.numbers.length ?? 0;
@@ -101,10 +447,16 @@ const ProstoTrainer = () => {
     setUserAnswer('');
     setUserIsCorrect(null);
     setShowBreakdown(false);
-    setError(null);
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
+    }
+    if (countdownIntervalRef.current) {
+      clearInterval(countdownIntervalRef.current);
+      countdownIntervalRef.current = null;
+    }
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
     }
   }, []);
 
@@ -154,9 +506,9 @@ const ProstoTrainer = () => {
       const text = value > 0 ? `плюс ${numberToWords(value)}` : numberToWords(value);
       utterance.text = text;
       utterance.lang = 'ru-RU';
-      utterance.rate = 2.5;
-      utterance.pitch = 1;
-      utterance.volume = 1;
+      utterance.rate = 1.9;
+      utterance.pitch = 1.0;
+      utterance.volume = 1.0;
 
       const voices = window.speechSynthesis.getVoices();
       const russianVoice = voices.find((voice) => voice.lang.toLowerCase().startsWith('ru'));
@@ -176,15 +528,14 @@ const ProstoTrainer = () => {
   };
 
   const startSession = () => {
-    setError(null);
     try {
       const newSession = generateSequence(formState);
       setSession(newSession);
       setCountdown(3);
       setStage('countdown');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Произошла ошибка. Попробуйте позже.');
-      setStage('error');
+      console.error('Ошибка при генерации последовательности:', err);
+      resetGame();
     }
   };
 
@@ -194,7 +545,6 @@ const ProstoTrainer = () => {
 
     const numericAnswer = parseInt(userAnswer, 10);
     if (Number.isNaN(numericAnswer)) {
-      setError('Введите корректное число');
       return;
     }
 
@@ -206,13 +556,18 @@ const ProstoTrainer = () => {
     navigate('/trainers/mental-arithmetic');
   }, [navigate]);
 
+  // Обратный отсчет
   useEffect(() => {
     if (stage !== 'countdown') return undefined;
+    
     setCountdown(3);
-    const interval = setInterval(() => {
+    countdownIntervalRef.current = window.setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
-          clearInterval(interval);
+          if (countdownIntervalRef.current) {
+            clearInterval(countdownIntervalRef.current);
+            countdownIntervalRef.current = null;
+          }
           setStage('play');
           return 0;
         }
@@ -220,15 +575,24 @@ const ProstoTrainer = () => {
       });
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      if (countdownIntervalRef.current) {
+        clearInterval(countdownIntervalRef.current);
+        countdownIntervalRef.current = null;
+      }
+    };
   }, [stage]);
 
+  // Показ чисел
   useEffect(() => {
     if (stage !== 'play' || !session) return undefined;
 
     setCurrentIndex(0);
     if (session.numbers.length > 0) {
-      speakNumber(session.numbers[0].value, session.settings.speed);
+      // Небольшая задержка перед первым числом
+      timerRef.current = window.setTimeout(() => {
+        speakNumber(session.numbers[0].value, session.settings.speed);
+      }, 100);
     }
 
     const scheduleNext = (index: number) => {
@@ -249,6 +613,7 @@ const ProstoTrainer = () => {
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
+        timerRef.current = null;
       }
       if (typeof window !== 'undefined' && window.speechSynthesis) {
         window.speechSynthesis.cancel();
@@ -278,15 +643,6 @@ const ProstoTrainer = () => {
         <section className={`${styles.layout} ${isSettingsOnly ? styles.layoutSingle : ''}`}>
           <div className={`${styles.settingsColumn} ${isSettingsOnly ? styles.settingsColumnWide : ''}`}>
             <div className={styles.panel}>
-              {stage === 'error' && error && (
-                <div className={styles.errorBanner}>
-                  <p>{error}</p>
-                  <button className={styles.secondaryButton} onClick={resetGame}>
-                    Попробовать ещё раз
-                  </button>
-                </div>
-              )}
-
               {stage === 'settings' ? (
                 <form
                   className={styles.settingsForm}
@@ -494,4 +850,3 @@ const ProstoTrainer = () => {
 };
 
 export default ProstoTrainer;
-
