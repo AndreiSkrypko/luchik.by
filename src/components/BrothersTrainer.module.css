@@ -1,0 +1,781 @@
+.trainerSection {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+  position: relative;
+  z-index: 3;
+}
+
+.trainerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerSection {
+  margin-top: -750px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.backButton {
+  background: transparent;
+  border: none;
+  color: #4665a1;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.backButton:hover {
+  color: #FF6B35;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.trainerTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+  display: block;
+  max-width: 100%;
+}
+
+.trainerSubtitle {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  text-align: center;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(440px, 1.2fr) minmax(360px, 0.8fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.layoutSingle {
+  grid-template-columns: minmax(480px, 1fr);
+}
+
+.settingsColumn,
+.stageColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settingsColumnWide {
+  max-width: none;
+  width: 100%;
+}
+
+.panel {
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+  box-shadow: 0 30px 64px rgba(38, 52, 104, 0.16);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelPlaceholder {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.panelPlaceholder p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.settingsForm {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 120, 214, 0.16);
+  box-shadow: 0 16px 32px rgba(92, 120, 214, 0.08);
+}
+
+.formGroup label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(38, 64, 119, 0.78);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.settingValue {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(92, 120, 214, 0.14);
+  color: #5c78d6;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.radioLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(92, 120, 214, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(38, 64, 119, 0.78);
+  position: relative;
+}
+
+.radioLabel:hover {
+  border-color: rgba(92, 120, 214, 0.4);
+  background: rgba(92, 120, 214, 0.05);
+  transform: translateY(-2px);
+}
+
+.radioLabel input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radioLabel:has(input[type="radio"]:checked) {
+  background: linear-gradient(135deg, rgba(92, 120, 214, 0.95) 0%, rgba(233, 106, 18, 0.85) 100%);
+  color: #ffffff;
+  border-color: rgba(92, 120, 214, 0.5);
+  box-shadow: 0 4px 15px rgba(92, 120, 214, 0.3);
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(92, 120, 214, 0.35) 0%, rgba(233, 106, 18, 0.35) 100%);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  box-shadow: 0 4px 12px rgba(92, 120, 214, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: linear-gradient(135deg, #5c78d6 0%, #e96a12 100%);
+  box-shadow: 0 4px 12px rgba(92, 120, 214, 0.3);
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(38, 64, 119, 0.55);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.helperText {
+  font-size: 0.82rem;
+  color: rgba(233, 106, 18, 0.85);
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton,
+.startButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.95rem 1.8rem;
+  border-radius: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.primaryButton,
+.startButton {
+  background: linear-gradient(90deg, rgba(233, 106, 18, 0.95) 0%, rgba(255, 180, 95, 0.95) 100%);
+  color: #fff;
+  border: 1px solid rgba(233, 106, 18, 0.4);
+  box-shadow: 0 16px 32px rgba(233, 106, 18, 0.22);
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(92, 120, 214, 0.28);
+  color: rgba(92, 120, 214, 0.9);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.startButton:hover {
+  transform: translateY(-2px);
+}
+
+.fullscreenOverlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(92, 120, 214, 0.95) 0%, rgba(233, 106, 18, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 4vw, 36px);
+  z-index: 100;
+  animation: overlayFadeIn 0.3s ease;
+}
+
+.numberOverlay {
+  background: linear-gradient(135deg, rgba(38, 64, 119, 0.98) 0%, rgba(22, 32, 62, 0.98) 100%);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.countdownContent {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.countdownEmoji {
+  font-size: clamp(5rem, 18vw, 10rem);
+  line-height: 1;
+  animation: emojiBounce 0.6s ease infinite;
+  filter: drop-shadow(0 20px 40px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes emojiBounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px);
+  }
+}
+
+.countdownText {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: textFadeIn 0.4s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.countdownNumber {
+  font-size: clamp(8rem, 30vw, 18rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(255, 255, 255, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  line-height: 1;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.countdownPulse {
+  animation: numberPulse 1s ease infinite;
+}
+
+@keyframes numberPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+.countdownHint {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: hintFadeIn 0.5s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@keyframes hintFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.countdownContent .secondaryButton {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #264077;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: 1rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.countdownContent .secondaryButton:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.numberContent {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.numberContent .secondaryButton {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #264077;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: 1rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.numberContent .secondaryButton:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.progress {
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.progressBar {
+  margin-top: 12px;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.currentNumber {
+  font-size: clamp(12rem, 50vw, 28rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin: 40px 0;
+  line-height: 1;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.4),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: numberAppear 0.3s ease;
+}
+
+@keyframes numberAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.positiveNumber {
+  color: #ffffff;
+}
+
+.negativeNumber {
+  color: #ffeb3b;
+  text-shadow: 
+    0 0 30px rgba(255, 235, 59, 0.8),
+    0 0 60px rgba(255, 235, 59, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.answerCard,
+.resultCard {
+  padding: 28px 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(92, 120, 214, 0.18);
+  box-shadow: 0 20px 40px rgba(92, 120, 214, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.answerCard h3,
+.resultCard h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #264077;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.answerCard p,
+.resultCard p {
+  margin: 0;
+  color: rgba(38, 64, 119, 0.78);
+  line-height: 1.6;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.answerInput {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.25rem;
+  border-radius: 18px;
+  border: 2px solid rgba(92, 120, 214, 0.35);
+  text-align: center;
+  font-weight: 600;
+  color: #264077;
+  background: rgba(255, 255, 255, 0.98);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.resultActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.breakdown {
+  margin-top: 10px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px dashed rgba(92, 120, 214, 0.32);
+  background: rgba(92, 120, 214, 0.05);
+}
+
+.breakdown h4 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: #264077;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.expression {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #264077;
+}
+
+.expression span {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(92, 120, 214, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.equals {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: #5c78d6;
+}
+
+.total {
+  background: rgba(72, 187, 120, 0.2);
+  border-color: rgba(72, 187, 120, 0.4);
+  color: #22543d;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .trainerSection {
+    padding: 50px 25px;
+  }
+
+  .headerSection {
+    margin-top: -600px;
+    padding: 0 30px;
+  }
+
+  .trainerTitle {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .trainerSubtitle {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainerSection {
+    padding: 40px 15px;
+  }
+
+  .headerSection {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: -280px !important;
+    padding: 0 20px;
+    z-index: 12;
+  }
+
+  .trainerTitle {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  .trainerSubtitle {
+    font-size: 16px;
+    margin-bottom: 35px;
+    line-height: 1.4;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layoutSingle {
+    grid-template-columns: 1fr;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsForm,
+  .answerCard,
+  .resultCard {
+    padding: 22px;
+  }
+
+  .formGroup {
+    padding: 16px 18px;
+  }
+
+  .countdownContent,
+  .numberContent {
+    padding: 26px;
+  }
+
+  .resultActions {
+    flex-direction: column;
+  }
+
+  .radioGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .radioLabel {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainerSection {
+    padding: 30px 12px;
+  }
+
+  .headerSection {
+    position: relative;
+    top: 0;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  .trainerTitle {
+    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .trainerSubtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  .settingsForm {
+    padding: 20px;
+  }
+}
+

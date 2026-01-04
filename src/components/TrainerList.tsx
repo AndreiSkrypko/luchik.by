@@ -205,6 +205,26 @@ const TrainerList = () => {
         navigate('/trainers/speed-reading/brain-buttons');
       } else if (trainer.slug === 'prosto' && program === 'mental-arithmetic') {
         navigate('/trainers/mental-arithmetic/prosto');
+      } else if (trainer.slug === 'brothers' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/brothers');
+      } else if (trainer.slug === 'friends' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/friends');
+      } else if (trainer.slug === 'friend-brother' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/friend-brother');
+      } else if (trainer.slug === 'multiplication-table' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/multiplication-table');
+      } else if (trainer.slug === 'multiplication' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/multiplication');
+      } else if (trainer.slug === 'multiplication-20' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/multiplication-20');
+      } else if (trainer.slug === 'base-multiplication' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/base-multiplication');
+      } else if (trainer.slug === 'tricks' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/tricks');
+      } else if (trainer.slug === 'squares' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/squares');
+      } else if (trainer.slug === 'flashcards' && program === 'mental-arithmetic') {
+        navigate('/trainers/mental-arithmetic/flashcards');
       } else {
         // Для других тренажеров - пока заглушка
         console.log('Navigate to trainer:', trainer.slug);
