@@ -1,0 +1,39 @@
+# КРИТИЧЕСКИ ВАЖНО: Разрешаем доступ ко ВСЕМ файлам в папке img
+# Этот файл должен быть в папке img/ на сервере
+
+# Отключаем любые ограничения доступа
+Options +Indexes +FollowSymLinks
+
+# Разрешаем доступ ко всем файлам (Apache 2.4)
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>
+
+# Разрешаем доступ ко всем файлам (Apache 2.2)
+<IfModule !mod_authz_core.c>
+  Order Allow,Deny
+  Allow from all
+</IfModule>
+
+# Разрешаем доступ к файлам с любыми расширениями
+<FilesMatch ".*">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order Allow,Deny
+    Allow from all
+  </IfModule>
+</FilesMatch>
+
+# Явно разрешаем SVG файлы
+<FilesMatch "\.svg$">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order Allow,Deny
+    Allow from all
+  </IfModule>
+</FilesMatch>
+

@@ -1,15 +1,51 @@
+# Устанавливаем правильные MIME типы
+<IfModule mod_mime.c>
+  AddType image/svg+xml svg svgz
+  AddType image/webp webp
+  AddEncoding gzip svgz
+</IfModule>
+
+# КРИТИЧЕСКИ ВАЖНО: Разрешаем доступ к папке img ДО всех остальных правил
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  
+  # Явно разрешаем доступ к папке img и всем её файлам (включая placeholder.svg)
+  RewriteCond %{REQUEST_URI} ^/img/
+  RewriteRule ^ - [L]
+  
+  # Явно разрешаем доступ к placeholder.svg в корне (на случай если используется старый путь)
+  RewriteCond %{REQUEST_URI} ^/placeholder\.svg$
+  RewriteRule ^ - [L]
   
   # Принудительное перенаправление на HTTPS (раскомментируйте при необходимости)
   # RewriteCond %{HTTPS} off
   # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
-  # Перенаправление всех запросов на index.html для SPA
-  # Если запрашивается существующий файл или директория, используем его
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  # Перенаправляем все остальные запросы на index.html
+  # ВАЖНО: Сначала проверяем и разрешаем доступ к статическим файлам
+  # Если запрашивается существующий файл (изображение, CSS, JS и т.д.), отдаем его напрямую
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+  
+  # Если запрашивается существующая директория, отдаем её
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # Перенаправляем все остальные запросы на index.html для SPA
   RewriteRule . /index.html [L]
+</IfModule>
+
+# Разрешаем доступ к статическим файлам (Apache 2.4)
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|eot|json|xml|txt|map)$">
+    Require all granted
+  </FilesMatch>
+</IfModule>
+
+# Разрешаем доступ к статическим файлам (Apache 2.2 - для совместимости)
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|eot|json|xml|txt|map)$">
+    Order Allow,Deny
+    Allow from all
+  </FilesMatch>
 </IfModule>
 

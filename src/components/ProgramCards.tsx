@@ -76,8 +76,16 @@ const ProgramCards = () => {
                   src={program.image}
                   alt={program.title}
                   className={styles.cardImage}
+                  loading="eager"
                   onError={(e) => {
-                    e.currentTarget.src = '/img/placeholder.svg';
+                    const img = e.currentTarget;
+                    // Предотвращаем бесконечный цикл ошибок
+                    if (img.src.includes('placeholder.svg') || img.dataset.fallback === 'used') {
+                      img.style.display = 'none';
+                      return;
+                    }
+                    img.dataset.fallback = 'used';
+                    img.src = '/img/placeholder.svg';
                   }}
                 />
               </div>

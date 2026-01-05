@@ -217,7 +217,13 @@ const TrainersCards = ({ trainers = mockTrainers }: TrainersCardsProps) => {
                       alt={trainer.title}
                       className={styles.cardImage}
                       onError={(e) => {
-                        e.currentTarget.src = '/img/placeholder.svg';
+                        const img = e.currentTarget;
+                        // Предотвращаем бесконечный цикл ошибок
+                        if (img.src.includes('placeholder.svg')) {
+                          img.style.display = 'none';
+                          return;
+                        }
+                        img.src = '/img/placeholder.svg';
                       }}
                     />
                   </div>
