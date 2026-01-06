@@ -57,6 +57,28 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     }
   };
 
+  const handleDirectionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Если мы на главной странице, скроллим к секции направлений
+    if (location.pathname === '/') {
+      const directionsSection = document.getElementById('directions');
+      if (directionsSection) {
+        directionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Если на другой странице, переходим на главную с якорем
+      navigate('/#directions', { replace: false });
+      // После перехода скроллим к секции
+      setTimeout(() => {
+        const directionsSection = document.getElementById('directions');
+        if (directionsSection) {
+          directionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+    closeMobileMenu();
+  };
+
   const navLinksContent = (
     <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
       <button
@@ -70,7 +92,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
       <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
         О нас
       </a>
-      <a href="#directions" className={styles.navTextLink} onClick={closeMobileMenu}>
+      <a href="#directions" className={styles.navTextLink} onClick={handleDirectionsClick}>
         Направления
       </a>
       <Link to="/gallery" className={styles.navTextLink} onClick={closeMobileMenu}>

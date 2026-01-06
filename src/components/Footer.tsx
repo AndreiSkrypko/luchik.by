@@ -37,6 +37,28 @@ const Footer = ({ onContactsClick }: FooterProps) => {
     }
   };
 
+  const handleDirectionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsFooterMenuOpen(false);
+    // Если мы на главной странице, скроллим к секции направлений
+    if (location.pathname === '/') {
+      const directionsSection = document.getElementById('directions');
+      if (directionsSection) {
+        directionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Если на другой странице, переходим на главную с якорем
+      navigate('/#directions', { replace: false });
+      // После перехода скроллим к секции
+      setTimeout(() => {
+        const directionsSection = document.getElementById('directions');
+        if (directionsSection) {
+          directionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <>
       {/* Полоса-разделитель перед футером */}
@@ -123,7 +145,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                   <a href="#about" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>
                     О нас
                   </a>
-                  <a href="#directions" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>
+                  <a href="#directions" className={styles.footerNavLink} onClick={handleDirectionsClick}>
                     Направления
                   </a>
                   <Link to="/gallery" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>

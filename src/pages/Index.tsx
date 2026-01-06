@@ -15,10 +15,21 @@ const Index = () => {
   const [isContactsOpen, setIsContactsOpen] = useState(false);
   const location = useLocation();
 
-  // Скроллим наверх при загрузке главной страницы, если нет hash
+  // Обрабатываем скролл при загрузке главной страницы
   useEffect(() => {
-    if (location.pathname === '/' && !location.hash) {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+    if (location.pathname === '/') {
+      if (location.hash === '#directions') {
+        // Если есть якорь #directions, скроллим к секции
+        setTimeout(() => {
+          const directionsSection = document.getElementById('directions');
+          if (directionsSection) {
+            directionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else if (!location.hash) {
+        // Если нет hash, скроллим наверх
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
     }
   }, [location.pathname, location.hash]);
 
