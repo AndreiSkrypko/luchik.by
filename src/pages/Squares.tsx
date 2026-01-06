@@ -25,7 +25,7 @@ const Squares = () => {
 
   return (
     <div className={styles.squaresPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.squaresMain}>
           <SquaresTrainer />

@@ -25,7 +25,7 @@ const BrainButtons = () => {
 
   return (
     <div className={styles.brainButtonsPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.brainButtonsMain}>
           <BrainButtonsTrainer />

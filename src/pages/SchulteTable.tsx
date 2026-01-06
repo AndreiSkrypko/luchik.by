@@ -25,7 +25,7 @@ const SchulteTable = () => {
 
   return (
     <div className={styles.schulteTablePage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.schulteTableMain}>
           <SchulteTableTrainer />

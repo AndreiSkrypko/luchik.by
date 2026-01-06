@@ -25,7 +25,7 @@ const Multiplication = () => {
 
   return (
     <div className={styles.multiplicationPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.multiplicationMain}>
           <MultiplicationTrainer />

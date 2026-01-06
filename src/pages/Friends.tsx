@@ -25,7 +25,7 @@ const Friends = () => {
 
   return (
     <div className={styles.friendsPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.friendsMain}>
           <FriendsTrainer />

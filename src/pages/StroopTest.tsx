@@ -25,7 +25,7 @@ const StroopTest = () => {
 
   return (
     <div className={styles.stroopTestPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.stroopTestMain}>
           <StroopTestTrainer />

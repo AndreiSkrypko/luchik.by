@@ -25,7 +25,7 @@ const FlashWords = () => {
 
   return (
     <div className={styles.flashWordsPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.flashWordsMain}>
           <FlashWordsTrainer />

@@ -25,7 +25,7 @@ const Prosto = () => {
 
   return (
     <div className={styles.prostoPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.prostoMain}>
           <ProstoTrainer />

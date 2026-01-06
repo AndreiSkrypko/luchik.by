@@ -25,7 +25,7 @@ const MultiplicationTable = () => {
 
   return (
     <div className={styles.multiplicationTablePage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.multiplicationTableMain}>
           <MultiplicationTableTrainer />

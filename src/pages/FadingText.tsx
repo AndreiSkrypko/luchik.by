@@ -25,7 +25,7 @@ const FadingText = () => {
 
   return (
     <div className={styles.fadingTextPage}>
-      <Header onContactsClick={toggleContacts} hideDecorations={true} />
+      <Header onContactsClick={toggleContacts} hideDecorations={false} />
       <main>
         <div className={styles.fadingTextMain}>
           <FadingTextTrainer />
