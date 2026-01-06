@@ -21,6 +21,12 @@ const Gallery = () => {
       <Header onContactsClick={toggleContacts} />
       <main>
         <div className={styles.galleryMain}>
+          <div className={styles.titleSection}>
+            <h1 className={styles.galleryTitle}>Галерея</h1>
+            <p className={styles.galleryDescription}>
+              Фото занятий и мастер-классов нашего центра
+            </p>
+          </div>
           {/* Контент галереи будет здесь */}
         </div>
       </main>

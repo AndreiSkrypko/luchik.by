@@ -27,10 +27,12 @@ const Age10_17 = () => {
       <Header onContactsClick={toggleContacts} />
       <main>
         <div className={styles.ageCategoryMain}>
-          <h1 className={styles.ageCategoryTitle}>Программы для детей 10-17 лет</h1>
-          <p className={styles.ageCategoryDescription}>
-            Развивающие занятия для подростков
-          </p>
+          <div className={styles.titleSection}>
+            <h1 className={styles.ageCategoryTitle}>Программы для детей 10-17 лет</h1>
+            <p className={styles.ageCategoryDescription}>
+              Развивающие занятия для подростков
+            </p>
+          </div>
           {/* Контент будет добавлен позже */}
         </div>
       </main>

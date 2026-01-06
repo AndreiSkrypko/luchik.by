@@ -27,10 +27,12 @@ const Age1_5 = () => {
       <Header onContactsClick={toggleContacts} />
       <main>
         <div className={styles.ageCategoryMain}>
-          <h1 className={styles.ageCategoryTitle}>Программы для детей 1-5 лет</h1>
-          <p className={styles.ageCategoryDescription}>
-            Развивающие занятия для самых маленьких
-          </p>
+          <div className={styles.titleSection}>
+            <h1 className={styles.ageCategoryTitle}>Программы для детей 1-5 лет</h1>
+            <p className={styles.ageCategoryDescription}>
+              Развивающие занятия для самых маленьких
+            </p>
+          </div>
           {/* Контент будет добавлен позже */}
         </div>
       </main>
