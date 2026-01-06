@@ -1,0 +1,146 @@
+/* Main Container с правильным градиентным фоном, как в галерее */
+.ageCategoryPage {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: #ffffff;
+  background-image: 
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+}
+
+/* Предотвращение обрезания декоративных элементов на десктопе */
+@media (min-width: 1025px) {
+  .ageCategoryPage {
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #ffffff;
+    background-image: 
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+  }
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ageCategoryPage {
+    background: #ffffff;
+    background-image: 
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(320px), #ffffff calc(320px));
+  }
+}
+
+/* Мобильная версия - градиент покрывает облака, белый фон после */
+@media (max-width: 768px) {
+  .ageCategoryPage {
+    background: #ffffff !important;
+    background-image: none !important;
+  }
+  
+  .ageCategoryPage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 210px;
+    background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .ageCategoryPage > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ageCategoryPage {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .ageCategoryPage::before {
+    height: 190px;
+  }
+}
+
+.ageCategoryMain {
+  padding: 120px 20px 60px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background: #ffffff;
+  margin-top: 240px;
+}
+
+.ageCategoryTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.ageCategoryDescription {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+  margin: 0;
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ageCategoryMain {
+    padding: 100px 15px 40px;
+    margin-top: 210px;
+  }
+
+  .ageCategoryTitle {
+    font-size: 40px;
+  }
+
+  .ageCategoryDescription {
+    font-size: 18px;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .ageCategoryMain {
+    padding: 90px 12px 30px;
+    margin-top: 150px;
+  }
+
+  .ageCategoryTitle {
+    font-size: 36px;
+  }
+
+  .ageCategoryDescription {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ageCategoryMain {
+    margin-top: 140px;
+  }
+
+  .ageCategoryTitle {
+    font-size: 28px;
+  }
+
+  .ageCategoryDescription {
+    font-size: 14px;
+  }
+}
+

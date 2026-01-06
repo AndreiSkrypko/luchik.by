@@ -25,6 +25,9 @@ import BaseMultiplication from "./pages/BaseMultiplication";
 import Tricks from "./pages/Tricks";
 import Squares from "./pages/Squares";
 import Flashcards from "./pages/Flashcards";
+import Age1_5 from "./pages/Age1-5";
+import Age5_10 from "./pages/Age5-10";
+import Age10_17 from "./pages/Age10-17";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +61,9 @@ const App = () => (
           <Route path="/trainers/mental-arithmetic/tricks" element={<Tricks />} />
           <Route path="/trainers/mental-arithmetic/squares" element={<Squares />} />
           <Route path="/trainers/mental-arithmetic/flashcards" element={<Flashcards />} />
+          <Route path="/age/1-5" element={<Age1_5 />} />
+          <Route path="/age/5-10" element={<Age5_10 />} />
+          <Route path="/age/10-17" element={<Age10_17 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './DirectionsSection.module.css';
 
 const DirectionsSection = () => {
+  const navigate = useNavigate();
+
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.error('Failed to load image:', e.currentTarget.src);
+  };
+
+  const handleCardClick = (ageRange: string) => {
+    navigate(`/age/${ageRange}`);
   };
 
   return (
@@ -20,7 +27,7 @@ const DirectionsSection = () => {
               onError={handleImageError}
             />
           </div>
-          <div className={styles.directionCard}>
+          <div className={styles.directionCard} onClick={() => handleCardClick('1-5')} style={{ cursor: 'pointer' }}>
             <div className={styles.ageTextWrapper}>
               <img
                 src="/img/directions/age-1-5.svg"
@@ -51,7 +58,7 @@ const DirectionsSection = () => {
               loading="lazy"
             />
           </div>
-          <div className={styles.directionCard}>
+          <div className={styles.directionCard} onClick={() => handleCardClick('5-10')} style={{ cursor: 'pointer' }}>
             <div className={styles.romashkaWrapper}>
               <img
                 src="/img/romashka.svg"
@@ -90,7 +97,7 @@ const DirectionsSection = () => {
               loading="lazy"
             />
           </div>
-          <div className={styles.directionCard}>
+          <div className={styles.directionCard} onClick={() => handleCardClick('10-17')} style={{ cursor: 'pointer' }}>
             <div className={styles.vzikWrapper}>
               <img
                 src="/img/vzik.svg"
