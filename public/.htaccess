@@ -1,25 +1,58 @@
-# Устанавливаем правильные MIME типы
+# Включаем поддержку UTF-8 для имен файлов
 <IfModule mod_mime.c>
-  AddType image/svg+xml svg svgz
-  AddType image/webp webp
-  AddEncoding gzip svgz
+  # Устанавливаем кодировку UTF-8 для всех файлов
+  AddDefaultCharset UTF-8
+  # JavaScript модули (ES6) - КРИТИЧЕСКИ ВАЖНО для работы ES modules
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+  AddType text/javascript .js
+  AddType text/javascript .mjs
+  
+  # Устанавливаем правильный charset для JavaScript
+  AddCharset UTF-8 .js .mjs
+  
+  # Изображения
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType image/png .png
+  AddType image/jpeg .jpg .jpeg
+  AddType image/gif .gif
+  AddType image/x-icon .ico
+  AddEncoding gzip .svgz
+  
+  # CSS
+  AddType text/css .css
+  AddCharset UTF-8 .css
+  
+  # JSON
+  AddType application/json .json
+  AddCharset UTF-8 .json
+  
+  # Шрифты
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType application/font-ttf .ttf
+  AddType application/font-eot .eot
+  
+  # Другие типы
+  AddType application/wasm .wasm
+  AddType text/plain .txt
+  AddType application/xml .xml
 </IfModule>
 
 # КРИТИЧЕСКИ ВАЖНО: Разрешаем доступ к папке img ДО всех остальных правил
 <IfModule mod_rewrite.c>
   RewriteEngine On
   
-  # Явно разрешаем доступ к папке img и всем её файлам (включая placeholder.svg)
+  # Явно разрешаем доступ к папке img и всем её файлам (включая кириллические имена)
+  # Проверяем существование файла после декодирования URL
   RewriteCond %{REQUEST_URI} ^/img/
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
   
-  # Явно разрешаем доступ к placeholder.svg в корне (на случай если используется старый путь)
-  RewriteCond %{REQUEST_URI} ^/placeholder\.svg$
+  # Явно разрешаем доступ к placeholder.svg и favicon.svg в корне
+  RewriteCond %{REQUEST_URI} ^/(placeholder|favicon)\.svg$
   RewriteRule ^ - [L]
-  
-  # Принудительное перенаправление на HTTPS (раскомментируйте при необходимости)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
   # ВАЖНО: Сначала проверяем и разрешаем доступ к статическим файлам
   # Если запрашивается существующий файл (изображение, CSS, JS и т.д.), отдаем его напрямую
@@ -34,18 +67,30 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
+# Устанавливаем правильные заголовки для JavaScript модулей и SVG
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|mjs)$">
+    Header set Content-Type "application/javascript; charset=utf-8"
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
+  
+  <FilesMatch "\.svg$">
+    Header set Content-Type "image/svg+xml; charset=utf-8"
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
+</IfModule>
+
 # Разрешаем доступ к статическим файлам (Apache 2.4)
 <IfModule mod_authz_core.c>
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|eot|json|xml|txt|map)$">
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|mjs|woff|woff2|ttf|eot|json|xml|txt|map|wasm)$">
     Require all granted
   </FilesMatch>
 </IfModule>
 
 # Разрешаем доступ к статическим файлам (Apache 2.2 - для совместимости)
 <IfModule !mod_authz_core.c>
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|eot|json|xml|txt|map)$">
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|mjs|woff|woff2|ttf|eot|json|xml|txt|map|wasm)$">
     Order Allow,Deny
     Allow from all
   </FilesMatch>
 </IfModule>
-
