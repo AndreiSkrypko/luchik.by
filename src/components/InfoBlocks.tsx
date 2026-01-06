@@ -22,8 +22,8 @@ const InfoBlocks = () => {
 
         <div className={styles.infoBlock}>
           <img
-            src="/img/cards/third.svg"
-            alt=""
+            src="/img/IMG_20201010_155836_BURST4.jpg"
+            alt="Робототехника и программирование"
             className={styles.infoBlockImage}
           />
         </div>

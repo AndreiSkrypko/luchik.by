@@ -35,6 +35,16 @@
   max-width: 100%;
 }
 
+/* Специальный стиль для JPG изображения в третьей карточке - подгоняем под размеры SVG */
+.infoBlock:nth-child(3) .infoBlockImage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  transform: rotate(10deg);
+}
+
 /* ============================================
    АДАПТИВНОСТЬ
    ============================================ */
