@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import InDevelopment from '@/components/InDevelopment';
 import styles from './AgeCategory.module.css';
 
 const Age1_5 = () => {
@@ -32,8 +33,8 @@ const Age1_5 = () => {
             <p className={styles.ageCategoryDescription}>
               Развивающие занятия для самых маленьких
             </p>
+            <InDevelopment />
           </div>
-          {/* Контент будет добавлен позже */}
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

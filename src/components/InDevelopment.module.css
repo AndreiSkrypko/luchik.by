@@ -1,0 +1,221 @@
+.inDevelopmentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.inDevelopmentContent {
+  max-width: 600px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.95));
+  border: 3px solid rgba(70, 101, 161, 0.2);
+  border-radius: 24px;
+  padding: 50px 40px;
+  box-shadow: 0 8px 32px rgba(70, 101, 161, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.inDevelopmentContent::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(70, 101, 161, 0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.iconWrapper {
+  margin-bottom: 24px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.icon {
+  font-size: 80px;
+  display: inline-block;
+  filter: drop-shadow(0 4px 8px rgba(70, 101, 161, 0.3));
+}
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #4665a1;
+  margin: 0 0 16px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0 0 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.decorativeElements {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.decorativeDot {
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.decorativeDot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.decorativeDot:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.decorativeDot:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+.subtext {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+  margin: 24px 0 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inDevelopmentContainer {
+    padding: 35px 20px 15px;
+    margin-top: 25px;
+  }
+
+  .inDevelopmentContent {
+    padding: 40px 35px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .subtext {
+    font-size: 15px;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .inDevelopmentContainer {
+    padding: 30px 15px 15px;
+    margin-top: 20px;
+  }
+
+  .inDevelopmentContent {
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+
+  .icon {
+    font-size: 60px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .decorativeElements {
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .decorativeDot {
+    font-size: 20px;
+  }
+
+  .subtext {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .inDevelopmentContainer {
+    padding: 25px 12px 12px;
+  }
+
+  .inDevelopmentContent {
+    padding: 30px 20px;
+  }
+
+  .icon {
+    font-size: 50px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .subtext {
+    font-size: 13px;
+  }
+}

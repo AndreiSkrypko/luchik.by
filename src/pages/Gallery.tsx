@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import InDevelopment from '@/components/InDevelopment';
 import styles from './Gallery.module.css';
 
 const Gallery = () => {
@@ -26,8 +27,8 @@ const Gallery = () => {
             <p className={styles.galleryDescription}>
               Фото занятий и мастер-классов нашего центра
             </p>
+            <InDevelopment />
           </div>
-          {/* Контент галереи будет здесь */}
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

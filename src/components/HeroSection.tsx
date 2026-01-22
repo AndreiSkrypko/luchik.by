@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './HeroSection.module.css';
 
 interface HeroSectionProps {
@@ -7,6 +10,13 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
   const navigate = useNavigate();
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const handleFormSuccess = () => {
+    setIsFormOpen(false);
+    navigate('/thank-you');
+  };
+
   return (
     <>
       {/* Основной заголовок */}
@@ -52,7 +62,11 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
 
       {/* Кнопка CTA */}
       <section className={styles.ctaSection}>
-        <button className={styles.ctaButton} type="button">
+        <button 
+          className={styles.ctaButton} 
+          type="button"
+          onClick={() => setIsFormOpen(true)}
+        >
           <img
             src="/img/main/cta-button.webp"
             alt="Оставить заявку"
@@ -63,6 +77,19 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
           <span className={styles.ctaButtonText}>ОСТАВИТЬ ЗАЯВКУ</span>
         </button>
       </section>
+
+      {/* Модальное окно с формой */}
+      <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+        <DialogContent className={styles.dialogContent}>
+          <DialogHeader>
+            <DialogTitle className={styles.dialogTitle}>Запись на подготовку к школе</DialogTitle>
+            <DialogDescription className={styles.dialogDescription}>
+              Заполните форму, и мы свяжемся с вами в ближайшее время
+            </DialogDescription>
+          </DialogHeader>
+          <EnrollmentForm onSuccess={handleFormSuccess} compact={true} />
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
