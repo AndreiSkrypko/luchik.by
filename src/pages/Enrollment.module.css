@@ -381,10 +381,11 @@
 
   .titleSection {
     position: relative;
-    margin-top: -280px !important;
+    margin-top: -250px !important; /* Опускаем заголовок ниже */
     padding: 0 20px;
     z-index: 12;
     margin-bottom: 8px;
+    cursor: pointer; /* Показываем, что заголовок кликабельный */
   }
 
   .enrollmentTitle {
@@ -416,21 +417,15 @@
   }
 
   .textHighlight {
-    font-size: 16px;
-    padding: 16px 18px;
-  }
-
-  .textHighlight strong {
-    font-size: 17px;
+    display: none !important; /* Скрываем блок "Важно" на мобильных */
   }
 
   .textFeatures {
-    font-size: 14px;
-    padding: 12px 16px;
+    display: none !important; /* Скрываем блок "Бесплатная консультация..." на мобильных */
   }
 
   .formSection {
-    margin-top: 20px;
+    margin-top: 40px; /* Увеличиваем отступ перед формой */
   }
 
   .enrollmentForm {
@@ -440,15 +435,24 @@
 
 @media (max-width: 480px) {
   .enrollmentMain {
-    margin-top: 140px;
+    margin-top: 80px; /* Уменьшаем отступ сверху */
   }
 
   .titleSection {
     position: relative;
     top: 0;
-    margin-top: 15px;
+    margin-top: -200px !important; /* Опускаем заголовок ниже на маленьких мобильных */
     padding: 0 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    cursor: pointer; /* Показываем, что заголовок кликабельный */
+  }
+  
+  .formColumn {
+    margin-top: 0 !important; /* Убираем отрицательный margin на маленьких мобильных */
+  }
+  
+  .formSection {
+    margin-top: 30px; /* Увеличиваем отступ перед формой */
   }
 
   .enrollmentTitle {
@@ -484,13 +488,12 @@
     padding: 14px 16px;
   }
 
-  .textHighlight strong {
-    font-size: 16px;
+  .textHighlight {
+    display: none !important; /* Скрываем блок "Важно" на маленьких мобильных */
   }
 
   .textFeatures {
-    font-size: 13px;
-    padding: 12px 14px;
+    display: none !important; /* Скрываем блок "Бесплатная консультация..." на маленьких мобильных */
   }
 
   .enrollmentForm {
@@ -895,11 +898,16 @@
 
   .formColumn {
     position: static;
-    order: -1;
+    order: 2; /* Форма идет после заголовка и информации */
+    margin-top: 0 !important; /* Убираем отрицательный margin на мобильных */
   }
 
   .infoColumn {
-    order: 1;
+    order: 1; /* Информация идет после заголовка */
+  }
+  
+  .titleSection {
+    order: 0; /* Заголовок идет первым */
   }
 
   .titleSection {
@@ -1021,6 +1029,11 @@
 
   .formColumn {
     gap: 0;
+    margin-top: 0 !important; /* Убираем отрицательный margin на маленьких мобильных */
+  }
+  
+  .formSection {
+    margin-top: 30px !important; /* Увеличиваем отступ перед формой */
   }
 
   .titleSection {

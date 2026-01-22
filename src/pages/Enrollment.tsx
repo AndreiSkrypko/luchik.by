@@ -8,6 +8,16 @@ import styles from './Enrollment.module.css';
 const Enrollment = () => {
   const navigate = useNavigate();
 
+  const handleTitleClick = () => {
+    // Проверяем, что мы на мобильном устройстве
+    if (window.innerWidth <= 768) {
+      const formElement = document.getElementById('enrollment-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <div className={styles.enrollmentPage}>
       <Header />
@@ -17,7 +27,7 @@ const Enrollment = () => {
           <div className={styles.contentWrapper}>
             {/* Левая колонка - информация о курсе */}
             <div className={styles.infoColumn}>
-              <div className={styles.titleSection}>
+              <div className={styles.titleSection} onClick={handleTitleClick}>
                 <h1 className={styles.enrollmentTitle}>Запись на подготовку к школе</h1>
               </div>
 
