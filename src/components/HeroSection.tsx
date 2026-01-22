@@ -1,6 +1,10 @@
 import styles from './HeroSection.module.css';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onContactsClick?: () => void;
+}
+
+const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
   return (
     <>
       {/* Основной заголовок */}
@@ -26,6 +30,23 @@ const HeroSection = () => {
           height={80}
           className={styles.ladybug}
         />
+        {/* Кликабельный текст набора - правее божьей коровки */}
+        <button
+          className={styles.enrollmentText}
+          type="button"
+          onClick={() => {
+            if (onContactsClick) {
+              onContactsClick();
+            }
+          }}
+          aria-label="Записаться на подготовку к школе"
+        >
+          <span className={styles.enrollmentTextBadge}>
+            ✨ Актуальный набор
+            <span className={styles.clickHint}> → Кликните для записи</span>
+          </span>
+          <span className={styles.enrollmentTextTitle}>Набор на подготовку к школе</span>
+        </button>
       </section>
 
       {/* Кнопка CTA */}

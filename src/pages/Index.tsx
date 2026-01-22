@@ -45,7 +45,7 @@ const Index = () => {
     <div className={styles.page}>
       <Header onContactsClick={toggleContacts} />
       <main>
-        <HeroSection />
+        <HeroSection onContactsClick={toggleContacts} />
         <InfoBlocks />
         <WhyUsSection />
         <DirectionsSection />
