@@ -203,7 +203,7 @@
 .contactsLeaf {
   position: absolute;
   bottom: 6cm;
-  left: 0;
+  left: -20px;
   width: 61px;
   height: 75px;
   z-index: 2;
