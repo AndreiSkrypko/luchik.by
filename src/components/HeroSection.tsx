@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './HeroSection.module.css';
 
 interface HeroSectionProps {
@@ -5,6 +6,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Основной заголовок */}
@@ -35,9 +37,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
           className={styles.enrollmentText}
           type="button"
           onClick={() => {
-            if (onContactsClick) {
-              onContactsClick();
-            }
+            navigate('/enrollment');
           }}
           aria-label="Записаться на подготовку к школе"
         >
