@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Trainers from "./pages/Trainers";
 import Enrollment from "./pages/Enrollment";
+import ThankYou from "./pages/ThankYou";
 import TrainerProgram from "./pages/TrainerProgram";
 import FadingText from "./pages/FadingText";
 import SchulteTable from "./pages/SchulteTable";
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/enrollment" element={<Enrollment />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/trainers/:program" element={<TrainerProgram />} />
           <Route path="/trainers/speed-reading/fading-text" element={<FadingText />} />
           <Route path="/trainers/speed-reading/schulte-table" element={<SchulteTable />} />

@@ -7,9 +7,9 @@ import styles from './Enrollment.module.css';
 
 const Enrollment = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
+    fullName: '',
+    dateOfBirth: '',
+    parentPhone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,16 +23,68 @@ const Enrollment = () => {
     }));
   };
 
+  const sendToTelegram = async (data: typeof formData) => {
+    const BOT_TOKEN = '8521779588:AAGekE0xiI-1b0ikAFJ10LSIW2t25JXtK3A';
+    const CHAT_ID = '1349417673';
+    
+    // Форматируем дату рождения для читаемости
+    const formattedDate = data.dateOfBirth 
+      ? new Date(data.dateOfBirth).toLocaleDateString('ru-RU', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })
+      : 'Не указана';
+
+    const message = `🎓 <b>Новая заявка на подготовку к школе</b>\n\n` +
+      `👤 <b>Имя и фамилия ребёнка:</b> ${data.fullName}\n` +
+      `📅 <b>Дата рождения:</b> ${formattedDate}\n` +
+      `📱 <b>Номер опекуна/родителя:</b> ${data.parentPhone}\n` +
+      (data.message ? `💬 <b>Дополнительная информация:</b>\n${data.message}` : '');
+
+    try {
+      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: 'HTML',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Ошибка отправки сообщения');
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Ошибка отправки в Telegram:', error);
+      throw error;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Здесь будет логика отправки формы
-    setTimeout(() => {
+    try {
+      await sendToTelegram(formData);
+      // Очищаем форму
+      setFormData({
+        fullName: '',
+        dateOfBirth: '',
+        parentPhone: '',
+        message: ''
+      });
+      // Перенаправляем на страницу благодарности для отслеживания конверсий
+      navigate('/thank-you');
+    } catch (error) {
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
       setIsSubmitting(false);
-      alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-      navigate('/');
-    }, 1000);
+    }
   };
 
   return (
@@ -88,49 +140,49 @@ const Enrollment = () => {
               <div className={styles.formSection} id="enrollment-form">
             <form className={styles.enrollmentForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.formLabel}>
-                  Имя ребёнка *
+                <label htmlFor="fullName" className={styles.formLabel}>
+                  Имя и фамилия ребёнка *
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
                   onChange={handleChange}
                   className={styles.formInput}
                   required
-                  placeholder="Введите имя"
+                  placeholder="Введите имя и фамилию"
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="phone" className={styles.formLabel}>
-                  Телефон *
+                <label htmlFor="dateOfBirth" className={styles.formLabel}>
+                  Дата рождения *
+                </label>
+                <input
+                  type="date"
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                  className={styles.formInput}
+                  required
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="parentPhone" className={styles.formLabel}>
+                  Номер опекуна или родителя *
                 </label>
                 <input
                   type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
+                  id="parentPhone"
+                  name="parentPhone"
+                  value={formData.parentPhone}
                   onChange={handleChange}
                   className={styles.formInput}
                   required
                   placeholder="+375 (XX) XXX-XX-XX"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.formLabel}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={styles.formInput}
-                  placeholder="example@mail.com"
                 />
               </div>
 
