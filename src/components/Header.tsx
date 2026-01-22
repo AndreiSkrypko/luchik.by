@@ -57,6 +57,28 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     }
   };
 
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Если мы на главной странице, скроллим к секции "О нас"
+    if (location.pathname === '/') {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Если на другой странице, переходим на главную с якорем
+      navigate('/#about', { replace: false });
+      // После перехода скроллим к секции
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+    closeMobileMenu();
+  };
+
   const handleDirectionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     // Если мы на главной странице, скроллим к секции направлений
@@ -89,7 +111,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
         <span></span>
         <span></span>
       </button>
-      <a href="#about" className={styles.navTextLink} onClick={closeMobileMenu}>
+      <a href="#about" className={styles.navTextLink} onClick={handleAboutClick}>
         О нас
       </a>
       <a href="#directions" className={styles.navTextLink} onClick={handleDirectionsClick}>
