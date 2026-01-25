@@ -44,22 +44,6 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
         />
       </section>
       
-      {/* Кликабельный текст набора - правее божьей коровки (вынесен из subtitleSection для правильного z-index) */}
-      <button
-        className={styles.enrollmentText}
-        type="button"
-        onClick={() => {
-          navigate('/enrollment');
-        }}
-        aria-label="Записаться на подготовку к школе"
-      >
-        <span className={styles.enrollmentTextBadge}>
-          ✨ Актуальный набор
-          <span className={styles.clickHint}> → Кликните для записи</span>
-        </span>
-        <span className={styles.enrollmentTextTitle}>Набор на подготовку к школе</span>
-      </button>
-
       {/* Кнопка CTA */}
       <section className={styles.ctaSection}>
         <button 

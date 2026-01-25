@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import EnrollmentCard from './EnrollmentCard';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -133,8 +134,10 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
   );
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerBackground}>
+    <>
+      <EnrollmentCard />
+      <header className={styles.header}>
+        <div className={styles.headerBackground}>
         {/* Логотип слева сверху */}
         <Link to="/" className={styles.logoLink} aria-label="На главную" onClick={handleLogoClick}>
           <div className={styles.logo}>
@@ -301,6 +304,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 
