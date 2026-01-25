@@ -33,6 +33,11 @@ body[data-mobile-menu-open="true"] .enrollmentCard {
   display: none;
 }
 
+/* Скрываем карточку когда открыта панель контактов */
+body[data-contacts-open="true"] .enrollmentCard {
+  display: none;
+}
+
 @keyframes textFloat {
   0%, 100% {
     transform: translateY(0);

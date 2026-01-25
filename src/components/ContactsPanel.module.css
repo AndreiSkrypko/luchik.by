@@ -72,6 +72,79 @@
   width: 100%;
 }
 
+/* Кнопка закрытия для мобильных */
+.contactsCloseButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 245, 255, 0.95));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: calc(var(--z-contacts-panel) + 1);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
+}
+
+.contactsCloseButton:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(229, 245, 255, 1));
+  border-color: #FF6B35;
+  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.35);
+  transform: scale(1.05);
+}
+
+.contactsCloseButton:active {
+  transform: scale(0.95);
+}
+
+.contactsCloseButton span {
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B35, #FFD700);
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: block;
+  box-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
+  transform-origin: center;
+}
+
+.contactsCloseButton span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.contactsCloseButton span:nth-child(2) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* Логотип для мобильных */
+.contactsMobileLogo {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contactsMobileLogo:hover {
+  transform: scale(1.05);
+}
+
+.contactsMobileLogo img {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(255, 107, 53, 0.2));
+}
+
 .contactsCloudContainer {
   position: relative;
   display: flex;
@@ -598,8 +671,20 @@
     max-width: 100vw;
   }
 
+  .contactsCloseButton {
+    display: flex;
+  }
+
   .contactsPanelHeader {
     padding: 30px 24px 20px;
+  }
+
+  .contactsCloudContainer {
+    display: none;
+  }
+
+  .contactsMobileLogo {
+    display: flex;
   }
 
   .contactsCloud {
@@ -643,8 +728,23 @@
 
 /* Маленькие мобильные (до 480px) */
 @media (max-width: 480px) {
+  .contactsCloseButton {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .contactsCloseButton span {
+    width: 20px;
+  }
+
   .contactsPanelHeader {
     padding: 20px 16px 15px;
+  }
+
+  .contactsMobileLogo img {
+    max-width: 160px;
   }
 
   .contactsCloud {

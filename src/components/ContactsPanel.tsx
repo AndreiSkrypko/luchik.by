@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from './ContactsPanel.module.css';
 
 interface ContactsPanelProps {
@@ -7,6 +8,38 @@ interface ContactsPanelProps {
 }
 
 const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onClose();
+    // Если мы уже на главной странице, просто скроллим наверх
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Очищаем hash из URL если есть
+      if (window.location.hash) {
+        window.history.replaceState(null, '', '/');
+      }
+    } else {
+      // Если на другой странице, переходим на главную
+      navigate('/', { replace: true });
+      // Скроллим наверх после перехода
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 100);
+    }
+  };
   // Предзагрузка SVG изображений при открытии панели
   useEffect(() => {
     if (isOpen) {
@@ -20,6 +53,17 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
         const img = new Image();
         img.src = src;
       });
+    }
+  }, [isOpen]);
+
+  // Добавляем/удаляем data-атрибут на body для скрытия EnrollmentCard при открытой панели контактов
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (isOpen) {
+        document.body.setAttribute('data-contacts-open', 'true');
+      } else {
+        document.body.removeAttribute('data-contacts-open');
+      }
     }
   }, [isOpen]);
 
@@ -40,28 +84,58 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
     <>
       <div className={styles.contactsOverlay} onClick={onClose} />
       <div className={styles.contactsPanel}>
+        {/* Кнопка закрытия для мобильных */}
+        {isMobile && (
+          <button
+            className={styles.contactsCloseButton}
+            onClick={onClose}
+            aria-label="Закрыть контакты"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        )}
         <div className={styles.contactsPanelHeader}>
-          <div className={styles.contactsCloudContainer}>
-            <img
-              src="/img/main/cloud-white.webp"
-              alt="Облако"
-              width={250}
-              height={125}
-              className={styles.contactsCloud}
-              onError={handleImageError}
-              onLoad={handleImageLoad}
-            />
-            <div className={styles.contactsCloudTitle}>Контакты</div>
-            <img
-              src="/img/main/cloud-1.webp"
-              alt="Белое облако"
-              width={70}
-              height={55}
-              className={styles.contactsWhiteCloud}
-              onError={handleImageError}
-              onLoad={handleImageLoad}
-            />
-          </div>
+          {isMobile ? (
+            /* Логотип для мобильных */
+            <Link
+              to="/"
+              className={styles.contactsMobileLogo}
+              onClick={handleLogoClick}
+              aria-label="На главную"
+            >
+              <img
+                src="/img/main/logo.webp"
+                alt="Логотип «Лучик»"
+                width={200}
+                height={62}
+                loading="eager"
+              />
+            </Link>
+          ) : (
+            /* Облако с заголовком для десктопа */
+            <div className={styles.contactsCloudContainer}>
+              <img
+                src="/img/main/cloud-white.webp"
+                alt="Облако"
+                width={250}
+                height={125}
+                className={styles.contactsCloud}
+                onError={handleImageError}
+                onLoad={handleImageLoad}
+              />
+              <div className={styles.contactsCloudTitle}>Контакты</div>
+              <img
+                src="/img/main/cloud-1.webp"
+                alt="Белое облако"
+                width={70}
+                height={55}
+                className={styles.contactsWhiteCloud}
+                onError={handleImageError}
+                onLoad={handleImageLoad}
+              />
+            </div>
+          )}
         </div>
         <div className={styles.contactsPanelContent}>
           <div className={styles.contactsFrame}>
