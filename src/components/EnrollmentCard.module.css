@@ -28,6 +28,11 @@
   max-width: fit-content;
 }
 
+/* Скрываем карточку когда открыто мобильное меню */
+body[data-mobile-menu-open="true"] .enrollmentCard {
+  display: none;
+}
+
 @keyframes textFloat {
   0%, 100% {
     transform: translateY(0);

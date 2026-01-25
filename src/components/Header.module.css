@@ -478,6 +478,10 @@
   .mobileMenuButton {
     display: none !important;
   }
+
+  .mobileMenuLogo {
+    display: none !important;
+  }
 }
 
 /* Планшеты и меньше (до 1024px) */
@@ -753,6 +757,27 @@
     z-index: var(--z-overlay-content) !important;
   }
 
+  .mobileMenuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: linkSlideIn 0.3s ease-out backwards;
+  }
+
+  .mobileMenuLogo:hover {
+    transform: scale(1.05);
+  }
+
+  .mobileMenuLogo img {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(255, 107, 53, 0.2));
+  }
+
   .navTextLink {
     font-size: 18px;
     font-weight: 700;
@@ -793,11 +818,11 @@
   }
 
   .closeButton { animation-delay: 0.05s; }
-  .navTextLink:nth-child(2) { animation-delay: 0.1s; }
-  .navTextLink:nth-child(3) { animation-delay: 0.15s; }
-  .navTextLink:nth-child(4) { animation-delay: 0.2s; }
-  .navTextLink:nth-child(5) { animation-delay: 0.25s; }
-  .navTextLink:nth-child(6) { animation-delay: 0.3s; }
+  .navTextLink:nth-of-type(1) { animation-delay: 0.1s; }
+  .navTextLink:nth-of-type(2) { animation-delay: 0.15s; }
+  .navTextLink:nth-of-type(3) { animation-delay: 0.2s; }
+  .navTextLink:nth-of-type(4) { animation-delay: 0.25s; }
+  .navTextLink:nth-of-type(5) { animation-delay: 0.3s; }
 
   @keyframes linkSlideIn {
     from {

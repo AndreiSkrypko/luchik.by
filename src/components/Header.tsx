@@ -23,6 +23,17 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Добавляем/удаляем data-атрибут на body для скрытия EnrollmentCard при открытом меню
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (isMobileMenuOpen) {
+        document.body.setAttribute('data-mobile-menu-open', 'true');
+      } else {
+        document.body.removeAttribute('data-mobile-menu-open');
+      }
+    }
+  }, [isMobileMenuOpen]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -103,6 +114,26 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
 
   const navLinksContent = (
     <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
+      {/* Логотип для мобильного меню */}
+      {isMobile && (
+        <Link 
+          to="/" 
+          className={styles.mobileMenuLogo} 
+          onClick={(e) => {
+            handleLogoClick(e);
+            closeMobileMenu();
+          }}
+          aria-label="На главную"
+        >
+          <img
+            src="/img/main/logo.webp"
+            alt="Логотип «Лучик»"
+            width={200}
+            height={62}
+            loading="eager"
+          />
+        </Link>
+      )}
       <a href="#about" className={styles.navTextLink} onClick={handleAboutClick}>
         О нас
       </a>
