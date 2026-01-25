@@ -1,0 +1,217 @@
+/* Карточка записи - всегда поверх фона на всех страницах */
+.enrollmentCard {
+  position: fixed;
+  left: calc(50% + 280px);
+  top: 120px;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: linear-gradient(135deg, 
+    rgba(255, 182, 193, 0.95) 0%, 
+    rgba(255, 218, 185, 0.95) 50%, 
+    rgba(173, 216, 230, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 182, 193, 0.6);
+  border-radius: 20px;
+  padding: 16px 20px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: textFloat 4s ease-in-out infinite;
+  pointer-events: auto;
+  box-shadow: 
+    0 8px 32px rgba(255, 182, 193, 0.4),
+    0 4px 16px rgba(173, 216, 230, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  max-width: fit-content;
+}
+
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.enrollmentCard:hover {
+  animation: none;
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, 
+    rgba(255, 192, 203, 1) 0%, 
+    rgba(255, 218, 185, 1) 50%, 
+    rgba(173, 216, 230, 1) 100%);
+  border-color: rgba(255, 182, 193, 0.9);
+  box-shadow: 
+    0 12px 40px rgba(255, 182, 193, 0.5),
+    0 6px 20px rgba(173, 216, 230, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.enrollmentCard:active {
+  transform: scale(1.05);
+}
+
+.enrollmentCardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 250, 245, 0.9) 100%);
+  border: 2px solid rgba(255, 182, 193, 0.5);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #d63384;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 12px rgba(255, 182, 193, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: visible;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.clickHint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #c77d9e;
+  margin-left: 6px;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.enrollmentCard:hover .enrollmentCardBadge {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 250, 245, 1) 100%);
+  border-color: rgba(255, 182, 193, 0.8);
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 16px rgba(255, 182, 193, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.enrollmentCardTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  background: linear-gradient(135deg, 
+    #d63384 0%, 
+    #e91e63 50%, 
+    #ff6b9d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  filter: drop-shadow(0 2px 4px rgba(214, 51, 132, 0.2));
+  letter-spacing: 0.2px;
+}
+
+.enrollmentCard:hover .enrollmentCardTitle {
+  transform: scale(1.03);
+  filter: drop-shadow(0 3px 6px rgba(214, 51, 132, 0.3));
+}
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+  .enrollmentCard {
+    left: calc(50% + 220px);
+    top: 100px;
+    padding: 12px 16px;
+    border-width: 4px;
+  }
+
+  .enrollmentCardTitle {
+    font-size: 22px;
+  }
+
+  .enrollmentCardBadge {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .clickHint {
+    font-size: 9px;
+    margin-left: 6px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .enrollmentCard {
+    position: fixed;
+    right: 12px;
+    left: auto;
+    top: 84px;
+    transform: none;
+    align-items: center;
+    margin: 0;
+    padding: 10px 12px;
+    border-width: 2px;
+    border-radius: 16px;
+    width: min(280px, calc(100vw - 24px));
+    box-sizing: border-box;
+    box-shadow: 
+      0 8px 32px rgba(255, 182, 193, 0.4),
+      0 4px 16px rgba(173, 216, 230, 0.3);
+  }
+
+  .enrollmentCardTitle {
+    font-size: 16px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .enrollmentCardBadge {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .clickHint {
+    display: none;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .enrollmentCard {
+    position: fixed;
+    right: 10px;
+    left: auto;
+    top: 78px;
+    transform: none;
+    align-items: center;
+    margin: 0;
+    padding: 9px 10px;
+    border-width: 2px;
+    border-radius: 14px;
+    width: min(260px, calc(100vw - 20px));
+  }
+
+  .enrollmentCardTitle {
+    font-size: 15px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .enrollmentCardBadge {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .clickHint {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ import FlashcardsTrainer from '@/components/FlashcardsTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './Flashcards.module.css';
 
 const Flashcards = () => {
@@ -34,6 +35,7 @@ const Flashcards = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

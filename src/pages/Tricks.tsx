@@ -5,6 +5,7 @@ import TricksTrainer from '@/components/TricksTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './Tricks.module.css';
 
 const Tricks = () => {
@@ -34,6 +35,7 @@ const Tricks = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

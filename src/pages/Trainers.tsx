@@ -5,6 +5,7 @@ import ProgramCards from '@/components/ProgramCards';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './Trainers.module.css';
 
 const Trainers = () => {
@@ -34,6 +35,7 @@ const Trainers = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

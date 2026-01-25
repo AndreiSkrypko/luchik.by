@@ -5,6 +5,7 @@ import MultiplicationTrainer from '@/components/MultiplicationTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './Multiplication.module.css';
 
 const Multiplication = () => {
@@ -34,6 +35,7 @@ const Multiplication = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

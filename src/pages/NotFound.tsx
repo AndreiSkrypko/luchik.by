@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import { useState } from 'react';
 import styles from './NotFound.module.css';
 
@@ -63,6 +64,7 @@ const NotFound = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

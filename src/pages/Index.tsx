@@ -9,6 +9,7 @@ import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './Index.module.css';
 
 const Index = () => {
@@ -56,6 +57,7 @@ const Index = () => {
       </div>
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

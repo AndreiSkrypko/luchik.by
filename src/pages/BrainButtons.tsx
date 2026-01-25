@@ -5,6 +5,7 @@ import BrainButtonsTrainer from '@/components/BrainButtonsTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './BrainButtons.module.css';
 
 const BrainButtons = () => {
@@ -34,6 +35,7 @@ const BrainButtons = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

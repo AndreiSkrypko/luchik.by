@@ -5,6 +5,7 @@ import BaseMultiplicationTrainer from '@/components/BaseMultiplicationTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './BaseMultiplication.module.css';
 
 const BaseMultiplication = () => {
@@ -34,6 +35,7 @@ const BaseMultiplication = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

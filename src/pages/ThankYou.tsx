@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './ThankYou.module.css';
 
 const ThankYou = () => {
@@ -69,6 +70,7 @@ const ThankYou = () => {
       </main>
       <Footer />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

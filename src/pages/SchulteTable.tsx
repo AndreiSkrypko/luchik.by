@@ -5,6 +5,7 @@ import SchulteTableTrainer from '@/components/SchulteTableTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './SchulteTable.module.css';
 
 const SchulteTable = () => {
@@ -34,6 +35,7 @@ const SchulteTable = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

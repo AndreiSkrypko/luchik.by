@@ -5,6 +5,7 @@ import DistributeWordsTrainer from '@/components/DistributeWordsTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './DistributeWords.module.css';
 
 const DistributeWords = () => {
@@ -34,6 +35,7 @@ const DistributeWords = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };

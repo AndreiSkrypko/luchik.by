@@ -5,6 +5,7 @@ import FlashWordsTrainer from '@/components/FlashWordsTrainer';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
+import EnrollmentCard from '@/components/EnrollmentCard';
 import styles from './FlashWords.module.css';
 
 const FlashWords = () => {
@@ -34,6 +35,7 @@ const FlashWords = () => {
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
+      <EnrollmentCard />
     </div>
   );
 };
