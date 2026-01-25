@@ -42,9 +42,9 @@
 
 .ctaButton {
   position: absolute;
-  bottom: 30px;
+  bottom: 33px;
   left: 50%;
-  transform: translateX(-97%);
+  transform: translateX(calc(-97% - 15px));
   background: transparent;
   border: none;
   padding: 10px 20px;
@@ -62,13 +62,13 @@
 }
 
 .ctaButton:hover {
-  transform: translateX(-97%) translateY(-3px);
+  transform: translateX(calc(-97% - 15px)) translateY(-3px);
   filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.5));
   box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
 }
 
 .ctaButton:active {
-  transform: translateX(-97%) translateY(-1px) scale(0.98);
+  transform: translateX(calc(-97% - 15px)) translateY(-1px) scale(0.98);
   filter: drop-shadow(0 4px 15px rgba(255, 107, 53, 0.6));
   box-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
 }
@@ -106,8 +106,8 @@
   }
 
   .ctaButton {
-    bottom: 25px;
-    transform: translateX(-97%);
+    bottom: 28px;
+    transform: translateX(calc(-97% - 13px));
     width: 440px;
     height: 85px;
     padding: 8px 16px;
@@ -131,8 +131,8 @@
   }
 
   .ctaButton {
-    bottom: 15px;
-    transform: translateX(-97%);
+    bottom: 18px;
+    transform: translateX(calc(-97% - 11px));
     width: 360px;
     height: 75px;
     padding: 8px 14px;
@@ -155,8 +155,8 @@
   }
 
   .ctaButton {
-    bottom: 10px;
-    transform: translateX(-97%);
+    bottom: 13px;
+    transform: translateX(calc(-97% - 10px));
     width: 320px;
     height: 70px;
     padding: 6px 12px;
