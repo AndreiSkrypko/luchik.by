@@ -103,14 +103,6 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
 
   const navLinksContent = (
     <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
-      <button
-        className={styles.closeButton}
-        onClick={closeMobileMenu}
-        aria-label="Закрыть меню"
-      >
-        <span></span>
-        <span></span>
-      </button>
       <a href="#about" className={styles.navTextLink} onClick={handleAboutClick}>
         О нас
       </a>

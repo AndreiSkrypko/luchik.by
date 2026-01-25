@@ -394,6 +394,7 @@
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   display: block;
   box-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
+  transform-origin: center;
 }
 
 .mobileMenuButton:hover span {
@@ -408,18 +409,18 @@
 }
 
 .mobileMenuButtonOpen span:nth-child(1) {
-  transform: rotate(45deg) translate(9px, 9px);
+  transform: translateY(9px) rotate(45deg);
   background: linear-gradient(90deg, #FF6B35, #FFD700);
   box-shadow: 0 2px 8px rgba(255, 107, 53, 0.5);
 }
 
 .mobileMenuButtonOpen span:nth-child(2) {
   opacity: 0;
-  transform: translateX(-10px);
+  transform: scale(0);
 }
 
 .mobileMenuButtonOpen span:nth-child(3) {
-  transform: rotate(-45deg) translate(9px, -9px);
+  transform: translateY(-9px) rotate(-45deg);
   background: linear-gradient(90deg, #FF6B35, #FFD700);
   box-shadow: 0 2px 8px rgba(255, 107, 53, 0.5);
 }
