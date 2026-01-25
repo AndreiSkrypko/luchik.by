@@ -66,12 +66,12 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
         <DialogContent className={styles.dialogContent}>
           <DialogHeader>
-            <DialogTitle className={styles.dialogTitle}>Запись на подготовку к школе</DialogTitle>
+            <DialogTitle className={styles.dialogTitle}>Оставить заявку</DialogTitle>
             <DialogDescription className={styles.dialogDescription}>
               Заполните форму, и мы свяжемся с вами в ближайшее время
             </DialogDescription>
           </DialogHeader>
-          <EnrollmentForm onSuccess={handleFormSuccess} compact={true} />
+          <EnrollmentForm onSuccess={handleFormSuccess} courseName="занятия в детском центре" compact={true} />
         </DialogContent>
       </Dialog>
     </div>
