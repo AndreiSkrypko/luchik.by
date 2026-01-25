@@ -64,6 +64,19 @@
 
     --radius: 1.5rem;
 
+    /* Z-index scale (predictable layering) */
+    --z-bg: 0;
+    --z-content: 1;
+    --z-decor: 2;
+    --z-header-ui: 10;
+    --z-float: 20;
+    --z-scrolltop: 30;
+    --z-overlay: 100;
+    --z-overlay-content: 110;
+    --z-modal: 200;
+    --z-contacts-overlay: 300;
+    --z-contacts-panel: 310;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 220 60% 35%;
     --sidebar-primary: 42 95% 58%;

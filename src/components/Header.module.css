@@ -7,7 +7,7 @@
   overflow: visible;
   padding: 20px 0 0;
   padding-bottom: 0;
-  z-index: 1;
+  z-index: auto;
 }
 
 .headerBackground {
@@ -18,7 +18,7 @@
   bottom: 0;
   overflow: visible;
   width: 100%;
-  z-index: 1;
+  z-index: var(--z-bg);
 }
 
 /* Облака */
@@ -32,7 +32,7 @@
   min-height: 438px;
   overflow: visible;
   pointer-events: none;
-  z-index: 1;
+  z-index: var(--z-decor);
 }
 
 .cloudsImage {
@@ -63,7 +63,7 @@
   position: absolute;
   top: -155px;
   right: -135px;
-  z-index: 5;
+  z-index: var(--z-decor);
   width: 600px;
   height: 600px;
   overflow: visible;
@@ -198,7 +198,7 @@
   position: absolute;
   top: 180px;
   left: 120px;
-  z-index: 4;
+  z-index: var(--z-decor);
   pointer-events: none;
   animation: cloudDrift 8s ease-in-out infinite;
   display: block;
@@ -209,7 +209,7 @@
   position: absolute;
   bottom: calc(60px - 6cm);
   left: 80px;
-  z-index: 4;
+  z-index: var(--z-decor);
   pointer-events: none;
   animation: beeBuzz 2s ease-in-out infinite;
   display: block;
@@ -220,7 +220,7 @@
   position: absolute;
   bottom: calc(60px - 8cm);
   right: 60px;
-  z-index: 4;
+  z-index: var(--z-decor);
   pointer-events: none;
   animation: cloudDriftReverse 10s ease-in-out infinite;
   display: block;
@@ -231,7 +231,7 @@
   position: absolute;
   top: 24px;
   left: 40px;
-  z-index: 100;
+  z-index: var(--z-header-ui);
   display: inline-block;
   cursor: pointer;
   pointer-events: auto;
@@ -258,7 +258,7 @@
 /* Навигация в шапке */
 .navbarRow {
   position: relative;
-  z-index: 10;
+  z-index: var(--z-header-ui);
   max-width: 1200px;
   margin: 36px auto 0;
   padding: 0 40px;
@@ -365,7 +365,7 @@
   border-radius: 16px;
   cursor: pointer;
   padding: 14px 12px;
-  z-index: 99999;
+  z-index: calc(var(--z-overlay-content) + 1);
   position: fixed;
   top: 20px;
   right: 20px;
@@ -431,7 +431,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 98;
+  z-index: var(--z-overlay);
   display: none;
 }
 
@@ -562,7 +562,7 @@
   .logoLink {
     top: 10px;
     left: 15px;
-    z-index: 100;
+    z-index: var(--z-header-ui);
     pointer-events: auto;
   }
 
@@ -576,7 +576,7 @@
     top: -80px;
     right: -60px;
     opacity: 0.5;
-    z-index: 1;
+    z-index: var(--z-decor);
   }
 
   .sun {
@@ -592,7 +592,7 @@
     right: -20px;
     width: calc(100% + 40px);
     display: block;
-    z-index: -1;
+    z-index: var(--z-bg);
     background: transparent;
   }
 
@@ -629,7 +629,7 @@
     position: absolute;
     top: 10px;
     right: 70px;
-    z-index: 20;
+    z-index: var(--z-header-ui);
   }
 
   .socials {
@@ -650,7 +650,7 @@
     display: flex !important;
     top: 16px;
     right: 16px;
-    z-index: 99999 !important;
+    z-index: calc(var(--z-overlay-content) + 1) !important;
     padding: 12px 10px;
     visibility: visible !important;
     opacity: 1 !important;
@@ -675,7 +675,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    z-index: 999999 !important;
+    z-index: var(--z-overlay-content) !important;
     margin: 0 !important;
     padding: 60px 20px 20px;
     overflow-y: auto;
@@ -697,7 +697,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000001;
+    z-index: calc(var(--z-overlay-content) + 2);
     box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -749,7 +749,7 @@
 
   .navLinksOpen {
     display: flex !important;
-    z-index: 999999 !important;
+    z-index: var(--z-overlay-content) !important;
   }
 
   .navTextLink {
@@ -760,7 +760,7 @@
     max-width: 90%;
     text-align: center;
     position: relative;
-    z-index: 1000000;
+    z-index: 0;
     color: #4A5568 !important;
     pointer-events: auto;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
@@ -886,7 +886,7 @@
     top: -60px;
     right: -50px;
     opacity: 0.4;
-    z-index: 1;
+    z-index: var(--z-decor);
   }
 
   .sun {
@@ -902,7 +902,7 @@
     right: -15px;
     width: calc(100% + 30px);
     display: block;
-    z-index: -1;
+    z-index: var(--z-bg);
     background: transparent;
   }
 
@@ -917,7 +917,7 @@
   .navbarRight {
     top: 8px;
     right: 65px;
-    z-index: 20;
+    z-index: var(--z-header-ui);
   }
 
   .socials {
@@ -938,7 +938,7 @@
     display: flex !important;
     top: 12px;
     right: 12px;
-    z-index: 99999 !important;
+    z-index: calc(var(--z-overlay-content) + 1) !important;
     padding: 10px 8px;
     visibility: visible !important;
     opacity: 1 !important;

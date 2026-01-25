@@ -18,7 +18,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
   };
 
   return (
-    <>
+    <div className={styles.hero}>
       {/* Основной заголовок */}
       <section className={styles.mainTitleSection}>
         <h1 className={styles.mainTitleText}>
@@ -90,7 +90,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
           <EnrollmentForm onSuccess={handleFormSuccess} compact={true} />
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 };
 

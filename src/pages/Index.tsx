@@ -43,15 +43,17 @@ const Index = () => {
 
   return (
     <div className={styles.page}>
-      <Header onContactsClick={toggleContacts} />
-      <main>
-        <HeroSection onContactsClick={toggleContacts} />
-        <InfoBlocks />
-        <WhyUsSection />
-        <DirectionsSection />
-        <MapSection />
-      </main>
-      <Footer onContactsClick={toggleContacts} />
+      <div className={styles.content}>
+        <Header onContactsClick={toggleContacts} />
+        <main>
+          <HeroSection onContactsClick={toggleContacts} />
+          <InfoBlocks />
+          <WhyUsSection />
+          <DirectionsSection />
+          <MapSection />
+        </main>
+        <Footer onContactsClick={toggleContacts} />
+      </div>
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
     </div>

@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 10000000;
+  z-index: var(--z-contacts-overlay);
   animation: fadeIn 0.3s ease;
 }
 
@@ -19,7 +19,7 @@
   height: 100vh;
   background: linear-gradient(180deg, #F0F9FF 0%, #E5F5FF 30%, #F0F9FF 60%, #ffffff 100%);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-  z-index: 10000001;
+  z-index: var(--z-contacts-panel);
   display: flex;
   flex-direction: column;
   overflow-y: auto;

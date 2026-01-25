@@ -4,6 +4,7 @@
   min-height: 100vh;
   margin: 0;
   position: relative;
+  isolation: isolate;
   overflow-x: hidden;
   overflow-y: visible;
   display: flex;
@@ -11,6 +12,20 @@
   background: #ffffff;
   background-image: 
     linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+}
+
+/* Глобальный фон-слой (картинка) — всегда под контентом */
+.thankYouPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/main/waves-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.12;
+  z-index: var(--z-bg);
+  pointer-events: none;
 }
 
 /* Предотвращение обрезания декоративных элементов на десктопе */
