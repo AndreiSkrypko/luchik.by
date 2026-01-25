@@ -343,7 +343,68 @@
   min-width: 0;
   overflow-x: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactAddress {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #777777;
+  line-height: 1.2;
+}
+
+.contactPhone {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4A90E2;
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 144, 226, 0.5);
+  text-underline-offset: 3px;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.contactPhone:hover {
+  color: #FF6B35;
+  text-decoration-color: #FF6B35;
+  text-decoration-thickness: 2px;
+  transform: translateY(-1px);
+}
+
+.contactPhone:active {
+  color: #FF8C5A;
+  transform: translateY(0);
+}
+
+.contactEmail {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4A90E2;
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 144, 226, 0.5);
+  text-underline-offset: 3px;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.contactEmail:hover {
+  color: #FF6B35;
+  text-decoration-color: #FF6B35;
+  text-decoration-thickness: 2px;
+  transform: translateY(-1px);
+}
+
+.contactEmail:active {
+  color: #FF8C5A;
+  transform: translateY(0);
 }
 
 .contactSvgText {
@@ -801,5 +862,11 @@
 
   .contactSvgText {
     font-size: 12px;
+  }
+
+  .contactAddress,
+  .contactPhone,
+  .contactEmail {
+    font-size: 14px;
   }
 }

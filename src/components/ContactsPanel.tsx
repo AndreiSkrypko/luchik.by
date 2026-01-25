@@ -171,10 +171,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   />
                 </div>
                 <div className={styles.contactInfo}>
-                  <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.contactSvgText}>
-                    <text x="0" y="20" fill="#777777" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="500">Замковая, 4</text>
-                    <text x="0" y="40" fill="#777777" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="500">+445523267</text>
-                  </svg>
+                  <div className={styles.contactAddress}>Замковая, 4</div>
+                  <a href="tel:+375445523267" className={styles.contactPhone}>+375445523267</a>
                 </div>
               </div>
               <div className={styles.contactItem}>
@@ -189,10 +187,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   />
                 </div>
                 <div className={styles.contactInfo}>
-                  <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.contactSvgText}>
-                    <text x="0" y="20" fill="#777777" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="500">Кооперативная, 56</text>
-                    <text x="0" y="40" fill="#777777" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="500">298667663</text>
-                  </svg>
+                  <div className={styles.contactAddress}>Кооперативная, 56</div>
+                  <a href="tel:+375298667663" className={styles.contactPhone}>+375298667663</a>
                 </div>
               </div>
               <div className={styles.contactItem}>
@@ -207,9 +203,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                   />
                 </div>
                 <div className={styles.contactInfo}>
-                  <svg width="200" height="32" viewBox="0 0 200 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.contactSvgText}>
-                    <text x="0" y="24" fill="#777777" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="500">luchik@.com</text>
-                  </svg>
+                  <a href="mailto:luchik@.com" className={styles.contactEmail}>luchik@.com</a>
                 </div>
               </div>
             </div>
