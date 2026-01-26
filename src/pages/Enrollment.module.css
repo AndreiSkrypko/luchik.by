@@ -450,6 +450,18 @@
   gap: 18px;
 }
 
+@media (max-width: 768px) {
+  .enrollmentForm {
+    padding-top: 0; /* Убираем верхний padding, так как заголовок уже внутри */
+  }
+}
+
+@media (max-width: 768px) {
+  .enrollmentForm {
+    padding-top: 0; /* Убираем верхний padding, так как заголовок уже внутри */
+  }
+}
+
 .formGroup {
   display: flex;
   flex-direction: column;
@@ -598,9 +610,10 @@
 /* Мобильная версия */
 @media (max-width: 768px) {
   .enrollmentMain {
-    padding: 0 12px 30px;
+    padding: 10px 12px 30px;
     margin-top: 0;
     background: transparent !important; /* Убираем белый фон, чтобы он не поднимался */
+    min-height: auto; /* Убираем минимальную высоту для компактности */
   }
 
   .titleSection {
@@ -608,8 +621,9 @@
     margin-top: -280px !important; /* Как в галерее */
     padding: 0 20px;
     z-index: 12;
-    margin-bottom: -60px !important; /* Уменьшаем отступ до формы еще больше */
+    margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
+    display: none !important; /* Скрываем заголовок, он будет в форме */
   }
 
   .enrollmentTitle {
@@ -679,8 +693,9 @@
     top: 0;
     margin-top: 15px !important; /* Как в галерее */
     padding: 0 15px;
-    margin-bottom: -50px !important; /* Уменьшаем отступ до формы еще больше */
+    margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
+    display: none !important; /* Скрываем заголовок, он будет в форме */
   }
   
   .formColumn {
@@ -1209,9 +1224,22 @@
   .formColumn {
     position: static;
     order: 1 !important; /* Форма идет сразу после заголовка */
-    margin-top: -40px !important; /* Поднимаем форму еще выше */
+    margin-top: 0 !important; /* Форма под хедером */
     width: 100%;
     padding: 0 20px;
+  }
+
+  .formSection::before {
+    content: 'Запись на подготовку к школе';
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #4665a1;
+    text-align: center;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    padding-top: 20px;
   }
 
   .titleSection {
@@ -1343,7 +1371,7 @@
 
   .formColumn {
     gap: 0;
-    margin-top: -50px !important; /* Поднимаем форму еще выше */
+    margin-top: 0 !important; /* Форма под хедером */
     order: 1 !important; /* Форма идет сразу после заголовка */
     width: 100%;
     padding: 0 15px;
@@ -1351,6 +1379,19 @@
   
   .formSection {
     margin-top: 0 !important; /* Форма сразу после заголовка */
+  }
+
+  .formSection::before {
+    font-size: 24px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  .enrollmentForm {
+    padding-top: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 20px;
   }
 
   .titleSection {
