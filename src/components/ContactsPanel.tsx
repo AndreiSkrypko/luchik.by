@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './ContactsPanel.module.css';
 
 interface ContactsPanelProps {
@@ -9,6 +11,7 @@ interface ContactsPanelProps {
 
 const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -78,6 +81,20 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.log('Successfully loaded image:', e.currentTarget.src);
+  };
+
+  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // На десктопе открываем форму записи, на мобильных - звоним
+    if (!isMobile) {
+      e.preventDefault();
+      setIsFormOpen(true);
+    }
+    // На мобильных оставляем стандартное поведение (звонок)
+  };
+
+  const handleFormSuccess = () => {
+    setIsFormOpen(false);
+    navigate('/thank-you');
   };
 
   return (
@@ -172,7 +189,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                 </div>
                 <div className={styles.contactInfo}>
                   <div className={styles.contactAddress}>Замковая, 4</div>
-                  <a href="tel:+375445523267" className={styles.contactPhone}>+375445523267</a>
+                  <a href="tel:+375445523267" className={styles.contactPhone} onClick={handlePhoneClick}>+375445523267</a>
                 </div>
               </div>
               <div className={styles.contactItem}>
@@ -188,7 +205,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                 </div>
                 <div className={styles.contactInfo}>
                   <div className={styles.contactAddress}>Кооперативная, 56</div>
-                  <a href="tel:+375298667663" className={styles.contactPhone}>+375298667663</a>
+                  <a href="tel:+375298667663" className={styles.contactPhone} onClick={handlePhoneClick}>+375298667663</a>
                 </div>
               </div>
               <div className={styles.contactItem}>
@@ -309,6 +326,19 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
           </div>
         </div>
       </div>
+
+      {/* Модальное окно с формой записи */}
+      <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+        <DialogContent className={styles.dialogContent}>
+          <DialogHeader>
+            <DialogTitle className={styles.dialogTitle}>Оставить заявку</DialogTitle>
+            <DialogDescription className={styles.dialogDescription}>
+              Заполните форму, и мы свяжемся с вами в ближайшее время
+            </DialogDescription>
+          </DialogHeader>
+          <EnrollmentForm onSuccess={handleFormSuccess} courseName="занятия в детском центре" compact={true} />
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
