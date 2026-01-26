@@ -170,11 +170,11 @@ const Footer = ({ onContactsClick }: FooterProps) => {
             <div className={styles.footerNavRight}>
               <div className={styles.footerAddress}>
                 <div>Замковая, 4</div>
-                <div>+37544 552-32-67</div>
+                <a href="tel:+375445523267" className={styles.footerPhone}>+37544 552-32-67</a>
               </div>
               <div className={styles.footerAddress}>
                 <div>Кооперативная, 36</div>
-                <div>+37529 866-76-63</div>
+                <a href="tel:+375298667663" className={styles.footerPhone}>+37529 866-76-63</a>
               </div>
               <div className={styles.footerSchedule}>
                 <div>Пн-Пт с 9.00 до 20.00</div>

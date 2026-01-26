@@ -9,14 +9,14 @@
   overflow-y: visible;
   background: #ffffff;
   background-image: 
-    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(450px), #ffffff calc(450px));
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
 }
 
 /* После туч везде белый фон */
 .trainersPage::after {
   content: '';
   position: absolute;
-  top: 450px;
+  top: 1400px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -46,11 +46,11 @@
     overflow-y: visible;
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(450px), #ffffff calc(450px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
   }
   
   .trainersPage::after {
-    top: 450px;
+    top: 1400px;
   }
 }
 
@@ -59,11 +59,11 @@
   .trainersPage {
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(400px), #ffffff calc(400px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1200px), #ffffff calc(1200px));
   }
   
   .trainersPage::after {
-    top: 400px;
+    top: 1200px;
   }
 }
 
@@ -80,7 +80,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 210px;
+    height: 600px;
     background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
     z-index: 0;
     pointer-events: none;
@@ -100,7 +100,7 @@
 /* Маленькие мобильные */
 @media (max-width: 480px) {
   .trainersPage::before {
-    height: 190px;
+    height: 500px;
   }
 }
   
