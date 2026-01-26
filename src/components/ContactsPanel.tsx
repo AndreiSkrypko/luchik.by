@@ -140,14 +140,14 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
         <div className={styles.contactsPanelContent}>
           <div className={styles.contactsFrame}>
             <svg
-              width="291"
-              height="225"
-              viewBox="0 0 291 225"
+              width="350"
+              height="280"
+              viewBox="0 0 350 280"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={styles.contactsFrameImage}
             >
-              <rect opacity="0.65" width="291" height="225" rx="22" fill="white" />
+              <rect opacity="0.65" width="350" height="280" rx="22" fill="white" />
             </svg>
             <img
               src="/img/contacts/cow.webp"
@@ -218,7 +218,6 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
           onError={handleImageError}
           onLoad={handleImageLoad}
         />
-        <div className={styles.contactsSocialsTitle}>Мы в соцсетях</div>
         <div className={styles.contactsSocials}>
           <div className={styles.contactsSocialItem}>
             <div className={styles.contactsSocialIconContainer}>
