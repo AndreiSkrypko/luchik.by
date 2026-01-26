@@ -913,6 +913,10 @@
   .contactsSocialUsername {
     display: none;
   }
+
+  .contactsScheduleFrame {
+    bottom: 1cm !important;
+  }
 }
 
 /* Маленькие мобильные (до 480px) */
@@ -1062,5 +1066,9 @@
 
   .contactsSocialUsername {
     display: none;
+  }
+
+  .contactsScheduleFrame {
+    bottom: 0.8cm !important;
   }
 }
