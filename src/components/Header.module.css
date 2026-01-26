@@ -5,9 +5,17 @@
   min-height: 520px;
   background: transparent;
   overflow: visible;
+  overflow-x: visible;
   padding: 20px 0 0;
   padding-bottom: 0;
   z-index: auto;
+}
+
+@media (max-width: 768px) {
+  .header {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
 }
 
 .headerBackground {
@@ -19,6 +27,13 @@
   overflow: visible;
   width: 100%;
   z-index: var(--z-bg);
+}
+
+@media (max-width: 768px) {
+  .headerBackground {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
 }
 
 /* Облака */
@@ -608,6 +623,7 @@
     min-height: 120px;
     padding: 10px 0 0;
     overflow: visible !important;
+    overflow-x: visible !important; /* Разрешаем горизонтальный скролл для облаков */
     background: transparent;
     position: relative;
     z-index: auto;
@@ -615,6 +631,7 @@
 
   .headerBackground {
     overflow: visible !important;
+    overflow-x: visible !important; /* Разрешаем горизонтальный скролл для облаков */
     background: transparent;
     z-index: auto;
   }
@@ -657,13 +674,15 @@
     bottom: -120px;
     min-height: 180px;
     opacity: 1;
-    left: 50%;
-    right: auto;
-    width: calc(100% + 40px);
-    transform: translateX(-50%);
+    left: -40px;
+    right: -40px;
+    width: calc(100% + 80px);
+    max-width: none;
+    transform: none;
     display: block;
     z-index: var(--z-bg);
     background: transparent;
+    overflow: visible;
   }
 
   .cloudsImage {
@@ -985,12 +1004,14 @@
     min-height: 100px;
     padding: 8px 0 0;
     overflow: visible;
+    overflow-x: visible; /* Разрешаем горизонтальный скролл для облаков */
     background: transparent;
     z-index: auto;
   }
 
   .headerBackground {
     z-index: auto;
+    overflow-x: visible; /* Разрешаем горизонтальный скролл для облаков */
   }
 
   .navTextLink {
@@ -1042,12 +1063,13 @@
     bottom: -100px;
     min-height: 150px;
     opacity: 1;
-    left: -15px;
-    right: -15px;
-    width: calc(100% + 30px);
+    left: -20px;
+    right: -20px;
+    width: calc(100% + 40px);
     display: block;
     z-index: var(--z-bg);
     background: transparent;
+    overflow: visible;
   }
 
   .cloudsImage {

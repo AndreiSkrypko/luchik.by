@@ -5,11 +5,17 @@
   margin: 0;
   position: relative;
   isolation: isolate;
-  overflow-x: hidden;
+  overflow-x: visible;
   overflow-y: visible;
   background: #ffffff;
   background-image: 
     linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
+}
+
+@media (max-width: 768px) {
+  .enrollmentPage {
+    overflow-x: visible;
+  }
 }
 
 /* После туч везде белый фон */
@@ -72,6 +78,8 @@
   .enrollmentPage {
     background: #ffffff !important;
     background-image: none !important;
+    overflow-x: visible; /* Разрешаем горизонтальный скролл для облаков */
+    overflow-y: auto;
   }
   
   .enrollmentPage::before {
@@ -84,11 +92,6 @@
   .enrollmentPage > * {
     position: relative;
     z-index: 1;
-  }
-  
-  .enrollmentPage {
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 }
 
@@ -157,6 +160,27 @@
   padding-bottom: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
+}
+
+/* Фиксируем позицию заголовка на средних экранах (между мобильными и планшетами) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .titleSection {
+    margin-top: -280px !important;
+    display: block !important;
+    position: relative;
+    z-index: 12;
+  }
+}
+
+/* Фиксируем позицию заголовка для промежуточных размеров экрана */
+@media (min-width: 480px) and (max-width: 600px) {
+  .titleSection {
+    margin-top: -280px !important;
+    display: block !important;
+    position: relative;
+    z-index: 12;
+    padding: 0 20px;
+  }
 }
 
 .enrollmentTitle {
@@ -452,13 +476,32 @@
 
 @media (max-width: 768px) {
   .enrollmentForm {
-    padding-top: 0; /* Убираем верхний padding, так как заголовок уже внутри */
+    padding: 16px !important; /* Уменьшаем padding для компактности */
+    gap: 14px !important;
   }
-}
 
-@media (max-width: 768px) {
-  .enrollmentForm {
-    padding-top: 0; /* Убираем верхний padding, так как заголовок уже внутри */
+  .formGroup {
+    gap: 6px !important;
+  }
+
+  .formLabel {
+    font-size: 14px !important;
+  }
+
+  .formInput,
+  .formTextarea {
+    font-size: 15px !important;
+    padding: 10px 14px !important;
+  }
+
+  .formTextarea {
+    min-height: 80px !important;
+  }
+
+  .submitButton {
+    font-size: 16px !important;
+    padding: 12px 20px !important;
+    margin-top: 4px !important;
   }
 }
 
@@ -530,14 +573,15 @@
 /* Планшеты */
 @media (min-width: 769px) and (max-width: 1024px) {
   .enrollmentMain {
-    padding: 100px 15px 40px;
-    margin-top: 210px;
+    padding: 20px 15px 40px;
+    margin-top: 150px;
   }
 
   .titleSection {
     margin-top: -600px;
     padding: 0 30px;
     margin-bottom: 8px;
+    display: block !important; /* Показываем заголовок на планшетах */
   }
 
   .enrollmentTitle {
@@ -623,7 +667,7 @@
     z-index: 12;
     margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
-    display: none !important; /* Скрываем заголовок, он будет в форме */
+    display: block !important; /* Показываем заголовок на мобильных */
   }
 
   .enrollmentTitle {
@@ -695,7 +739,7 @@
     padding: 0 15px;
     margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
-    display: none !important; /* Скрываем заголовок, он будет в форме */
+    display: block !important; /* Показываем заголовок на маленьких мобильных */
   }
   
   .formColumn {
@@ -1134,6 +1178,15 @@
 
   .formColumn {
     top: 100px;
+    margin-top: -100px !important; /* Поднимаем форму выше на планшетах */
+  }
+
+  .formSection::before {
+    display: none !important; /* Убираем дублирующий заголовок */
+  }
+
+  .enrollmentForm {
+    padding-top: 20px !important;
   }
 
   .titleSection {
@@ -1224,22 +1277,13 @@
   .formColumn {
     position: static;
     order: 1 !important; /* Форма идет сразу после заголовка */
-    margin-top: 0 !important; /* Форма под хедером */
+    margin-top: -50px !important; /* Поднимаем форму, но не перекрываем хедер */
     width: 100%;
     padding: 0 20px;
   }
 
   .formSection::before {
-    content: 'Запись на подготовку к школе';
-    display: block;
-    font-family: 'Nunito', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: #4665a1;
-    text-align: center;
-    margin: 0 0 20px;
-    line-height: 1.2;
-    padding-top: 20px;
+    display: none !important; /* Убираем дублирующий заголовок */
   }
 
   .titleSection {
@@ -1371,7 +1415,7 @@
 
   .formColumn {
     gap: 0;
-    margin-top: 0 !important; /* Форма под хедером */
+    margin-top: -50px !important; /* Поднимаем форму, но не перекрываем хедер */
     order: 1 !important; /* Форма идет сразу после заголовка */
     width: 100%;
     padding: 0 15px;
@@ -1382,16 +1426,35 @@
   }
 
   .formSection::before {
-    font-size: 24px;
-    margin-bottom: 16px;
-    padding-top: 16px;
+    display: none !important; /* Убираем дублирующий заголовок */
   }
 
   .enrollmentForm {
-    padding-top: 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 20px;
+    padding: 14px !important; /* Уменьшаем padding для компактности */
+    gap: 12px !important;
+  }
+
+  .formGroup {
+    gap: 5px !important;
+  }
+
+  .formLabel {
+    font-size: 13px !important;
+  }
+
+  .formInput,
+  .formTextarea {
+    font-size: 14px !important;
+    padding: 9px 12px !important;
+  }
+
+  .formTextarea {
+    min-height: 70px !important;
+  }
+
+  .submitButton {
+    font-size: 15px !important;
+    padding: 11px 18px !important;
   }
 
   .titleSection {
