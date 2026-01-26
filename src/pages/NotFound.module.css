@@ -9,8 +9,21 @@
   overflow-y: visible;
   background: #ffffff;
   background-image: 
-    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(450px), #ffffff calc(450px));
   display: flex;
+}
+
+/* После туч везде белый фон */
+.notFoundPage::after {
+  content: '';
+  position: absolute;
+  top: 450px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Глобальный фон-слой (картинка) — всегда под контентом */
@@ -41,7 +54,11 @@
     overflow-y: visible;
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(450px), #ffffff calc(450px));
+  }
+  
+  .notFoundPage::after {
+    top: 450px;
   }
 }
 
@@ -50,7 +67,11 @@
   .notFoundPage {
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(320px), #ffffff calc(320px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(400px), #ffffff calc(400px));
+  }
+  
+  .notFoundPage::after {
+    top: 400px;
   }
 }
 

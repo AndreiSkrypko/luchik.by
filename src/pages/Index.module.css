@@ -9,7 +9,20 @@
   overflow-y: visible;
   background: #ffffff;
   background-image: 
-    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
+}
+
+/* После туч везде белый фон - начинается после карточек преимуществ */
+.page::after {
+  content: '';
+  position: absolute;
+  top: 1400px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Глобальный фон-слой (картинка) — всегда под контентом */
@@ -39,7 +52,11 @@
     overflow-y: visible;
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(380px), #ffffff calc(380px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
+  }
+  
+  .page::after {
+    top: 1400px;
   }
 }
 
@@ -48,7 +65,11 @@
   .page {
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(320px), #ffffff calc(320px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1200px), #ffffff calc(1200px));
+  }
+  
+  .page::after {
+    top: 1200px;
   }
 }
 
