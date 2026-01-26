@@ -8,15 +8,16 @@
   overflow-x: hidden;
   overflow-y: visible;
   background: #ffffff;
+  /* Градиент покрывает тучи (до ~800px), затем белый фон до футера */
   background-image: 
-    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
+    linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
 }
 
-/* После туч везде белый фон */
+/* После градиента везде белый фон */
 .galleryPage::after {
   content: '';
   position: absolute;
-  top: 1400px;
+  top: 800px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -46,11 +47,11 @@
     overflow-y: visible;
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1400px), #ffffff calc(1400px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
   }
   
   .galleryPage::after {
-    top: 1400px;
+    top: 800px;
   }
 }
 
@@ -59,11 +60,11 @@
   .galleryPage {
     background: #ffffff;
     background-image: 
-      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(1200px), #ffffff calc(1200px));
+      linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
   }
   
   .galleryPage::after {
-    top: 1200px;
+    top: 800px;
   }
 }
 
@@ -209,6 +210,17 @@
   .galleryDescription {
     font-size: 15px;
     line-height: 1.4;
+  }
+}
+
+/* Уменьшаем отступ до футера на странице галереи */
+.galleryPage :global(.footerDivider) {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .galleryPage :global(.footerDivider) {
+    margin-top: 40px;
   }
 }
 
