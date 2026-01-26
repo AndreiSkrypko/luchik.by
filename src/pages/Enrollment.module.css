@@ -543,6 +543,7 @@
 
   .persuasiveContent {
     margin-top: 0;
+    display: none !important; /* Скрываем контент с преимуществами на мобильных */
   }
 
   .textContent {
@@ -597,16 +598,17 @@
 /* Мобильная версия */
 @media (max-width: 768px) {
   .enrollmentMain {
-    padding: 90px 12px 30px;
-    margin-top: 150px;
+    padding: 0 12px 30px;
+    margin-top: 0;
+    background: transparent !important; /* Убираем белый фон, чтобы он не поднимался */
   }
 
   .titleSection {
     position: relative;
-    margin-top: -250px !important; /* Опускаем заголовок ниже */
+    margin-top: -280px !important; /* Как в галерее */
     padding: 0 20px;
     z-index: 12;
-    margin-bottom: 8px;
+    margin-bottom: -60px !important; /* Уменьшаем отступ до формы еще больше */
     cursor: pointer; /* Показываем, что заголовок кликабельный */
   }
 
@@ -623,6 +625,7 @@
 
   .persuasiveContent {
     margin-top: 0;
+    display: none !important; /* Скрываем контент с преимуществами на мобильных */
   }
 
   .textContent {
@@ -666,15 +669,17 @@
 
 @media (max-width: 480px) {
   .enrollmentMain {
-    margin-top: 80px; /* Уменьшаем отступ сверху */
+    margin-top: 0; /* Заголовок сразу под хедером */
+    padding-top: 0;
+    background: transparent !important; /* Убираем белый фон, чтобы он не поднимался */
   }
 
   .titleSection {
     position: relative;
     top: 0;
-    margin-top: -200px !important; /* Опускаем заголовок ниже на маленьких мобильных */
+    margin-top: 15px !important; /* Как в галерее */
     padding: 0 15px;
-    margin-bottom: 20px; /* Увеличиваем отступ снизу */
+    margin-bottom: -50px !important; /* Уменьшаем отступ до формы еще больше */
     cursor: pointer; /* Показываем, что заголовок кликабельный */
   }
   
@@ -699,6 +704,7 @@
 
   .persuasiveContent {
     margin-top: 0;
+    display: none !important; /* Скрываем контент с преимуществами на мобильных */
   }
 
   .textContent {
@@ -1177,22 +1183,35 @@
 @media (max-width: 768px) {
   .contentWrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoColumn {
+    order: 2; /* Информация идет после формы (но скрыта) */
+    display: contents; /* Позволяет дочерним элементам участвовать в порядке родителя */
+  }
+
+  .titleSection {
+    order: 0 !important; /* Заголовок идет первым, выносим из infoColumn */
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+    margin-top: 0 !important;
+  }
+
+  .persuasiveContent {
+    order: 3; /* Контент идет последним (но скрыт) */
   }
 
   .formColumn {
     position: static;
-    order: 2; /* Форма идет после заголовка и информации */
-    margin-top: 0 !important; /* Убираем отрицательный margin на мобильных */
-  }
-
-  .infoColumn {
-    order: 1; /* Информация идет после заголовка */
-  }
-  
-  .titleSection {
-    order: 0; /* Заголовок идет первым */
+    order: 1 !important; /* Форма идет сразу после заголовка */
+    margin-top: -40px !important; /* Поднимаем форму еще выше */
+    width: 100%;
+    padding: 0 20px;
   }
 
   .titleSection {
@@ -1309,16 +1328,37 @@
 @media (max-width: 480px) {
   .contentWrapper {
     padding: 0 15px;
-    gap: 30px;
+    gap: 0;
+  }
+
+  .infoColumn {
+    display: contents; /* Позволяет дочерним элементам участвовать в порядке родителя */
+  }
+
+  .titleSection {
+    order: 0 !important;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
   }
 
   .formColumn {
     gap: 0;
-    margin-top: 0 !important; /* Убираем отрицательный margin на маленьких мобильных */
+    margin-top: -50px !important; /* Поднимаем форму еще выше */
+    order: 1 !important; /* Форма идет сразу после заголовка */
+    width: 100%;
+    padding: 0 15px;
   }
   
   .formSection {
-    margin-top: 30px !important; /* Увеличиваем отступ перед формой */
+    margin-top: 0 !important; /* Форма сразу после заголовка */
+  }
+
+  .titleSection {
+    padding: 16px 15px 10px;
+  }
+
+  .persuasiveContent {
+    order: 2; /* Контент идет последним (но скрыт) */
   }
 
   .titleSection {
