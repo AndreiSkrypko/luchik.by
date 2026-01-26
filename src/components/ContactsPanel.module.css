@@ -1,31 +1,36 @@
 /* Панель контактов */
 .contactsOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   background: rgba(0, 0, 0, 0.4);
-  z-index: var(--z-contacts-overlay);
+  z-index: var(--z-contacts-overlay) !important;
   animation: fadeIn 0.3s ease;
+  margin: 0 !important;
 }
 
 .contactsPanel {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
   width: 450px;
   max-width: 90vw;
   height: 100vh;
   background: linear-gradient(180deg, #F0F9FF 0%, #E5F5FF 30%, #F0F9FF 60%, #ffffff 100%);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-  z-index: var(--z-contacts-panel);
+  z-index: var(--z-contacts-panel) !important;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   animation: slideInBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  margin: 0 !important;
+  transform: none !important;
 }
 
 .contactsPanel::before {
@@ -779,8 +784,16 @@
 /* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
   .contactsPanel {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: auto !important;
     width: 100vw;
     max-width: 100vw;
+    z-index: var(--z-contacts-panel) !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
   .contactsCloseButton {

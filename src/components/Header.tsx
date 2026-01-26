@@ -43,10 +43,15 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
   };
 
   const handleContactsClick = () => {
-    if (onContactsClick) {
-      onContactsClick();
-    }
+    // Закрываем меню сначала
     closeMobileMenu();
+    // Затем открываем панель контактов с небольшой задержкой
+    // чтобы меню успело закрыться
+    setTimeout(() => {
+      if (onContactsClick) {
+        onContactsClick();
+      }
+    }, 150);
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

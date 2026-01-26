@@ -725,6 +725,7 @@
     height: 44px;
     visibility: visible !important;
     opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
   .mobileMenuButton span {
