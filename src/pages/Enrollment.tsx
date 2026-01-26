@@ -1,12 +1,23 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './Enrollment.module.css';
 
 const Enrollment = () => {
   const navigate = useNavigate();
+  const [isContactsOpen, setIsContactsOpen] = useState(false);
+
+  const toggleContacts = () => {
+    setIsContactsOpen(!isContactsOpen);
+  };
+
+  const closeContacts = () => {
+    setIsContactsOpen(false);
+  };
 
   const handleTitleClick = () => {
     // Проверяем, что мы на мобильном устройстве
@@ -20,7 +31,7 @@ const Enrollment = () => {
 
   return (
     <div className={styles.enrollmentPage}>
-      <Header />
+      <Header onContactsClick={toggleContacts} />
       <main>
         <div className={styles.enrollmentMain}>
           {/* Контейнер с двумя колонками */}
@@ -197,7 +208,8 @@ const Enrollment = () => {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer onContactsClick={toggleContacts} />
+      <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
       <ScrollToTop />
     </div>
   );
