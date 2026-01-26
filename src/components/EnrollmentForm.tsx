@@ -97,6 +97,7 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
 
   return (
     <form className={`${styles.enrollmentForm} ${compact ? styles.compactForm : ''}`} onSubmit={handleSubmit}>
+      <h2 className={styles.formTitle}>Запись на подготовку к школе</h2>
       <div className={styles.formGroup}>
         <label htmlFor="fullName" className={styles.formLabel}>
           Имя и фамилия ребёнка *

@@ -166,7 +166,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
   .titleSection {
     margin-top: -280px !important;
-    display: block !important;
+    display: none !important; /* Скрываем заголовок на средних мобильных */
     position: relative;
     z-index: 12;
   }
@@ -176,7 +176,7 @@
 @media (min-width: 480px) and (max-width: 600px) {
   .titleSection {
     margin-top: -280px !important;
-    display: block !important;
+    display: none !important; /* Скрываем заголовок на промежуточных размерах */
     position: relative;
     z-index: 12;
     padding: 0 20px;
@@ -667,7 +667,7 @@
     z-index: 12;
     margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
-    display: block !important; /* Показываем заголовок на мобильных */
+    display: none !important; /* Скрываем заголовок на мобильных */
   }
 
   .enrollmentTitle {
@@ -739,7 +739,7 @@
     padding: 0 15px;
     margin-bottom: 0 !important;
     cursor: pointer; /* Показываем, что заголовок кликабельный */
-    display: block !important; /* Показываем заголовок на маленьких мобильных */
+    display: none !important; /* Скрываем заголовок на маленьких мобильных */
   }
   
   .formColumn {
@@ -1268,6 +1268,7 @@
     margin-bottom: 20px !important;
     position: relative !important;
     margin-top: 0 !important;
+    display: none !important; /* Скрываем заголовок на мобильных */
   }
 
   .persuasiveContent {
@@ -1277,7 +1278,7 @@
   .formColumn {
     position: static;
     order: 1 !important; /* Форма идет сразу после заголовка */
-    margin-top: -50px !important; /* Поднимаем форму, но не перекрываем хедер */
+    margin-top: -30px !important; /* Опускаем форму ниже, чтобы не закрывала хедер на мобильных */
     width: 100%;
     padding: 0 20px;
   }
@@ -1411,11 +1412,12 @@
     order: 0 !important;
     margin-bottom: 16px !important;
     margin-top: 0 !important;
+    display: none !important; /* Скрываем заголовок на маленьких мобильных */
   }
 
   .formColumn {
     gap: 0;
-    margin-top: -50px !important; /* Поднимаем форму, но не перекрываем хедер */
+    margin-top: -20px !important; /* Опускаем форму ниже, чтобы не закрывала хедер на маленьких мобильных */
     order: 1 !important; /* Форма идет сразу после заголовка */
     width: 100%;
     padding: 0 15px;

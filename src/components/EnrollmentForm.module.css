@@ -8,6 +8,17 @@
   gap: 24px;
 }
 
+.formTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  display: none; /* Скрыт по умолчанию */
+}
+
 .formGroup {
   display: flex;
   flex-direction: column;
@@ -119,6 +130,13 @@
     gap: 20px;
   }
 
+  .formTitle {
+    display: block; /* Показываем заголовок на мобильных */
+    font-size: 28px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
   .formLabel {
     font-size: 15px;
   }
@@ -155,5 +173,13 @@
   .compactForm .submitButton {
     font-size: 14px !important;
     padding: 9px 18px !important;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .formTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 }
