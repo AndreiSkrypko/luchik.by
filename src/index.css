@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
+/* Fonts are loaded in index.html with optimization */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -140,6 +139,19 @@
     /* Минимальный размер шрифта для предотвращения авто-зума на iOS */
     font-size: 16px;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Предотвращение layout shift для изображений */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Оптимизация рендеринга */
+  * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

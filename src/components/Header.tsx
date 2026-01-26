@@ -269,7 +269,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
             width={1480}
             height={338}
             className={styles.cloudsImage}
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
             decoding="async"
           />
         </div>
@@ -318,7 +319,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
             width={100}
             height={100}
             className={styles.sun}
-            loading="lazy"
+            loading="eager"
+            fetchPriority="low"
             decoding="async"
           />
         </div>

@@ -44,8 +44,7 @@
   display: block;
   opacity: 1;
   animation: bigCloudsDrift 20s ease-in-out infinite;
-  /* Оптимизация загрузки фона */
-  loading: lazy;
+  /* Оптимизация рендеринга */
   image-rendering: -webkit-optimize-contrast;
 }
 
@@ -77,8 +76,7 @@
   display: block;
   animation: sunGlow 8s ease-in-out infinite;
   filter: drop-shadow(0 0 40px rgba(255, 200, 0, 0.25));
-  /* Оптимизация загрузки */
-  loading: lazy;
+  /* Оптимизация рендеринга */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
