@@ -377,8 +377,6 @@
 
 .mobileMenuButton {
   display: none;
-  flex-direction: column;
-  gap: 6px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 245, 255, 0.95));
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 107, 53, 0.3);
@@ -389,6 +387,8 @@
   position: fixed;
   top: 20px;
   right: 20px;
+  width: 48px;
+  height: 48px;
   box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   align-items: center;
@@ -407,19 +407,34 @@
 }
 
 .mobileMenuButton span {
-  width: 28px;
-  height: 3px;
+  position: absolute;
+  width: 24px;
+  height: 2.5px;
   background: linear-gradient(90deg, #FF6B35, #FFD700);
-  border-radius: 3px;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 2px;
+  transition: all 0.3s ease;
   display: block;
-  box-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 1px 3px rgba(255, 107, 53, 0.4);
   transform-origin: center;
+  left: 50%;
+  top: 50%;
+}
+
+.mobileMenuButton span:nth-child(1) {
+  transform: translate(-50%, calc(-50% - 9px));
+}
+
+.mobileMenuButton span:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+
+.mobileMenuButton span:nth-child(3) {
+  transform: translate(-50%, calc(-50% + 9px));
 }
 
 .mobileMenuButton:hover span {
   background: linear-gradient(90deg, #FF8C5A, #FFE066);
-  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 1px 4px rgba(255, 107, 53, 0.5);
 }
 
 .mobileMenuButtonOpen {
@@ -429,20 +444,28 @@
 }
 
 .mobileMenuButtonOpen span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-  background: linear-gradient(90deg, #FF6B35, #FFD700);
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.5);
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+  background: linear-gradient(90deg, #FF6B35, #FFD700) !important;
+  box-shadow: 0 1px 4px rgba(255, 107, 53, 0.5) !important;
+  margin: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
 }
 
 .mobileMenuButtonOpen span:nth-child(2) {
-  opacity: 0;
-  transform: scale(0);
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0) !important;
+  margin: 0 !important;
+  visibility: hidden !important;
 }
 
 .mobileMenuButtonOpen span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-  background: linear-gradient(90deg, #FF6B35, #FFD700);
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.5);
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
+  background: linear-gradient(90deg, #FF6B35, #FFD700) !important;
+  box-shadow: 0 1px 4px rgba(255, 107, 53, 0.5) !important;
+  margin: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
 }
 
 .mobileMenuOverlay {
@@ -697,9 +720,51 @@
     top: 16px;
     right: 16px;
     z-index: calc(var(--z-overlay-content) + 1) !important;
-    padding: 12px 10px;
+    padding: 0;
+    width: 44px;
+    height: 44px;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+
+  .mobileMenuButton span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .mobileMenuButton span:nth-child(1) {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+
+  .mobileMenuButton span:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  .mobileMenuButton span:nth-child(3) {
+    transform: translate(-50%, calc(-50% + 8px));
+  }
+
+  .mobileMenuButtonOpen span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+  }
+
+  .mobileMenuButtonOpen span:nth-child(2) {
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    visibility: hidden !important;
+  }
+
+  .mobileMenuButtonOpen span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+  }
+
+  /* Скрываем бургер, когда открыта панель контактов */
+  body[data-contacts-open="true"] .mobileMenuButton,
+  body[data-contacts-open="true"] .mobileMenuButtonOpen {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
   .mobileMenuOverlay {
