@@ -235,8 +235,8 @@
   pointer-events: auto;
   text-decoration: none;
   transition: transform 0.2s ease;
-  padding: 30px;
-  margin: -30px;
+  padding: 0;
+  margin: 0;
   min-width: fit-content;
   min-height: fit-content;
   isolation: isolate;
@@ -539,8 +539,8 @@
   }
 
   .logoLink {
-    padding: 25px;
-    margin: -25px;
+    padding: 0;
+    margin: 0;
   }
 
   .logoLink::before {
@@ -624,8 +624,8 @@
     left: 15px;
     z-index: var(--z-header-ui);
     pointer-events: auto;
-    padding: 25px;
-    margin: -25px;
+    padding: 0;
+    margin: 0;
   }
 
   .logoLink::before {
@@ -1007,8 +1007,8 @@
     left: 12px;
     z-index: 100;
     pointer-events: auto;
-    padding: 20px;
-    margin: -20px;
+    padding: 0;
+    margin: 0;
   }
 
   .logoLink::before {
