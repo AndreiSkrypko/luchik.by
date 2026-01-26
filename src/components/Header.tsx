@@ -133,9 +133,10 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           <img
             src="/img/main/logo.webp"
             alt="Логотип «Лучик»"
-            width={200}
-            height={62}
+            width={520}
+            height={138}
             loading="eager"
+            fetchPriority="high"
           />
         </Link>
       )}
@@ -169,10 +170,11 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
             <img
               src="/img/main/logo.webp"
               alt="Логотип «Лучик»"
-              width={260}
-              height={80}
+              width={520}
+              height={138}
               loading="eager"
               fetchPriority="high"
+              decoding="sync"
             />
           </div>
         </Link>
@@ -297,9 +299,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           <div className={styles.bee}>
             <img
               src="/img/main/bee.webp"
+              width={176}
+              height={186}
               alt="Пчела"
-              width={88}
-              height={92}
             />
           </div>
         )}
@@ -321,8 +323,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           <img
             src="/img/main/sun.webp"
             alt="Солнце"
-            width={100}
-            height={100}
+            width={1200}
+            height={1184}
             className={styles.sun}
             loading="eager"
             fetchPriority="low"

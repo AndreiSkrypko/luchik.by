@@ -150,6 +150,29 @@
     display: block;
   }
 
+  /* Убеждаемся, что Footer всегда виден на всех страницах */
+  footer,
+  .footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: var(--z-content) !important;
+  }
+
+  .footerNavRight,
+  .footerAddress,
+  .footerSchedule,
+  .footerSocials {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .footerAddress,
+  .footerSchedule {
+    display: block !important;
+  }
+
   /* Оптимизация рендеринга */
   * {
     -webkit-font-smoothing: antialiased;

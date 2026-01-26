@@ -15,6 +15,10 @@
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+  /* Обеспечиваем видимость для LCP */
+  visibility: visible;
+  opacity: 1;
+  min-height: 120px; /* Минимальная высота для LCP */
 }
 
 .mainTitleText {
@@ -29,6 +33,11 @@
   letter-spacing: -0.02em;
   max-width: 100%;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Обеспечиваем видимость для LCP */
+  visibility: visible;
+  opacity: 1;
+  /* Предотвращаем layout shift */
+  contain: layout style paint;
 }
 
 /* Подзаголовок текстом и божья коровка */

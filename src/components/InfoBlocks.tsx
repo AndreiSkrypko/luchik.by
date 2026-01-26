@@ -25,6 +25,10 @@ const InfoBlocks = () => {
             src="/img/IMG_20201010_155836_BURST4.jpg"
             alt="Робототехника и программирование"
             className={styles.infoBlockImage}
+            width={570}
+            height={428}
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

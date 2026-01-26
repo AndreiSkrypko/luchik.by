@@ -19,9 +19,9 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
 
   return (
     <div className={styles.hero}>
-      {/* Основной заголовок */}
+      {/* Основной заголовок - LCP элемент */}
       <section className={styles.mainTitleSection}>
-        <h1 className={styles.mainTitleText}>
+        <h1 className={styles.mainTitleText} itemProp="name">
           Детский центр
           <br />
           современных знаний
@@ -38,8 +38,8 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
         <img
           src="/img/main/ladybug.webp"
           alt="Божья коровка"
-          width={80}
-          height={80}
+          width={144}
+          height={144}
           className={styles.ladybug}
           loading="lazy"
           fetchPriority="low"

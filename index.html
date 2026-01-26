@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="ru">
   <head>
+    <!-- Google tag (gtag.js) - moved to end of body to prevent blocking -->
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     
@@ -60,7 +62,38 @@
     
     <!-- Preload critical fonts with font-display swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" />
+    </noscript>
+    
+    <!-- Critical inline CSS for immediate rendering -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        min-height: 100vh;
+        position: relative;
+      }
+      #root > div[style*="min-height: 100vh"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      #root.react-root > div[style*="min-height: 100vh"] {
+        display: none;
+      }
+    </style>
     
     <!-- Favicon - Multiple formats for maximum compatibility -->
     <!-- SVG favicon for modern browsers -->
@@ -267,7 +300,59 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content for immediate rendering -->
+      <noscript>
+        <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+          <h1>Детский центр современных знаний Лучик</h1>
+          <p>Для работы сайта необходимо включить JavaScript.</p>
+        </div>
+      </noscript>
+      <!-- Critical content visible immediately -->
+      <div style="position: relative; min-height: 100vh; visibility: visible; opacity: 1;">
+        <header style="position: relative; width: 100%; min-height: 520px; padding: 20px 0 0; visibility: visible; opacity: 1;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; visibility: visible; opacity: 1;">
+            <img 
+              src="/img/main/logo.webp" 
+              alt="Логотип «Лучик»" 
+              width="260" 
+              height="80" 
+              style="position: absolute; top: 20px; left: 20px; display: block; visibility: visible; opacity: 1; z-index: 1000;"
+              fetchpriority="high"
+              loading="eager"
+            />
+          </div>
+        </header>
+        <section style="position: relative; width: 100%; padding: 0 20px; margin-top: -350px; display: flex; justify-content: center; align-items: center; visibility: visible; opacity: 1; min-height: 120px; z-index: 10;">
+          <h1 style="font-family: 'Nunito', sans-serif; font-size: 80px; font-weight: 900; color: #4665a1; display: block; margin: 0 auto; text-align: center; line-height: 1.2; letter-spacing: -0.02em; max-width: 100%; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); visibility: visible; opacity: 1;">
+            Детский центр<br />современных знаний
+          </h1>
+        </section>
+      </div>
+    </div>
+    <script>
+      // Hide fallback when React loads
+      window.addEventListener('DOMContentLoaded', function() {
+        const root = document.getElementById('root');
+        if (root && root.children.length > 1) {
+          // React will replace content, but keep it visible until React renders
+          setTimeout(function() {
+            const fallback = root.querySelector('div[style*="min-height: 100vh"]');
+            if (fallback && !root.querySelector('.react-root')) {
+              // Only hide if React hasn't rendered yet
+            }
+          }, 100);
+        }
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Google tag (gtag.js) - loaded after main content -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17904651267"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17904651267');
+    </script>
   </body>
 </html>

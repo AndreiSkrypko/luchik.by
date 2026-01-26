@@ -18,6 +18,22 @@ const Footer = ({ onContactsClick }: FooterProps) => {
     setIsFooterMenuOpen(false);
   };
 
+  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Отслеживание конверсии - клик по телефону
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const phoneNumber = e.currentTarget.getAttribute('href')?.replace('tel:', '') || 'unknown';
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17904651267',
+        'event_category': 'phone',
+        'event_label': 'phone_click',
+        'phone_number': phoneNumber,
+        'value': 1.0,
+        'currency': 'BYN'
+      });
+    }
+    // Оставляем стандартное поведение (звонок)
+  };
+
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     // Если мы уже на главной странице, просто скроллим наверх
@@ -76,8 +92,8 @@ const Footer = ({ onContactsClick }: FooterProps) => {
               <img
                 src="/img/footer/logo.webp"
                 alt="Логотип Лучик"
-                width={240}
-                height={80}
+                width={480}
+                height={128}
                 className={styles.footerLogoImage}
                 loading="lazy"
                 decoding="async"
@@ -85,8 +101,8 @@ const Footer = ({ onContactsClick }: FooterProps) => {
             <img
               src="/img/footer/pchela.webp"
               alt="Пчела"
-              width={45}
-              height={45}
+              width={100}
+              height={80}
               className={styles.footerBee}
             />
             <img
@@ -170,11 +186,11 @@ const Footer = ({ onContactsClick }: FooterProps) => {
             <div className={styles.footerNavRight}>
               <div className={styles.footerAddress}>
                 <div>Замковая, 4</div>
-                <a href="tel:+375445523267" className={styles.footerPhone}>+37544 552-32-67</a>
+                <a href="tel:+375445523267" className={styles.footerPhone} onClick={handlePhoneClick}>+37544 552-32-67</a>
               </div>
               <div className={styles.footerAddress}>
                 <div>Кооперативная, 36</div>
-                <a href="tel:+375298667663" className={styles.footerPhone}>+37529 866-76-63</a>
+                <a href="tel:+375298667663" className={styles.footerPhone} onClick={handlePhoneClick}>+37529 866-76-63</a>
               </div>
               <div className={styles.footerSchedule}>
                 <div>Пн-Пт с 9.00 до 20.00</div>

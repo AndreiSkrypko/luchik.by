@@ -84,6 +84,19 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
   };
 
   const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Отслеживание конверсии - клик по телефону
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const phoneNumber = e.currentTarget.getAttribute('href')?.replace('tel:', '') || 'unknown';
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17904651267',
+        'event_category': 'phone',
+        'event_label': 'phone_click',
+        'phone_number': phoneNumber,
+        'value': 1.0,
+        'currency': 'BYN'
+      });
+    }
+    
     // На десктопе открываем форму записи, на мобильных - звоним
     if (!isMobile) {
       e.preventDefault();
@@ -124,8 +137,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               <img
                 src="/img/main/logo.webp"
                 alt="Логотип «Лучик»"
-                width={200}
-                height={62}
+                width={520}
+                height={138}
                 loading="eager"
               />
             </Link>

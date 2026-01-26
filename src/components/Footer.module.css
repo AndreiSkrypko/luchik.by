@@ -9,8 +9,11 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
   background: #ffffff;
+  /* Убеждаемся, что разделитель всегда виден */
+  visibility: visible;
+  opacity: 1;
 }
 
 .dividerImage {
@@ -30,6 +33,11 @@
   box-sizing: border-box;
   background: #ffffff;
   position: relative;
+  z-index: var(--z-content);
+  /* Убеждаемся, что Footer всегда виден */
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
 .footerContent {
@@ -41,6 +49,9 @@
   padding-bottom: 0;
   position: relative;
   gap: 60px;
+  /* Убеждаемся, что контент Footer всегда виден */
+  visibility: visible;
+  opacity: 1;
 }
 
 .footerLogoLink {
@@ -170,6 +181,9 @@
   gap: 15px;
   position: relative;
   min-width: 220px;
+  /* Убеждаемся, что данные Footer всегда видны */
+  visibility: visible;
+  opacity: 1;
 }
 
 .footerNavDivider {
@@ -296,6 +310,10 @@
   color: #666;
   line-height: 1.6;
   white-space: nowrap;
+  /* Убеждаемся, что адреса всегда видны */
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
 .footerPhone {
@@ -327,6 +345,10 @@
   color: #666;
   line-height: 1.6;
   white-space: nowrap;
+  /* Убеждаемся, что расписание всегда видно */
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
 .footerSocials {
@@ -495,6 +517,9 @@
     margin-left: 0;
     margin-top: 20px;
     align-items: center;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .footerNavDivider {
@@ -509,6 +534,9 @@
   .footerAddress,
   .footerSchedule {
     white-space: normal;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
@@ -647,12 +675,14 @@
     max-width: 100%;
     margin-left: 0;
     padding-left: 0;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-top: 20px;
     gap: 15px;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .footerAddress {
@@ -671,6 +701,9 @@
     max-width: 320px;
     box-sizing: border-box;
     color: #4665a1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .footerPhone {
@@ -714,6 +747,9 @@
     max-width: 320px;
     box-sizing: border-box;
     color: #4665a1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .footerSocials {
@@ -728,7 +764,9 @@
     width: 100%;
     max-width: 320px;
     box-sizing: border-box;
-    display: flex;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .footerGrass {

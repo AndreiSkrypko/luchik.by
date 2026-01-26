@@ -75,6 +75,18 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
     
     try {
       await sendToTelegram(formData);
+      
+      // Отслеживание конверсии - заполнение формы
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17904651267',
+          'event_category': 'form',
+          'event_label': 'enrollment_form_submit',
+          'value': 1.0,
+          'currency': 'BYN'
+        });
+      }
+      
       // Очищаем форму
       setFormData({
         fullName: '',
