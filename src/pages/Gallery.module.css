@@ -75,20 +75,10 @@
   }
   
   .galleryPage::before {
-    content: '';
-    position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 600px;
+    height: 210px;
     background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  .galleryPage > * {
-    position: relative;
-    z-index: 1;
+    opacity: 1;
   }
   
   .galleryPage {
@@ -100,7 +90,7 @@
 /* Маленькие мобильные */
 @media (max-width: 480px) {
   .galleryPage::before {
-    height: 500px;
+    height: 190px;
   }
 }
   

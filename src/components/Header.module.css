@@ -657,9 +657,10 @@
     bottom: -120px;
     min-height: 180px;
     opacity: 1;
-    left: -20px;
-    right: -20px;
+    left: 50%;
+    right: auto;
     width: calc(100% + 40px);
+    transform: translateX(-50%);
     display: block;
     z-index: var(--z-bg);
     background: transparent;
@@ -671,6 +672,7 @@
     background: transparent;
     opacity: 1;
     filter: none;
+    animation: none !important;
   }
 
   .cloudOne {
