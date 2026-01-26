@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
-import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './Enrollment.module.css';
 
@@ -210,7 +209,6 @@ const Enrollment = () => {
       </main>
       <Footer onContactsClick={toggleContacts} />
       <ContactsPanel isOpen={isContactsOpen} onClose={closeContacts} />
-      <ScrollToTop />
     </div>
   );
 };

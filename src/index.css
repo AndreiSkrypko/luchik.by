@@ -173,6 +173,51 @@
     display: block !important;
   }
 
+  /* Исправление для страницы записи: футер внизу с пространством и кнопка справа */
+  .enrollmentPage .footerDivider {
+    margin-top: 200px !important;
+  }
+
+  @media (max-width: 1024px) {
+    .enrollmentPage .footerDivider {
+      margin-top: 120px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .enrollmentPage .footerDivider {
+      margin-top: 60px !important;
+    }
+
+  }
+
+  .enrollmentPage .footer {
+    padding-bottom: 40px !important;
+  }
+
+  .enrollmentPage .scrollToTop {
+    position: fixed !important;
+    right: 30px !important;
+    left: auto !important;
+    bottom: 30px !important;
+  }
+
+  @media (max-width: 768px) {
+    .enrollmentPage .scrollToTop {
+      right: 20px !important;
+      left: auto !important;
+      bottom: 20px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .enrollmentPage .scrollToTop {
+      right: 15px !important;
+      left: auto !important;
+      bottom: 15px !important;
+    }
+  }
+
   /* Оптимизация рендеринга */
   * {
     -webkit-font-smoothing: antialiased;
