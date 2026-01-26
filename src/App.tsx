@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,13 +36,25 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
+// Компонент для автоматического скролла наверх при переходе между страницами
+const ScrollToTopOnRouteChange = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Скроллим наверх при изменении пути (но не при изменении hash)
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [location.pathname]);
+
+  return null;
+};
+
+// Обертка для роутера с автоматическим скроллом
+const AppRouter = () => (
+  <BrowserRouter>
+    <ScrollToTopOnRouteChange />
+    <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
@@ -70,8 +84,16 @@ const App = () => (
           <Route path="/age/10-17" element={<Age10_17 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+    </Routes>
+  </BrowserRouter>
+);
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <AppRouter />
     </TooltipProvider>
   </QueryClientProvider>
 );
