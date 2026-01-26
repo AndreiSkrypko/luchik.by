@@ -163,6 +163,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={styles.contactsFrameImage}
+              preserveAspectRatio="none"
             >
               <rect opacity="0.65" width="350" height="280" rx="22" fill="white" />
             </svg>
@@ -248,8 +249,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                 <img
                   src="/img/socseti/inst.svg"
                   alt="Instagram"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className={styles.contactsSocialIcon}
                   onError={handleImageError}
                   onLoad={handleImageLoad}
@@ -270,8 +271,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                 <img
                   src="/img/socseti/vk.svg"
                   alt="ВКонтакте"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className={styles.contactsSocialIcon}
                   onError={handleImageError}
                   onLoad={handleImageLoad}
@@ -287,8 +288,8 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
                 <img
                   src="/img/socseti/ok.svg"
                   alt="Одноклассники"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className={styles.contactsSocialIcon}
                   onError={handleImageError}
                   onLoad={handleImageLoad}
