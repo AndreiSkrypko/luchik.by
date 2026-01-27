@@ -68,6 +68,10 @@ const ThankYou = () => {
           </div>
         </div>
       </main>
+      {/* Скрытая форма для Google Ads - автоматическое определение конверсии */}
+      <form style={{ display: 'none' }} id="thank-you-form" aria-hidden="true">
+        <input type="hidden" name="conversion" value="thank-you-page" />
+      </form>
       <Footer />
       <ScrollToTop />
       <EnrollmentCard />
