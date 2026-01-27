@@ -9,25 +9,19 @@ import styles from './ThankYou.module.css';
 const ThankYou = () => {
   useEffect(() => {
     // Google Ads conversion tracking
-    // Замените 'AW-CONVERSION_ID' и 'CONVERSION_LABEL' на ваши реальные значения из Google Ads
-    // Формат: 'AW-XXXXXXXXXX/YYYYYYYYYYYYYYYYYYYYYYYY'
-    
+    // Event snippet for "Отправка формы для потенциальных клиентов" conversion page
     const sendConversion = () => {
       // Проверяем наличие gtag
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-          'value': 1.0,
-          'currency': 'BYN'
+          'send_to': 'AW-17904651267/VnyECNSD8-0bEIOYzdlC'
         });
       } else {
         // Если gtag еще не загружен, ждем немного и пробуем снова
         setTimeout(() => {
           if (typeof window !== 'undefined' && (window as any).gtag) {
             (window as any).gtag('event', 'conversion', {
-              'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-              'value': 1.0,
-              'currency': 'BYN'
+              'send_to': 'AW-17904651267/VnyECNSD8-0bEIOYzdlC'
             });
           }
         }, 1000);
