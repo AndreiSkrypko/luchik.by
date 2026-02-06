@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import styles from './TrainerList.module.css';
 
 interface Trainer {
@@ -196,6 +196,10 @@ const TrainerList = () => {
   const trainers = programName 
     ? allTrainers.filter(t => t.program === programName)
     : [];
+  const location = useLocation();
+  // detect class selection for English: /trainers/english/class/3
+  const classMatch = location.pathname.match(/\/trainers\/english\/class\/([1-9])/);
+  const selectedClass = classMatch ? classMatch[1] : null;
 
   const handleTrainerClick = (trainer: Trainer) => {
     if (trainer.external_url) {
@@ -257,6 +261,80 @@ const TrainerList = () => {
     );
   }
 
+  // Special flow for English: choose class 1-9 first
+  if (program === 'english' && !selectedClass) {
+    const classes = Array.from({ length: 9 }, (_, i) => i + 1);
+    return (
+      <section className={styles.trainerListSection}>
+        <div className={styles.trainerListContainer}>
+          <div className={styles.headerSection}>
+            <button className={styles.backButton} onClick={handleBackClick}>
+              ← К выбору тренажера
+            </button>
+            <div className={styles.titleSection}>
+              <h2 className={styles.trainerListTitle}>{programName}</h2>
+            </div>
+          </div>
+          <div className={styles.trainersGrid}>
+            {classes.map((cls) => (
+              <div
+                key={cls}
+                className={styles.trainerCard}
+                onClick={() => navigate(`/trainers/english/class/${cls}`)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className={styles.cardContent}>
+                  <h4 className={styles.cardTitle}>Класс {cls}</h4>
+                  <p className={styles.cardLead}>Тренажёры для {cls}‑го класса</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // If a class is selected, show (placeholder) list of trainers for that class
+  if (program === 'english' && selectedClass) {
+    return (
+      <section className={styles.trainerListSection}>
+        <div className={styles.trainerListContainer}>
+          <div className={styles.headerSection}>
+            <button className={styles.backButton} onClick={() => navigate('/trainers/english')}>
+              ← К выбору класса
+            </button>
+            <div className={styles.titleSection}>
+              <h2 className={styles.trainerListTitle}>Английский — класс {selectedClass}</h2>
+            </div>
+          </div>
+          <div className={styles.trainersGrid}>
+            {/* Пока-заглушки: позже добавим реальные тренажёры для каждого класса */}
+            <div className={styles.trainerCard}>
+              <div className={styles.cardContent}>
+                <h4 className={styles.cardTitle}>Словарные карточки</h4>
+                <p className={styles.cardLead}>Работа со словарным запасом — упражнения и игры</p>
+              </div>
+            </div>
+            <div className={styles.trainerCard}>
+              <div className={styles.cardContent}>
+                <h4 className={styles.cardTitle}>Чтение</h4>
+                <p className={styles.cardLead}>Тексты и задания по чтению для уровня класса</p>
+              </div>
+            </div>
+            <div className={styles.trainerCard}>
+              <div className={styles.cardContent}>
+                <h4 className={styles.cardTitle}>Аудирование</h4>
+                <p className={styles.cardLead}>Короткие аудио‑упражнения на понимание</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Default trainers list for other programs
   return (
     <section className={styles.trainerListSection}>
       <div className={styles.trainerListContainer}>

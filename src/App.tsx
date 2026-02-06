@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Trainers from "./pages/Trainers";
+import English from "./pages/English";
 import Enrollment from "./pages/Enrollment";
 import ThankYou from "./pages/ThankYou";
 import TrainerProgram from "./pages/TrainerProgram";
@@ -59,6 +60,7 @@ const AppRouter = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/trainers" element={<Trainers />} />
+          <Route path="/trainers/english" element={<English />} />
           <Route path="/enrollment" element={<Enrollment />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/trainers/:program" element={<TrainerProgram />} />

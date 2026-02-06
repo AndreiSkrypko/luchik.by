@@ -5,10 +5,10 @@
       ABC
     </text>
   </g>
-  <text x="36" y="120" font-family="Montserrat, sans-serif" font-size="50" font-weight="700" fill="white" opacity="0.95">
+  <text x="36" y="120" font-family="Montserrat, sans-serif" font-size="50" font-weight="700" fill="white" opacity="0.9">
     Английский язык
   </text>
-  <text x="36" y="152" font-family="Montserrat, sans-serif" font-size="18" font-weight="500" fill="rgba(255,255,255,0.85)">
+  <text x="36" y="152" font-family="Montserrat, sans-serif" font-size="18" font-weight="500" fill="rgba(255,255,255,0.75)">
     Тренажёр для развития словарного запаса, чтения и аудирования
   </text>
   <rect x="36" y="170" width="240" height="12" rx="6" fill="rgba(255,255,255,0.22)" />
