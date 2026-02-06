@@ -24,6 +24,14 @@ const programs: Program[] = [
     image: '/img/trainers/mental-arithmetic/multiplication-table.svg',
     route: '/trainers/mental-arithmetic'
   }
+  ,
+  {
+    id: 'english',
+    title: 'Английский язык',
+    description: 'Тренажёр для развития словарного запаса, чтения и аудирования на английском языке',
+    image: '/img/trainers/english/english.svg',
+    route: '/trainers/english'
+  }
 ];
 
 const ProgramCards = () => {

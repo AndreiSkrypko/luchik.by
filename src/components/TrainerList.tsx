@@ -169,12 +169,23 @@ const allTrainers: Trainer[] = [
     program: 'Ментальная арифметика',
     accent_color: '#FF6B35'
   }
+  ,
+  {
+    id: 18,
+    slug: 'english-words',
+    title: 'Английский язык',
+    lead: 'Тренажёр для развития словарного запаса, чтения и аудирования для детей',
+    image: '/img/trainers/english/english.svg',
+    program: 'Английский язык',
+    accent_color: '#4B9CF5'
+  }
 ];
 
 // Маппинг роутов к названиям программ
 const programMap: Record<string, string> = {
   'speed-reading': 'Скорочтение',
   'mental-arithmetic': 'Ментальная арифметика'
+  ,'english': 'Английский язык'
 };
 
 const TrainerList = () => {
