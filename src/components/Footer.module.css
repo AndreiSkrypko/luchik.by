@@ -4,9 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
-  margin-bottom: 40px;
-  padding: 20px;
+  /* Убираем большой внешний отступ и делаем компактный фон вокруг полосы */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px 20px;
   box-sizing: border-box;
   position: relative;
   z-index: var(--z-content);
@@ -440,8 +441,9 @@
 /* Планшеты (до 1024px) */
 @media (max-width: 1024px) {
   .footerDivider {
-    margin-top: 120px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 16px;
   }
 
   .footerContent {
@@ -496,8 +498,9 @@
 /* Средние экраны (до 900px) */
 @media (max-width: 900px) {
   .footerDivider {
-    margin-top: 100px;
-    margin-bottom: 25px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 16px 14px;
   }
 
   .footerContent {
@@ -543,9 +546,9 @@
 /* Мобильная адаптация */
 @media (max-width: 768px) {
   .footerDivider {
-    margin-top: 60px;
-    margin-bottom: 20px;
-    padding: 0 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 12px 20px;
   }
 
   .footer {
