@@ -16,6 +16,7 @@ import FadingText from "./pages/FadingText";
 import SchulteTable from "./pages/SchulteTable";
 import StroopTest from "./pages/StroopTest";
 import FlashWords from "./pages/FlashWords";
+import EnglishFlashcards from "./pages/EnglishFlashcards";
 import DistributeWords from "./pages/DistributeWords";
 import BrainButtons from "./pages/BrainButtons";
 import Prosto from "./pages/Prosto";
@@ -79,6 +80,7 @@ const AppRouter = () => (
           <Route path="/trainers/mental-arithmetic/tricks" element={<Tricks />} />
           <Route path="/trainers/mental-arithmetic/squares" element={<Squares />} />
           <Route path="/trainers/mental-arithmetic/flashcards" element={<Flashcards />} />
+          <Route path="/trainers/languages/english-flashcards" element={<EnglishFlashcards />} />
           <Route path="/age/1-5" element={<Age1_5 />} />
           <Route path="/age/5-10" element={<Age5_10 />} />
           <Route path="/age/10-17" element={<Age10_17 />} />

@@ -169,12 +169,25 @@ const allTrainers: Trainer[] = [
     program: 'Ментальная арифметика',
     accent_color: '#FF6B35'
   }
+  ,
+  // Английские карточки
+  {
+    id: 18,
+    slug: 'english-flashcards',
+    title: 'Английский — карточки',
+    lead: 'Флеш-карточки для изучения английских слов: запоминайте перевод, произношение и примеры использования.',
+    image: '/img/trainers/english/flashcards.svg',
+    program: 'Английский язык',
+    accent_color: '#4F8EF7'
+  }
 ];
 
 // Маппинг роутов к названиям программ
 const programMap: Record<string, string> = {
   'speed-reading': 'Скорочтение',
   'mental-arithmetic': 'Ментальная арифметика'
+  ,
+  'languages': 'Английский язык'
 };
 
 const TrainerList = () => {
