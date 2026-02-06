@@ -189,17 +189,21 @@ const programMap: Record<string, string> = {
 };
 
 const TrainerList = () => {
-  const { program } = useParams<{ program: string }>();
+  const { program, classNumber } = useParams<{ program?: string; classNumber?: string }>();
   const navigate = useNavigate();
-
-  const programName = program ? programMap[program] : null;
+  const location = useLocation();
+  
+  // Detect if we're on English page (either /trainers/english or /trainers/english/class/X)
+  const isEnglishPage = location.pathname.startsWith('/trainers/english');
+  const effectiveProgram = isEnglishPage ? 'english' : program;
+  
+  const programName = effectiveProgram ? programMap[effectiveProgram] : null;
   const trainers = programName 
     ? allTrainers.filter(t => t.program === programName)
     : [];
-  const location = useLocation();
+  
   // detect class selection for English: /trainers/english/class/3
-  const classMatch = location.pathname.match(/\/trainers\/english\/class\/([1-9])/);
-  const selectedClass = classMatch ? classMatch[1] : null;
+  const selectedClass = classNumber || (location.pathname.match(/\/trainers\/english\/class\/([1-9])/)?.[1] ?? null);
 
   const handleTrainerClick = (trainer: Trainer) => {
     if (trainer.external_url) {
@@ -262,7 +266,7 @@ const TrainerList = () => {
   }
 
   // Special flow for English: choose class 1-9 first
-  if (program === 'english' && !selectedClass) {
+  if (effectiveProgram === 'english' && !selectedClass) {
     const classes = Array.from({ length: 9 }, (_, i) => i + 1);
     return (
       <section className={styles.trainerListSection}>
@@ -272,7 +276,7 @@ const TrainerList = () => {
               ← К выбору тренажера
             </button>
             <div className={styles.titleSection}>
-              <h2 className={styles.trainerListTitle}>{programName}</h2>
+              <h2 className={styles.trainerListTitle}>Английский язык</h2>
             </div>
           </div>
           <div className={styles.trainersGrid}>
@@ -296,7 +300,7 @@ const TrainerList = () => {
   }
 
   // If a class is selected, show (placeholder) list of trainers for that class
-  if (program === 'english' && selectedClass) {
+  if (effectiveProgram === 'english' && selectedClass) {
     return (
       <section className={styles.trainerListSection}>
         <div className={styles.trainerListContainer}>

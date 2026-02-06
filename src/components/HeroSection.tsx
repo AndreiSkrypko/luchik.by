@@ -42,7 +42,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
           height={144}
           className={styles.ladybug}
           loading="lazy"
-          fetchPriority="low"
+         
         />
       </section>
 
@@ -60,7 +60,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
             height={82}
             className={styles.ctaButtonImage}
             loading="eager"
-            fetchPriority="high"
+            
           />
           <span className={styles.ctaButtonText}>ОСТАВИТЬ ЗАЯВКУ</span>
         </button>

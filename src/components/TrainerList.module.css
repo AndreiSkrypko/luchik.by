@@ -6,6 +6,18 @@
   z-index: 3;
 }
 
+/* Ensure cards are visible above hero decorations:
+   increase top padding and set z-index to content level */
+.trainerListSection {
+  padding-top: 140px !important;
+  z-index: var(--z-content) !important;
+}
+
+.trainerListContainer {
+  position: relative;
+  z-index: var(--z-content);
+}
+
 .trainerListContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -414,4 +426,7 @@
     height: 100%;
   }
 }
+
+/* DEBUG (temporary) — highlight section and cards to confirm rendering */
+/* DEBUG styles removed */
 

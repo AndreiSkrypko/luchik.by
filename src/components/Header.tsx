@@ -173,7 +173,6 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               width={520}
               height={138}
               loading="eager"
-              fetchPriority="high"
               decoding="sync"
             />
           </div>
@@ -270,16 +269,15 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
 
         {/* Большие тучи по низу шапки */}
         <div className={styles.clouds}>
-          <img
-            src="/img/main/clouds.webp"
-            alt="Тучи"
-            width={1480}
-            height={338}
-            className={styles.cloudsImage}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
+            <img
+              src="/img/main/clouds.webp"
+              alt="Тучи"
+              width={1480}
+              height={338}
+              className={styles.cloudsImage}
+              loading="eager"
+              decoding="async"
+            />
         </div>
 
         {/* Маленькое облако под логотипом */}
@@ -320,16 +318,15 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
 
         {/* Солнце */}
         <div className={styles.sunContainer}>
-          <img
-            src="/img/main/sun.webp"
-            alt="Солнце"
-            width={1200}
-            height={1184}
-            className={styles.sun}
-            loading="eager"
-            fetchPriority="low"
-            decoding="async"
-          />
+            <img
+              src="/img/main/sun.webp"
+              alt="Солнце"
+              width={1200}
+              height={1184}
+              className={styles.sun}
+              loading="eager"
+              decoding="async"
+            />
         </div>
       </div>
     </header>
