@@ -46,12 +46,7 @@ const ProgramCards = () => {
       <div className={styles.programsContainer}>
         <div className={styles.titleSection}>
           <h2 className={styles.programsTitle}>Тренажеры развития</h2>
-          <p className={styles.programsDescription}>
-            Здесь собраны тренажеры, по которым занимаются наши ученики. 
-            Каждый тренажер помогает развивать важные навыки: скорость чтения, 
-            концентрацию внимания, память и математические способности.
-          </p>
-          </div>
+        </div>
         <div className={styles.programsGrid}>
           {programs.map((program) => (
             <div

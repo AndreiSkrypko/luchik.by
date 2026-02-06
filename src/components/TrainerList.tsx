@@ -266,9 +266,6 @@ const TrainerList = () => {
           </button>
           <div className={styles.titleSection}>
             <h2 className={styles.trainerListTitle}>{programName}</h2>
-            <p className={styles.trainerListSubtitle}>
-              Выберите тренажер для начала тренировки
-            </p>
           </div>
         </div>
         <div className={styles.trainersGrid}>
