@@ -41,3 +41,33 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Force-hide outer border on hovered cards to remove orange hairline */
+.trainerCard,
+.programCard {
+  background-clip: padding-box; /* prevent background painting into border */
+}
+
+.trainerCard:hover,
+.programCard:hover,
+.trainerCard:focus,
+.programCard:focus {
+  /* allow components to set hover border color (use accent) */
+  border-color: var(--accent-color, #FF6B35) !important;
+  outline: none !important;
+  box-shadow: 0 12px 40px rgba(70, 101, 161, 0.2);
+}
+
+/* Ensure the accent line is drawn inside card and clipped */
+.trainerCard::before,
+.programCard::before {
+  z-index: 2;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  height: 1px;
+  border-radius: 16px;
+  pointer-events: none;
+  transform-origin: center;
+}

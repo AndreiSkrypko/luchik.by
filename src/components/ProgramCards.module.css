@@ -135,6 +135,7 @@
   border-radius: 20px;
   padding: 40px;
   border: 2px solid #E5F5FF;
+  border-top: 2px solid transparent;
   box-shadow: 0 4px 20px rgba(70, 101, 161, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -147,19 +148,24 @@
 .programCard::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 1px;
   background: #FF6B35;
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  border-radius: 16px;
+  z-index: 10;
+  display: none;
 }
 
 .programCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(70, 101, 161, 0.2);
-  border-color: #FF6B35;
+  /* full orange border on hover */
+  border-color: #FF6B35 !important;
 }
 
 .programCard:hover::before {
