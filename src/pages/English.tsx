@@ -5,6 +5,7 @@ import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
 import InDevelopment from '@/components/InDevelopment';
+import EnglishClassCards from '@/components/EnglishClassCards';
 import styles from './Gallery.module.css';
 
 const English = () => {
@@ -32,6 +33,7 @@ const English = () => {
             </p>
             <InDevelopment />
           </div>
+          <EnglishClassCards />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />
