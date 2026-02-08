@@ -119,6 +119,22 @@
   transform: translateY(-5px);
 }
 
+/* when cloudWrapper is placed inside a direction card, position it relative to the card */
+.directionCard > .cloudWrapper {
+  position: absolute;
+  top: auto;
+  bottom: 140px; /* raised higher from the bottom edge */
+  right: -40px; /* move further outside to the right */
+  z-index: 5;
+  pointer-events: none;
+  clip-path: none;
+}
+
+.directionCard > .cloudWrapper .cloud {
+  width: 110px;
+  opacity: 0.95;
+}
+
 .cardBase {
   width: 100%;
   height: auto;

@@ -17,17 +17,17 @@ const DirectionsSection = () => {
       <div className={styles.directionsContainer}>
         <h2 className={styles.directionsTitle}>Направления обучения</h2>
         <div className={styles.directionsCards}>
-          <div className={styles.cloudWrapper}>
-            <img
-              src="/img/footer/oblako1.webp"
-              alt="Облако"
-              width={80}
-              height={50}
-              className={styles.cloud}
-              onError={handleImageError}
-            />
-          </div>
           <div className={styles.directionCard} onClick={() => handleCardClick('1-5')} style={{ cursor: 'pointer' }}>
+            <div className={styles.cloudWrapper}>
+              <img
+                src="/img/footer/oblako1.webp"
+                alt="Облако"
+                width={80}
+                height={50}
+                className={styles.cloud}
+                onError={handleImageError}
+              />
+            </div>
             <div className={styles.ageTextWrapper}>
               <img
                 src="/img/directions/age-1-5.svg"
