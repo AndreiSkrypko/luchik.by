@@ -94,6 +94,13 @@ const data: Category[] = [
 const EnglishClassCards: React.FC = () => {
   const navigate = useNavigate();
 
+  const getBadgeText = (title: string) => {
+    // keep only letters and spaces, take first letters of up to 2 words
+    const cleaned = title.replace(/[^A-Za-zА-Яа-я\s]/g, '').trim();
+    const parts = cleaned.split(/\s+/).filter(Boolean);
+    return parts.slice(0, 2).map((w) => w[0].toUpperCase()).join('');
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.headerRow}>
@@ -108,12 +115,14 @@ const EnglishClassCards: React.FC = () => {
           <div key={cat.id} className={styles.category}>
             <div className={styles.categoryHeader}>
               <h3 className={styles.categoryTitle}>{cat.title}</h3>
-              <button className={styles.viewAll}>Посмотреть все</button>
             </div>
 
             <div className={styles.itemsGrid}>
               {cat.items.map((it) => (
                 <article key={it.id} className={styles.itemCard}>
+                  <div className={styles.badge} aria-hidden>
+                    {getBadgeText(it.title)}
+                  </div>
                   <div className={styles.itemInner}>
                     <h4 className={styles.itemTitle}>{it.title}</h4>
                     {it.meta && <div className={styles.itemMeta}>{it.meta}</div>}

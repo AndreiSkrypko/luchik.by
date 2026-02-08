@@ -106,6 +106,31 @@
   margin-top: 240px;
 }
 
+/* When cards should sit directly under the gallery title (used for english class page) */
+.cardsUnderTitle {
+  margin-top: -600px;
+  /* make the cards container full-bleed so cards reach the page edge */
+  position: absolute;
+  left: 0;
+  top: 140px; /* adjust to sit under the title area */
+  width: 100vw;
+  max-width: none;
+  padding-left: 0;
+  z-index: calc(var(--z-content) + 1);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cardsUnderTitle {
+    margin-top: -280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsUnderTitle {
+    margin-top: -280px !important;
+  }
+}
+
 .titleSection {
   margin-top: -750px;
   position: relative;
