@@ -7,7 +7,7 @@ const InfoBlocks = () => {
         <div className={styles.infoBlock}>
           <img
             src="/img/cards/first.svg"
-            alt="от 1 года до 12 лет"
+            alt="от 1 до 17 лет"
             className={styles.infoBlockImage}
           />
         </div>
@@ -43,7 +43,7 @@ const InfoBlocks = () => {
       {/* Mobile thesis-style list */}
       <div className={styles.mobileTheses} role="list">
         <ul>
-          <li className={styles.thesisPink}>Для детей 1–12 лет — комплексные занятия и подготовка к школе</li>
+          <li className={styles.thesisPink}>Для детей от 1 до 17 лет — комплексные занятия и подготовка к школе</li>
           <li className={styles.thesisGreen}>Опытные педагоги — логопеды и наставники по STEM-направлениям</li>
           <li className={styles.thesisOrange}>Индивидуальный подход — программы под потребности ребёнка</li>
           <li className={styles.thesisBlue}>Тёплая семейная атмосфера — безопасное и интересное пространство</li>
