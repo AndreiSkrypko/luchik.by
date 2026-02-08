@@ -67,24 +67,22 @@ const TrainerProgram = () => {
                 <h2 className={trainerStyles.trainerListTitle}>Учим буквы</h2>
               </div>
             </div>
-
-            <div className={`${englishStyles.categories} ${galleryStyles.cardsUnderTitle}`}>
-              <div className={englishStyles.category}>
-                {/* category header removed (title and "Посмотреть все") */}
-
-                <div className={englishStyles.itemsGrid}>
-                  {items.map((title) => (
-                    <article key={title} className={englishStyles.itemCard}>
-                      <div className={englishStyles.badge} aria-hidden>
-                        {getBadgeText(title)}
-                      </div>
-                      <div className={englishStyles.itemInner}>
-                        <h4 className={englishStyles.itemTitle}>{title}</h4>
-                      </div>
-                      <button className={englishStyles.openBtn}>Открыть</button>
-                    </article>
-                  ))}
-                </div>
+          </div>
+          {/* cards placed as sibling so full-bleed positioning aligns to page edges */}
+          <div className={`${englishStyles.categories} ${galleryStyles.cardsUnderTitle}`}>
+            <div className={englishStyles.category}>
+              <div className={englishStyles.itemsGrid}>
+                {items.map((title) => (
+                  <article key={title} className={englishStyles.itemCard}>
+                    <div className={englishStyles.badge} aria-hidden>
+                      {getBadgeText(title)}
+                    </div>
+                    <div className={englishStyles.itemInner}>
+                      <h4 className={englishStyles.itemTitle}>{title}</h4>
+                    </div>
+                    <button className={englishStyles.openBtn}>Открыть</button>
+                  </article>
+                ))}
               </div>
             </div>
           </div>

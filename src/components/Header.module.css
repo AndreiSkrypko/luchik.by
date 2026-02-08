@@ -241,7 +241,8 @@
 
 /* Логотип в левом верхнем углу */
 .logoLink {
-  position: absolute;
+  /* Keep logo fixed on screen so it remains visible during scroll */
+  position: fixed;
   top: 24px;
   left: 40px;
   z-index: var(--z-header-ui);

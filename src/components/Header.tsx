@@ -164,19 +164,24 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerBackground}>
-        {/* Логотип слева сверху */}
-        <Link to="/" className={styles.logoLink} aria-label="На главную" onClick={handleLogoClick}>
-          <div className={styles.logo}>
-            <img
-              src="/img/main/logo.webp"
-              alt="Логотип «Лучик»"
-              width={520}
-              height={138}
-              loading="eager"
-              decoding="sync"
-            />
-          </div>
-        </Link>
+        {/* Логотип слева сверху — рендерим через portal в body чтобы быть вне stacking contexts */}
+        {typeof window !== 'undefined' &&
+          createPortal(
+            <Link to="/" className={styles.logoLink} aria-label="На главную" onClick={handleLogoClick}>
+              <div className={styles.logo}>
+                <img
+                  src="/img/main/logo.webp"
+                  alt="Логотип «Лучик»"
+                  width={520}
+                  height={138}
+                  loading="eager"
+                  decoding="sync"
+                />
+              </div>
+            </Link>,
+            document.body
+          )
+        }
 
         {/* Навигация и кнопка «Контакты» */}
         <nav className={styles.navbarRow} aria-label="Основная навигация">
