@@ -38,6 +38,30 @@ const WhyUsSection = () => {
         </div>
       </div>
 
+      {/* Mobile layout: show boy image and concise text side-by-side */}
+      <div className={styles.mobileWhyUs}>
+        <h2 className={styles.mobileWhyTitle}>Почему мы</h2>
+        <div className={styles.mobileInner}>
+          <img src="/img/why_we/boy.svg" alt="Ребёнок" className={styles.mobileBoy} />
+          <div className={styles.mobileWhyText}>
+            <ul className={styles.mobileWhyList}>
+              <li>Для детей 1–12 лет</li>
+              <li>Опытные педагоги и логопеды</li>
+              <li>Индивидуальный подход</li>
+              <li>Тёплая семейная атмосфера</li>
+            </ul>
+            <button
+              className={styles.mobileCta}
+              type="button"
+              onClick={() => setIsFormOpen(true)}
+              aria-label="Записаться на пробное занятие"
+            >
+              Записаться
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Модальное окно с формой */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
         <DialogContent className={styles.dialogContent}>
