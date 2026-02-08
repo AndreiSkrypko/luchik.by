@@ -45,6 +45,7 @@ const InfoBlocks = () => {
         <ul>
           <li className={styles.thesisPink}>Для детей 1–12 лет — комплексные занятия и подготовка к школе</li>
           <li className={styles.thesisGreen}>Опытные педагоги — логопеды и наставники по STEM-направлениям</li>
+          <li className={styles.thesisOrange}>Индивидуальный подход — программы под потребности ребёнка</li>
           <li className={styles.thesisBlue}>Тёплая семейная атмосфера — безопасное и интересное пространство</li>
         </ul>
       </div>

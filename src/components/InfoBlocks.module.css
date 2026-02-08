@@ -85,6 +85,12 @@
 
 /* photo thesis removed from mobile list */
 
+.mobileTheses li.thesisOrange {
+  background: linear-gradient(135deg, #FFF1D6 0%, #FFD19A 100%);
+  color: #4a2a00;
+  border: none;
+}
+
 /* Специальный стиль для JPG изображения в третьей карточке - подгоняем под размеры SVG */
 .infoBlock:nth-child(3) .infoBlockImage {
   width: 100%;
