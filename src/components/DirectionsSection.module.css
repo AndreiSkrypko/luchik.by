@@ -124,7 +124,7 @@
   position: absolute;
   top: auto;
   bottom: 140px; /* raised higher from the bottom edge */
-  right: -40px; /* move further outside to the right */
+  right: -80px; /* move further outside to the right */
   z-index: 5;
   pointer-events: none;
   clip-path: none;
