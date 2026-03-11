@@ -15,6 +15,27 @@ import legoLogopedImg from '@/assets/directions/lego-logoped.png';
 import prep2yearImg from '@/assets/directions/prep-2year.png';
 import prepSchoolImg from '@/assets/directions/prep-school.png';
 import legoMathImg from '@/assets/directions/lego-math.png';
+import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.png';
+import englishImg from '@/assets/directions/english.png';
+import chessImg from '@/assets/directions/chess.png';
+import programmingScratchImg from '@/assets/directions/programming-scratch.png';
+import programmingMinecraftImg from '@/assets/directions/programming-minecraft.png';
+import programmingRobloxImg from '@/assets/directions/programming-roblox.png';
+import programmingVrImg from '@/assets/directions/programming-vr.png';
+import roboticsImg from '@/assets/directions/robotics.png';
+import mentalArithmeticImg from '@/assets/directions/mental-arithmetic.png';
+import tutorImg from '@/assets/directions/tutor.png';
+import modeling3dImg from '@/assets/directions/3d-modeling.png';
+import robotics10_17Img from '@/assets/directions/robotics-10-17.png';
+import arduinoElectronicsImg from '@/assets/directions/arduino-electronics.png';
+import programmingPythonImg from '@/assets/directions/programming-python.png';
+import programmingJavascriptImg from '@/assets/directions/programming-javascript.png';
+import webDevelopmentImg from '@/assets/directions/web-development.png';
+import modeling3dBlenderImg from '@/assets/directions/3d-blender.png';
+import programmingVr10_17Img from '@/assets/directions/programming-vr-10-17.png';
+import programmingRoblox10_17Img from '@/assets/directions/programming-roblox-10-17.png';
+import circuitDesignImg from '@/assets/directions/circuit-design.png';
+import artificialIntelligenceImg from '@/assets/directions/artificial-intelligence.png';
 
 const directionImageOverrides: Record<string, string> = {
   'mama-malysh': mamaMalyshImg,
@@ -26,6 +47,27 @@ const directionImageOverrides: Record<string, string> = {
   'prep-2year': prep2yearImg,
   'prep-school': prepSchoolImg,
   'lego-math': legoMathImg,
+  'logic-speed-reading': logicSpeedReadingImg,
+  'english': englishImg,
+  'chess': chessImg,
+  'programming-scratch': programmingScratchImg,
+  'programming-minecraft': programmingMinecraftImg,
+  'programming-roblox': programmingRobloxImg,
+  'programming-vr': programmingVrImg,
+  'robotics': roboticsImg,
+  'mental-arithmetic': mentalArithmeticImg,
+  'tutor': tutorImg,
+  '3d-modeling': modeling3dImg,
+  'robotics-10-17': robotics10_17Img,
+  'arduino-electronics': arduinoElectronicsImg,
+  'programming-python': programmingPythonImg,
+  'programming-javascript': programmingJavascriptImg,
+  'web-development': webDevelopmentImg,
+  '3d-blender': modeling3dBlenderImg,
+  'programming-vr-10-17': programmingVr10_17Img,
+  'programming-roblox-10-17': programmingRoblox10_17Img,
+  'circuit-design': circuitDesignImg,
+  'artificial-intelligence': artificialIntelligenceImg,
 };
 
 interface DirectionProgramsListProps {
