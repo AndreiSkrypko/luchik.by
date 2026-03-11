@@ -6,6 +6,28 @@ import { directionPrograms } from '@/data/directionPrograms';
 import type { DirectionProgram } from '@/data/directionPrograms';
 import styles from './DirectionProgramsList.module.css';
 
+import mamaMalyshImg from '@/assets/directions/mama-malysh.png';
+import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.png';
+import complexImg from '@/assets/directions/complex.png';
+import logopedImg from '@/assets/directions/logoped.png';
+import artStudioImg from '@/assets/directions/art-studio.png';
+import legoLogopedImg from '@/assets/directions/lego-logoped.png';
+import prep2yearImg from '@/assets/directions/prep-2year.png';
+import prepSchoolImg from '@/assets/directions/prep-school.png';
+import legoMathImg from '@/assets/directions/lego-math.png';
+
+const directionImageOverrides: Record<string, string> = {
+  'mama-malysh': mamaMalyshImg,
+  'lego-razvivayka': legoRazvivaykaImg,
+  'complex': complexImg,
+  'logoped': logopedImg,
+  'art-studio': artStudioImg,
+  'lego-logoped': legoLogopedImg,
+  'prep-2year': prep2yearImg,
+  'prep-school': prepSchoolImg,
+  'lego-math': legoMathImg,
+};
+
 interface DirectionProgramsListProps {
   ageRange: string;
 }
@@ -68,8 +90,8 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
               >
                 <div className={styles.cardImageWrapper}>
                   <img
-                    src={program.image}
-                    alt=""
+                    src={directionImageOverrides[program.id] ?? program.image}
+                    alt={program.title}
                     className={styles.cardImage}
                     loading="lazy"
                   />
