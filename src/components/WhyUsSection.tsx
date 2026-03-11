@@ -45,10 +45,10 @@ const WhyUsSection = () => {
           <img src="/img/why_we/boy.svg" alt="Ребёнок" className={styles.mobileBoy} />
           <div className={styles.mobileWhyText}>
             <ul className={styles.mobileWhyList}>
-              <li>От 1 до 17 лет</li>
-              <li>Опытные педагоги</li>
-              <li>Персональный подход</li>
-              <li>Уют и безопасность</li>
+              <li>Практические проекты</li>
+              <li>Результаты</li>
+              <li>Онлайн и офлайн</li>
+              <li>Регулярные отчёты</li>
             </ul>
             <button
               className={styles.mobileCta}

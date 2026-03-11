@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
-import InDevelopment from '@/components/InDevelopment';
+import DirectionProgramsList from '@/components/DirectionProgramsList';
 import styles from './AgeCategory.module.css';
 
 const Age5_10 = () => {
@@ -29,13 +29,7 @@ const Age5_10 = () => {
       <Header onContactsClick={toggleContacts} />
       <main>
         <div className={styles.ageCategoryMain}>
-          <div className={styles.titleSection}>
-            <h1 className={styles.ageCategoryTitle}>Программы для детей 5-10 лет</h1>
-            <p className={styles.ageCategoryDescription}>
-              Развивающие занятия для младших школьников
-            </p>
-            <InDevelopment />
-          </div>
+          <DirectionProgramsList ageRange="5-10" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

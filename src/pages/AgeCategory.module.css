@@ -83,12 +83,14 @@
   }
 }
 
+/* Как в Gallery: margin-top создаёт зону градиента, hero с отрицательным margin подтягивается вверх */
 .ageCategoryMain {
   padding: 120px 20px 60px;
   min-height: calc(100vh - 200px);
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   position: relative;
   background: #ffffff;
   margin-top: 240px;
@@ -179,6 +181,7 @@
 
 @media (max-width: 480px) {
   .ageCategoryMain {
+    padding: 70px 12px 30px;
     margin-top: 140px;
   }
 
