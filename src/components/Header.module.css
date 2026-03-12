@@ -1002,6 +1002,10 @@
   .navTextLink:hover::before {
     opacity: 1;
   }
+
+  .navTextLink::after {
+    display: none;
+  }
 }
 
 /* Маленькие мобильные (до 480px) */
