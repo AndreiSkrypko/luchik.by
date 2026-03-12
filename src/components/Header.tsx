@@ -136,7 +136,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
             width={520}
             height={138}
             loading="eager"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </Link>
       )}

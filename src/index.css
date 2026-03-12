@@ -376,3 +376,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Контейнер для модалок — вне трансформаций страницы */
+#dialog-root {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+#dialog-root > * {
+  pointer-events: auto;
+}

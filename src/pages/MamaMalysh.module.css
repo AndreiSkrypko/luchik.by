@@ -1,0 +1,571 @@
+/* ====================================================
+   PAGE WRAPPER — Gallery pattern
+   ==================================================== */
+.mamaMalyshPage {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: #ffffff;
+  background-image: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
+}
+
+.mamaMalyshPage::after {
+  content: '';
+  position: absolute;
+  top: 800px;
+  left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mamaMalyshPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/main/waves-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.12;
+  z-index: var(--z-bg);
+  pointer-events: none;
+}
+
+@media (min-width: 1025px) { .mamaMalyshPage { overflow-x: hidden; overflow-y: visible; } }
+@media (min-width: 769px) and (max-width: 1024px) { .mamaMalyshPage::after { top: 800px; } }
+@media (max-width: 768px) {
+  .mamaMalyshPage { background: #ffffff !important; background-image: none !important; }
+  .mamaMalyshPage::before {
+    top: 0; height: 210px;
+    background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
+    opacity: 1;
+  }
+}
+@media (max-width: 480px) { .mamaMalyshPage::before { height: 190px; } }
+
+/* ====================================================
+   MAIN
+   ==================================================== */
+.mamaMalyshMain {
+  padding: 120px 20px 80px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  background: #ffffff;
+  margin-top: 240px;
+}
+
+/* ====================================================
+   TITLE SECTION — gradient zone
+   ==================================================== */
+.titleSection {
+  margin-top: -750px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.backButton {
+  background: transparent;
+  border: none;
+  color: #4665a1;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 12px;
+  align-self: flex-start;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.8;
+}
+.backButton:hover { color: #FF6B35; opacity: 1; }
+
+.pageTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #4665a1;
+  text-align: center;
+  margin: 0 auto 14px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.pageDescription {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ====================================================
+   TOP GRID: left info + right form
+   ==================================================== */
+.topGrid {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: stretch;
+}
+
+/* ---- Left column ---- */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroImage {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 40px rgba(70, 101, 161, 0.13);
+}
+
+.heroImage img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.heroImage:hover img { transform: scale(1.02); }
+
+.aboutText {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+.aboutText:last-of-type {
+  margin-bottom: auto;
+  padding-bottom: 28px;
+}
+
+/* Кнопка «Записаться» — только на мобильном */
+.mobileEnrollBtn {
+  display: none;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid #E8EFF6;
+  padding-top: 24px;
+}
+
+.badge {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #F0F7FF 0%, #E8F4FD 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(70, 101, 161, 0.1);
+}
+
+.badgeIcon { font-size: 24px; flex-shrink: 0; }
+
+.badgeLabel {
+  display: block;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.badgeValue {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3748;
+}
+
+/* ---- Right column (form) ---- */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(70, 101, 161, 0.12);
+  box-shadow: 0 8px 32px rgba(70, 101, 161, 0.06);
+}
+
+.rightColumn form {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.formTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #4665a1;
+  margin: 0 0 6px;
+}
+
+.formSubtitle {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  color: #718096;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* ====================================================
+   PROGRAM SECTION
+   ==================================================== */
+.programSection {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  margin: 80px auto 0;
+  padding: 0 24px;
+}
+
+.sectionHeading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2D3748;
+  margin: 0 0 36px;
+  letter-spacing: -0.02em;
+}
+
+.programGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.programItem {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 24px;
+  background: #ffffff;
+  border: 1px solid #EDF2F7;
+  border-radius: 18px;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+
+.programItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(70, 101, 161, 0.1);
+  border-color: rgba(70, 101, 161, 0.2);
+}
+
+.programEmoji {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, #EBF4FF 0%, #D6EAFF 100%);
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.programItem h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0 0 6px;
+}
+
+.programItem p {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ====================================================
+   WHY SECTION
+   ==================================================== */
+.whySection {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  margin: 72px auto 0;
+  padding: 0 24px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.whyItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  background: linear-gradient(135deg, #F7FBFF 0%, #F0F7FE 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(70, 101, 161, 0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.whyItem:hover {
+  box-shadow: 0 6px 20px rgba(70, 101, 161, 0.08);
+  transform: translateY(-2px);
+}
+
+.whyCheck {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4665a1 0%, #6B8EC8 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 2px;
+  box-shadow: 0 4px 12px rgba(70, 101, 161, 0.25);
+}
+
+.whyItem p {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  color: #2D3748;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 4px;
+}
+
+/* ====================================================
+   LOCATION BAR
+   ==================================================== */
+.locationBar {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  margin: 64px auto 0;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #EDF2F7;
+}
+
+.locationBar span {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #718096;
+  letter-spacing: 0.01em;
+}
+
+/* ====================================================
+   FOOTER DIVIDER
+   ==================================================== */
+.mamaMalyshPage :global(.footerDivider) { margin-top: 60px; }
+
+/* Модалка формы записи */
+.formDialog {
+  max-width: 440px !important;
+}
+
+.formDialogTitle {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #4665a1 !important;
+}
+
+.formDialogDesc {
+  font-family: 'Segoe UI', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  color: #718096 !important;
+  margin-bottom: 8px !important;
+}
+
+.formDialogHeader {
+  text-align: left !important;
+}
+
+@media (max-width: 768px) {
+  .formDialog {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 440px !important;
+    max-height: calc(100dvh - 32px) !important;
+    overflow-y: auto !important;
+    z-index: 51 !important;
+    animation: none !important;
+    transition: none !important;
+    transform-origin: center center !important;
+    padding: max(32px, env(safe-area-inset-top)) 24px max(28px, env(safe-area-inset-bottom)) !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(70, 101, 161, 0.12) !important;
+    box-shadow: 0 24px 56px rgba(70, 101, 161, 0.18), 0 12px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+    background: linear-gradient(180deg, #ffffff 0%, #F8FAFD 100%) !important;
+  }
+
+  .formDialog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #4665a1 0%, #6B8EC8 50%, #FF6B35 100%);
+    box-shadow: 0 2px 8px rgba(70, 101, 161, 0.2);
+  }
+
+  .formDialog :global(> button) {
+    top: 18px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    aspect-ratio: 1 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(70, 101, 161, 0.08) !important;
+    color: #4665a1 !important;
+    opacity: 1 !important;
+  }
+
+  .formDialog :global(> button:hover) {
+    background: rgba(70, 101, 161, 0.15) !important;
+    color: #4665a1 !important;
+  }
+}
+
+/* ====================================================
+   RESPONSIVE — tablets
+   ==================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mamaMalyshMain { padding: 100px 16px 60px; margin-top: 210px; }
+  .titleSection { margin-top: -600px; padding: 0 24px; }
+  .pageTitle { font-size: 42px; }
+  .topGrid { grid-template-columns: 1fr 360px; gap: 40px; padding: 40px 16px 0; }
+  .programGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ====================================================
+   RESPONSIVE — mobile
+   ==================================================== */
+@media (max-width: 768px) {
+  .mamaMalyshMain { padding: 90px 12px 40px; margin-top: 150px; }
+  .titleSection { margin-top: -280px !important; padding: 0 16px; }
+  .pageTitle { font-size: 34px; margin-bottom: 12px; }
+  .pageDescription { font-size: 16px; }
+
+  .topGrid { grid-template-columns: 1fr; gap: 32px; padding: 32px 16px 0; }
+  .leftColumn { order: 1; }
+  .rightColumn { display: none !important; }
+
+  .aboutText:last-of-type {
+    margin-bottom: 16px;
+    padding-bottom: 0;
+  }
+
+  .mobileEnrollBtn {
+    display: inline-block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 0 24px;
+    padding: 16px 28px;
+    background: linear-gradient(90deg, #FF6B35 0%, #FF8A50 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.35);
+  }
+
+  .heroImage img { height: 220px; }
+  .badges { flex-direction: column; gap: 10px; }
+
+  .programGrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .programItem { padding: 20px 16px; }
+  .programEmoji { width: 44px; height: 44px; font-size: 20px; }
+
+  .whyGrid { grid-template-columns: 1fr; }
+  .sectionHeading { font-size: 26px; margin-bottom: 24px; }
+
+  .programSection, .whySection { margin-top: 56px; padding: 0 16px; }
+  .locationBar { margin-top: 48px; padding: 18px 16px; }
+  .mamaMalyshPage :global(.footerDivider) { margin-top: 40px; }
+}
+
+@media (max-width: 480px) {
+  .mamaMalyshMain { padding: 70px 12px 32px; margin-top: 140px; }
+  .titleSection { margin-top: 15px; padding: 0 12px; }
+  .pageTitle { font-size: 28px; }
+  .pageDescription { font-size: 15px; }
+
+  .topGrid { padding: 24px 12px 0; gap: 24px; }
+  .rightColumn { padding: 20px 16px; }
+  .heroImage img { height: 190px; }
+  .aboutText { font-size: 15px; }
+
+  .programGrid { grid-template-columns: 1fr; }
+  .programSection, .whySection { padding: 0 12px; }
+  .locationBar { padding: 16px 12px; }
+
+  .sectionHeading { font-size: 22px; }
+  .formTitle { font-size: 21px; }
+}

@@ -32,6 +32,15 @@ import Flashcards from "./pages/Flashcards";
 import Age1_5 from "./pages/Age1-5";
 import Age5_10 from "./pages/Age5-10";
 import Age10_17 from "./pages/Age10-17";
+import MamaMalysh from "./pages/MamaMalysh";
+import LegoRazvivayka from "./pages/LegoRazvivayka";
+import Complex from "./pages/course/Complex";
+import Logoped from "./pages/course/Logoped";
+import ArtStudio from "./pages/course/ArtStudio";
+import LegoLogoped from "./pages/course/LegoLogoped";
+import Prep2year from "./pages/course/Prep2year";
+import PrepSchool from "./pages/course/PrepSchool";
+import LegoMath from "./pages/course/LegoMath";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -83,6 +92,15 @@ const AppRouter = () => (
           <Route path="/age/1-5" element={<Age1_5 />} />
           <Route path="/age/5-10" element={<Age5_10 />} />
           <Route path="/age/10-17" element={<Age10_17 />} />
+          <Route path="/course/mama-malysh" element={<MamaMalysh />} />
+          <Route path="/course/lego-razvivayka" element={<LegoRazvivayka />} />
+          <Route path="/course/complex" element={<Complex />} />
+          <Route path="/course/logoped" element={<Logoped />} />
+          <Route path="/course/art-studio" element={<ArtStudio />} />
+          <Route path="/course/lego-logoped" element={<LegoLogoped />} />
+          <Route path="/course/prep-2year" element={<Prep2year />} />
+          <Route path="/course/prep-school" element={<PrepSchool />} />
+          <Route path="/course/lego-math" element={<LegoMath />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
     </Routes>

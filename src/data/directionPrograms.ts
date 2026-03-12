@@ -25,6 +25,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Клуб «Мама и малыш»',
         lead: '1,5–3 года. Совместные занятия для мамы и ребёнка — развитие через игру и общение',
         image: '/img/directions/mama-malysh.png',
+        linkTo: '/course/mama-malysh',
         accentColor: '#FF6B35',
       },
       {
@@ -32,6 +33,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Лего-развивайка',
         lead: '2,5–3 года. Конструирование, развитие мелкой моторики и пространственного мышления',
         image: '/img/directions/lego-razvivayka.png',
+        linkTo: '/course/lego-razvivayka',
         accentColor: '#4B9CF5',
       },
       {
@@ -39,6 +41,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Комплексные развивающие занятия',
         lead: '3–4 года. Речь, моторика, мышление, творчество — всё в одном курсе',
         image: '/img/directions/complex.png',
+        linkTo: '/course/complex',
         accentColor: '#27AE60',
       },
       {
@@ -46,6 +49,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Логопед',
         lead: 'С 3 лет. Диагностика и коррекция речи, постановка звуков',
         image: '/img/directions/logoped.png',
+        linkTo: '/course/logoped',
         accentColor: '#9B59B6',
       },
       {
@@ -53,6 +57,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Арт-студия',
         lead: '3–5 лет. Рисование, лепка, аппликации — развитие воображения и творческих способностей',
         image: '/img/directions/art-studio.png',
+        linkTo: '/course/art-studio',
         accentColor: '#E74C3C',
       },
       {
@@ -60,6 +65,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Лего с логопедом',
         lead: '3–5 лет. Конструирование в сочетании с логопедическими упражнениями',
         image: '/img/directions/lego-logoped.png',
+        linkTo: '/course/lego-logoped',
         accentColor: '#2C3E50',
       },
       {
@@ -67,6 +73,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Двухгодовой курс подготовки к школе',
         lead: '4–5 лет. Постепенная адаптация к учебному процессу за два года до школы',
         image: '/img/directions/prep-2year.png',
+        linkTo: '/course/prep-2year',
         accentColor: '#4B9CF5',
       },
       {
@@ -74,6 +81,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Подготовка к школе',
         lead: '5–7 лет. Чтение, счёт, развитие усидчивости и готовности к первому классу',
         image: '/img/directions/prep-school.png',
+        linkTo: '/course/prep-school',
         accentColor: '#FF6B35',
       },
       {
@@ -81,6 +89,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Лего-математика',
         lead: '5–7 лет. Математика через конструирование — числа, форма, логика',
         image: '/img/directions/lego-math.png',
+        linkTo: '/course/lego-math',
         accentColor: '#2C3E50',
       },
     ],
