@@ -190,7 +190,7 @@ const MapSection = () => {
         <div className={styles.titleWrapper}>
           <h2 className={styles.mapTitle}>Мы на карте</h2>
           <img
-            src="/img/airplane.svg"
+            src="/img/map/airplane.svg"
             alt="Самолет"
             className={styles.airplane}
             onError={handleImageError}

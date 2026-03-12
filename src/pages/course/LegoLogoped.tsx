@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import legoLogopedImg from '@/assets/directions/lego-logoped.png';
+import legoLogopedImg from '@/assets/directions/lego-logoped.webp';
 import styles from './CoursePage.module.css';
 
 const LegoLogoped = () => {

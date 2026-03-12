@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import artificialIntelligenceImg from '@/assets/directions/artificial-intelligence.png';
+import artificialIntelligenceImg from '@/assets/directions/artificial-intelligence.webp';
 import styles from './CoursePage.module.css';
 
 const ArtificialIntelligence = () => {

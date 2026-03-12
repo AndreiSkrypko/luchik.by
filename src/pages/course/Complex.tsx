@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import complexImg from '@/assets/directions/complex.png';
+import complexImg from '@/assets/directions/complex.webp';
 import styles from './CoursePage.module.css';
 
 const Complex = () => {

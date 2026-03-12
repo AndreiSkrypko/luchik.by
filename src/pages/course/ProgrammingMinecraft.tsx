@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import programmingMinecraftImg from '@/assets/directions/programming-minecraft.png';
+import programmingMinecraftImg from '@/assets/directions/programming-minecraft.webp';
 import styles from './CoursePage.module.css';
 
 const ProgrammingMinecraft = () => {

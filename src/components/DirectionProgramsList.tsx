@@ -6,36 +6,38 @@ import { directionPrograms } from '@/data/directionPrograms';
 import type { DirectionProgram } from '@/data/directionPrograms';
 import styles from './DirectionProgramsList.module.css';
 
-import mamaMalyshImg from '@/assets/directions/mama-malysh.png';
-import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.png';
-import complexImg from '@/assets/directions/complex.png';
-import logopedImg from '@/assets/directions/logoped.png';
-import artStudioImg from '@/assets/directions/art-studio.png';
-import legoLogopedImg from '@/assets/directions/lego-logoped.png';
-import prep2yearImg from '@/assets/directions/prep-2year.png';
-import prepSchoolImg from '@/assets/directions/prep-school.png';
-import legoMathImg from '@/assets/directions/lego-math.png';
-import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.png';
-import englishImg from '@/assets/directions/english.png';
-import chessImg from '@/assets/directions/chess.png';
-import programmingScratchImg from '@/assets/directions/programming-scratch.png';
-import programmingMinecraftImg from '@/assets/directions/programming-minecraft.png';
-import programmingRobloxImg from '@/assets/directions/programming-roblox.png';
-import programmingVrImg from '@/assets/directions/programming-vr.png';
-import roboticsImg from '@/assets/directions/robotics.png';
-import mentalArithmeticImg from '@/assets/directions/mental-arithmetic.png';
-import tutorImg from '@/assets/directions/tutor.png';
-import modeling3dImg from '@/assets/directions/3d-modeling.png';
-import robotics10_17Img from '@/assets/directions/robotics-10-17.png';
-import arduinoElectronicsImg from '@/assets/directions/arduino-electronics.png';
-import programmingPythonImg from '@/assets/directions/programming-python.png';
-import programmingJavascriptImg from '@/assets/directions/programming-javascript.png';
-import webDevelopmentImg from '@/assets/directions/web-development.png';
-import modeling3dBlenderImg from '@/assets/directions/3d-blender.png';
-import programmingVr10_17Img from '@/assets/directions/programming-vr-10-17.png';
-import programmingRoblox10_17Img from '@/assets/directions/programming-roblox-10-17.png';
-import circuitDesignImg from '@/assets/directions/circuit-design.png';
-import artificialIntelligenceImg from '@/assets/directions/artificial-intelligence.png';
+import mamaMalyshImg from '@/assets/directions/mama-malysh.webp';
+import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.webp';
+import complexImg from '@/assets/directions/complex.webp';
+import logopedImg from '@/assets/directions/logoped.webp';
+import artStudioImg from '@/assets/directions/art-studio.webp';
+import legoLogopedImg from '@/assets/directions/lego-logoped.webp';
+import prep2yearImg from '@/assets/directions/prep-2year.webp';
+import prepSchoolImg from '@/assets/directions/prep-school.webp';
+import legoMathImg from '@/assets/directions/lego-math.webp';
+import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.webp';
+import englishImg from '@/assets/directions/english.webp';
+import chessImg from '@/assets/directions/chess.webp';
+import programmingScratchImg from '@/assets/directions/programming-scratch.webp';
+import programmingMinecraftImg from '@/assets/directions/programming-minecraft.webp';
+import programmingRobloxImg from '@/assets/directions/programming-roblox.webp';
+import programmingVrImg from '@/assets/directions/programming-vr.webp';
+import roboticsImg from '@/assets/directions/robotics.webp';
+import mentalArithmeticImg from '@/assets/directions/mental-arithmetic.webp';
+import tutorImg from '@/assets/directions/tutor.webp';
+import modeling3dImg from '@/assets/directions/3d-modeling.webp';
+import robotics10_17Img from '@/assets/directions/robotics-10-17.webp';
+import arduinoElectronicsImg from '@/assets/directions/arduino-electronics.webp';
+import programmingPythonImg from '@/assets/directions/programming-python.webp';
+import programmingJavascriptImg from '@/assets/directions/programming-javascript.webp';
+import webDevelopmentImg from '@/assets/directions/web-development.webp';
+import modeling3dBlenderImg from '@/assets/directions/3d-blender.webp';
+import programmingVr10_17Img from '@/assets/directions/programming-vr-10-17.webp';
+import programmingRoblox10_17Img from '@/assets/directions/programming-roblox-10-17.webp';
+import circuitDesignImg from '@/assets/directions/circuit-design.webp';
+import artificialIntelligenceImg from '@/assets/directions/artificial-intelligence.webp';
+
+const BUTTON_COLORS = ['#FF6B35', '#4B9CF5', '#27AE60', '#9B59B6', '#E74C3C', '#F39C12'];
 
 const directionImageOverrides: Record<string, string> = {
   'mama-malysh': mamaMalyshImg,
@@ -123,12 +125,12 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
           </div>
 
           <div className={styles.programsGrid}>
-            {config.programs.map((program) => (
+            {config.programs.map((program, index) => (
               <article
                 key={program.id}
                 className={styles.programCard}
                 onClick={() => handleProgramClick(program)}
-                style={{ '--accent-color': program.accentColor || '#FF6B35' } as React.CSSProperties}
+                style={{ '--accent-color': BUTTON_COLORS[index % BUTTON_COLORS.length] } as React.CSSProperties}
               >
                 <div className={styles.cardImageWrapper}>
                   <img

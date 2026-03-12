@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import artStudioImg from '@/assets/directions/art-studio.png';
+import artStudioImg from '@/assets/directions/art-studio.webp';
 import styles from './CoursePage.module.css';
 
 const ArtStudio = () => {

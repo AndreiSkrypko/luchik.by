@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import prepSchoolImg from '@/assets/directions/prep-school.png';
+import prepSchoolImg from '@/assets/directions/prep-school.webp';
 import styles from './CoursePage.module.css';
 
 const PrepSchool = () => {

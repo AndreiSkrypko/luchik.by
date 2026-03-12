@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import mamaMalyshImg from '@/assets/directions/mama-malysh.png';
+import mamaMalyshImg from '@/assets/directions/mama-malysh.webp';
 import styles from './MamaMalysh.module.css';
 
 const MamaMalysh = () => {

@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import programmingRoblox10_17Img from '@/assets/directions/programming-roblox-10-17.png';
+import programmingRoblox10_17Img from '@/assets/directions/programming-roblox-10-17.webp';
 import styles from './CoursePage.module.css';
 
 const ProgrammingRoblox10_17 = () => {

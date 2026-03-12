@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import logopedImg from '@/assets/directions/logoped.png';
+import logopedImg from '@/assets/directions/logoped.webp';
 import styles from './CoursePage.module.css';
 
 const Logoped = () => {

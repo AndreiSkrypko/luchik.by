@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import legoMathImg from '@/assets/directions/lego-math.png';
+import legoMathImg from '@/assets/directions/lego-math.webp';
 import styles from './CoursePage.module.css';
 
 const LegoMath = () => {

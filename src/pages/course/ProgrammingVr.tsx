@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import programmingVrImg from '@/assets/directions/programming-vr.png';
+import programmingVrImg from '@/assets/directions/programming-vr.webp';
 import styles from './CoursePage.module.css';
 
 const ProgrammingVr = () => {

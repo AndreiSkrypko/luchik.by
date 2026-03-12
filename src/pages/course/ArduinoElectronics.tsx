@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import arduinoElectronicsImg from '@/assets/directions/arduino-electronics.png';
+import arduinoElectronicsImg from '@/assets/directions/arduino-electronics.webp';
 import styles from './CoursePage.module.css';
 
 const ArduinoElectronics = () => {

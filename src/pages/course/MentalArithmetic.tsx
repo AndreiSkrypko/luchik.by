@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import mentalArithmeticImg from '@/assets/directions/mental-arithmetic.png';
+import mentalArithmeticImg from '@/assets/directions/mental-arithmetic.webp';
 import styles from './CoursePage.module.css';
 
 const MentalArithmetic = () => {

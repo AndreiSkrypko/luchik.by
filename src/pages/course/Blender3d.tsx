@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import blender3dImg from '@/assets/directions/3d-blender.png';
+import blender3dImg from '@/assets/directions/3d-blender.webp';
 import styles from './CoursePage.module.css';
 
 const Blender3d = () => {

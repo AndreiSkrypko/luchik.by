@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import englishImg from '@/assets/directions/english.png';
+import englishImg from '@/assets/directions/english.webp';
 import styles from './CoursePage.module.css';
 
 const English = () => {

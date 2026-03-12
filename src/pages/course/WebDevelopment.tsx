@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import webDevelopmentImg from '@/assets/directions/web-development.png';
+import webDevelopmentImg from '@/assets/directions/web-development.webp';
 import styles from './CoursePage.module.css';
 
 const WebDevelopment = () => {

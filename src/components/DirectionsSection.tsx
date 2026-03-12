@@ -38,7 +38,7 @@ const DirectionsSection = () => {
             </div>
             <div className={styles.ageTextWrapper2}>
               <img
-                src="/img/1-5.svg"
+                src="/img/directions/1-5.svg"
                 alt="1-5 лет"
                 className={styles.ageText2}
                 onError={handleImageError}
@@ -77,7 +77,7 @@ const DirectionsSection = () => {
             </div>
             <div className={styles.ageTextWrapper2}>
               <img
-                src="/img/5-10.svg"
+                src="/img/directions/5-10.svg"
                 alt="5-10 лет"
                 className={styles.ageText2}
                 onError={handleImageError}
@@ -100,7 +100,7 @@ const DirectionsSection = () => {
           <div className={styles.directionCard} onClick={() => handleCardClick('10-17')} style={{ cursor: 'pointer' }}>
             <div className={styles.vzikWrapper}>
               <img
-                src="/img/vzik.svg"
+                src="/img/directions/vzik.svg"
                 alt="Взъик"
                 className={styles.vzik}
                 onError={handleImageError}
@@ -116,7 +116,7 @@ const DirectionsSection = () => {
             </div>
             <div className={styles.ageTextWrapper2}>
               <img
-                src="/img/10-17.svg"
+                src="/img/directions/10-17.svg"
                 alt="10-17 лет"
                 className={styles.ageText2}
                 onError={handleImageError}

@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.png';
+import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.webp';
 import styles from './CoursePage.module.css';
 
 const LogicSpeedReading = () => {

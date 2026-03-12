@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.png';
+import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.webp';
 import styles from './LegoRazvivayka.module.css';
 
 const LegoRazvivayka = () => {

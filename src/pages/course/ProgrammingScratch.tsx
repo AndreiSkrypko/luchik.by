@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import programmingScratchImg from '@/assets/directions/programming-scratch.png';
+import programmingScratchImg from '@/assets/directions/programming-scratch.webp';
 import styles from './CoursePage.module.css';
 
 const ProgrammingScratch = () => {

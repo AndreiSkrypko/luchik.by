@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import circuitDesignImg from '@/assets/directions/circuit-design.png';
+import circuitDesignImg from '@/assets/directions/circuit-design.webp';
 import styles from './CoursePage.module.css';
 
 const CircuitDesign = () => {

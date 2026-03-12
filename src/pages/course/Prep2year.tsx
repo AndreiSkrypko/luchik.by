@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import prep2yearImg from '@/assets/directions/prep-2year.png';
+import prep2yearImg from '@/assets/directions/prep-2year.webp';
 import styles from './CoursePage.module.css';
 
 const Prep2year = () => {

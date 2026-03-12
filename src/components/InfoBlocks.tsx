@@ -22,7 +22,7 @@ const InfoBlocks = () => {
 
         <div className={styles.infoBlock}>
           <img
-            src="/img/IMG_20201010_155836_BURST4.jpg"
+            src="/img/cards/robotics.webp"
             alt="Робототехника и программирование"
             className={styles.infoBlockImage}
             width={570}
@@ -34,7 +34,7 @@ const InfoBlocks = () => {
 
         <div className={styles.infoBlock}>
           <img
-            src="/img/cards/fouth.svg"
+            src="/img/cards/fourth.svg"
             alt="Семейная атмосфера"
             className={styles.infoBlockImage}
           />

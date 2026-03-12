@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import roboticsImg from '@/assets/directions/robotics.png';
+import roboticsImg from '@/assets/directions/robotics.webp';
 import styles from './CoursePage.module.css';
 
 const Robotics = () => {

@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import tutorImg from '@/assets/directions/tutor.png';
+import tutorImg from '@/assets/directions/tutor.webp';
 import styles from './CoursePage.module.css';
 
 const Tutor = () => {

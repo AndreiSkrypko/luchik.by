@@ -9,7 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
-import modeling3dImg from '@/assets/directions/3d-modeling.png';
+import modeling3dImg from '@/assets/directions/3d-modeling.webp';
 import styles from './CoursePage.module.css';
 
 const Modeling3d = () => {
