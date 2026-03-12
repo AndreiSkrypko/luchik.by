@@ -297,7 +297,7 @@
   z-index: var(--z-header-ui);
   max-width: 1200px;
   margin: 36px auto 0;
-  padding: 0 40px;
+  padding: 0 16px 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -305,8 +305,12 @@
 
 .navLinks {
   display: flex;
-  gap: 48px;
-  margin-left: 240px;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 0;
+  min-width: 0;
 }
 
 .navTextLink {
@@ -317,10 +321,11 @@
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.3s ease;
-  padding: 8px 16px;
+  padding: 8px 0;
   border-radius: 8px;
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .navTextLink:hover {
@@ -333,8 +338,8 @@
   content: '';
   position: absolute;
   bottom: 4px;
-  left: 16px;
-  right: 16px;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, #FF6B35, #FFD700);
   transform: scaleX(0);
@@ -349,6 +354,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-left: 32px;
 }
 
 /* Блок соцсетей справа в шапке */
@@ -605,12 +611,11 @@
   }
 
   .navbarRow {
-    padding: 0 30px;
+    padding: 0 16px 0 30px;
   }
 
   .navLinks {
-    gap: 32px;
-    margin-left: 200px;
+    margin-left: 160px;
   }
 
   .navTextLink {
