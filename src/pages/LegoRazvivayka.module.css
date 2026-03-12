@@ -39,14 +39,28 @@
 @media (min-width: 1025px) { .legoRazvivaykaPage { overflow-x: hidden; overflow-y: visible; } }
 @media (min-width: 769px) and (max-width: 1024px) { .legoRazvivaykaPage::after { top: 800px; } }
 @media (max-width: 768px) {
-  .legoRazvivaykaPage { background: #ffffff !important; background-image: none !important; }
+  .legoRazvivaykaPage {
+    background: #ffffff !important;
+    background-image: none !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .legoRazvivaykaPage::before {
-    top: 0; height: 210px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 210px;
     background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
     opacity: 1;
   }
+  .legoRazvivaykaPage::after {
+    top: 200px;
+  }
 }
-@media (max-width: 480px) { .legoRazvivaykaPage::before { height: 190px; } }
+@media (max-width: 480px) {
+  .legoRazvivaykaPage::before { height: 190px; }
+  .legoRazvivaykaPage::after { top: 180px; }
+}
 
 /* ====================================================
    MAIN
@@ -62,8 +76,18 @@
   margin-top: 240px;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .legoRazvivaykaMain { padding: 100px 16px 60px; margin-top: 210px; }
+}
+@media (max-width: 768px) {
+  .legoRazvivaykaMain { padding: 80px 12px 30px; margin-top: 130px; background: transparent; }
+}
+@media (max-width: 480px) {
+  .legoRazvivaykaMain { padding: 65px 12px 30px; margin-top: 115px; }
+}
+
 /* ====================================================
-   TITLE SECTION — gradient zone
+   TITLE SECTION — как age/1-5 (container + heroSection)
    ==================================================== */
 .titleSection {
   margin-top: -750px;
@@ -73,28 +97,43 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .titleSection { margin-top: -600px; padding: 0 24px; }
+}
+@media (max-width: 768px) {
+  .titleSection { margin-top: -280px !important; padding: 0 15px; }
+}
+@media (max-width: 480px) {
+  .titleSection { margin-top: -200px !important; padding: 0 12px; }
+}
+
+/* Как age/1-5 — кнопка «К направлениям» */
 .backButton {
   background: transparent;
   border: none;
   color: #4665a1;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  font-size: 15px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  padding: 10px 0;
-  margin-bottom: 12px;
+  padding: 12px 0;
+  margin-bottom: 24px;
   align-self: flex-start;
-  transition: color 0.2s;
-  display: flex;
+  transition: color 0.3s ease;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  opacity: 0.8;
+  gap: 8px;
 }
-.backButton:hover { color: #FF6B35; opacity: 1; }
+.backButton:hover {
+  color: #FF6B35;
+}
 
 .pageTitle {
   font-family: 'Nunito', sans-serif;
@@ -487,12 +526,10 @@
 }
 
 @media (max-width: 768px) {
-  .legoRazvivaykaMain { padding: 90px 12px 40px; margin-top: 150px; }
-  .titleSection { margin-top: -280px !important; padding: 0 16px; }
   .pageTitle { font-size: 34px; margin-bottom: 12px; }
   .pageDescription { font-size: 16px; }
 
-  .topGrid { grid-template-columns: 1fr; gap: 32px; padding: 32px 16px 0; }
+  .topGrid { grid-template-columns: 1fr; gap: 32px; padding: 20px 15px 0; }
   .leftColumn { order: 1; }
   .rightColumn { display: none !important; }
 
@@ -531,12 +568,10 @@
 }
 
 @media (max-width: 480px) {
-  .legoRazvivaykaMain { padding: 70px 12px 32px; margin-top: 140px; }
-  .titleSection { margin-top: 15px; padding: 0 12px; }
   .pageTitle { font-size: 28px; }
   .pageDescription { font-size: 15px; }
 
-  .topGrid { padding: 24px 12px 0; gap: 24px; }
+  .topGrid { padding: 20px 12px 0; gap: 24px; }
   .rightColumn { padding: 20px 16px; }
   .heroImage img { height: 190px; }
   .aboutText { font-size: 15px; }

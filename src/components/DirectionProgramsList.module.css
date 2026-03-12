@@ -30,13 +30,13 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    margin-top: -280px;
+    margin-top: -300px;
   }
 }
 
 @media (max-width: 480px) {
   .heroSection {
-    margin-top: -200px;
+    margin-top: -220px;
   }
 }
 
@@ -254,7 +254,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 24px 15px 60px;
+    padding: 20px 15px 60px;
   }
 
   .hero {
