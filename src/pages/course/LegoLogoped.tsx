@@ -37,7 +37,7 @@ const LegoLogoped = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={legoLogopedImg} alt="Лего с логопедом" loading="eager" />
+                <img src={legoLogopedImg} alt="Лего с логопедом в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Лего с логопедом — уникальный формат, объединяющий конструирование и развитие речи. Дети с 

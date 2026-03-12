@@ -48,7 +48,7 @@ const LegoRazvivayka = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={legoRazvivaykaImg} alt="Лего-развивайка" loading="eager" />
+                <img src={legoRazvivaykaImg} alt="Лего-развивайка в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Лего-развивайка — программа для детей 2,5–3 лет, где конструирование становится инструментом 

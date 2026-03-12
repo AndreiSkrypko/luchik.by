@@ -136,7 +136,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
             >
               <img
                 src="/img/main/logo.webp"
-                alt="Логотип «Лучик»"
+                alt="Логотип детского центра Лучик в Лиде"
                 width={520}
                 height={138}
                 loading="eager"
@@ -261,7 +261,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               >
                 <img
                   src="/img/socseti/inst.svg"
-                  alt="Instagram"
+                  alt="Instagram детского центра Лучик в Лиде"
                   width={40}
                   height={40}
                   className={styles.contactsSocialIcon}
@@ -283,7 +283,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               >
                 <img
                   src="/img/socseti/vk.svg"
-                  alt="ВКонтакте"
+                  alt="ВКонтакте детского центра Лучик в Лиде"
                   width={40}
                   height={40}
                   className={styles.contactsSocialIcon}
@@ -300,7 +300,7 @@ const ContactsPanel = ({ isOpen, onClose }: ContactsPanelProps) => {
               >
                 <img
                   src="/img/socseti/ok.svg"
-                  alt="Одноклассники"
+                  alt="Одноклассники детского центра Лучик в Лиде"
                   width={40}
                   height={40}
                   className={styles.contactsSocialIcon}

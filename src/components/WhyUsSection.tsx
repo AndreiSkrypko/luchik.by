@@ -19,12 +19,12 @@ const WhyUsSection = () => {
         <div className={styles.whyUsContent}>
           <img
             src="/img/why_we/cards.svg"
-            alt="Почему мы?"
+            alt="Почему выбирают детский центр Лучик в Лиде"
             className={styles.whyUsCards}
           />
           <img
             src="/img/why_we/boy.svg"
-            alt="Мальчик"
+            alt="Ребёнок на занятиях в детском центре Лучик"
             className={styles.whyUsBoy}
           />
           <button 
@@ -42,7 +42,7 @@ const WhyUsSection = () => {
       <div className={styles.mobileWhyUs}>
         <h2 className={styles.mobileWhyTitle}>Почему мы</h2>
         <div className={styles.mobileInner}>
-          <img src="/img/why_we/boy.svg" alt="Ребёнок" className={styles.mobileBoy} />
+          <img src="/img/why_we/boy.svg" alt="Ребёнок в детском центре Лучик, Лида" className={styles.mobileBoy} />
           <div className={styles.mobileWhyText}>
             <ul className={styles.mobileWhyList}>
               <li>Практические проекты</li>

@@ -37,7 +37,7 @@ const ProgrammingPython = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingPythonImg} alt="Python" loading="eager" />
+                <img src={programmingPythonImg} alt="Программирование Python в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Python — один из самых популярных языков в мире. Простой синтаксис, читаемость и богатые 

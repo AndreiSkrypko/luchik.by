@@ -37,7 +37,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
         </p>
         <img
           src="/img/main/ladybug.webp"
-          alt="Божья коровка"
+          alt="Божья коровка — символ детского центра Лучик в Лиде"
           width={144}
           height={144}
           className={styles.ladybug}
@@ -55,7 +55,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
         >
           <img
             src="/img/main/cta-button.webp"
-            alt="Оставить заявку"
+            alt="Оставить заявку в детский центр Лучик"
             width={371}
             height={82}
             className={styles.ctaButtonImage}

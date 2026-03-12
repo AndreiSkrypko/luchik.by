@@ -37,7 +37,7 @@ const ProgrammingVr = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingVrImg} alt="VR" loading="eager" />
+                <img src={programmingVrImg} alt="VR-программирование в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 VR-разработка — создание миров и игр для шлемов виртуальной реальности. Дети работают в 

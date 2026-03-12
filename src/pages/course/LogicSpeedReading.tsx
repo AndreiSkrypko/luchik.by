@@ -37,7 +37,7 @@ const LogicSpeedReading = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={logicSpeedReadingImg} alt="Логика и скорочтение" loading="eager" />
+                <img src={logicSpeedReadingImg} alt="Логика и скорочтение в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Курс «Логика и скорочтение» помогает детям не только быстро читать, но и понимать текст, выделять 

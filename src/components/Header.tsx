@@ -132,7 +132,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
         >
           <img
             src="/img/main/logo.webp"
-            alt="Логотип «Лучик»"
+            alt="Логотип детского центра Лучик в Лиде"
             width={520}
             height={138}
             loading="eager"
@@ -171,7 +171,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               <div className={styles.logo}>
                 <img
                   src="/img/main/logo.webp"
-                  alt="Логотип «Лучик»"
+                  alt="Логотип детского центра Лучик в Лиде"
                   width={520}
                   height={138}
                   loading="eager"
@@ -198,7 +198,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               >
                 <img
                   src="/img/socseti/inst.svg"
-                  alt="Instagram"
+                  alt="Instagram детского центра Лучик в Лиде"
                   width={32}
                   height={32}
                   className={styles.socialIcon}
@@ -228,7 +228,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               >
                 <img
                   src="/img/socseti/ok.svg"
-                  alt="Одноклассники"
+                  alt="Одноклассники детского центра Лучик в Лиде"
                   width={32}
                   height={32}
                   className={styles.socialIcon}

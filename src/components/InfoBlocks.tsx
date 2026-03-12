@@ -7,7 +7,7 @@ const InfoBlocks = () => {
         <div className={styles.infoBlock}>
           <img
             src="/img/cards/first.svg"
-            alt="от 1 до 17 лет"
+            alt="Детский центр Лучик — занятия от 1 до 17 лет в Лиде"
             className={styles.infoBlockImage}
           />
         </div>
@@ -15,7 +15,7 @@ const InfoBlocks = () => {
         <div className={styles.infoBlock}>
           <img
             src="/img/cards/second.svg"
-            alt="Педагоги с опытом"
+            alt="Педагоги с опытом — детский центр Лучик в Лиде"
             className={styles.infoBlockImage}
           />
         </div>
@@ -23,7 +23,7 @@ const InfoBlocks = () => {
         <div className={styles.infoBlock}>
           <img
             src="/img/cards/robotics.webp"
-            alt="Робототехника и программирование"
+            alt="Робототехника и программирование в детском центре Лучик, Лида"
             className={styles.infoBlockImage}
             width={570}
             height={428}
@@ -35,7 +35,7 @@ const InfoBlocks = () => {
         <div className={styles.infoBlock}>
           <img
             src="/img/cards/fourth.svg"
-            alt="Семейная атмосфера"
+            alt="Семейная атмосфера в детском центре Лучик, Лида"
             className={styles.infoBlockImage}
           />
         </div>

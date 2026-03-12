@@ -37,7 +37,7 @@ const Blender3d = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={blender3dImg} alt="Blender" loading="eager" />
+                <img src={blender3dImg} alt="Blender 3D в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Blender — бесплатный профессиональный редактор 3D. Подростки учатся создавать модели, 

@@ -37,7 +37,7 @@ const ArtStudio = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={artStudioImg} alt="Арт-студия" loading="eager" />
+                <img src={artStudioImg} alt="Арт-студия в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Арт-студия — пространство, где ребёнок раскрывает творческий потенциал через рисование, лепку и 

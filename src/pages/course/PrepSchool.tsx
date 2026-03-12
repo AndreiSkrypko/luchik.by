@@ -37,7 +37,7 @@ const PrepSchool = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={prepSchoolImg} alt="Подготовка к школе" loading="eager" />
+                <img src={prepSchoolImg} alt="Подготовка к школе в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Подготовка к школе — интенсивный курс для будущих первоклассников. За год до школы мы даём ребёнку 

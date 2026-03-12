@@ -191,7 +191,7 @@ const MapSection = () => {
           <h2 className={styles.mapTitle}>Мы на карте</h2>
           <img
             src="/img/map/airplane.svg"
-            alt="Самолет"
+            alt="Самолёт — детский центр Лучик на карте Лиды"
             className={styles.airplane}
             onError={handleImageError}
           />
@@ -202,7 +202,7 @@ const MapSection = () => {
               <div className={styles.locationIcon}>
                 <img
                   src="/img/map/location-icon.svg"
-                  alt="Локация"
+                  alt="Локация детского центра Лучик в Лиде"
                   className={styles.locationIconImage}
                   onError={handleImageError}
                 />
@@ -227,7 +227,7 @@ const MapSection = () => {
           <div className={styles.cowWrapper}>
             <img
               src="/img/map/korovka.svg"
-              alt=""
+              alt="Божья коровка — символ детского центра Лучик в Лиде"
               className={styles.cowImage}
               onError={handleImageError}
             />
@@ -235,7 +235,7 @@ const MapSection = () => {
           <div className={styles.boyWrapper}>
             <img
               src="/img/map/boy.svg"
-              alt=""
+              alt="Ребёнок — детский центр Лучик в Лиде"
               className={styles.boyImage}
               onError={handleImageError}
             />

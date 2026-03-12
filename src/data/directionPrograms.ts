@@ -3,7 +3,7 @@ export interface DirectionProgram {
   title: string;
   lead: string;
   image: string;
-  linkTo?: string; // e.g. /trainers/mental-arithmetic
+  linkTo?: string; // e.g. /course/logic-speed-reading
   accentColor?: string;
 }
 

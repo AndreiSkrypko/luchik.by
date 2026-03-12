@@ -37,7 +37,7 @@ const ProgrammingRoblox = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingRobloxImg} alt="Roblox" loading="eager" />
+                <img src={programmingRobloxImg} alt="Программирование Roblox в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Roblox Studio — платформа, где дети создают собственные 3D-игры и публикуют их для миллионов 

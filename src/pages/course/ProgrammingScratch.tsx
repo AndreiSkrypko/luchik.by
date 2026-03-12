@@ -37,7 +37,7 @@ const ProgrammingScratch = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingScratchImg} alt="Scratch" loading="eager" />
+                <img src={programmingScratchImg} alt="Программирование Scratch в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Scratch — среда визуального программирования от MIT. Дети собирают программы из блоков, 

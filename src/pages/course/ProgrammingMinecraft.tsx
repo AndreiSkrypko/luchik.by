@@ -37,7 +37,7 @@ const ProgrammingMinecraft = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingMinecraftImg} alt="Minecraft" loading="eager" />
+                <img src={programmingMinecraftImg} alt="Программирование Minecraft в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Minecraft Education Edition и MakeCode позволяют программировать внутри популярной игры. 

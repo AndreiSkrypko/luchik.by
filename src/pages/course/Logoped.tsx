@@ -37,7 +37,7 @@ const Logoped = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={logopedImg} alt="Логопед" loading="eager" />
+                <img src={logopedImg} alt="Логопед в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Занятия с логопедом помогают ребёнку правильно произносить звуки, развивать связную речь и 

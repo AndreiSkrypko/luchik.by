@@ -91,7 +91,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
             <div className={styles.footerLogo}>
               <img
                 src="/img/footer/logo.webp"
-                alt="Логотип Лучик"
+                alt="Логотип детского центра Лучик в Лиде"
                 width={480}
                 height={128}
                 className={styles.footerLogoImage}
@@ -100,7 +100,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
               />
             <img
               src="/img/footer/pchela.webp"
-              alt="Пчела"
+              alt="Пчела — символ детского центра Лучик в Лиде"
               width={100}
               height={80}
               className={styles.footerBee}
@@ -200,7 +200,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                 <a href="#" className={styles.footerSocialLink}>
                   <img
                     src="/img/socseti/inst.svg"
-                    alt="Instagram"
+                    alt="Instagram детского центра Лучик в Лиде"
                     width={32}
                     height={32}
                     className={styles.footerSocialIcon}
@@ -209,7 +209,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                 <a href="#" className={styles.footerSocialLink}>
                   <img
                     src="/img/socseti/vk.svg"
-                    alt="VK"
+                    alt="ВКонтакте детского центра Лучик в Лиде"
                     width={32}
                     height={32}
                     className={styles.footerSocialIcon}
@@ -218,7 +218,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                 <a href="#" className={styles.footerSocialLink}>
                   <img
                     src="/img/socseti/ok.svg"
-                    alt="Odnoklassniki"
+                    alt="Одноклассники детского центра Лучик в Лиде"
                     width={32}
                     height={32}
                     className={styles.footerSocialIcon}

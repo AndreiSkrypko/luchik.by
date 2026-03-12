@@ -37,7 +37,7 @@ const Prep2year = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={prep2yearImg} alt="Подготовка к школе" loading="eager" />
+                <img src={prep2yearImg} alt="Подготовка к школе в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Двухгодовой курс подготовки к школе — это мягкое и последовательное введение ребёнка в учебный 

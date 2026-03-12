@@ -135,7 +135,7 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
                 <div className={styles.cardImageWrapper}>
                   <img
                     src={directionImageOverrides[program.id] ?? program.image}
-                    alt={program.title}
+                    alt={`${program.title} в Лиде, детский центр Лучик`}
                     className={styles.cardImage}
                     loading="lazy"
                   />

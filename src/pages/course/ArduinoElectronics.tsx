@@ -37,7 +37,7 @@ const ArduinoElectronics = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={arduinoElectronicsImg} alt="Arduino" loading="eager" />
+                <img src={arduinoElectronicsImg} alt="Arduino и электроника в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Arduino — платформа для создания электронных проектов. Подростки учатся собирать схемы, 

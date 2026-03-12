@@ -37,7 +37,7 @@ const LegoMath = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={legoMathImg} alt="Лего-математика" loading="eager" />
+                <img src={legoMathImg} alt="Лего-математика в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Лего-математика — курс, где дети изучают числа, формы, логику и простые математические операции 

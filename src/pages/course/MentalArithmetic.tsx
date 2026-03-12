@@ -37,7 +37,7 @@ const MentalArithmetic = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={mentalArithmeticImg} alt="Ментальная арифметика" loading="eager" />
+                <img src={mentalArithmeticImg} alt="Ментальная арифметика в Лиде, детский центр Лучик" loading="eager" />
               </div>
               <p className={styles.aboutText}>
                 Ментальная арифметика — методика развития умственного счёта с помощью абакуса (счётов). 

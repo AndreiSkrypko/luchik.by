@@ -21,7 +21,7 @@ const DirectionsSection = () => {
             <div className={styles.cloudWrapper}>
               <img
                 src="/img/footer/oblako1.webp"
-                alt="Облако"
+                alt="Направления детского центра Лучик в Лиде"
                 width={80}
                 height={50}
                 className={styles.cloud}
@@ -46,7 +46,7 @@ const DirectionsSection = () => {
             </div>
             <img
               src="/img/directions/card-base.svg"
-              alt=""
+              alt="Декоративная основа карточки 1-5 лет"
               className={styles.cardBase}
               onError={handleImageError}
             />
@@ -85,7 +85,7 @@ const DirectionsSection = () => {
             </div>
             <img
               src="/img/directions/card-base.svg"
-              alt=""
+              alt="Декоративная основа карточки 5-10 лет"
               className={styles.cardBase}
               onError={handleImageError}
             />
@@ -101,7 +101,7 @@ const DirectionsSection = () => {
             <div className={styles.vzikWrapper}>
               <img
                 src="/img/directions/vzik.svg"
-                alt="Взъик"
+                alt="Персонаж Вжик — детский центр Лучик в Лиде"
                 className={styles.vzik}
                 onError={handleImageError}
               />
@@ -124,7 +124,7 @@ const DirectionsSection = () => {
             </div>
             <img
               src="/img/directions/card-base.svg"
-              alt=""
+              alt="Декоративная основа карточки 10-17 лет"
               className={styles.cardBase}
               onError={handleImageError}
             />
