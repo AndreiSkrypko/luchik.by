@@ -104,7 +104,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Логика и скорочтение',
         lead: 'Развитие логического мышления, техника быстрого чтения и понимание текста',
         image: '/img/directions/logic-speed-reading.png',
-        linkTo: '/trainers/speed-reading',
+        linkTo: '/course/logic-speed-reading',
         accentColor: '#FF6B35',
       },
       {
@@ -112,7 +112,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Английский язык',
         lead: 'Развитие словарного запаса, чтения и аудирования в игровом формате',
         image: '/img/directions/english.png',
-        linkTo: '/trainers/english',
+        linkTo: '/course/english',
         accentColor: '#4B9CF5',
       },
       {
@@ -120,6 +120,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Шахматы',
         lead: 'Развитие стратегического мышления, памяти и концентрации через игру',
         image: '/img/directions/chess.png',
+        linkTo: '/course/chess',
         accentColor: '#2C3E50',
       },
       {
@@ -127,6 +128,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование Scratch',
         lead: 'Визуальное программирование для начинающих — создание игр и анимаций',
         image: '/img/directions/programming-scratch.png',
+        linkTo: '/course/programming-scratch',
         accentColor: '#FF6B35',
       },
       {
@@ -134,6 +136,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование Minecraft',
         lead: 'Программирование в популярной игровой среде — логика и креативность',
         image: '/img/directions/programming-minecraft.png',
+        linkTo: '/course/programming-minecraft',
         accentColor: '#27AE60',
       },
       {
@@ -141,6 +144,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование Roblox',
         lead: 'Создание своих игр в Roblox Studio на языке Lua',
         image: '/img/directions/programming-roblox.png',
+        linkTo: '/course/programming-roblox',
         accentColor: '#9B59B6',
       },
       {
@@ -148,6 +152,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование VR-игр',
         lead: 'Создание виртуальной реальности — 3D-мир и интерактивные игры',
         image: '/img/directions/programming-vr.png',
+        linkTo: '/course/programming-vr',
         accentColor: '#4B9CF5',
       },
       {
@@ -155,6 +160,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Робототехника',
         lead: 'Сборка роботов, основы механики и программирования',
         image: '/img/directions/robotics.png',
+        linkTo: '/course/robotics',
         accentColor: '#2C3E50',
       },
       {
@@ -162,7 +168,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Ментальная арифметика',
         lead: 'Счёт в уме, развитие памяти и концентрации. Онлайн-тренажёры и офлайн-занятия',
         image: '/img/directions/mental-arithmetic.png',
-        linkTo: '/trainers/mental-arithmetic',
+        linkTo: '/course/mental-arithmetic',
         accentColor: '#FF6B35',
       },
       {
@@ -170,6 +176,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Репетитор',
         lead: 'Индивидуальные занятия по школьным предметам — помощь с домашними заданиями',
         image: '/img/directions/tutor.png',
+        linkTo: '/course/tutor',
         accentColor: '#27AE60',
       },
       {
@@ -177,6 +184,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: '3D-моделирование',
         lead: 'Создание трёхмерных моделей, основы цифрового дизайна и печати',
         image: '/img/directions/3d-modeling.png',
+        linkTo: '/course/3d-modeling',
         accentColor: '#E74C3C',
       },
     ],
@@ -191,6 +199,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Робототехника',
         lead: 'Продвинутые проекты: сборка роботов, датчики, программирование микроконтроллеров',
         image: '/img/directions/robotics-10-17.png',
+        linkTo: '/course/robotics-10-17',
         accentColor: '#2C3E50',
       },
       {
@@ -198,6 +207,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Электроника и Arduino',
         lead: 'Основы электроники, программирование микроконтроллеров, создание умных устройств',
         image: '/img/directions/arduino-electronics.png',
+        linkTo: '/course/arduino-electronics',
         accentColor: '#27AE60',
       },
       {
@@ -205,6 +215,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование на Python',
         lead: 'Синтаксис, алгоритмы, работа с данными — от основ до практических проектов',
         image: '/img/directions/programming-python.png',
+        linkTo: '/course/programming-python',
         accentColor: '#4B9CF5',
       },
       {
@@ -212,6 +223,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Программирование на JavaScript',
         lead: 'Интерактивность на веб-страницах, логика приложений, основы фреймворков',
         image: '/img/directions/programming-javascript.png',
+        linkTo: '/course/programming-javascript',
         accentColor: '#F39C12',
       },
       {
@@ -219,6 +231,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Веб-разработка',
         lead: 'HTML, CSS, JavaScript — создание сайтов с нуля, верстка и фронтенд',
         image: '/img/directions/web-development.png',
+        linkTo: '/course/web-development',
         accentColor: '#E74C3C',
       },
       {
@@ -226,6 +239,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: '3D-моделирование в Blender',
         lead: 'Создание трёхмерных моделей, анимация, рендеринг и основы визуализации',
         image: '/img/directions/3d-blender.png',
+        linkTo: '/course/3d-blender',
         accentColor: '#F39C12',
       },
       {
@@ -233,6 +247,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Разработка VR-игр',
         lead: 'Создание приложений виртуальной реальности — 3D-мир и интерактив',
         image: '/img/directions/programming-vr-10-17.png',
+        linkTo: '/course/programming-vr-10-17',
         accentColor: '#4B9CF5',
       },
       {
@@ -240,6 +255,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Разработка игр в Roblox',
         lead: 'Roblox Studio и Lua — создание многопользовательских игр и механик',
         image: '/img/directions/programming-roblox-10-17.png',
+        linkTo: '/course/programming-roblox-10-17',
         accentColor: '#9B59B6',
       },
       {
@@ -247,6 +263,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Схемотехника',
         lead: 'Чтение принципиальных схем, пайка, проектирование электронных устройств',
         image: '/img/directions/circuit-design.png',
+        linkTo: '/course/circuit-design',
         accentColor: '#2C3E50',
       },
       {
@@ -254,6 +271,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         title: 'Искусственный интеллект',
         lead: 'Основы машинного обучения, нейросети, работа с данными и AI-инструментами',
         image: '/img/directions/artificial-intelligence.png',
+        linkTo: '/course/artificial-intelligence',
         accentColor: '#9B59B6',
       },
     ],

@@ -1,17 +1,22 @@
 import { Link } from 'react-router-dom';
-import { courseOrder } from '@/data/courseNav';
+import { courseOrder, courseOrder5_10, courseOrder10_17 } from '@/data/courseNav';
 import styles from './CourseNav.module.css';
 
 interface CourseNavProps {
   currentCourseId: string;
+  ageRange?: '1-5' | '5-10' | '10-17';
 }
 
-const CourseNav = ({ currentCourseId }: CourseNavProps) => {
-  const idx = courseOrder.findIndex((c) => c.id === currentCourseId);
+const CourseNav = ({ currentCourseId, ageRange = '1-5' }: CourseNavProps) => {
+  const order = ageRange === '10-17' ? courseOrder10_17 : ageRange === '5-10' ? courseOrder5_10 : courseOrder;
+  const listPath = ageRange === '10-17' ? '/age/10-17' : ageRange === '5-10' ? '/age/5-10' : '/age/1-5';
+  const listLabel = ageRange === '10-17' ? 'Все курсы 10–17 лет' : ageRange === '5-10' ? 'Все курсы 5–10 лет' : 'Все курсы 1–5 лет';
+
+  const idx = order.findIndex((c) => c.id === currentCourseId);
   if (idx < 0) return null;
 
-  const prev = idx > 0 ? courseOrder[idx - 1] : null;
-  const next = idx < courseOrder.length - 1 ? courseOrder[idx + 1] : null;
+  const prev = idx > 0 ? order[idx - 1] : null;
+  const next = idx < order.length - 1 ? order[idx + 1] : null;
 
   return (
     <nav className={styles.courseNav} aria-label="Навигация по курсам">
@@ -24,8 +29,8 @@ const CourseNav = ({ currentCourseId }: CourseNavProps) => {
         ) : (
           <div className={styles.navPlaceholder} />
         )}
-        <Link to="/age/1-5" className={styles.navAll}>
-          Все курсы 1–5 лет
+        <Link to={listPath} className={styles.navAll}>
+          {listLabel}
         </Link>
         {next ? (
           <Link to={next.path} className={styles.navLink} data-direction="next">

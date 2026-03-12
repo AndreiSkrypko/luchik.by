@@ -41,6 +41,27 @@ import LegoLogoped from "./pages/course/LegoLogoped";
 import Prep2year from "./pages/course/Prep2year";
 import PrepSchool from "./pages/course/PrepSchool";
 import LegoMath from "./pages/course/LegoMath";
+import LogicSpeedReading from "./pages/course/LogicSpeedReading";
+import English from "./pages/course/English";
+import Chess from "./pages/course/Chess";
+import ProgrammingScratch from "./pages/course/ProgrammingScratch";
+import ProgrammingMinecraft from "./pages/course/ProgrammingMinecraft";
+import ProgrammingRoblox from "./pages/course/ProgrammingRoblox";
+import ProgrammingVr from "./pages/course/ProgrammingVr";
+import Robotics from "./pages/course/Robotics";
+import MentalArithmetic from "./pages/course/MentalArithmetic";
+import Tutor from "./pages/course/Tutor";
+import Modeling3d from "./pages/course/Modeling3d";
+import Robotics10_17 from "./pages/course/Robotics10_17";
+import ArduinoElectronics from "./pages/course/ArduinoElectronics";
+import ProgrammingPython from "./pages/course/ProgrammingPython";
+import ProgrammingJavascript from "./pages/course/ProgrammingJavascript";
+import WebDevelopment from "./pages/course/WebDevelopment";
+import Blender3d from "./pages/course/Blender3d";
+import ProgrammingVr10_17 from "./pages/course/ProgrammingVr10_17";
+import ProgrammingRoblox10_17 from "./pages/course/ProgrammingRoblox10_17";
+import CircuitDesign from "./pages/course/CircuitDesign";
+import ArtificialIntelligence from "./pages/course/ArtificialIntelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -101,6 +122,27 @@ const AppRouter = () => (
           <Route path="/course/prep-2year" element={<Prep2year />} />
           <Route path="/course/prep-school" element={<PrepSchool />} />
           <Route path="/course/lego-math" element={<LegoMath />} />
+          <Route path="/course/logic-speed-reading" element={<LogicSpeedReading />} />
+          <Route path="/course/english" element={<English />} />
+          <Route path="/course/chess" element={<Chess />} />
+          <Route path="/course/programming-scratch" element={<ProgrammingScratch />} />
+          <Route path="/course/programming-minecraft" element={<ProgrammingMinecraft />} />
+          <Route path="/course/programming-roblox" element={<ProgrammingRoblox />} />
+          <Route path="/course/programming-vr" element={<ProgrammingVr />} />
+          <Route path="/course/robotics" element={<Robotics />} />
+          <Route path="/course/mental-arithmetic" element={<MentalArithmetic />} />
+          <Route path="/course/tutor" element={<Tutor />} />
+          <Route path="/course/3d-modeling" element={<Modeling3d />} />
+          <Route path="/course/robotics-10-17" element={<Robotics10_17 />} />
+          <Route path="/course/arduino-electronics" element={<ArduinoElectronics />} />
+          <Route path="/course/programming-python" element={<ProgrammingPython />} />
+          <Route path="/course/programming-javascript" element={<ProgrammingJavascript />} />
+          <Route path="/course/web-development" element={<WebDevelopment />} />
+          <Route path="/course/3d-blender" element={<Blender3d />} />
+          <Route path="/course/programming-vr-10-17" element={<ProgrammingVr10_17 />} />
+          <Route path="/course/programming-roblox-10-17" element={<ProgrammingRoblox10_17 />} />
+          <Route path="/course/circuit-design" element={<CircuitDesign />} />
+          <Route path="/course/artificial-intelligence" element={<ArtificialIntelligence />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
     </Routes>
