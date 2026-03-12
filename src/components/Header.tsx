@@ -149,9 +149,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
       <Link to="/gallery" className={styles.navTextLink} onClick={closeMobileMenu}>
         Галерея
       </Link>
-      <Link to="/trainers" className={styles.navTextLink} onClick={closeMobileMenu}>
-        Тренажеры
-      </Link>
+      <a href="https://mentor-orpin-two.vercel.app/" className={styles.navTextLink} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+        Обучающая платформа
+      </a>
       <button
         onClick={handleContactsClick}
         className={styles.navTextLink}

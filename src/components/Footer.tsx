@@ -169,9 +169,9 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                   </Link>
                 </div>
                 <div className={styles.footerNavLinksColumn}>
-                  <Link to="/trainers" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>
-                    Тренажеры
-                  </Link>
+                  <a href="https://mentor-orpin-two.vercel.app/" className={styles.footerNavLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsFooterMenuOpen(false)}>
+                    Обучающая платформа
+                  </a>
                   <button
                     onClick={handleContactsClick}
                     className={styles.footerNavLink}
