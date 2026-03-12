@@ -5,6 +5,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import { directionPrograms } from '@/data/directionPrograms';
 import type { DirectionProgram } from '@/data/directionPrograms';
 import styles from './DirectionProgramsList.module.css';
+import modalStyles from './EnrollmentModal.module.css';
 
 import mamaMalyshImg from '@/assets/directions/mama-malysh.webp';
 import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.webp';
@@ -167,10 +168,10 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
       </section>
 
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className={styles.dialogContent}>
-          <DialogHeader>
-            <DialogTitle className={styles.dialogTitle}>Записаться на пробное занятие</DialogTitle>
-            <DialogDescription className={styles.dialogDescription}>
+        <DialogContent className={modalStyles.content}>
+          <DialogHeader className={modalStyles.header}>
+            <DialogTitle className={modalStyles.title}>Записаться на пробное занятие</DialogTitle>
+            <DialogDescription className={modalStyles.description}>
               Заполните форму, и мы свяжемся с вами в ближайшее время
             </DialogDescription>
           </DialogHeader>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './HeroSection.module.css';
+import modalStyles from './EnrollmentModal.module.css';
 
 interface HeroSectionProps {
   onContactsClick?: () => void;
@@ -68,10 +69,10 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
 
       {/* Модальное окно с формой */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className={styles.dialogContent}>
-          <DialogHeader>
-            <DialogTitle className={styles.dialogTitle}>Оставить заявку</DialogTitle>
-            <DialogDescription className={styles.dialogDescription}>
+        <DialogContent className={modalStyles.content}>
+          <DialogHeader className={modalStyles.header}>
+            <DialogTitle className={modalStyles.title}>Оставить заявку</DialogTitle>
+            <DialogDescription className={modalStyles.description}>
               Заполните форму, и мы свяжемся с вами в ближайшее время
             </DialogDescription>
           </DialogHeader>

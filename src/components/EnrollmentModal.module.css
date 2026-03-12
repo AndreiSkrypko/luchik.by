@@ -1,0 +1,104 @@
+/**
+ * Общие стили модального окна записи.
+ * Используется на главной (Hero, WhyUs, DirectionProgramsList) и на страницах курсов.
+ * Обеспечивает одинаковый красивый вид модалки на мобильных.
+ */
+
+.content {
+  max-width: 440px !important;
+  padding: 24px !important;
+  overflow: visible !important;
+  background: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.title {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #4665a1 !important;
+  text-align: left !important;
+}
+
+.description {
+  font-family: 'Segoe UI', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  color: #718096 !important;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+}
+
+.header {
+  text-align: left !important;
+}
+
+/* Красивая модалка на мобильных — как на страницах курсов */
+@media (max-width: 768px) {
+  .content {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 440px !important;
+    max-height: calc(100dvh - 32px) !important;
+    overflow-y: auto !important;
+    z-index: 51 !important;
+    animation: none !important;
+    transition: none !important;
+    transform-origin: center center !important;
+    padding: max(32px, env(safe-area-inset-top)) 24px max(28px, env(safe-area-inset-bottom)) !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(70, 101, 161, 0.12) !important;
+    box-shadow: 0 24px 56px rgba(70, 101, 161, 0.18), 0 12px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+    background: linear-gradient(180deg, #ffffff 0%, #F8FAFD 100%) !important;
+  }
+
+  .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #4665a1 0%, #6B8EC8 50%, #FF6B35 100%);
+    box-shadow: 0 2px 8px rgba(70, 101, 161, 0.2);
+  }
+
+  .content :global(> button) {
+    top: 18px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    aspect-ratio: 1 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(70, 101, 161, 0.08) !important;
+    color: #4665a1 !important;
+    opacity: 1 !important;
+  }
+
+  .content :global(> button:hover) {
+    background: rgba(70, 101, 161, 0.15) !important;
+    color: #4665a1 !important;
+  }
+
+  .title {
+    font-size: 20px !important;
+  }
+
+  .description {
+    font-size: 13px !important;
+  }
+}

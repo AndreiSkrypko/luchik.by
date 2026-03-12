@@ -40,6 +40,20 @@
   border-color: #4665a1;
 }
 
+.formInput.formInputError {
+  border-color: #e53e3e;
+}
+
+.formInput.formInputError:focus {
+  border-color: #e53e3e;
+}
+
+.formError {
+  font-size: 13px;
+  color: #e53e3e;
+  margin-top: -4px;
+}
+
 .formTextarea {
   resize: vertical;
   min-height: 100px;

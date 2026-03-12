@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './WhyUsSection.module.css';
+import modalStyles from './EnrollmentModal.module.css';
 
 const WhyUsSection = () => {
   const navigate = useNavigate();
@@ -64,10 +65,10 @@ const WhyUsSection = () => {
 
       {/* Модальное окно с формой */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className={styles.dialogContent}>
-          <DialogHeader>
-            <DialogTitle className={styles.dialogTitle}>Записаться на пробное занятие</DialogTitle>
-            <DialogDescription className={styles.dialogDescription}>
+        <DialogContent className={modalStyles.content}>
+          <DialogHeader className={modalStyles.header}>
+            <DialogTitle className={modalStyles.title}>Записаться на пробное занятие</DialogTitle>
+            <DialogDescription className={modalStyles.description}>
               Заполните форму, и мы свяжемся с вами в ближайшее время
             </DialogDescription>
           </DialogHeader>

@@ -53,6 +53,25 @@ const Footer = ({ onContactsClick }: FooterProps) => {
     }
   };
 
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsFooterMenuOpen(false);
+    if (location.pathname === '/') {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate('/#about', { replace: false });
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   const handleDirectionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsFooterMenuOpen(false);
@@ -158,7 +177,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
               </div>
               <div className={`${styles.footerNavLinks} ${isFooterMenuOpen ? styles.footerNavLinksOpen : ''}`}>
                 <div className={styles.footerNavLinksColumn}>
-                  <a href="#about" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>
+                  <a href="#about" className={styles.footerNavLink} onClick={handleAboutClick}>
                     О нас
                   </a>
                   <a href="#directions" className={styles.footerNavLink} onClick={handleDirectionsClick}>
@@ -197,7 +216,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                 <div>Сб, Вс с 10.00 до 18.00</div>
               </div>
               <div className={styles.footerSocials}>
-                <a href="#" className={styles.footerSocialLink}>
+                <a href="https://instagram.com/lu4ik_lida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы в Instagram">
                   <img
                     src="/img/socseti/inst.svg"
                     alt="Instagram детского центра Лучик в Лиде"
@@ -206,7 +225,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                     className={styles.footerSocialIcon}
                   />
                 </a>
-                <a href="#" className={styles.footerSocialLink}>
+                <a href="https://vk.com/luchiklida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы во ВКонтакте">
                   <img
                     src="/img/socseti/vk.svg"
                     alt="ВКонтакте детского центра Лучик в Лиде"
@@ -215,7 +234,7 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                     className={styles.footerSocialIcon}
                   />
                 </a>
-                <a href="#" className={styles.footerSocialLink}>
+                <a href="https://ok.ru/luchiklida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы в Одноклассниках">
                   <img
                     src="/img/socseti/ok.svg"
                     alt="Одноклассники детского центра Лучик в Лиде"

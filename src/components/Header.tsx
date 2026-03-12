@@ -190,9 +190,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           <div className={styles.navbarRight}>
             <div className={styles.socials}>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/lu4ik_lida"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={styles.socialIconLink}
                 aria-label="Мы в Instagram"
               >
@@ -205,9 +205,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
                 />
               </a>
               <a
-                href="https://vk.com"
+                href="https://vk.com/luchiklida"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={styles.socialIconLink}
                 aria-label="Мы во ВКонтакте"
               >
@@ -220,9 +220,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
                 />
               </a>
               <a
-                href="https://ok.ru"
+                href="https://ok.ru/luchiklida"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={styles.socialIconLink}
                 aria-label="Мы в Одноклассниках"
               >

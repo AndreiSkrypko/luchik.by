@@ -8,6 +8,12 @@ interface EnrollmentFormProps {
   compact?: boolean;
 }
 
+// Валидация белорусского номера: +375 XX XXX-XX-XX (12 цифр: 375 + 9)
+const validateBelarusPhone = (phone: string): boolean => {
+  const digits = phone.replace(/\D/g, '');
+  return digits.startsWith('375') && digits.length === 12;
+};
+
 const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к школе', compact = false }: EnrollmentFormProps) => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -15,6 +21,7 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
     parentPhone: '',
     message: ''
   });
+  const [phoneError, setPhoneError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -24,6 +31,9 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
       ...prev,
       [name]: value
     }));
+    if (name === 'parentPhone') {
+      setPhoneError(value ? (validateBelarusPhone(value) ? '' : 'Введите номер в формате +375 (XX) XXX-XX-XX') : '');
+    }
   };
 
   const sendToTelegram = async (data: typeof formData) => {
@@ -40,6 +50,7 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
       : 'Не указана';
 
     const message = `🎓 <b>Новая заявка на ${courseName}</b>\n\n` +
+      `📚 <b>Курс:</b> ${courseName}\n` +
       `👤 <b>Имя и фамилия ребёнка:</b> ${data.fullName}\n` +
       `📅 <b>Дата рождения:</b> ${formattedDate}\n` +
       `📱 <b>Номер опекуна/родителя:</b> ${data.parentPhone}\n` +
@@ -71,6 +82,11 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateBelarusPhone(formData.parentPhone)) {
+      setPhoneError('Введите номер в формате +375 (XX) XXX-XX-XX');
+      return;
+    }
+    setPhoneError('');
     setIsSubmitting(true);
     
     try {
@@ -150,10 +166,14 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
           name="parentPhone"
           value={formData.parentPhone}
           onChange={handleChange}
-          className={styles.formInput}
+          onBlur={() => formData.parentPhone && setPhoneError(validateBelarusPhone(formData.parentPhone) ? '' : 'Введите номер в формате +375 (XX) XXX-XX-XX')}
+          className={`${styles.formInput} ${phoneError ? styles.formInputError : ''}`}
           required
           placeholder="+375 (XX) XXX-XX-XX"
+          aria-invalid={!!phoneError}
+          aria-describedby={phoneError ? 'parentPhone-error' : undefined}
         />
+        {phoneError && <span id="parentPhone-error" className={styles.formError} role="alert">{phoneError}</span>}
       </div>
 
       <div className={styles.formGroup}>
