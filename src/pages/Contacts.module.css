@@ -1,0 +1,619 @@
+/* ============================================================
+   СТРАНИЦА КОНТАКТОВ
+   ============================================================ */
+
+.contactsPage {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: #ffffff;
+  background-image: linear-gradient(
+    to bottom,
+    #E5F5FF 0%,
+    #C3E1FF 50%,
+    #C3E1FF calc(800px),
+    #ffffff calc(800px)
+  );
+}
+
+.contactsPage::after {
+  content: '';
+  position: absolute;
+  top: 750px;
+  left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contactsPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/main/waves-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.12;
+  z-index: var(--z-bg);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .contactsPage {
+    background: #ffffff !important;
+    background-image: none !important;
+  }
+  .contactsPage::before {
+    top: 0;
+    height: 210px;
+    background: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF 100%);
+    opacity: 1;
+  }
+}
+@media (max-width: 480px) {
+  .contactsPage::before { height: 190px; }
+}
+
+/* ── Главный контейнер ── */
+.contactsMain {
+  padding: 120px 20px 60px;
+  min-height: calc(100vh - 200px);
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  margin-top: 240px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Заголовок ── */
+.titleSection {
+  margin-top: -750px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+/* мобильный: убираем трюк с большим отрицательным margin. padding-top — под заголовок под навбаром, градиент ::before не трогаем */
+@media (max-width: 768px) {
+  .contactsMain {
+    margin-top: 0;
+    background: transparent;
+  }
+  .titleSection {
+    margin-top: 0 !important;
+    padding-top: 8px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .titleSection {
+    padding-top: 4px;
+    margin-bottom: 20px;
+  }
+}
+
+.pageTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #4665a1;
+  margin: 0 0 12px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.pageDescription {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  color: #4A5568;
+  max-width: 560px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.desktopBr { display: block; }
+
+/* ── Общая секция ── */
+.section {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 36px;
+}
+
+.sectionTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #2D3748;
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+/* ── Карточки адресов ── */
+.addressGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.addressCard {
+  background: linear-gradient(135deg, #F0F7FF 0%, #E8F4FD 100%);
+  border: 1px solid rgba(70, 101, 161, 0.15);
+  border-radius: 20px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 24px rgba(70, 101, 161, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.addressCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(70, 101, 161, 0.14);
+}
+
+.addressCardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.addressIconWrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4665a1 0%, #6B8EC8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(70, 101, 161, 0.35);
+}
+
+.addressSvg {
+  width: 24px;
+  height: 24px;
+}
+
+.addressLabel {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4665a1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.addressStreet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #2D3748;
+  line-height: 1.2;
+}
+
+.addressPhone {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #4665a1;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.addressPhone:hover {
+  color: #FF6B35;
+}
+
+/* ── Инфо-ряд (email + расписание) ── */
+.infoRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.infoCard {
+  background: #ffffff;
+  border: 1px solid rgba(70, 101, 161, 0.1);
+  border-radius: 16px;
+  padding: 20px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 2px 16px rgba(70, 101, 161, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(70, 101, 161, 0.1);
+}
+
+.infoCardIcon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #EBF4FF 0%, #D6EAFF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4665a1;
+}
+
+.infoSvg {
+  width: 22px;
+  height: 22px;
+}
+
+.infoCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.infoCardLabel {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.infoCardValue {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4665a1;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.infoCardValue:hover { color: #FF6B35; }
+
+.scheduleLines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.scheduleLine {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2D3748;
+}
+
+/* ── Мессенджеры ── */
+.messengersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.messengerCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--m-from) 0%, var(--m-to) 100%);
+  box-shadow: 0 6px 20px var(--m-shadow);
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.messengerCard::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.messengerCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--m-shadow);
+}
+
+.messengerIconWrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messengerIconWrap img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.messengerCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.messengerName {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.messengerHint {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ── Соцсети ── */
+.socialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.socialCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1.5px solid rgba(70, 101, 161, 0.12);
+  box-shadow: 0 2px 16px rgba(70, 101, 161, 0.07);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.socialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(70, 101, 161, 0.12);
+  border-color: rgba(70, 101, 161, 0.28);
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.socialCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.socialName {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #2D3748;
+  line-height: 1.2;
+}
+
+.socialUsername {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #718096;
+}
+
+/* ── CTA ── */
+.ctaSection {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 36px;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, #4665a1 0%, #5B7FC7 60%, #6B8EC8 100%);
+  border-radius: 22px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  box-shadow: 0 12px 48px rgba(70, 101, 161, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaCard::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.ctaCard::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.ctaText {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.ctaSubtitle {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.55;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButtonPrimary {
+  padding: 16px 32px;
+  background: linear-gradient(90deg, #FF6B35 0%, #FF8A50 100%);
+  color: #fff;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.55);
+}
+
+.ctaButtonSecondary {
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── Нижний отступ до футера ── */
+.contactsPage :global(.footerDivider) { margin-top: 48px; }
+
+/* ============================================================
+   ПЛАНШЕТЫ (769–1024)
+   ============================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contactsMain { padding: 100px 24px 50px; margin-top: 210px; }
+  .titleSection { margin-top: -600px; }
+  .pageTitle { font-size: 44px; }
+  .pageDescription { font-size: 17px; }
+  .messengersGrid { grid-template-columns: repeat(3, 1fr); }
+  .socialsGrid { grid-template-columns: repeat(3, 1fr); }
+  .ctaCard { padding: 40px 36px; flex-direction: column; text-align: center; }
+  .ctaSubtitle { max-width: 100%; }
+  .ctaButtons { flex-direction: row; justify-content: center; }
+}
+
+/* ============================================================
+   МОБИЛЬНЫЕ (≤768)
+   ============================================================ */
+@media (max-width: 768px) {
+  .contactsMain { padding: 0 16px 32px; }
+  .pageTitle { font-size: 32px; margin-bottom: 8px; }
+  .pageDescription { font-size: 15px; }
+  .desktopBr { display: none; }
+
+  .section { margin-bottom: 24px; }
+
+  .addressGrid { grid-template-columns: 1fr; gap: 12px; }
+  .addressCard { padding: 18px 16px; gap: 10px; }
+  .addressPhone { font-size: 20px; }
+  .addressStreet { font-size: 16px; }
+
+  .infoRow { grid-template-columns: 1fr; gap: 10px; }
+  .infoCard { padding: 16px 14px; }
+
+  .messengersGrid { grid-template-columns: 1fr; gap: 10px; }
+  .messengerCard { padding: 14px 16px; }
+
+  .socialsGrid { grid-template-columns: 1fr; gap: 10px; }
+  .socialCard { padding: 14px 16px; }
+
+  .ctaSection { margin-bottom: 24px; }
+  .ctaCard {
+    padding: 24px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .ctaTitle { font-size: 20px; }
+  .ctaSubtitle { font-size: 14px; max-width: 100%; }
+  .ctaButtons { flex-direction: column; width: 100%; gap: 10px; }
+  .ctaButtonPrimary, .ctaButtonSecondary { width: 100%; text-align: center; padding: 14px 24px; }
+}
+
+@media (max-width: 480px) {
+  .contactsMain { padding: 0 12px 24px; }
+  .pageTitle { font-size: 26px; }
+  .pageDescription { font-size: 14px; }
+  .addressCard { padding: 16px 14px; }
+  .addressPhone { font-size: 18px; }
+  .ctaCard { padding: 20px 16px; border-radius: 18px; }
+
+  .contactsPage :global(.footerDivider) { margin-top: 32px; }
+}

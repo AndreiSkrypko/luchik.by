@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
+import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
 import ThankYou from "./pages/ThankYou";
 import Age1_5 from "./pages/Age1-5";
@@ -71,6 +72,7 @@ const AppRouter = () => (
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/age/1-5" element={<Age1_5 />} />

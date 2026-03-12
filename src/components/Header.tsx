@@ -42,18 +42,6 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleContactsClick = () => {
-    // Закрываем меню сначала
-    closeMobileMenu();
-    // Затем открываем панель контактов с небольшой задержкой
-    // чтобы меню успело закрыться
-    setTimeout(() => {
-      if (onContactsClick) {
-        onContactsClick();
-      }
-    }, 150);
-  };
-
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     // Если мы уже на главной странице, просто скроллим наверх
@@ -152,12 +140,9 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
       <a href="https://mentor-orpin-two.vercel.app/" className={styles.navTextLink} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
         Обучающая платформа
       </a>
-      <button
-        onClick={handleContactsClick}
-        className={styles.navTextLink}
-      >
+      <Link to="/contacts" className={styles.navTextLink} onClick={closeMobileMenu}>
         Контакты
-      </button>
+      </Link>
     </div>
   );
 

@@ -3,20 +3,13 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 interface FooterProps {
-  onContactsClick?: () => void;
+  onContactsClick?: () => void; /* deprecated: Контакты ведёт на /contacts */
 }
 
-const Footer = ({ onContactsClick }: FooterProps) => {
+const Footer = ({ onContactsClick: _onContactsClick }: FooterProps) => {
   const [isFooterMenuOpen, setIsFooterMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleContactsClick = () => {
-    if (onContactsClick) {
-      onContactsClick();
-    }
-    setIsFooterMenuOpen(false);
-  };
 
   const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Отслеживание конверсии - клик по телефону
@@ -191,13 +184,9 @@ const Footer = ({ onContactsClick }: FooterProps) => {
                   <a href="https://mentor-orpin-two.vercel.app/" className={styles.footerNavLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsFooterMenuOpen(false)}>
                     Обучающая платформа
                   </a>
-                  <button
-                    onClick={handleContactsClick}
-                    className={styles.footerNavLink}
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left' }}
-                  >
+                  <Link to="/contacts" className={styles.footerNavLink} onClick={() => setIsFooterMenuOpen(false)}>
                     Контакты
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
