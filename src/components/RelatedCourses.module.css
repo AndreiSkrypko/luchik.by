@@ -1,0 +1,67 @@
+.relatedSection {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) { .relatedSection { margin-top: 40px; padding: 0 16px; } }
+@media (max-width: 480px) { .relatedSection { padding: 0 12px; } }
+
+.relatedHeading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2D3748;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) { .relatedHeading { font-size: 20px; margin-bottom: 16px; } }
+
+.relatedGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.relatedCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1px solid #EDF2F7;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #4665a1;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.relatedCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(70, 101, 161, 0.12);
+  border-color: rgba(70, 101, 161, 0.25);
+  color: #2D3748;
+}
+
+.relatedTitle {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+@media (max-width: 480px) { .relatedTitle { max-width: 160px; } }
+
+.relatedArrow {
+  flex-shrink: 0;
+  color: #FF6B35;
+  font-size: 16px;
+}

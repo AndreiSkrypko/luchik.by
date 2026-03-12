@@ -7,6 +7,8 @@ import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
+import CourseNav from '@/components/CourseNav';
+import RelatedCourses from '@/components/RelatedCourses';
 import complexImg from '@/assets/directions/complex.png';
 import styles from './CoursePage.module.css';
 
@@ -84,9 +86,13 @@ const Complex = () => {
             </div>
           </section>
 
+          <RelatedCourses currentCourseId="complex" />
+
           <section className={styles.locationBar}>
             <span>📍 г. Лида · Детский центр «Лучик» · Небольшие группы</span>
           </section>
+
+          <CourseNav currentCourseId="complex" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

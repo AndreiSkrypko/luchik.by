@@ -7,6 +7,8 @@ import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
+import CourseNav from '@/components/CourseNav';
+import RelatedCourses from '@/components/RelatedCourses';
 import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.png';
 import styles from './LegoRazvivayka.module.css';
 
@@ -165,9 +167,13 @@ const LegoRazvivayka = () => {
             </div>
           </section>
 
+          <RelatedCourses currentCourseId="lego-razvivayka" />
+
           <section className={styles.locationBar}>
             <span>📍 г. Лида · Детский центр «Лучик» · Небольшие группы</span>
           </section>
+
+          <CourseNav currentCourseId="lego-razvivayka" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

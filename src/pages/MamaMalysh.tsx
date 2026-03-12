@@ -7,6 +7,8 @@ import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
+import CourseNav from '@/components/CourseNav';
+import RelatedCourses from '@/components/RelatedCourses';
 import mamaMalyshImg from '@/assets/directions/mama-malysh.png';
 import styles from './MamaMalysh.module.css';
 
@@ -165,9 +167,13 @@ const MamaMalysh = () => {
             </div>
           </section>
 
+          <RelatedCourses currentCourseId="mama-malysh" />
+
           <section className={styles.locationBar}>
             <span>📍 г. Лида · Детский центр «Лучик» · Небольшие группы</span>
           </section>
+
+          <CourseNav currentCourseId="mama-malysh" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />

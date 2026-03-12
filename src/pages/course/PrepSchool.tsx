@@ -7,6 +7,8 @@ import ContactsPanel from '@/components/ContactsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
+import CourseNav from '@/components/CourseNav';
+import RelatedCourses from '@/components/RelatedCourses';
 import prepSchoolImg from '@/assets/directions/prep-school.png';
 import styles from './CoursePage.module.css';
 
@@ -84,9 +86,13 @@ const PrepSchool = () => {
             </div>
           </section>
 
+          <RelatedCourses currentCourseId="prep-school" />
+
           <section className={styles.locationBar}>
             <span>📍 г. Лида · Детский центр «Лучик» · Небольшие группы</span>
           </section>
+
+          <CourseNav currentCourseId="prep-school" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />
