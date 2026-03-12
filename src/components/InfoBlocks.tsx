@@ -22,8 +22,8 @@ const InfoBlocks = () => {
 
         <div className={styles.infoBlock}>
           <img
-            src="/img/cards/robotics.webp"
-            alt="Робототехника и программирование в детском центре Лучик, Лида"
+            src="/img/cards/about-center.webp"
+            alt="Детский центр Лучик — занятия и развивающие кружки в Лиде"
             className={styles.infoBlockImage}
             width={570}
             height={428}
