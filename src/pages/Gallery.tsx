@@ -9,8 +9,8 @@ import styles from './Gallery.module.css';
 
 const GALLERY_ITEMS = [
   {
-    src: '/img/cards/about-center.webp',
-    alt: 'Занятия в детском центре Лучик',
+    src: '/img/gallery/developing/1.jpg',
+    alt: 'Развивающие занятия в центре Лучик',
     title: 'Развивающие занятия',
     description: 'Комплексные программы для детей от 1 года',
     href: '/gallery/developing',
