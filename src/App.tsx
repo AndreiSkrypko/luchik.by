@@ -8,6 +8,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
+import GalleryMasterclass from "./pages/GalleryMasterclass";
+import GalleryDeveloping from "./pages/gallery/GalleryDeveloping";
+import GalleryRobotics from "./pages/gallery/GalleryRobotics";
+import GalleryPrepSchool from "./pages/gallery/GalleryPrepSchool";
+import GalleryProgramming from "./pages/gallery/GalleryProgramming";
+import GalleryLogoLego from "./pages/gallery/GalleryLogoLego";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -71,6 +77,12 @@ const AppRouter = () => (
     <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/masterclass" element={<GalleryMasterclass />} />
+          <Route path="/gallery/developing" element={<GalleryDeveloping />} />
+          <Route path="/gallery/robotics" element={<GalleryRobotics />} />
+          <Route path="/gallery/prep-school" element={<GalleryPrepSchool />} />
+          <Route path="/gallery/programming" element={<GalleryProgramming />} />
+          <Route path="/gallery/logo-lego" element={<GalleryLogoLego />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />

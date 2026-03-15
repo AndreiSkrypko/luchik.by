@@ -11,10 +11,11 @@
   background-image: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
 }
 
+/* top: 750px — перекрывает границу градиента, без полосы (README §6) */
 .coursePage::after {
   content: '';
   position: absolute;
-  top: 800px;
+  top: 750px;
   left: 0; right: 0; bottom: 0;
   background: #ffffff;
   z-index: 0;
