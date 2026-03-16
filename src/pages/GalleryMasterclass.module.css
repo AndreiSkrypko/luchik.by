@@ -105,20 +105,28 @@
   top: 105px;
   left: 40px;
   z-index: var(--z-header-fixed);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 245, 255, 0.95));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(70, 101, 161, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(70, 101, 161, 0.12);
+  color: #2d4a7c;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  color: #4665a1;
+  font-weight: 700;
   text-decoration: none;
   margin: 0;
-  padding: 12px 0;
-  transition: color 0.3s ease;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 .backLink:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(229, 245, 255, 1));
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
   color: #FF6B35;
 }
 
@@ -281,20 +289,6 @@
   .backLink {
     top: 66px;
     left: 15px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 245, 255, 0.95));
-    backdrop-filter: blur(10px);
-    padding: 10px 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(70, 101, 161, 0.2);
-    box-shadow: 0 2px 12px rgba(70, 101, 161, 0.12);
-    color: #2d4a7c;
-    font-weight: 700;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
-  }
-  .backLink:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(229, 245, 255, 1));
-    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
-    color: #FF6B35;
   }
 
   .main {
