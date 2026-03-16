@@ -149,10 +149,27 @@
   .backButton { top: 87px; left: 30px; }
 }
 @media (max-width: 768px) {
-  .backButton { top: 66px; left: 15px; }
+  .backButton {
+    top: 66px;
+    left: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(229, 245, 255, 0.95));
+    backdrop-filter: blur(10px);
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(70, 101, 161, 0.2);
+    box-shadow: 0 2px 12px rgba(70, 101, 161, 0.12);
+    color: #2d4a7c;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+  }
+  .backButton:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(229, 245, 255, 1));
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+    color: #FF6B35;
+  }
 }
 @media (max-width: 480px) {
-  .backButton { top: 54px; left: 12px; }
+  .backButton { top: 54px; left: 12px; padding: 10px 14px; font-size: 15px; }
 }
 
 .pageTitle {
