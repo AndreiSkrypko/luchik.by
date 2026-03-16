@@ -1,7 +1,17 @@
 import GalleryCategory from '@/components/GalleryCategory';
 
-// Добавляйте фото в /img/gallery/prep-school/ (1.png, 2.png, ...)
-const PHOTOS: { src: string; alt: string }[] = [];
+const BASE = '/img/gallery/prep-school';
+const PHOTOS: { src: string; alt: string }[] = [
+  { src: `${BASE}/photo_2026-03-16_18-36-11.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-17.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-20.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-25.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-29.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-32.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-36.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-39.webp`, alt: 'Подготовка к школе в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_18-36-42.webp`, alt: 'Подготовка к школе в центре Лучик' },
+];
 
 const GalleryPrepSchool = () => (
   <GalleryCategory

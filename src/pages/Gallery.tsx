@@ -23,7 +23,7 @@ const GALLERY_ITEMS = [
     href: '/gallery/robotics',
   },
   {
-    src: '/img/cards/about-center.webp',
+    src: '/img/gallery/prep-school/photo_2026-03-16_18-36-11.webp',
     alt: 'Подготовка к школе в центре Лучик',
     title: 'Подготовка к школе',
     description: 'Комплексная подготовка детей к школе',
@@ -51,11 +51,39 @@ const GALLERY_ITEMS = [
     href: '/gallery/electronics',
   },
   {
-    src: '/img/cards/robotics.webp',
+    src: '/img/gallery/legokonstruirovanie/20230325_110808.webp',
     alt: 'Легоконструирование в центре Лучик',
     title: 'Легоконструирование',
     description: 'Конструирование из Lego для детей',
     href: '/gallery/lego',
+  },
+  {
+    src: '/img/gallery/legorazvivaika/IMG_1818.webp',
+    alt: 'Лего-развивайка в центре Лучик',
+    title: 'Лего-развивайка',
+    description: 'Занятия для детей 2,5–3 лет',
+    href: '/gallery/lego-razvivayka',
+  },
+  {
+    src: '/img/gallery/chess/IMG_2095.webp',
+    alt: 'Шахматы в центре Лучик',
+    title: 'Шахматы',
+    description: 'Развитие логики и стратегического мышления',
+    href: '/gallery/chess',
+  },
+  {
+    src: '/img/gallery/legomatematika/IMG_1969.webp',
+    alt: 'Лего-математика в центре Лучик',
+    title: 'Лего-математика',
+    description: 'Математика через Lego для детей 5–7 лет',
+    href: '/gallery/lego-matematika',
+  },
+  {
+    src: '/img/gallery/3dmodelirovanie/IMG_5054.webp',
+    alt: '3D-моделирование в центре Лучик',
+    title: '3D-моделирование',
+    description: 'Tinkercad, Blender — создание 3D-моделей',
+    href: '/gallery/3d-modeling',
   },
 ];
 

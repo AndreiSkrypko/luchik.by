@@ -71,6 +71,34 @@ export const seoConfig: Record<string, SeoConfig> = {
     canonical: `${SITE_URL}/gallery/lego`,
   },
 
+  '/gallery/lego-razvivayka': {
+    title: 'Галерея — Лего-развивайка | Детский центр Лучик, Лида',
+    description: 'Фото занятий Лего-развивайки для детей 2,5–3 лет. Конструирование, мелкая моторика, пространственное мышление.',
+    keywords: `${baseKeywords}, лего развивайка фото Лида, лего 2-3 года Лучик`,
+    canonical: `${SITE_URL}/gallery/lego-razvivayka`,
+  },
+
+  '/gallery/chess': {
+    title: 'Галерея — Шахматы | Детский центр Лучик, Лида',
+    description: 'Фото занятий по шахматам в детском центре Лучик. Развитие логики, памяти и стратегического мышления.',
+    keywords: `${baseKeywords}, шахматы фото Лида, галерея шахматы Лучик`,
+    canonical: `${SITE_URL}/gallery/chess`,
+  },
+
+  '/gallery/lego-matematika': {
+    title: 'Галерея — Лего-математика | Детский центр Лучик, Лида',
+    description: 'Фото занятий по Лего-математике для детей 5–7 лет. Числа, форма, логика через Lego.',
+    keywords: `${baseKeywords}, лего математика фото Лида, галерея Лучик`,
+    canonical: `${SITE_URL}/gallery/lego-matematika`,
+  },
+
+  '/gallery/3d-modeling': {
+    title: 'Галерея — 3D-моделирование | Детский центр Лучик, Лида',
+    description: 'Фото занятий по 3D-моделированию: Tinkercad, Blender. Создание моделей, основы цифрового дизайна.',
+    keywords: `${baseKeywords}, 3D моделирование фото Лида, Tinkercad Blender Лучик`,
+    canonical: `${SITE_URL}/gallery/3d-modeling`,
+  },
+
   '/gallery/masterclass': {
     title: 'Галерея — Мастер-классы | Детский центр Лучик, Лида',
     description: 'Фото мастер-классов детского центра Лучик: творчество, конструирование, эксперименты для детей.',

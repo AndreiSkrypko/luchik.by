@@ -15,6 +15,10 @@ import GalleryPrepSchool from "./pages/gallery/GalleryPrepSchool";
 import GalleryProgramming from "./pages/gallery/GalleryProgramming";
 import GalleryElectronics from "./pages/gallery/GalleryElectronics";
 import GalleryLego from "./pages/gallery/GalleryLego";
+import GalleryLegoRazvivayka from "./pages/gallery/GalleryLegoRazvivayka";
+import GalleryChess from "./pages/gallery/GalleryChess";
+import GalleryLegoMatematika from "./pages/gallery/GalleryLegoMatematika";
+import Gallery3dModeling from "./pages/gallery/Gallery3dModeling";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -85,6 +89,10 @@ const AppRouter = () => (
           <Route path="/gallery/programming" element={<GalleryProgramming />} />
           <Route path="/gallery/electronics" element={<GalleryElectronics />} />
           <Route path="/gallery/lego" element={<GalleryLego />} />
+          <Route path="/gallery/lego-razvivayka" element={<GalleryLegoRazvivayka />} />
+          <Route path="/gallery/chess" element={<GalleryChess />} />
+          <Route path="/gallery/lego-matematika" element={<GalleryLegoMatematika />} />
+          <Route path="/gallery/3d-modeling" element={<Gallery3dModeling />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />
