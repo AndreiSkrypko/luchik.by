@@ -14,6 +14,7 @@ import GalleryRobotics from "./pages/gallery/GalleryRobotics";
 import GalleryPrepSchool from "./pages/gallery/GalleryPrepSchool";
 import GalleryProgramming from "./pages/gallery/GalleryProgramming";
 import GalleryElectronics from "./pages/gallery/GalleryElectronics";
+import GalleryLego from "./pages/gallery/GalleryLego";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -83,6 +84,7 @@ const AppRouter = () => (
           <Route path="/gallery/prep-school" element={<GalleryPrepSchool />} />
           <Route path="/gallery/programming" element={<GalleryProgramming />} />
           <Route path="/gallery/electronics" element={<GalleryElectronics />} />
+          <Route path="/gallery/lego" element={<GalleryLego />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />

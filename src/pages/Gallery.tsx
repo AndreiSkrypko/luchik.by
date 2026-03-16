@@ -44,11 +44,18 @@ const GALLERY_ITEMS = [
     href: '/gallery/masterclass',
   },
   {
-    src: '/img/cards/robotics.webp',
+    src: '/img/gallery/elektronika_shemotehnika/IMG_2016.webp',
     alt: 'Электроника и схемотехника в центре Лучик',
     title: 'Электроника и схемотехника',
     description: 'Arduino, пайка, создание электронных устройств',
     href: '/gallery/electronics',
+  },
+  {
+    src: '/img/cards/robotics.webp',
+    alt: 'Легоконструирование в центре Лучик',
+    title: 'Легоконструирование',
+    description: 'Конструирование из Lego для детей',
+    href: '/gallery/lego',
   },
 ];
 
