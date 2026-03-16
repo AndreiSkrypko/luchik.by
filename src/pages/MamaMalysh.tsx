@@ -34,13 +34,15 @@ const MamaMalysh = () => {
       <main>
         <div className={styles.mamaMalyshMain}>
           <div className={styles.titleSection}>
-            <button
-              className={styles.backButton}
-              onClick={() => navigate('/age/1-5')}
-              aria-label="К программам 1-5 лет"
-            >
-              ← К программам 1-5 лет
-            </button>
+            <div className={styles.breadcrumbWrapper}>
+              <button
+                className={styles.backButton}
+                onClick={() => navigate('/age/1-5')}
+                aria-label="К программам 1-5 лет"
+              >
+                ← К программам 1-5 лет
+              </button>
+            </div>
             <h1 className={styles.pageTitle}>Клуб «Мама и малыш»</h1>
             <p className={styles.pageDescription}>Мама и малыш 1,5–3 лет — развитие через игру</p>
           </div>

@@ -29,7 +29,9 @@ const WebDevelopment = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/10-17')} aria-label="К программам 10-17 лет">← К программам 10-17 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/10-17')} aria-label="К программам 10-17 лет">← К программам 10-17 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Веб-разработка</h1>
             <p className={styles.pageDescription}>HTML, CSS, JavaScript — создание сайтов с нуля</p>
           </div>

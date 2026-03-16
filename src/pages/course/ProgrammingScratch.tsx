@@ -29,7 +29,9 @@ const ProgrammingScratch = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Программирование Scratch</h1>
             <p className={styles.pageDescription}>Визуальное программирование — игры и анимации для начинающих</p>
           </div>

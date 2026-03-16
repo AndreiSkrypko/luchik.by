@@ -40,7 +40,17 @@
   }
 }
 
+/* Обёртка для сохранения места в потоке при position: fixed */
+.breadcrumbWrapper {
+  min-height: 44px;
+  margin-bottom: 24px;
+}
+
 .backButton {
+  position: fixed;
+  top: 105px;
+  left: 40px;
+  z-index: var(--z-header-ui);
   background: transparent;
   border: none;
   color: #4665a1;
@@ -49,11 +59,12 @@
   font-weight: 600;
   cursor: pointer;
   padding: 12px 0;
-  margin-bottom: 24px;
+  margin: 0;
   transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 
 .backButton:hover {
@@ -242,6 +253,11 @@
    ============================================ */
 
 @media (max-width: 1024px) {
+  .backButton {
+    top: 87px;
+    left: 30px;
+  }
+
   .programsGrid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -253,6 +269,11 @@
 }
 
 @media (max-width: 768px) {
+  .backButton {
+    top: 66px;
+    left: 15px;
+  }
+
   .section {
     padding: 20px 15px 60px;
   }
@@ -306,6 +327,11 @@
 }
 
 @media (max-width: 480px) {
+  .backButton {
+    top: 54px;
+    left: 12px;
+  }
+
   .section {
     padding: 20px 12px 48px;
   }

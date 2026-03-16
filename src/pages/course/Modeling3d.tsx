@@ -29,7 +29,9 @@ const Modeling3d = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>3D-моделирование</h1>
             <p className={styles.pageDescription}>Создание 3D-моделей, дизайн и основы печати — 5–10 лет</p>
           </div>

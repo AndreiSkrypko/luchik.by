@@ -95,10 +95,11 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
       <main>
         <div className={styles.main}>
           <div className={styles.titleSection}>
-            <Link to="/gallery" className={styles.backLink}>
-              <ChevronLeft size={20} />
-              <span>Назад в галерею</span>
-            </Link>
+            <div className={styles.breadcrumbWrapper}>
+              <Link to="/gallery" className={styles.backLink}>
+                ← Назад в галерею
+              </Link>
+            </div>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.description}>{description}</p>
 

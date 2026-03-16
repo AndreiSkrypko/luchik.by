@@ -29,7 +29,9 @@ const Robotics = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Робототехника</h1>
             <p className={styles.pageDescription}>Сборка роботов, механика и программирование — 5–10 лет</p>
           </div>

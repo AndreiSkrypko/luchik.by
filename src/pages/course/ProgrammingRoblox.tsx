@@ -29,7 +29,9 @@ const ProgrammingRoblox = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Программирование Roblox</h1>
             <p className={styles.pageDescription}>Создание игр в Roblox Studio на Lua — 5–10 лет</p>
           </div>

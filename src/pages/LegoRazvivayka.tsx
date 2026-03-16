@@ -34,13 +34,15 @@ const LegoRazvivayka = () => {
       <main>
         <div className={styles.legoRazvivaykaMain}>
           <div className={styles.titleSection}>
-            <button
-              className={styles.backButton}
-              onClick={() => navigate('/age/1-5')}
-              aria-label="К программам 1-5 лет"
-            >
-              ← К программам 1-5 лет
-            </button>
+            <div className={styles.breadcrumbWrapper}>
+              <button
+                className={styles.backButton}
+                onClick={() => navigate('/age/1-5')}
+                aria-label="К программам 1-5 лет"
+              >
+                ← К программам 1-5 лет
+              </button>
+            </div>
             <h1 className={styles.pageTitle}>Лего-развивайка</h1>
             <p className={styles.pageDescription}>Lego Duplo для 2,5–3 лет — моторика, логика, творчество</p>
           </div>

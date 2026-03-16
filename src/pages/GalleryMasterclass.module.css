@@ -94,17 +94,28 @@
   box-sizing: border-box;
 }
 
+/* Обёртка для сохранения места в потоке при position: fixed */
+.breadcrumbWrapper {
+  min-height: 44px;
+  margin-bottom: 24px;
+}
+
 .backLink {
+  position: fixed;
+  top: 105px;
+  left: 40px;
+  z-index: var(--z-header-ui);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  font-size: 15px;
+  gap: 8px;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   color: #4665a1;
   text-decoration: none;
-  margin-bottom: 20px;
-  transition: color 0.2s;
+  margin: 0;
+  padding: 12px 0;
+  transition: color 0.3s ease;
 }
 
 .backLink:hover {
@@ -236,6 +247,11 @@
 
 /* Адаптивность — как CoursePage */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .backLink {
+    top: 87px;
+    left: 30px;
+  }
+
   .main {
     padding: 100px 16px 60px;
     margin-top: 210px;
@@ -261,6 +277,11 @@
 }
 
 @media (max-width: 768px) {
+  .backLink {
+    top: 66px;
+    left: 15px;
+  }
+
   .main {
     padding: 80px 12px 30px;
     margin-top: 130px;
@@ -297,6 +318,11 @@
 }
 
 @media (max-width: 480px) {
+  .backLink {
+    top: 54px;
+    left: 12px;
+  }
+
   .main {
     padding: 65px 12px 30px;
     margin-top: 115px;

@@ -29,7 +29,9 @@ const LegoLogoped = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Лего с логопедом</h1>
             <p className={styles.pageDescription}>Lego и логопедия вместе — 3–5 лет</p>
           </div>

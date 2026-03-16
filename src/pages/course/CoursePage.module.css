@@ -96,8 +96,17 @@
 @media (max-width: 768px) { .titleSection { margin-top: -280px !important; padding: 0 15px; } }
 @media (max-width: 480px) { .titleSection { margin-top: -200px !important; padding: 0 12px; } }
 
-/* Как на страницах возрастных категорий (DirectionProgramsList) */
+/* Как на страницах возрастных категорий (DirectionProgramsList) — фиксированная крошка под логотипом */
+.breadcrumbWrapper {
+  min-height: 44px;
+  margin-bottom: 24px;
+}
+
 .backButton {
+  position: fixed;
+  top: 105px;
+  left: 40px;
+  z-index: var(--z-header-ui);
   background: transparent;
   border: none;
   color: #4665a1;
@@ -106,8 +115,7 @@
   font-weight: 600;
   cursor: pointer;
   padding: 12px 0;
-  margin-bottom: 24px;
-  align-self: flex-start;
+  margin: 0;
   transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -115,6 +123,16 @@
 }
 .backButton:hover {
   color: #FF6B35;
+}
+
+@media (max-width: 1024px) {
+  .backButton { top: 87px; left: 30px; }
+}
+@media (max-width: 768px) {
+  .backButton { top: 66px; left: 15px; }
+}
+@media (max-width: 480px) {
+  .backButton { top: 54px; left: 12px; }
 }
 
 .pageTitle {

@@ -29,7 +29,9 @@ const ArtStudio = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Арт-студия</h1>
             <p className={styles.pageDescription}>Рисование, лепка, аппликации — творчество для 3–5 лет</p>
           </div>

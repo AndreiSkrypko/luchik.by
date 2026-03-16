@@ -29,7 +29,9 @@ const Complex = () => {
       <main>
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
-            <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            <div className={styles.breadcrumbWrapper}>
+              <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+            </div>
             <h1 className={styles.pageTitle}>Комплексные развивающие занятия</h1>
             <p className={styles.pageDescription}>Речь, моторика, творчество — комплексный курс для 3–4 лет</p>
           </div>

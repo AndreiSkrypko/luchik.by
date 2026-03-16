@@ -109,13 +109,15 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.heroSection}>
-            <button
-              className={styles.backButton}
-              onClick={handleBackClick}
-              aria-label="К направлениям"
-            >
-              ← К направлениям
-            </button>
+            <div className={styles.breadcrumbWrapper}>
+              <button
+                className={styles.backButton}
+                onClick={handleBackClick}
+                aria-label="К направлениям"
+              >
+                ← К направлениям
+              </button>
+            </div>
 
             <div className={styles.hero}>
             <div className={styles.titleBlock}>
