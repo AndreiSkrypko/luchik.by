@@ -10,6 +10,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
 import CoursePriceGallery from '@/components/CoursePriceGallery';
+import CourseBreadcrumb from '@/components/CourseBreadcrumb';
 import programmingRobloxImg from '@/assets/directions/programming-roblox.webp';
 import styles from './CoursePage.module.css';
 
@@ -31,7 +32,7 @@ const ProgrammingRoblox = () => {
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+              <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
             <h1 className={styles.pageTitle}>Программирование Roblox</h1>
             <p className={styles.pageDescription}>Создание игр в Roblox Studio на Lua — 5–10 лет</p>

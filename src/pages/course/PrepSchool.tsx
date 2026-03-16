@@ -10,6 +10,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
 import CoursePriceGallery from '@/components/CoursePriceGallery';
+import CourseBreadcrumb from '@/components/CourseBreadcrumb';
 import prepSchoolImg from '@/assets/directions/prep-school.webp';
 import styles from './CoursePage.module.css';
 
@@ -31,7 +32,7 @@ const PrepSchool = () => {
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <button className={styles.backButton} onClick={() => navigate('/age/1-5')} aria-label="К программам 1-5 лет">← К программам 1-5 лет</button>
+              <CourseBreadcrumb to="/age/1-5" label="К программам 1-5 лет" />
             </div>
             <h1 className={styles.pageTitle}>Подготовка к школе</h1>
             <p className={styles.pageDescription}>Чтение, счёт, письмо — готовность к школе, 5–7 лет</p>

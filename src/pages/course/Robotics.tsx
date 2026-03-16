@@ -10,6 +10,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
 import CoursePriceGallery from '@/components/CoursePriceGallery';
+import CourseBreadcrumb from '@/components/CourseBreadcrumb';
 import roboticsImg from '@/assets/directions/robotics.webp';
 import styles from './CoursePage.module.css';
 
@@ -31,7 +32,7 @@ const Robotics = () => {
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <button className={styles.backButton} onClick={() => navigate('/age/5-10')} aria-label="К программам 5-10 лет">← К программам 5-10 лет</button>
+              <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
             <h1 className={styles.pageTitle}>Робототехника</h1>
             <p className={styles.pageDescription}>Сборка роботов, механика и программирование — 5–10 лет</p>

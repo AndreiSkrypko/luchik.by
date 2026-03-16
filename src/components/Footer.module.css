@@ -249,6 +249,8 @@
   margin-top: 15px;
   width: 372px;
   justify-content: center;
+  position: relative;
+  z-index: 2; /* выше облака, чтобы ссылки не перекрывались */
 }
 
 .footerNavLinksColumn {

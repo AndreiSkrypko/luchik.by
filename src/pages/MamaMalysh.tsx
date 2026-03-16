@@ -10,6 +10,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
 import CoursePriceGallery from '@/components/CoursePriceGallery';
+import CourseBreadcrumb from '@/components/CourseBreadcrumb';
 import mamaMalyshImg from '@/assets/directions/mama-malysh.webp';
 import styles from './MamaMalysh.module.css';
 
@@ -36,13 +37,7 @@ const MamaMalysh = () => {
         <div className={styles.mamaMalyshMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <button
-                className={styles.backButton}
-                onClick={() => navigate('/age/1-5')}
-                aria-label="К программам 1-5 лет"
-              >
-                ← К программам 1-5 лет
-              </button>
+              <CourseBreadcrumb to="/age/1-5" label="К программам 1-5 лет" />
             </div>
             <h1 className={styles.pageTitle}>Клуб «Мама и малыш»</h1>
             <p className={styles.pageDescription}>Мама и малыш 1,5–3 лет — развитие через игру</p>

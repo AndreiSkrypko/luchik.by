@@ -10,6 +10,7 @@ import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
 import CoursePriceGallery from '@/components/CoursePriceGallery';
+import CourseBreadcrumb from '@/components/CourseBreadcrumb';
 import robotics10_17Img from '@/assets/directions/robotics-10-17.webp';
 import styles from './CoursePage.module.css';
 
@@ -31,7 +32,7 @@ const Robotics10_17 = () => {
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <button className={styles.backButton} onClick={() => navigate('/age/10-17')} aria-label="К программам 10-17 лет">← К программам 10-17 лет</button>
+              <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
             <h1 className={styles.pageTitle}>Робототехника</h1>
             <p className={styles.pageDescription}>Продвинутые проекты — датчики, микроконтроллеры, программирование</p>
