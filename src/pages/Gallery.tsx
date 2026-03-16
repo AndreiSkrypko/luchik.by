@@ -9,14 +9,14 @@ import styles from './Gallery.module.css';
 
 const GALLERY_ITEMS = [
   {
-    src: '/img/gallery/developing/1.jpg',
+    src: '/img/gallery/developing/1.webp',
     alt: 'Развивающие занятия в центре Лучик',
     title: 'Развивающие занятия',
     description: 'Комплексные программы для детей от 1 года',
     href: '/gallery/developing',
   },
   {
-    src: '/img/cards/robotics.webp',
+    src: '/img/gallery/robotics/IMG_4011.webp',
     alt: 'Робототехника в центре Лучик',
     title: 'Робототехника',
     description: 'Конструирование и программирование роботов',
@@ -30,14 +30,14 @@ const GALLERY_ITEMS = [
     href: '/gallery/prep-school',
   },
   {
-    src: '/img/cards/robotics.webp',
+    src: '/img/gallery/programming/IMG_3989.webp',
     alt: 'Программирование в центре Лучик',
     title: 'Программирование',
     description: 'Scratch, Python, Roblox и другие направления',
     href: '/gallery/programming',
   },
   {
-    src: '/img/masterclass/1.png',
+    src: '/img/masterclass/1.webp',
     alt: 'Мастер-классы в центре Лучик',
     title: 'Мастер-классы',
     description: 'Творческие и развивающие мастер-классы',
@@ -45,10 +45,10 @@ const GALLERY_ITEMS = [
   },
   {
     src: '/img/cards/robotics.webp',
-    alt: 'Логопедия и LEGO в центре Лучик',
-    title: 'Логопедия и LEGO',
-    description: 'Современные методики развития речи',
-    href: '/gallery/logo-lego',
+    alt: 'Электроника и схемотехника в центре Лучик',
+    title: 'Электроника и схемотехника',
+    description: 'Arduino, пайка, создание электронных устройств',
+    href: '/gallery/electronics',
   },
 ];
 

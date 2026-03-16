@@ -11,6 +11,38 @@ import styles from '@/pages/GalleryMasterclass.module.css';
 
 const PHOTOS_PER_PAGE = 12;
 
+function GalleryImageCard({
+  photo,
+  index,
+  onOpen,
+  onLoadError,
+}: {
+  photo: { src: string; alt: string };
+  index: number;
+  onOpen: (idx: number) => void;
+  onLoadError: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className={styles.card}
+      onClick={() => onOpen(index)}
+    >
+      <div className={styles.imageWrap}>
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          className={styles.image}
+          loading="lazy"
+          decoding="async"
+          onError={onLoadError}
+        />
+      </div>
+      <span className={styles.viewHint}>Нажмите для просмотра</span>
+    </button>
+  );
+}
+
 export interface GalleryCategoryProps {
   title: string;
   description: string;
@@ -21,13 +53,15 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
   const [isContactsOpen, setIsContactsOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [failedIndices, setFailedIndices] = useState<Set<number>>(() => new Set());
 
   const toggleContacts = () => setIsContactsOpen(!isContactsOpen);
   const closeContacts = () => setIsContactsOpen(false);
 
-  const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
+  const visiblePhotos = photos.filter((_, i) => !failedIndices.has(i));
+  const totalPages = Math.max(1, Math.ceil(visiblePhotos.length / PHOTOS_PER_PAGE));
   const startIdx = (currentPage - 1) * PHOTOS_PER_PAGE;
-  const photosOnPage = photos.slice(startIdx, startIdx + PHOTOS_PER_PAGE);
+  const photosOnPage = visiblePhotos.slice(startIdx, startIdx + PHOTOS_PER_PAGE);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(startIdx + index);
@@ -41,9 +75,19 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
     if (newPage !== currentPage) setCurrentPage(newPage);
   };
 
+  const handleLoadError = (originalIndex: number) => {
+    setFailedIndices((prev) => new Set(prev).add(originalIndex));
+  };
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages >= 1) {
+      setCurrentPage(totalPages);
+    }
+  }, [totalPages, currentPage]);
 
   return (
     <div className={styles.page}>
@@ -60,25 +104,18 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
 
             <div className={styles.grid}>
               {photosOnPage.length > 0 ? (
-                photosOnPage.map((photo, idx) => (
-                  <button
-                    key={startIdx + idx}
-                    type="button"
-                    className={styles.card}
-                    onClick={() => openLightbox(idx)}
-                  >
-                    <div className={styles.imageWrap}>
-                      <img
-                        src={photo.src}
-                        alt={photo.alt}
-                        className={styles.image}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <span className={styles.viewHint}>Нажмите для просмотра</span>
-                  </button>
-                ))
+                photosOnPage.map((photo, idx) => {
+                  const originalIndex = photos.indexOf(photo);
+                  return (
+                    <GalleryImageCard
+                      key={originalIndex}
+                      photo={photo}
+                      index={idx}
+                      onOpen={openLightbox}
+                      onLoadError={() => handleLoadError(originalIndex)}
+                    />
+                  );
+                })
               ) : (
                 <p className={styles.emptyHint}>
                   Фото скоро появятся. Добавьте их в массив PHOTOS в файле страницы.
@@ -119,9 +156,9 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
       <ScrollToTop />
       <EnrollmentCard />
 
-      {lightboxIndex !== null && photos.length > 0 && (
+      {lightboxIndex !== null && visiblePhotos.length > 0 && (
         <ImageLightbox
-          images={photos}
+          images={visiblePhotos}
           currentIndex={lightboxIndex}
           onClose={closeLightbox}
           onIndexChange={handleLightboxIndexChange}

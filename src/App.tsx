@@ -13,7 +13,7 @@ import GalleryDeveloping from "./pages/gallery/GalleryDeveloping";
 import GalleryRobotics from "./pages/gallery/GalleryRobotics";
 import GalleryPrepSchool from "./pages/gallery/GalleryPrepSchool";
 import GalleryProgramming from "./pages/gallery/GalleryProgramming";
-import GalleryLogoLego from "./pages/gallery/GalleryLogoLego";
+import GalleryElectronics from "./pages/gallery/GalleryElectronics";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -82,7 +82,7 @@ const AppRouter = () => (
           <Route path="/gallery/robotics" element={<GalleryRobotics />} />
           <Route path="/gallery/prep-school" element={<GalleryPrepSchool />} />
           <Route path="/gallery/programming" element={<GalleryProgramming />} />
-          <Route path="/gallery/logo-lego" element={<GalleryLogoLego />} />
+          <Route path="/gallery/electronics" element={<GalleryElectronics />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />
