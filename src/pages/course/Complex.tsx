@@ -39,7 +39,7 @@ const Complex = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={complexImg} alt="Комплексные занятия в Лиде, детский центр Лучик" loading="eager" />
+                <img src={complexImg} alt="Комплексные занятия в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Комплексные развивающие занятия — это гармоничное сочетание разных направлений развития в одном курсе. 

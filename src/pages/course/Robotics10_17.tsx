@@ -39,7 +39,7 @@ const Robotics10_17 = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={robotics10_17Img} alt="Робототехника в Лиде, детский центр Лучик" loading="eager" />
+                <img src={robotics10_17Img} alt="Робототехника в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Продвинутый курс робототехники для подростков — сборка сложных роботов, работа с датчиками, 

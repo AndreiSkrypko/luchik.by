@@ -39,7 +39,7 @@ const ArtificialIntelligence = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={artificialIntelligenceImg} alt="Искусственный интеллект в Лиде, детский центр Лучик" loading="eager" />
+                <img src={artificialIntelligenceImg} alt="Искусственный интеллект в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Курс по основам искусственного интеллекта знакомит подростков с машинным обучением, 

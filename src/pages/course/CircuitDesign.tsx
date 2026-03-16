@@ -39,7 +39,7 @@ const CircuitDesign = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={circuitDesignImg} alt="Схемотехника в Лиде, детский центр Лучик" loading="eager" />
+                <img src={circuitDesignImg} alt="Схемотехника в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Схемотехника — чтение и создание принципиальных схем, пайка, проектирование устройств. 

@@ -265,7 +265,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               width={1480}
               height={338}
               className={styles.cloudsImage}
-              loading="eager"
+              loading="lazy"
               decoding="async"
             />
         </div>
@@ -278,6 +278,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               alt="Облако"
               width={174}
               height={138}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
@@ -290,6 +292,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               width={176}
               height={186}
               alt="Пчела"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
@@ -302,6 +306,8 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               alt="Облако"
               width={200}
               height={120}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
@@ -314,7 +320,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
               width={1200}
               height={1184}
               className={styles.sun}
-              loading="eager"
+              loading="lazy"
               decoding="async"
             />
         </div>

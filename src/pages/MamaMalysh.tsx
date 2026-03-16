@@ -50,7 +50,7 @@ const MamaMalysh = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={mamaMalyshImg} alt="Клуб Мама и малыш в Лиде, детский центр Лучик" loading="eager" />
+                <img src={mamaMalyshImg} alt="Клуб Мама и малыш в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Клуб «Мама и малыш» создан для родителей и детей 1,5–3 лет. Это идеальный возраст, 

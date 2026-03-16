@@ -39,7 +39,7 @@ const Robotics = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={roboticsImg} alt="Робототехника в Лиде, детский центр Лучик" loading="eager" />
+                <img src={roboticsImg} alt="Робототехника в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Робототехника объединяет конструирование, механику и программирование. Дети собирают роботов 

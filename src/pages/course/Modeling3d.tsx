@@ -39,7 +39,7 @@ const Modeling3d = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={modeling3dImg} alt="3D-моделирование в Лиде, детский центр Лучик" loading="eager" />
+                <img src={modeling3dImg} alt="3D-моделирование в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 3D-моделирование — создание объёмных объектов на компьютере. Дети работают в программах 

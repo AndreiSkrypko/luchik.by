@@ -39,7 +39,7 @@ const ProgrammingRoblox10_17 = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingRoblox10_17Img} alt="Программирование Roblox в Лиде, детский центр Лучик" loading="eager" />
+                <img src={programmingRoblox10_17Img} alt="Программирование Roblox в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Продвинутый курс Roblox для подростков — создание многопользовательских игр с механиками, 

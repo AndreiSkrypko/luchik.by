@@ -39,7 +39,7 @@ const Chess = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={chessImg} alt="Шахматы в Лиде, детский центр Лучик" loading="eager" />
+                <img src={chessImg} alt="Шахматы в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Шахматы — это спорт, игра и мощный тренажёр для мозга. Курс развивает логическое мышление, 

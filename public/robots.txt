@@ -1,4 +1,12 @@
 User-agent: *
+Disallow:
+Sitemap: https://luchik.by/sitemap.xml
+Host: luchik.by
+
+# Crawl-delay can be added for aggressive bots, e.g.:
+# Crawl-delay: 10
+
+User-agent: *
 Allow: /
 Disallow: /thank-you
 

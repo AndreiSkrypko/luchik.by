@@ -60,7 +60,8 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
             width={371}
             height={82}
             className={styles.ctaButtonImage}
-            loading="eager"
+            loading="lazy"
+            decoding="async"
             
           />
           <span className={styles.ctaButtonText}>ОСТАВИТЬ ЗАЯВКУ</span>

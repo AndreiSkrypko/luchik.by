@@ -1,0 +1,254 @@
+{
+  "threshold_kb": 200,
+  "processed": 50,
+  "results": [
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\directions\\card-3.svg",
+      "error": "Input file has corrupt header: glib: XML parse error: Error domain 1 code 114 on line 16 column 10001654 of data: Resource limit exceeded: Buffer size limit exceeded, try XML_PARSE_HUGE"
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\directions\\card-1.svg",
+      "error": "Input file has corrupt header: glib: XML parse error: Error domain 1 code 114 on line 13 column 10001673 of data: Resource limit exceeded: Buffer size limit exceeded, try XML_PARSE_HUGE"
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\3dmodelirovanie\\IMG_5068.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\3dmodelirovanie\\IMG_5068_opt.webp",
+      "newSize_kb": 226.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3207.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3207_opt.webp",
+      "newSize_kb": 435.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7660.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7660_opt.webp",
+      "newSize_kb": 331.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7747.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7747_opt.webp",
+      "newSize_kb": 345
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3121.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3121_opt.webp",
+      "newSize_kb": 322.4
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3185.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3185_opt.webp",
+      "newSize_kb": 505.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3180.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3180_opt.webp",
+      "newSize_kb": 536.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3134.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3134_opt.webp",
+      "newSize_kb": 463.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7748.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7748_opt.webp",
+      "newSize_kb": 302.6
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3190.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3190_opt.webp",
+      "newSize_kb": 448.8
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3210.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3210_opt.webp",
+      "newSize_kb": 523.8
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3119.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3119_opt.webp",
+      "newSize_kb": 399.8
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7634.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7634_opt.webp",
+      "newSize_kb": 468.4
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7618.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7618_opt.webp",
+      "newSize_kb": 446.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3125.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3125_opt.webp",
+      "newSize_kb": 364.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legorazvivaika\\IMG_1829.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legorazvivaika\\IMG_1829_opt.webp",
+      "newSize_kb": 417.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3181.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3181_opt.webp",
+      "newSize_kb": 380.7
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\cards\\about-center.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\cards\\about-center_opt.webp",
+      "newSize_kb": 83.5
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7738.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7738_opt.webp",
+      "newSize_kb": 382.2
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20190928_143607.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20190928_143607_opt.webp",
+      "newSize_kb": 185.7
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3096.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3096_opt.webp",
+      "newSize_kb": 389.6
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3102.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3102_opt.webp",
+      "newSize_kb": 375.6
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191213_182825.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191213_182825_opt.webp",
+      "newSize_kb": 172.9
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7777.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7777_opt.webp",
+      "newSize_kb": 388.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\directions\\card-2.svg",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\directions\\card-2_opt.webp",
+      "newSize_kb": 14.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7626.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7626_opt.webp",
+      "newSize_kb": 368.6
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\robotics\\20240224_164125.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\robotics\\20240224_164125_opt.webp",
+      "newSize_kb": 252
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\robotics\\20250709_102010.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\robotics\\20250709_102010_opt.webp",
+      "newSize_kb": 112.2
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230217_175510.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230217_175510_opt.webp",
+      "newSize_kb": 242.5
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legorazvivaika\\IMG_1818.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legorazvivaika\\IMG_1818_opt.webp",
+      "newSize_kb": 294.5
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7771.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7771_opt.webp",
+      "newSize_kb": 308.7
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20211112_174826.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20211112_174826_opt.webp",
+      "newSize_kb": 154.6
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7774.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7774_opt.webp",
+      "newSize_kb": 276.9
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7619.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7619_opt.webp",
+      "newSize_kb": 305.2
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20211112_194859.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20211112_194859_opt.webp",
+      "newSize_kb": 223.9
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230407_175725.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230407_175725_opt.webp",
+      "newSize_kb": 236
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230203_181415.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230203_181415_opt.webp",
+      "newSize_kb": 216.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7620.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7620_opt.webp",
+      "newSize_kb": 224.2
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7717.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7717_opt.webp",
+      "newSize_kb": 195.7
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legomatematika\\20211126_182433.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legomatematika\\20211126_182433_opt.webp",
+      "newSize_kb": 199.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230408_112912.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\20230408_112912_opt.webp",
+      "newSize_kb": 138.3
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7714.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7714_opt.webp",
+      "newSize_kb": 219.2
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3137.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_3137_opt.webp",
+      "newSize_kb": 247.1
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legomatematika\\20211126_182610.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legomatematika\\20211126_182610_opt.webp",
+      "newSize_kb": 163.7
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7253.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7253_opt.webp",
+      "newSize_kb": 252.5
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191025_182258.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191025_182258_opt.webp",
+      "newSize_kb": 143.5
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7239.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\masterclass\\IMG_7239_opt.webp",
+      "newSize_kb": 230.4
+    },
+    {
+      "file": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191207_172241.webp",
+      "outPath": "C:\\Users\\userSL0925\\.cursor\\luchik.by\\public\\img\\gallery\\legokonstruirovanie\\IMG_20191207_172241_opt.webp",
+      "newSize_kb": 89.1
+    }
+  ]
+}

@@ -39,7 +39,7 @@ const ProgrammingJavascript = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingJavascriptImg} alt="Программирование JavaScript в Лиде, детский центр Лучик" loading="eager" />
+                <img src={programmingJavascriptImg} alt="Программирование JavaScript в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 JavaScript — язык веб-разработки. Он отвечает за интерактивность сайтов: кнопки, формы, 

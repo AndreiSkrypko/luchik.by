@@ -96,3 +96,22 @@ background-image: linear-gradient(..., #C3E1FF calc(800px), #ffffff calc(800px))
 
 Если хотите, могу автоматически создать шаблон страницы и добавить маршрут по указанному `slug` — напишите slug и желаемый заголовок.  
 
+## Оптимизация изображений и проверка тяжёлых файлов
+
+Проект содержит несколько утилит для работы с изображениями в папке `public/img/`. Рекомендации и быстрые команды:
+
+- Проверить большие файлы (по умолчанию порог 200 KB) и получить отчёт:
+  - `npm run report:large-images` — создаст `reports/large-images.json` и выведет сводку.
+
+- Оптимизация / конвертация:
+  - `npm run optimize-images` — выполняет набор преднастроенных оптимизаций (см. `scripts/optimize-images.js`).
+  - `node scripts/convert-folder-to-webp.js gallery/<category>` — конвертирует JPG/PNG в WebP внутри указанной папки.
+  - `node scripts/convert-heic-to-webp.js <folder>` — конвертация HEIC.
+
+Практический порядок работы:
+1. `npm run report:large-images` — найти кандидатов.  
+2. Для выбранной папки запустить `node scripts/convert-folder-to-webp.js <folder>` или `npm run optimize-images`.  
+3. Проверить сайт локально и закоммитить уменьшённые файлы.
+
+Если хотите, могу запустить отчёт по большим изображениям и прислать результат (список файлов >200KB). Согласны? 
+

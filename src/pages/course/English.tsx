@@ -39,7 +39,7 @@ const English = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={englishImg} alt="Английский язык в Лиде, детский центр Лучик" loading="eager" />
+                <img src={englishImg} alt="Английский язык в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Курс английского для детей 5–10 лет строится на коммуникативном подходе: много говорения, игр, 

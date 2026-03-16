@@ -30,12 +30,21 @@ function GalleryImageCard({
     >
       <div className={styles.imageWrap}>
         <img
-          src={photo.src}
+          src={photo.src.replace(/\.\w+$/, '_opt.webp')}
           alt={photo.alt}
           className={styles.image}
           loading="lazy"
           decoding="async"
-          onError={onLoadError}
+          onError={(e) => {
+            const imgEl = e.currentTarget as HTMLImageElement;
+            // If optimized variant failed, try original; otherwise mark as failed
+            if (!imgEl.dataset.fallbackTried) {
+              imgEl.dataset.fallbackTried = '1';
+              imgEl.src = photo.src;
+              return;
+            }
+            onLoadError();
+          }}
         />
       </div>
       <span className={styles.viewHint}>Нажмите для просмотра</span>

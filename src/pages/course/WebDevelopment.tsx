@@ -39,7 +39,7 @@ const WebDevelopment = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={webDevelopmentImg} alt="Веб-разработка в Лиде, детский центр Лучик" loading="eager" />
+                <img src={webDevelopmentImg} alt="Веб-разработка в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Веб-разработка — создание сайтов: разметка (HTML), стили (CSS) и интерактивность (JavaScript). 

@@ -39,7 +39,7 @@ const Tutor = () => {
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={tutorImg} alt="Репетитор в Лиде, детский центр Лучик" loading="eager" />
+                <img src={tutorImg} alt="Репетитор в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Индивидуальные занятия с репетитором помогают ребёнку подтянуть школьные предметы, разобрать 
