@@ -5,6 +5,7 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: '/img/gallery/programming/IMG_3940.webp', alt: 'Занятия по программированию в центре Лучик' },
   { src: '/img/gallery/programming/IMG_3986.webp', alt: 'Программирование Scratch и Python' },
   { src: '/img/gallery/programming/IMG_3989.webp', alt: 'Программирование для детей в центре Лучик' },
+  { src: '/img/gallery/programming/photo_2026-03-16_20-31-31.webp', alt: 'Занятия по программированию' },
 ];
 
 const GalleryProgramming = () => (

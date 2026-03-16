@@ -8,6 +8,8 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: `${BASE}/IMG_2109.webp`, alt: 'Шахматы в центре Лучик' },
   { src: `${BASE}/IMG_2111.webp`, alt: 'Шахматы в центре Лучик' },
   { src: `${BASE}/IMG_20191005_130245.webp`, alt: 'Шахматы в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_20-30-51.webp`, alt: 'Шахматы в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-16_20-30-55.webp`, alt: 'Шахматы в центре Лучик' },
 ];
 
 const GalleryChess = () => (

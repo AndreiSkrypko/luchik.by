@@ -57,6 +57,13 @@ export const seoConfig: Record<string, SeoConfig> = {
     canonical: `${SITE_URL}/gallery/programming`,
   },
 
+  '/gallery/english': {
+    title: 'Галерея — Английский | Детский центр Лучик, Лида',
+    description: 'Фото занятий по английскому языку для детей: игровые уроки, разговорная практика и занятия с педагогами.',
+    keywords: `${baseKeywords}, английский фото Лида, галерея английский Лучик`,
+    canonical: `${SITE_URL}/gallery/english`,
+  },
+
   '/gallery/electronics': {
     title: 'Галерея — Электроника и схемотехника | Детский центр Лучик, Лида',
     description: 'Фото занятий по электронике и схемотехнике в детском центре Лучик. Arduino, пайка, проектирование.',
@@ -97,6 +104,13 @@ export const seoConfig: Record<string, SeoConfig> = {
     description: 'Фото занятий по 3D-моделированию: Tinkercad, Blender. Создание моделей, основы цифрового дизайна.',
     keywords: `${baseKeywords}, 3D моделирование фото Лида, Tinkercad Blender Лучик`,
     canonical: `${SITE_URL}/gallery/3d-modeling`,
+  },
+
+  '/gallery/programming-vr': {
+    title: 'Галерея — Программирование VR-игр | Детский центр Лучик, Лида',
+    description: 'Фото занятий по программированию VR-игр. Создание игр для шлемов виртуальной реальности.',
+    keywords: `${baseKeywords}, VR программирование фото Лида, виртуальная реальность дети Лучик`,
+    canonical: `${SITE_URL}/gallery/programming-vr`,
   },
 
   '/gallery/masterclass': {

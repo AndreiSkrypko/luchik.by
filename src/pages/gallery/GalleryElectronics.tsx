@@ -15,6 +15,8 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: '/img/gallery/elektronika_shemotehnika/20250412_095608.webp', alt: 'Занятия по Arduino' },
   { src: '/img/gallery/elektronika_shemotehnika/photo_17_2025-03-18_19-28-04.webp', alt: 'Электроника для детей' },
   { src: '/img/gallery/elektronika_shemotehnika/photo_21_2025-03-18_19-28-04.webp', alt: 'Схемотехника' },
+  { src: '/img/gallery/elektronika_shemotehnika/photo_2026-03-16_20-31-22.webp', alt: 'Электроника и схемотехника' },
+  { src: '/img/gallery/elektronika_shemotehnika/photo_2026-03-16_20-31-36.webp', alt: 'Занятия по Arduino и пайке' },
 ];
 
 const GalleryElectronics = () => (

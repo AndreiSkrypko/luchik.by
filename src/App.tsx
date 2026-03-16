@@ -13,12 +13,14 @@ import GalleryDeveloping from "./pages/gallery/GalleryDeveloping";
 import GalleryRobotics from "./pages/gallery/GalleryRobotics";
 import GalleryPrepSchool from "./pages/gallery/GalleryPrepSchool";
 import GalleryProgramming from "./pages/gallery/GalleryProgramming";
+import GalleryEnglish from "./pages/gallery/GalleryEnglish";
 import GalleryElectronics from "./pages/gallery/GalleryElectronics";
 import GalleryLego from "./pages/gallery/GalleryLego";
 import GalleryLegoRazvivayka from "./pages/gallery/GalleryLegoRazvivayka";
 import GalleryChess from "./pages/gallery/GalleryChess";
 import GalleryLegoMatematika from "./pages/gallery/GalleryLegoMatematika";
 import Gallery3dModeling from "./pages/gallery/Gallery3dModeling";
+import GalleryVr from "./pages/gallery/GalleryVr";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -85,6 +87,7 @@ const AppRouter = () => (
           <Route path="/gallery/masterclass" element={<GalleryMasterclass />} />
           <Route path="/gallery/developing" element={<GalleryDeveloping />} />
           <Route path="/gallery/robotics" element={<GalleryRobotics />} />
+          <Route path="/gallery/english" element={<GalleryEnglish />} />
           <Route path="/gallery/prep-school" element={<GalleryPrepSchool />} />
           <Route path="/gallery/programming" element={<GalleryProgramming />} />
           <Route path="/gallery/electronics" element={<GalleryElectronics />} />
@@ -93,6 +96,7 @@ const AppRouter = () => (
           <Route path="/gallery/chess" element={<GalleryChess />} />
           <Route path="/gallery/lego-matematika" element={<GalleryLegoMatematika />} />
           <Route path="/gallery/3d-modeling" element={<Gallery3dModeling />} />
+          <Route path="/gallery/programming-vr" element={<GalleryVr />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />

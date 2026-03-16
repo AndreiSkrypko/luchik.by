@@ -37,6 +37,20 @@ const GALLERY_ITEMS = [
     href: '/gallery/programming',
   },
   {
+    src: '/img/gallery/vr/photo_2026-03-16_20-08-21.webp',
+    alt: 'Программирование VR-игр в центре Лучик',
+    title: 'Программирование VR-игр',
+    description: 'Создание игр для шлемов виртуальной реальности',
+    href: '/gallery/programming-vr',
+  },
+  {
+    src: '/img/gallery/english/photo_2026-03-16_20-05-26.webp',
+    alt: 'Английский в центре Лучик',
+    title: 'Английский язык',
+    description: 'Уроки английского в игровой форме для детей',
+    href: '/gallery/english',
+  },
+  {
     src: '/img/gallery/masterclass/IMG_7670.webp',
     alt: 'Мастер-классы в центре Лучик',
     title: 'Мастер-классы',
