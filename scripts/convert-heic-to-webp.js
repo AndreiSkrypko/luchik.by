@@ -28,6 +28,7 @@ async function convertHeicToWebp(heicPath, targetDir) {
   });
 
   const webpBuffer = await sharp(jpegBuffer)
+    .rotate()
     .webp({ quality: 85 })
     .toBuffer();
 

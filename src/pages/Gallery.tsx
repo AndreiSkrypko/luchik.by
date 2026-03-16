@@ -37,7 +37,7 @@ const GALLERY_ITEMS = [
     href: '/gallery/programming',
   },
   {
-    src: '/img/masterclass/1.webp',
+    src: '/img/gallery/masterclass/IMG_7670.webp',
     alt: 'Мастер-классы в центре Лучик',
     title: 'Мастер-классы',
     description: 'Творческие и развивающие мастер-классы',

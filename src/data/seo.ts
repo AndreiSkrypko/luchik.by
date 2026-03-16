@@ -43,6 +43,55 @@ export const seoConfig: Record<string, SeoConfig> = {
     canonical: `${SITE_URL}/gallery`,
   },
 
+  '/gallery/robotics': {
+    title: 'Галерея — Робототехника | Детский центр Лучик, Лида',
+    description: 'Фото занятий по робототехнике в детском центре Лучик. Сборка роботов, программирование, Lego WeDo.',
+    keywords: `${baseKeywords}, робототехника фото Лида, галерея робототехника Лучик`,
+    canonical: `${SITE_URL}/gallery/robotics`,
+  },
+
+  '/gallery/programming': {
+    title: 'Галерея — Программирование | Детский центр Лучик, Лида',
+    description: 'Фото занятий по программированию: Scratch, Python, Roblox. Детский центр Лучик в Лиде.',
+    keywords: `${baseKeywords}, программирование фото Лида, галерея программирование Лучик`,
+    canonical: `${SITE_URL}/gallery/programming`,
+  },
+
+  '/gallery/electronics': {
+    title: 'Галерея — Электроника и схемотехника | Детский центр Лучик, Лида',
+    description: 'Фото занятий по электронике и схемотехнике в детском центре Лучик. Arduino, пайка, проектирование.',
+    keywords: `${baseKeywords}, электроника фото Лида, схемотехника дети Лучик`,
+    canonical: `${SITE_URL}/gallery/electronics`,
+  },
+
+  '/gallery/lego': {
+    title: 'Галерея — Легоконструирование | Детский центр Лучик, Лида',
+    description: 'Фото занятий по легоконструированию в детском центре Лучик. Конструирование, развитие моторики.',
+    keywords: `${baseKeywords}, лего фото Лида, легоконструирование Лучик`,
+    canonical: `${SITE_URL}/gallery/lego`,
+  },
+
+  '/gallery/masterclass': {
+    title: 'Галерея — Мастер-классы | Детский центр Лучик, Лида',
+    description: 'Фото мастер-классов детского центра Лучик: творчество, конструирование, эксперименты для детей.',
+    keywords: `${baseKeywords}, мастер-классы фото Лида, галерея Лучик`,
+    canonical: `${SITE_URL}/gallery/masterclass`,
+  },
+
+  '/gallery/developing': {
+    title: 'Галерея — Развивающие занятия | Детский центр Лучик, Лида',
+    description: 'Фото развивающих занятий для детей в детском центре Лучик. Комплексные программы, подготовка к школе.',
+    keywords: `${baseKeywords}, развивающие занятия фото Лида, галерея Лучик`,
+    canonical: `${SITE_URL}/gallery/developing`,
+  },
+
+  '/gallery/prep-school': {
+    title: 'Галерея — Подготовка к школе | Детский центр Лучик, Лида',
+    description: 'Фото занятий по подготовке к школе в детском центре Лучик. Чтение, счёт, готовность к первому классу.',
+    keywords: `${baseKeywords}, подготовка к школе фото Лида, галерея Лучик`,
+    canonical: `${SITE_URL}/gallery/prep-school`,
+  },
+
   '/contacts': {
     title: 'Контакты | Детский центр Лучик в Лиде — адреса, телефоны, мессенджеры',
     description: 'Контакты детского центра Лучик в Лиде: Замковая 4, Кооперативная 36. Телефоны, WhatsApp, Telegram, Viber, email. Режим работы Пн-Пт 9:00–20:00.',

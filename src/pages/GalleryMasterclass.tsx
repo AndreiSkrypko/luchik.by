@@ -1,10 +1,11 @@
 import GalleryCategory from '@/components/GalleryCategory';
+import masterclassFiles from '@/data/masterclass-photos.json';
 
-// Добавляйте фото в /img/masterclass/ (1.webp, 2.webp, ... до ~50)
-const MASTERCLASS_PHOTOS = [
-  { src: '/img/masterclass/1.webp', alt: 'Мастер-класс в центре Лучик — ребёнок с поделкой на новогоднюю тематику' },
-  { src: '/img/masterclass/2.webp', alt: 'Мастер-класс в центре Лучик — праздник с кроликом и детьми' },
-];
+const BASE = '/img/gallery/masterclass';
+const MASTERCLASS_PHOTOS = (masterclassFiles as string[]).map((f) => ({
+  src: `${BASE}/${f}`,
+  alt: 'Мастер-класс в центре Лучик',
+}));
 
 const GalleryMasterclass = () => (
   <GalleryCategory

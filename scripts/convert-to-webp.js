@@ -41,6 +41,7 @@ async function convertToWebp(inputPath) {
 
   try {
     const buf = await sharp(inputPath)
+      .rotate()
       .webp({ quality: WEBP_QUALITY, effort: 6 })
       .toBuffer();
 
