@@ -264,7 +264,7 @@
   top: -30px;
   left: -30px;
   right: -30px;
-  bottom: -30px;
+  bottom: 0; /* Снизу не расширяем, чтобы не перекрывать хлебные крошки */
   z-index: -1;
   pointer-events: auto;
 }
@@ -569,7 +569,7 @@
     top: -25px;
     left: -25px;
     right: -25px;
-    bottom: -25px;
+    bottom: 0;
   }
 
   .logo img {
@@ -655,7 +655,7 @@
     top: -25px;
     left: -25px;
     right: -25px;
-    bottom: -25px;
+    bottom: 0;
   }
 
   .logo img {
@@ -1048,7 +1048,7 @@
     top: -20px;
     left: -20px;
     right: -20px;
-    bottom: -20px;
+    bottom: 0;
   }
 
   .logo img {
