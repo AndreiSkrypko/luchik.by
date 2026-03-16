@@ -10,7 +10,8 @@ const CoursePriceGallery = ({ courseId }: CoursePriceGalleryProps) => {
   const meta = courseMeta[courseId];
   if (!meta) return null;
 
-  const { price, galleryPath } = meta;
+  const { price, priceDisplay, galleryPath } = meta;
+  const priceText = priceDisplay ?? `${price} руб/мес`;
 
   return (
     <div className={styles.priceAndGallery}>
@@ -18,7 +19,7 @@ const CoursePriceGallery = ({ courseId }: CoursePriceGalleryProps) => {
         <span className={styles.priceIcon}>💰</span>
         <div>
           <span className={styles.priceLabel}>Абонемент</span>
-          <span className={styles.priceValue}>{price} руб/мес</span>
+          <span className={styles.priceValue}>{priceText}</span>
         </div>
       </div>
       <Link to={`${galleryPath}?from=/course/${courseId}`} className={styles.galleryLink}>

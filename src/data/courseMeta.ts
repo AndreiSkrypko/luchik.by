@@ -1,6 +1,8 @@
 /** Цена и ссылка на галерею для страниц курсов */
 export interface CourseMeta {
   price: string;
+  /** Кастомный текст цены (например "13 руб за занятие в абонементе/мес"). Если задан — используется вместо "X руб/мес" */
+  priceDisplay?: string;
   galleryPath: string;
 }
 
@@ -15,7 +17,7 @@ export const courseMeta: Record<string, CourseMeta> = {
   'art-studio': { price: DEFAULT_PRICE, galleryPath: '/gallery/masterclass' },
   'lego-logoped': { price: DEFAULT_PRICE, galleryPath: '/gallery/lego-razvivayka' },
   'prep-2year': { price: DEFAULT_PRICE, galleryPath: '/gallery/developing' },
-  'prep-school': { price: DEFAULT_PRICE, galleryPath: '/gallery/prep-school' },
+  'prep-school': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
   'lego-math': { price: DEFAULT_PRICE, galleryPath: '/gallery/lego-matematika' },
   'logic-speed-reading': { price: DEFAULT_PRICE, galleryPath: DEFAULT_GALLERY },
   'english': { price: DEFAULT_PRICE, galleryPath: '/gallery/english' },
