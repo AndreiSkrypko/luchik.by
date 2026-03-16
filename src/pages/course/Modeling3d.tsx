@@ -9,6 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
+import CoursePriceGallery from '@/components/CoursePriceGallery';
 import modeling3dImg from '@/assets/directions/3d-modeling.webp';
 import styles from './CoursePage.module.css';
 
@@ -52,6 +53,7 @@ const Modeling3d = () => {
                 3D-печать и где она применяется в жизни.
               </p>
               <button type="button" className={styles.mobileEnrollBtn} onClick={() => setIsFormOpen(true)} aria-label="Записаться">Записаться</button>
+              <CoursePriceGallery courseId="3d-modeling" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>🧊</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>5–10 лет</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>45–60 мин</span></div></div>

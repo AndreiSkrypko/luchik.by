@@ -9,6 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
+import CoursePriceGallery from '@/components/CoursePriceGallery';
 import mamaMalyshImg from '@/assets/directions/mama-malysh.webp';
 import styles from './MamaMalysh.module.css';
 
@@ -71,6 +72,7 @@ const MamaMalysh = () => {
               >
                 Записаться
               </button>
+              <CoursePriceGallery courseId="mama-malysh" />
               <div className={styles.badges}>
                 <div className={styles.badge}>
                   <span className={styles.badgeIcon}>👶</span>

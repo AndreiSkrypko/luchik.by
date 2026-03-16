@@ -9,6 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
+import CoursePriceGallery from '@/components/CoursePriceGallery';
 import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.webp';
 import styles from './LegoRazvivayka.module.css';
 
@@ -71,6 +72,7 @@ const LegoRazvivayka = () => {
               >
                 Записаться
               </button>
+              <CoursePriceGallery courseId="lego-razvivayka" />
               <div className={styles.badges}>
                 <div className={styles.badge}>
                   <span className={styles.badgeIcon}>🧒</span>

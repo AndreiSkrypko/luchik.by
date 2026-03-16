@@ -215,6 +215,74 @@
 
 .mobileEnrollBtn { display: none; }
 
+/* Цена и ссылка на галерею — между описанием и бейджами */
+.priceAndGallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.priceBadge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #F0F7FF 0%, #E8F4FD 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(70, 101, 161, 0.1);
+}
+
+.priceIcon { font-size: 24px; flex-shrink: 0; }
+
+.priceLabel {
+  display: block;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.priceValue {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #4665a1;
+}
+
+.galleryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4665a1;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid rgba(70, 101, 161, 0.25);
+  transition: all 0.3s ease;
+}
+
+.galleryLink:hover {
+  color: #FF6B35;
+  border-color: #FF6B35;
+  background: rgba(255, 107, 53, 0.06);
+}
+
+.galleryLinkIcon { font-size: 18px; }
+
+@media (max-width: 768px) {
+  .priceAndGallery { flex-direction: column; align-items: stretch; margin: 16px 0; }
+}
+
 @media (max-width: 768px) {
   .mobileEnrollBtn {
     display: inline-block;

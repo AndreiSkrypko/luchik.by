@@ -9,6 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
+import CoursePriceGallery from '@/components/CoursePriceGallery';
 import programmingScratchImg from '@/assets/directions/programming-scratch.webp';
 import styles from './CoursePage.module.css';
 
@@ -52,6 +53,7 @@ const ProgrammingScratch = () => {
                 собственный проект. Scratch — отличная база для перехода к Python и другим языкам.
               </p>
               <button type="button" className={styles.mobileEnrollBtn} onClick={() => setIsFormOpen(true)} aria-label="Записаться">Записаться</button>
+              <CoursePriceGallery courseId="programming-scratch" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>🐱</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>5–10 лет</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>45–60 мин</span></div></div>

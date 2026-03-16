@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsPanel from '@/components/ContactsPanel';
@@ -59,6 +59,10 @@ export interface GalleryCategoryProps {
 }
 
 const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) => {
+  const [searchParams] = useSearchParams();
+  const rawFrom = searchParams.get('from');
+  // Разрешаем только внутренние пути вида /course/xxx
+  const fromCourse = rawFrom?.startsWith('/course/') && !rawFrom.includes('//') ? rawFrom : null;
   const [isContactsOpen, setIsContactsOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -105,9 +109,15 @@ const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) =
         <div className={styles.main}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <Link to="/gallery" className={styles.backLink}>
-                ← Назад в галерею
-              </Link>
+              {fromCourse ? (
+                <Link to={fromCourse} className={styles.backLink}>
+                  ← Назад к курсу
+                </Link>
+              ) : (
+                <Link to="/gallery" className={styles.backLink}>
+                  ← Назад в галерею
+                </Link>
+              )}
             </div>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.description}>{description}</p>

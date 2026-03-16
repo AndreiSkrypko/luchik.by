@@ -9,6 +9,7 @@ import EnrollmentCard from '@/components/EnrollmentCard';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import CourseNav from '@/components/CourseNav';
 import RelatedCourses from '@/components/RelatedCourses';
+import CoursePriceGallery from '@/components/CoursePriceGallery';
 import legoLogopedImg from '@/assets/directions/lego-logoped.webp';
 import styles from './CoursePage.module.css';
 
@@ -52,6 +53,7 @@ const LegoLogoped = () => {
                 Идеально подходит для детей, которых сложно усадить за классические логопедические задания.
               </p>
               <button type="button" className={styles.mobileEnrollBtn} onClick={() => setIsFormOpen(true)} aria-label="Записаться">Записаться</button>
+              <CoursePriceGallery courseId="lego-logoped" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>👶</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>3–5 лет</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>45–60 мин</span></div></div>
