@@ -61,7 +61,7 @@ const DirectionsSection = () => {
           <div className={styles.directionCard} onClick={() => handleCardClick('5-10')} style={{ cursor: 'pointer' }}>
             <div className={styles.romashkaWrapper}>
               <img
-                src="/img/romashka.svg"
+                src="/img/directions/romashka.svg"
                 alt="Ромашка"
                 className={styles.romashka}
                 onError={handleImageError}

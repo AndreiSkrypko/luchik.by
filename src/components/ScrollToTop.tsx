@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './ScrollToTop.module.css';
 
 const ScrollToTop = () => {
@@ -27,7 +28,7 @@ const ScrollToTop = () => {
     });
   };
 
-  return (
+  const button = (
     <button
       className={`${styles.scrollToTop} ${isVisible ? styles.visible : ''}`}
       onClick={scrollToTop}
@@ -52,6 +53,11 @@ const ScrollToTop = () => {
       </svg>
     </button>
   );
+
+  /* Рендер в body — избегаем stacking context страниц (isolation, transform), кнопка всегда справа снизу */
+  return typeof document !== 'undefined'
+    ? createPortal(button, document.body)
+    : null;
 };
 
 export default ScrollToTop;

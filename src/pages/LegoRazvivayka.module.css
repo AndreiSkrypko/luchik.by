@@ -13,10 +13,11 @@
   background-image: linear-gradient(to bottom, #E5F5FF 0%, #C3E1FF 50%, #C3E1FF calc(800px), #ffffff calc(800px));
 }
 
+/* top: 750px — перекрывает границу градиента, без полосы (README §6) */
 .legoRazvivaykaPage::after {
   content: '';
   position: absolute;
-  top: 800px;
+  top: 750px;
   left: 0; right: 0; bottom: 0;
   background: #ffffff;
   z-index: 0;
@@ -37,7 +38,7 @@
 }
 
 @media (min-width: 1025px) { .legoRazvivaykaPage { overflow-x: hidden; overflow-y: visible; } }
-@media (min-width: 769px) and (max-width: 1024px) { .legoRazvivaykaPage::after { top: 800px; } }
+@media (min-width: 769px) and (max-width: 1024px) { .legoRazvivaykaPage::after { top: 750px; } }
 @media (max-width: 768px) {
   .legoRazvivaykaPage {
     background: #ffffff !important;
@@ -124,7 +125,7 @@
   position: fixed;
   top: 105px;
   left: 40px;
-  z-index: var(--z-header-ui);
+  z-index: var(--z-header-fixed);
   background: transparent;
   border: none;
   color: #4665a1;

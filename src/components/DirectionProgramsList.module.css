@@ -50,7 +50,7 @@
   position: fixed;
   top: 105px;
   left: 40px;
-  z-index: var(--z-header-ui);
+  z-index: var(--z-header-fixed);
   background: transparent;
   border: none;
   color: #4665a1;

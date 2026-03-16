@@ -68,6 +68,7 @@
     --z-content: 1;
     --z-decor: 2;
     --z-header-ui: 10;
+    --z-header-fixed: 10000; /* логотип и хлебные крошки поверх EnrollmentCard */
     --z-float: 20;
     --z-scrolltop: 30;
     --z-overlay: 100;
