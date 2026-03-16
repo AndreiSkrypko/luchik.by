@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import EnrollmentForm from '@/components/EnrollmentForm';
@@ -104,20 +105,23 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
     setTimeout(() => document.getElementById('directions')?.scrollIntoView({ behavior: 'smooth' }), 100);
   };
 
+  const breadcrumbButton = (
+    <button
+      className={styles.backButton}
+      onClick={handleBackClick}
+      aria-label="К направлениям"
+    >
+      ← К направлениям
+    </button>
+  );
+
   return (
     <>
+      {typeof document !== 'undefined' && createPortal(breadcrumbButton, document.body)}
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.heroSection}>
-            <div className={styles.breadcrumbWrapper}>
-              <button
-                className={styles.backButton}
-                onClick={handleBackClick}
-                aria-label="К направлениям"
-              >
-                ← К направлениям
-              </button>
-            </div>
+            <div className={styles.breadcrumbWrapper} aria-hidden="true" />
 
             <div className={styles.hero}>
             <div className={styles.titleBlock}>
