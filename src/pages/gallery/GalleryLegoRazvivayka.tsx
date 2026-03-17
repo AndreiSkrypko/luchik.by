@@ -29,6 +29,7 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: `${BASE}/photo_2026-03-16_18-15-25.webp`, alt: 'Лего-развивайка в центре Лучик' },
   { src: `${BASE}/photo_2026-03-16_18-15-39.webp`, alt: 'Лего-развивайка в центре Лучик' },
   { src: `${BASE}/photo_2026-03-16_18-15-42.webp`, alt: 'Лего-развивайка в центре Лучик' },
+  { src: `${BASE}/photo_2026-03-17_06-35-13.webp`, alt: 'Лего-развивайка в центре Лучик' },
 ];
 
 const GalleryLegoRazvivayka = () => (

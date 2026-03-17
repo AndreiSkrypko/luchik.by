@@ -17,6 +17,7 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: '/img/gallery/elektronika_shemotehnika/photo_21_2025-03-18_19-28-04.webp', alt: 'Схемотехника' },
   { src: '/img/gallery/elektronika_shemotehnika/photo_2026-03-16_20-31-22.webp', alt: 'Электроника и схемотехника' },
   { src: '/img/gallery/elektronika_shemotehnika/photo_2026-03-16_20-31-36.webp', alt: 'Занятия по Arduino и пайке' },
+  { src: '/img/gallery/elektronika_shemotehnika/photo_2026-03-17_06-36-10.webp', alt: 'Электроника и схемотехника в центре Лучик' },
 ];
 
 const GalleryElectronics = () => (

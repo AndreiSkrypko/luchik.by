@@ -25,6 +25,16 @@ const PHOTOS: { src: string; alt: string }[] = [
   { src: '/img/gallery/robotics/photo_2026-03-16_20-31-08.webp', alt: 'Программирование роботов' },
   { src: '/img/gallery/robotics/photo_2026-03-16_20-31-13.webp', alt: 'Конструирование и программирование' },
   { src: '/img/gallery/robotics/photo_2026-03-16_20-31-16.webp', alt: 'Робототехника в центре Лучик' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-34-01.webp', alt: 'Занятия по робототехнике' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-34-06.webp', alt: 'Робототехника в центре Лучик' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-34-10.webp', alt: 'Конструирование роботов' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-22.webp', alt: 'Сборка и программирование' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-26.webp', alt: 'Занятия по робототехнике' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-30.webp', alt: 'Робототехника в центре Лучик' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-34.webp', alt: 'Конструирование роботов' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-37.webp', alt: 'Программирование роботов' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-40.webp', alt: 'Занятия по робототехнике' },
+  { src: '/img/gallery/robotics/photo_2026-03-17_06-37-43.webp', alt: 'Робототехника в центре Лучик' },
 ];
 
 const GalleryRobotics = () => (

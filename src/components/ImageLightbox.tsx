@@ -14,11 +14,14 @@ const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 const ZOOM_STEP = 0.25;
 
+const SWIPE_THRESHOLD = 50;
+
 const ImageLightbox = ({ images, currentIndex, onClose, onIndexChange }: ImageLightboxProps) => {
   const [zoom, setZoom] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const currentImage = images[currentIndex];
@@ -69,6 +72,40 @@ const ImageLightbox = ({ images, currentIndex, onClose, onIndexChange }: ImageLi
 
   const handleMouseUp = () => setIsDragging(false);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    if (zoom > 1) {
+      setIsDragging(true);
+      dragStart.current = { x: t.clientX - position.x, y: t.clientY - position.y };
+    } else {
+      touchStartRef.current = { x: t.clientX, y: t.clientY };
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (zoom > 1 && isDragging) {
+      const t = e.touches[0];
+      setPosition({ x: t.clientX - dragStart.current.x, y: t.clientY - dragStart.current.y });
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (zoom > 1) {
+      setIsDragging(false);
+      return;
+    }
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    if (!start) return;
+    const t = e.changedTouches[0];
+    const deltaX = t.clientX - start.x;
+    const deltaY = t.clientY - start.y;
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0 && hasPrev) goPrev();
+      else if (deltaX < 0 && hasNext) goNext();
+    }
+  };
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -99,6 +136,10 @@ const ImageLightbox = ({ images, currentIndex, onClose, onIndexChange }: ImageLi
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
     >
       <button
         className={styles.closeBtn}
