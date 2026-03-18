@@ -14,7 +14,7 @@ export const courseMeta: Record<string, CourseMeta> = {
   'lego-razvivayka': { price: DEFAULT_PRICE, galleryPath: '/gallery/lego-razvivayka' },
   'complex': { price: DEFAULT_PRICE, galleryPath: '/gallery/developing' },
   'logoped': { price: DEFAULT_PRICE, galleryPath: '/gallery/developing' },
-  'art-studio': { price: DEFAULT_PRICE, galleryPath: '/gallery/masterclass' },
+  'art-studio': { price: DEFAULT_PRICE, galleryPath: '/gallery/art-studio' },
   'lego-logoped': { price: DEFAULT_PRICE, galleryPath: '/gallery/lego-razvivayka' },
   'prep-2year': { price: DEFAULT_PRICE, galleryPath: '/gallery/developing' },
   'prep-school': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },

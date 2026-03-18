@@ -58,6 +58,13 @@ const GALLERY_ITEMS = [
     href: '/gallery/masterclass',
   },
   {
+    src: '/img/gallery/artstudio/photo_2026-03-18_12-00-45.webp',
+    alt: 'Арт-студия в центре Лучик',
+    title: 'Арт-студия',
+    description: 'Творческие занятия для детей',
+    href: '/gallery/art-studio',
+  },
+  {
     src: '/img/gallery/elektronika_shemotehnika/IMG_2016.webp',
     alt: 'Электроника и схемотехника в центре Лучик',
     title: 'Электроника и схемотехника',

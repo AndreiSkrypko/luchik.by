@@ -120,6 +120,13 @@ export const seoConfig: Record<string, SeoConfig> = {
     canonical: `${SITE_URL}/gallery/masterclass`,
   },
 
+  '/gallery/art-studio': {
+    title: 'Галерея — Арт-студия | Детский центр Лучик, Лида',
+    description: 'Фото занятий в арт-студии детского центра Лучик. Рисование, творчество, развитие воображения.',
+    keywords: `${baseKeywords}, арт-студия фото Лида, творческие занятия дети Лучик`,
+    canonical: `${SITE_URL}/gallery/art-studio`,
+  },
+
   '/gallery/developing': {
     title: 'Галерея — Развивающие занятия | Детский центр Лучик, Лида',
     description: 'Фото развивающих занятий для детей в детском центре Лучик. Комплексные программы, подготовка к школе.',

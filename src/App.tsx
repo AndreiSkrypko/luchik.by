@@ -21,6 +21,7 @@ import GalleryChess from "./pages/gallery/GalleryChess";
 import GalleryLegoMatematika from "./pages/gallery/GalleryLegoMatematika";
 import Gallery3dModeling from "./pages/gallery/Gallery3dModeling";
 import GalleryVr from "./pages/gallery/GalleryVr";
+import GalleryArtStudio from "./pages/gallery/GalleryArtStudio";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Enrollment from "./pages/Enrollment";
@@ -97,6 +98,7 @@ const AppRouter = () => (
           <Route path="/gallery/lego-matematika" element={<GalleryLegoMatematika />} />
           <Route path="/gallery/3d-modeling" element={<Gallery3dModeling />} />
           <Route path="/gallery/programming-vr" element={<GalleryVr />} />
+          <Route path="/gallery/art-studio" element={<GalleryArtStudio />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/enrollment" element={<Enrollment />} />
