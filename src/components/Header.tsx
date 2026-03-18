@@ -249,13 +249,17 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           </button>
         )}
 
-        {/* Overlay для закрытия меню */}
-        {isMobileMenuOpen && (
-          <div
-            className={styles.mobileMenuOverlay}
-            onClick={closeMobileMenu}
-          />
-        )}
+        {/* Overlay для закрытия меню (в portal, чтобы быть выше хлебных крошек) */}
+        {isMobileMenuOpen &&
+          isMobile &&
+          typeof window !== 'undefined' &&
+          createPortal(
+            <div
+              className={styles.mobileMenuOverlay}
+              onClick={closeMobileMenu}
+            />,
+            document.body
+          )}
 
         {/* Большие тучи по низу шапки */}
         <div className={styles.clouds}>

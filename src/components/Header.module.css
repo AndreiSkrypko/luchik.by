@@ -460,7 +460,7 @@
 }
 
 .mobileMenuButtonOpen {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 215, 0, 0.15));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(229, 245, 255, 0.98));
   border-color: #FF6B35;
   box-shadow: 0 6px 30px rgba(255, 107, 53, 0.4);
 }
@@ -499,6 +499,12 @@
   background: rgba(0, 0, 0, 0.3);
   z-index: var(--z-overlay);
   display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuOverlay {
+    z-index: var(--z-mobile-menu);
+  }
 }
 
 /* ============================================
@@ -746,7 +752,7 @@
     display: flex !important;
     top: 16px;
     right: 16px;
-    z-index: calc(var(--z-overlay-content) + 1) !important;
+    z-index: calc(var(--z-mobile-menu) + 2) !important; /* выше overlay, чтобы не затемнялся */
     padding: 0;
     width: 44px;
     height: 44px;
@@ -814,7 +820,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    z-index: var(--z-overlay-content) !important;
+    z-index: calc(var(--z-mobile-menu) + 1) !important; /* выше overlay — меню светлое */
     margin: 0 !important;
     padding: 60px 20px 20px;
     overflow-y: auto;
@@ -836,7 +842,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: calc(var(--z-overlay-content) + 2);
+    z-index: calc(var(--z-mobile-menu) + 1);
     box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -888,7 +894,7 @@
 
   .navLinksOpen {
     display: flex !important;
-    z-index: var(--z-overlay-content) !important;
+    z-index: calc(var(--z-mobile-menu) + 1) !important;
   }
 
   .mobileMenuLogo {
@@ -1114,7 +1120,7 @@
     display: flex !important;
     top: 12px;
     right: 12px;
-    z-index: calc(var(--z-overlay-content) + 1) !important;
+    z-index: calc(var(--z-mobile-menu) + 2) !important;
     padding: 10px 8px;
     visibility: visible !important;
     opacity: 1 !important;

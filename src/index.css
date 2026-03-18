@@ -69,6 +69,7 @@
     --z-decor: 2;
     --z-header-ui: 10;
     --z-header-fixed: 10000; /* логотип и хлебные крошки поверх EnrollmentCard */
+    --z-mobile-menu: 10100; /* бургер-меню выше хлебных крошек на мобильных */
     --z-float: 20;
     --z-scrolltop: 30;
     --z-overlay: 100;
