@@ -283,18 +283,18 @@
 
   .mobileInner {
     display: flex;
-    flex-direction: row;
-    gap: 12px;
+    flex-direction: column;
+    gap: 16px;
     align-items: center;
     width: 100%;
   }
 
   .mobileBoy {
-    width: 40%;
+    width: 44%;
   }
 
   .mobileWhyText {
-    width: 60%;
+    width: 100%;
   }
 
   .ctaButton {
@@ -334,11 +334,11 @@
   }
 
   .mobileBoy {
-    width: 40%;
+    width: 48%;
   }
 
   .mobileWhyText {
-    width: 60%;
+    width: 100%;
   }
 
   .ctaButton {
