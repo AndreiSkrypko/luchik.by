@@ -1,35 +1,18 @@
 import GalleryCategory from '@/components/GalleryCategory';
+import { GALLERY_PREFIX, galleryAltLine } from '@/lib/galleryAlt';
+import { galleryFiles } from '@/lib/galleryPaths';
 
 const BASE = '/img/gallery/legokonstruirovanie';
-const PHOTOS: { src: string; alt: string }[] = [
-  { src: `${BASE}/20211112_174826.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20211112_194859.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20211112_194929.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20211126_185507.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230203_181415.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230203_182451.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230217_175510.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230325_110808.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230407_175725.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/20230408_112912.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20181116_192921.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20190704_165505.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20190928_143607.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191012_143441.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191025_182258.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191026_143653.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191026_154336.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191207_172241.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20191213_182825.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20200110_182103.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/IMG_20211211_154826.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_20-30-32.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_20-30-35.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_20-31-00.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-17_06-36-13.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-17_06-36-59.webp`, alt: 'Легоконструирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-17_06-37-03.webp`, alt: 'Легоконструирование в центре Лучик' },
-];
+const SLUG = 'lego_konstr';
+const COUNT = 27;
+
+const SOURCES = galleryFiles(BASE, SLUG, COUNT);
+const PREFIX = GALLERY_PREFIX.lego;
+
+const PHOTOS = SOURCES.map((src, i) => ({
+  src,
+  alt: galleryAltLine(PREFIX, i),
+}));
 
 const GalleryLego = () => (
   <GalleryCategory

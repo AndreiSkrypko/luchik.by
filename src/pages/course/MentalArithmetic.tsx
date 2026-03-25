@@ -57,7 +57,7 @@ const MentalArithmetic = () => {
               <CoursePriceGallery courseId="mental-arithmetic" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>🧮</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>5–10 лет</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>45–60 мин</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>60 мин</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>📱</span><div><span className={styles.badgeLabel}>Формат</span><span className={styles.badgeValue}>Офлайн + тренажёры</span></div></div>
               </div>
             </div>

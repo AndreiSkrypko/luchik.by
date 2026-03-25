@@ -1,16 +1,19 @@
 import GalleryCategory from '@/components/GalleryCategory';
+import { GALLERY_PREFIX, galleryAltLine } from '@/lib/galleryAlt';
+import { galleryFiles } from '@/lib/galleryPaths';
 
 const BASE = '/img/gallery/chess';
-const PHOTOS: { src: string; alt: string }[] = [
-  { src: `${BASE}/IMG_2095.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/IMG_2097.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/IMG_2108.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/IMG_2109.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/IMG_2111.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/IMG_20191005_130245.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_20-30-51.webp`, alt: 'Шахматы в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_20-30-55.webp`, alt: 'Шахматы в центре Лучик' },
-];
+const SLUG = 'shahmaty';
+/** На диске 7 фото (один файл из списка отсутствовал). */
+const COUNT = 7;
+
+const SOURCES = galleryFiles(BASE, SLUG, COUNT);
+const PREFIX = GALLERY_PREFIX.chess;
+
+const PHOTOS = SOURCES.map((src, i) => ({
+  src,
+  alt: galleryAltLine(PREFIX, i),
+}));
 
 const GalleryChess = () => (
   <GalleryCategory

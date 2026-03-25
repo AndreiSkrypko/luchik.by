@@ -253,6 +253,12 @@
   margin-bottom: 3px;
 }
 
+.priceValueStack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .priceValue {
   display: block;
   font-family: 'Nunito', sans-serif;

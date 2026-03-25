@@ -10,16 +10,25 @@ const CoursePriceGallery = ({ courseId }: CoursePriceGalleryProps) => {
   const meta = courseMeta[courseId];
   if (!meta) return null;
 
-  const { price, priceDisplay, galleryPath } = meta;
-  const priceText = priceDisplay ?? `${price} руб/мес`;
+  const { price, priceDisplay, priceDisplayLines, priceSectionLabel, galleryPath } = meta;
+  const lines =
+    priceDisplayLines && priceDisplayLines.length > 0
+      ? priceDisplayLines
+      : [priceDisplay ?? `${price} руб/мес`];
 
   return (
     <div className={styles.priceAndGallery}>
       <div className={styles.priceBadge}>
         <span className={styles.priceIcon}>💰</span>
         <div>
-          <span className={styles.priceLabel}>Абонемент</span>
-          <span className={styles.priceValue}>{priceText}</span>
+          <span className={styles.priceLabel}>{priceSectionLabel ?? 'Абонемент'}</span>
+          <div className={styles.priceValueStack}>
+            {lines.map((line, i) => (
+              <span key={i} className={styles.priceValue}>
+                {line}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <Link to={`${galleryPath}?from=/course/${courseId}`} className={styles.galleryLink}>

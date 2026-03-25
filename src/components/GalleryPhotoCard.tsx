@@ -16,6 +16,7 @@ const GalleryPhotoCard = ({ src, alt, title, description, href }: GalleryPhotoCa
         <img
           src={src}
           alt={alt}
+          title={alt}
           className={styles.image}
           loading="lazy"
           decoding="async"

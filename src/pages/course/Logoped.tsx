@@ -57,7 +57,7 @@ const Logoped = () => {
               <CoursePriceGallery courseId="logoped" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>👶</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>С 3 лет</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>30–45 мин</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>40 мин</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>👤</span><div><span className={styles.badgeLabel}>Формат</span><span className={styles.badgeValue}>Индивидуально</span></div></div>
               </div>
             </div>

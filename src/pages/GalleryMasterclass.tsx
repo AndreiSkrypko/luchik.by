@@ -1,10 +1,13 @@
 import GalleryCategory from '@/components/GalleryCategory';
 import masterclassFiles from '@/data/masterclass-photos.json';
+import { GALLERY_PREFIX, galleryAltLine } from '@/lib/galleryAlt';
 
 const BASE = '/img/gallery/masterclass';
-const MASTERCLASS_PHOTOS = (masterclassFiles as string[]).map((f) => ({
+const PREFIX = GALLERY_PREFIX.masterclass;
+
+const MASTERCLASS_PHOTOS = (masterclassFiles as string[]).map((f, i) => ({
   src: `${BASE}/${f}`,
-  alt: 'Мастер-класс в центре Лучик',
+  alt: galleryAltLine(PREFIX, i),
 }));
 
 const GalleryMasterclass = () => (

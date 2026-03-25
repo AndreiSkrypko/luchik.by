@@ -57,7 +57,7 @@ const Robotics = () => {
               <CoursePriceGallery courseId="robotics" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>🤖</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>5–10 лет</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>60–90 мин</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>75 мин</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>🔧</span><div><span className={styles.badgeLabel}>Формат</span><span className={styles.badgeValue}>Lego, датчики</span></div></div>
               </div>
             </div>

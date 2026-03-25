@@ -1,16 +1,18 @@
 import GalleryCategory from '@/components/GalleryCategory';
+import { GALLERY_PREFIX, galleryAltLine } from '@/lib/galleryAlt';
+import { galleryFiles } from '@/lib/galleryPaths';
 
 const BASE = '/img/gallery/3dmodelirovanie';
-const PHOTOS: { src: string; alt: string }[] = [
-  { src: `${BASE}/IMG_5054.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/IMG_5059.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/IMG_5065.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/IMG_5067.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/IMG_5068.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_18-52-19.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_18-52-23.webp`, alt: '3D-моделирование в центре Лучик' },
-  { src: `${BASE}/photo_2026-03-16_18-52-26.webp`, alt: '3D-моделирование в центре Лучик' },
-];
+const SLUG = 'modelirovanie_3d';
+const COUNT = 8;
+
+const SOURCES = galleryFiles(BASE, SLUG, COUNT);
+const PREFIX = GALLERY_PREFIX.modeling3d;
+
+const PHOTOS = SOURCES.map((src, i) => ({
+  src,
+  alt: galleryAltLine(PREFIX, i),
+}));
 
 const Gallery3dModeling = () => (
   <GalleryCategory

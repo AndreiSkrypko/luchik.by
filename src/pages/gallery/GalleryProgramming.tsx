@@ -1,12 +1,18 @@
 import GalleryCategory from '@/components/GalleryCategory';
+import { GALLERY_PREFIX, galleryAltLine } from '@/lib/galleryAlt';
+import { galleryFiles } from '@/lib/galleryPaths';
 
-// Добавляйте фото в /img/gallery/programming/ (формат .webp)
-const PHOTOS: { src: string; alt: string }[] = [
-  { src: '/img/gallery/programming/IMG_3940.webp', alt: 'Занятия по программированию в центре Лучик' },
-  { src: '/img/gallery/programming/IMG_3986.webp', alt: 'Программирование Scratch и Python' },
-  { src: '/img/gallery/programming/IMG_3989.webp', alt: 'Программирование для детей в центре Лучик' },
-  { src: '/img/gallery/programming/photo_2026-03-16_20-31-31.webp', alt: 'Занятия по программированию' },
-];
+const BASE = '/img/gallery/programming';
+const SLUG = 'programmirovanie';
+const COUNT = 7;
+
+const SOURCES = galleryFiles(BASE, SLUG, COUNT);
+const PREFIX = GALLERY_PREFIX.programming;
+
+const PHOTOS = SOURCES.map((src, i) => ({
+  src,
+  alt: galleryAltLine(PREFIX, i),
+}));
 
 const GalleryProgramming = () => (
   <GalleryCategory

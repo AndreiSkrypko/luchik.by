@@ -57,8 +57,8 @@ const Prep2year = () => {
               <CoursePriceGallery courseId="prep-2year" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>📅</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>4–5 лет</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Курс</span><span className={styles.badgeValue}>2 года</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>📚</span><div><span className={styles.badgeLabel}>Формат</span><span className={styles.badgeValue}>Постепенно</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>60 мин</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>📚</span><div><span className={styles.badgeLabel}>Курс</span><span className={styles.badgeValue}>2 года</span></div></div>
               </div>
             </div>
 

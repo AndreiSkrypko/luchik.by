@@ -17,10 +17,24 @@
   </url>
   <url>
     <loc>https://luchik.by/gallery</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url><loc>https://luchik.by/gallery/masterclass</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/developing</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/robotics</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/english</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/prep-school</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/programming</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/electronics</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/lego</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/lego-razvivayka</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/chess</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/lego-matematika</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/3d-modeling</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/programming-vr</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://luchik.by/gallery/art-studio</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <url>
     <loc>https://luchik.by/contacts</loc>
     <lastmod>2025-03-12</lastmod>

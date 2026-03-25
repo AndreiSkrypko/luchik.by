@@ -17,7 +17,7 @@ function GalleryImageCard({
   onOpen,
   onLoadError,
 }: {
-  photo: { src: string; alt: string };
+  photo: { src: string; alt: string; title?: string };
   index: number;
   onOpen: (idx: number) => void;
   onLoadError: () => void;
@@ -32,6 +32,7 @@ function GalleryImageCard({
         <img
           src={photo.src.replace(/\.\w+$/, '_opt.webp')}
           alt={photo.alt}
+          title={photo.title ?? photo.alt}
           className={styles.image}
           loading="lazy"
           decoding="async"
@@ -55,7 +56,7 @@ function GalleryImageCard({
 export interface GalleryCategoryProps {
   title: string;
   description: string;
-  photos: { src: string; alt: string }[];
+  photos: { src: string; alt: string; title?: string }[];
 }
 
 const GalleryCategory = ({ title, description, photos }: GalleryCategoryProps) => {

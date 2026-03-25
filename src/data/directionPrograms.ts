@@ -158,7 +158,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'robotics',
         title: 'Робототехника',
-        lead: 'Сборка роботов, основы механики и программирования',
+        lead: 'Сборка роботов, основы механики и программирования — занятие 75 минут',
         image: '/img/directions/robotics.webp',
         linkTo: '/course/robotics',
         accentColor: '#4B9CF5',
@@ -197,7 +197,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'robotics-10-17',
         title: 'Робототехника',
-        lead: 'Продвинутые проекты: сборка роботов, датчики, программирование микроконтроллеров',
+        lead: 'Продвинутые проекты: сборка роботов, датчики, программирование микроконтроллеров — занятие 75 минут',
         image: '/img/directions/robotics-10-17.webp',
         linkTo: '/course/robotics-10-17',
         accentColor: '#4B9CF5',
@@ -205,7 +205,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'arduino-electronics',
         title: 'Электроника и Arduino',
-        lead: 'Основы электроники, программирование микроконтроллеров, создание умных устройств',
+        lead: 'Основы электроники, программирование микроконтроллеров, создание умных устройств — занятие 75 минут',
         image: '/img/directions/arduino-electronics.webp',
         linkTo: '/course/arduino-electronics',
         accentColor: '#27AE60',
@@ -213,7 +213,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'programming-python',
         title: 'Программирование на Python',
-        lead: 'Синтаксис, алгоритмы, работа с данными — от основ до практических проектов',
+        lead: 'Синтаксис, алгоритмы, работа с данными — от основ до практических проектов — занятие 75 минут',
         image: '/img/directions/programming-python.webp',
         linkTo: '/course/programming-python',
         accentColor: '#4B9CF5',
@@ -221,7 +221,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'programming-javascript',
         title: 'Программирование на JavaScript',
-        lead: 'Интерактивность на веб-страницах, логика приложений, основы фреймворков',
+        lead: 'Интерактивность на веб-страницах, логика приложений, основы фреймворков — занятие 75 минут',
         image: '/img/directions/programming-javascript.webp',
         linkTo: '/course/programming-javascript',
         accentColor: '#F39C12',
@@ -237,7 +237,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: '3d-blender',
         title: '3D-моделирование в Blender',
-        lead: 'Создание трёхмерных моделей, анимация, рендеринг и основы визуализации',
+        lead: 'Создание трёхмерных моделей, анимация, рендеринг и основы визуализации — занятие 75 минут',
         image: '/img/directions/3d-blender.webp',
         linkTo: '/course/3d-blender',
         accentColor: '#F39C12',
@@ -245,7 +245,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'programming-vr-10-17',
         title: 'Разработка VR-игр',
-        lead: 'Создание приложений виртуальной реальности — 3D-мир и интерактив',
+        lead: 'Создание приложений виртуальной реальности — 3D-мир и интерактив — занятие 75 минут',
         image: '/img/directions/programming-vr-10-17.webp',
         linkTo: '/course/programming-vr-10-17',
         accentColor: '#4B9CF5',
@@ -253,7 +253,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'programming-roblox-10-17',
         title: 'Разработка игр в Roblox',
-        lead: 'Roblox Studio и Lua — создание многопользовательских игр и механик',
+        lead: 'Roblox Studio и Lua — создание многопользовательских игр и механик — занятие 75 минут',
         image: '/img/directions/programming-roblox-10-17.webp',
         linkTo: '/course/programming-roblox-10-17',
         accentColor: '#9B59B6',
@@ -261,7 +261,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'circuit-design',
         title: 'Схемотехника',
-        lead: 'Чтение принципиальных схем, пайка, проектирование электронных устройств',
+        lead: 'Чтение принципиальных схем, пайка, проектирование электронных устройств — занятие 75 минут',
         image: '/img/directions/circuit-design.webp',
         linkTo: '/course/circuit-design',
         accentColor: '#4B9CF5',
@@ -269,7 +269,7 @@ export const directionPrograms: Record<string, DirectionConfig> = {
       {
         id: 'artificial-intelligence',
         title: 'Искусственный интеллект',
-        lead: 'Основы машинного обучения, нейросети, работа с данными и AI-инструментами',
+        lead: 'Основы машинного обучения, нейросети, работа с данными и AI-инструментами — занятие 75 минут',
         image: '/img/directions/artificial-intelligence.webp',
         linkTo: '/course/artificial-intelligence',
         accentColor: '#9B59B6',

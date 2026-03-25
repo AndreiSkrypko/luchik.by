@@ -4,7 +4,7 @@ import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 import styles from './ImageLightbox.module.css';
 
 export interface ImageLightboxProps {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; title?: string }[];
   currentIndex: number;
   onClose: () => void;
   onIndexChange?: (index: number) => void;
@@ -163,6 +163,7 @@ const ImageLightbox = ({ images, currentIndex, onClose, onIndexChange }: ImageLi
         <img
           src={currentImage.src}
           alt={currentImage.alt}
+          title={currentImage.title ?? currentImage.alt}
           className={styles.image}
           style={{
             transform: `scale(${zoom}) translate(${position.x}px, ${position.y}px)`,

@@ -75,7 +75,7 @@ const MamaMalysh = () => {
                 </div>
                 <div className={styles.badge}>
                   <span className={styles.badgeIcon}>⏱</span>
-                  <div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>45–60 мин</span></div>
+                  <div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>60 мин</span></div>
                 </div>
                 <div className={styles.badge}>
                   <span className={styles.badgeIcon}>👩‍👧</span>
