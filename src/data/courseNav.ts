@@ -12,7 +12,6 @@ export const courseOrder: CourseNavItem[] = [
   { id: 'art-studio', path: '/course/art-studio', title: 'Арт-студия' },
   { id: 'lego-logoped', path: '/course/lego-logoped', title: 'Лего с логопедом' },
   { id: 'prep-2year', path: '/course/prep-2year', title: 'Двухгодовой курс подготовки к школе' },
-  { id: 'prep-school', path: '/course/prep-school', title: 'Подготовка к школе' },
   { id: 'lego-math', path: '/course/lego-math', title: 'Лего-математика' },
 ];
 
@@ -23,12 +22,13 @@ export const relatedCourses: Record<string, string[]> = {
   'logoped': ['lego-logoped', 'complex'],
   'art-studio': ['complex', 'lego-logoped'],
   'lego-logoped': ['lego-razvivayka', 'logoped', 'lego-math'],
-  'prep-2year': ['complex', 'prep-school'],
-  'prep-school': ['prep-2year', 'lego-math'],
-  'lego-math': ['lego-razvivayka', 'lego-logoped', 'prep-school'],
+  'prep-2year': ['complex', 'lego-math'],
+  'lego-math': ['lego-razvivayka', 'lego-logoped', 'prep-2year'],
 };
 
 export const courseOrder5_10: CourseNavItem[] = [
+  { id: 'prep-school', path: '/course/prep-school', title: 'Годовой курс подготовки к школе' },
+  { id: 'prep-express', path: '/course/prep-express', title: 'Экспресс-курс подготовки к школе' },
   { id: 'logic-speed-reading', path: '/course/logic-speed-reading', title: 'Логика и скорочтение' },
   { id: 'english', path: '/course/english', title: 'Английский язык' },
   { id: 'chess', path: '/course/chess', title: 'Шахматы' },
@@ -43,7 +43,9 @@ export const courseOrder5_10: CourseNavItem[] = [
 ];
 
 export const relatedCourses5_10: Record<string, string[]> = {
-  'logic-speed-reading': ['mental-arithmetic', 'chess'],
+  'prep-school': ['prep-express', 'logic-speed-reading', 'mental-arithmetic'],
+  'prep-express': ['prep-school', 'logic-speed-reading', 'mental-arithmetic'],
+  'logic-speed-reading': ['prep-school', 'mental-arithmetic', 'chess'],
   'english': ['chess', 'programming-scratch'],
   'chess': ['logic-speed-reading', 'mental-arithmetic'],
   'programming-scratch': ['programming-minecraft', 'robotics', 'english'],
@@ -51,7 +53,7 @@ export const relatedCourses5_10: Record<string, string[]> = {
   'programming-roblox': ['programming-minecraft', 'programming-vr'],
   'programming-vr': ['programming-roblox', '3d-modeling'],
   'robotics': ['programming-scratch', '3d-modeling'],
-  'mental-arithmetic': ['logic-speed-reading', 'chess', 'tutor'],
+  'mental-arithmetic': ['prep-school', 'logic-speed-reading', 'chess'],
   'tutor': ['mental-arithmetic', 'logic-speed-reading'],
   '3d-modeling': ['programming-vr', 'robotics'],
 };

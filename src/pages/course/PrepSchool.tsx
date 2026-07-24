@@ -32,21 +32,21 @@ const PrepSchool = () => {
         <div className={styles.courseMain}>
           <div className={styles.titleSection}>
             <div className={styles.breadcrumbWrapper}>
-              <CourseBreadcrumb to="/age/1-5" label="К программам 1-5 лет" />
+              <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Подготовка к школе</h1>
-            <p className={styles.pageDescription}>Чтение, счёт, письмо — готовность к школе, 5–7 лет</p>
+            <h1 className={styles.pageTitle}>Годовой курс подготовки к школе</h1>
+            <p className={styles.pageDescription}>Чтение, счёт, письмо — готовность к школе за учебный год, 5–7 лет</p>
           </div>
 
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={prepSchoolImg} alt="Подготовка к школе в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
+                <img src={prepSchoolImg} alt="Годовой курс подготовки к школе в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
-                Подготовка к школе — интенсивный курс для будущих первоклассников. За год до школы мы даём ребёнку 
-                все необходимые навыки: чтение, счёт, основы письма, умение работать в учебном режиме. Курс 
-                подходит и тем, кто уже ходил на двухгодичную подготовку, и тем, кто начинает с нуля.
+                Годовой курс подготовки к школе — полноценная программа для будущих первоклассников. За учебный год 
+                мы даём ребёнку все необходимые навыки: чтение, счёт, основы письма, умение работать в учебном режиме. 
+                Курс подходит и тем, кто уже ходил на двухгодичную подготовку, и тем, кто начинает с нуля.
               </p>
               <p className={styles.aboutText}>
                 Занятия строятся с учётом требований современной школы. Педагоги используют проверенные методики 
@@ -57,15 +57,15 @@ const PrepSchool = () => {
               <CoursePriceGallery courseId="prep-school" />
               <div className={styles.badges}>
                 <div className={styles.badge}><span className={styles.badgeIcon}>📚</span><div><span className={styles.badgeLabel}>Возраст</span><span className={styles.badgeValue}>5–7 лет</span></div></div>
+                <div className={styles.badge}><span className={styles.badgeIcon}>📅</span><div><span className={styles.badgeLabel}>Длительность</span><span className={styles.badgeValue}>1 год</span></div></div>
                 <div className={styles.badge}><span className={styles.badgeIcon}>⏱</span><div><span className={styles.badgeLabel}>Занятие</span><span className={styles.badgeValue}>60 мин</span></div></div>
-                <div className={styles.badge}><span className={styles.badgeIcon}>🎯</span><div><span className={styles.badgeLabel}>Формат</span><span className={styles.badgeValue}>Чтение, счёт, письмо</span></div></div>
               </div>
             </div>
 
             <div className={styles.rightColumn} id="enrollment-form">
               <h2 className={styles.formTitle}>Записаться на занятие</h2>
               <p className={styles.formSubtitle}>Оставьте заявку — мы перезвоним и подберём удобное время</p>
-              <EnrollmentForm onSuccess={handleFormSuccess} courseName="Подготовка к школе" />
+              <EnrollmentForm onSuccess={handleFormSuccess} courseName="Годовой курс подготовки к школе" />
             </div>
           </div>
 
@@ -91,13 +91,13 @@ const PrepSchool = () => {
             </div>
           </section>
 
-          <RelatedCourses currentCourseId="prep-school" />
+          <RelatedCourses currentCourseId="prep-school" ageRange="5-10" />
 
           <section className={styles.locationBar}>
             <span>📍 г. Лида · Детский центр «Лучик» · Небольшие группы</span>
           </section>
 
-          <CourseNav currentCourseId="prep-school" />
+          <CourseNav currentCourseId="prep-school" ageRange="5-10" />
         </div>
       </main>
       <Footer onContactsClick={toggleContacts} />
@@ -111,7 +111,7 @@ const PrepSchool = () => {
             <DialogTitle className={styles.formDialogTitle}>Записаться на занятие</DialogTitle>
             <DialogDescription className={styles.formDialogDesc}>Оставьте заявку — мы перезвоним и подберём удобное время</DialogDescription>
           </DialogHeader>
-          <EnrollmentForm onSuccess={handleFormSuccess} courseName="Подготовка к школе" compact />
+          <EnrollmentForm onSuccess={handleFormSuccess} courseName="Годовой курс подготовки к школе" compact />
         </DialogContent>
       </Dialog>
     </div>

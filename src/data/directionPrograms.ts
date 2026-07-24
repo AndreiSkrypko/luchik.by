@@ -77,14 +77,6 @@ export const directionPrograms: Record<string, DirectionConfig> = {
         accentColor: '#4B9CF5',
       },
       {
-        id: 'prep-school',
-        title: 'Подготовка к школе',
-        lead: '5–7 лет. Чтение, счёт, развитие усидчивости и готовности к первому классу',
-        image: '/img/directions/prep-school.webp',
-        linkTo: '/course/prep-school',
-        accentColor: '#FF6B35',
-      },
-      {
         id: 'lego-math',
         title: 'Лего-математика',
         lead: '5–7 лет. Математика через конструирование — числа, форма, логика',
@@ -99,6 +91,22 @@ export const directionPrograms: Record<string, DirectionConfig> = {
     description: 'Развивающие занятия для младших школьников',
     mascot: 'romashka',
     programs: [
+      {
+        id: 'prep-school',
+        title: 'Годовой курс подготовки к школе',
+        lead: '5–7 лет. Чтение, счёт, письмо и готовность к первому классу за учебный год',
+        image: '/img/directions/prep-school.webp',
+        linkTo: '/course/prep-school',
+        accentColor: '#FF6B35',
+      },
+      {
+        id: 'prep-express',
+        title: 'Экспресс-курс подготовки к школе',
+        lead: '5–7 лет. Интенсивная подготовка за 6 месяцев — чтение, счёт, письмо',
+        image: '/img/directions/prep-express.webp',
+        linkTo: '/course/prep-express',
+        accentColor: '#E74C3C',
+      },
       {
         id: 'logic-speed-reading',
         title: 'Логика и скорочтение',

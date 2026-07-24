@@ -54,6 +54,7 @@ export const courseMeta: Record<string, CourseMeta> = {
     galleryPath: '/gallery/developing',
   },
   'prep-school': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
+  'prep-express': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
   'lego-math': {
     price: DEFAULT_PRICE,
     priceDisplay: '12 руб за занятие в абонементе/мес',

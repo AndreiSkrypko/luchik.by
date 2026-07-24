@@ -37,6 +37,7 @@ import ArtStudio from "./pages/course/ArtStudio";
 import LegoLogoped from "./pages/course/LegoLogoped";
 import Prep2year from "./pages/course/Prep2year";
 import PrepSchool from "./pages/course/PrepSchool";
+import PrepExpress from "./pages/course/PrepExpress";
 import LegoMath from "./pages/course/LegoMath";
 import LogicSpeedReading from "./pages/course/LogicSpeedReading";
 import English from "./pages/course/English";
@@ -114,6 +115,7 @@ const AppRouter = () => (
           <Route path="/course/lego-logoped" element={<LegoLogoped />} />
           <Route path="/course/prep-2year" element={<Prep2year />} />
           <Route path="/course/prep-school" element={<PrepSchool />} />
+          <Route path="/course/prep-express" element={<PrepExpress />} />
           <Route path="/course/lego-math" element={<LegoMath />} />
           <Route path="/course/logic-speed-reading" element={<LogicSpeedReading />} />
           <Route path="/course/english" element={<English />} />

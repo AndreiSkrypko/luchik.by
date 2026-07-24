@@ -16,6 +16,7 @@ import artStudioImg from '@/assets/directions/art-studio.webp';
 import legoLogopedImg from '@/assets/directions/lego-logoped.webp';
 import prep2yearImg from '@/assets/directions/prep-2year.webp';
 import prepSchoolImg from '@/assets/directions/prep-school.webp';
+import prepExpressImg from '@/assets/directions/prep-express.webp';
 import legoMathImg from '@/assets/directions/lego-math.webp';
 import logicSpeedReadingImg from '@/assets/directions/logic-speed-reading.webp';
 import englishImg from '@/assets/directions/english.webp';
@@ -50,6 +51,7 @@ const directionImageOverrides: Record<string, string> = {
   'lego-logoped': legoLogopedImg,
   'prep-2year': prep2yearImg,
   'prep-school': prepSchoolImg,
+  'prep-express': prepExpressImg,
   'lego-math': legoMathImg,
   'logic-speed-reading': logicSpeedReadingImg,
   'english': englishImg,
