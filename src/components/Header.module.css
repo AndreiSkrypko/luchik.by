@@ -372,7 +372,7 @@
   font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #4A5568;
+  color: #FF6B35;
   text-decoration: none;
   white-space: nowrap;
   padding: 0;
@@ -384,25 +384,9 @@
 }
 
 .phoneLink:hover {
-  color: #FF6B35;
+  color: #E85A28;
   transform: translateY(-2px) scale(1.03);
-  text-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
-}
-
-.phoneLink::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #FF6B35, #FFD700);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.phoneLink:hover::after {
-  transform: scaleX(1);
+  text-shadow: 0 2px 8px rgba(255, 107, 53, 0.35);
 }
 
 /* Мобильная кнопка «Позвонить» */
