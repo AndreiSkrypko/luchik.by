@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { contacts } from '@/data/contacts';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -40,6 +41,20 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const phoneNumber = e.currentTarget.getAttribute('href')?.replace('tel:', '') || 'unknown';
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17904651267',
+        'event_category': 'phone',
+        'event_label': 'header_phone_click',
+        'phone_number': phoneNumber,
+        'value': 1.0,
+        'currency': 'BYN'
+      });
+    }
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -105,13 +120,46 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     closeMobileMenu();
   };
 
+  const phonesBlock = (
+    <div className={styles.phones} aria-label="Телефоны">
+      {isMobile ? (
+        <a
+          href={`tel:${contacts.phoneA1.number}`}
+          className={styles.phoneCallBtn}
+          onClick={handlePhoneClick}
+          aria-label={`Позвонить: ${contacts.phoneA1.display}`}
+        >
+          <svg className={styles.phoneCallIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"
+              fill="currentColor"
+            />
+          </svg>
+          Позвонить
+        </a>
+      ) : (
+        contacts.phones.map((phone) => (
+          <a
+            key={phone.number}
+            href={`tel:${phone.number}`}
+            className={styles.phoneLink}
+            onClick={handlePhoneClick}
+            aria-label={`Позвонить: ${phone.display}`}
+          >
+            {phone.display}
+          </a>
+        ))
+      )}
+    </div>
+  );
+
   const navLinksContent = (
     <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksOpen : ''}`}>
       {/* Логотип для мобильного меню */}
       {isMobile && (
-        <Link 
-          to="/" 
-          className={styles.mobileMenuLogo} 
+        <Link
+          to="/"
+          className={styles.mobileMenuLogo}
           onClick={(e) => {
             handleLogoClick(e);
             closeMobileMenu();
@@ -143,6 +191,18 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
       <Link to="/contacts" className={styles.navTextLink} onClick={closeMobileMenu}>
         Контакты
       </Link>
+      {isMobile && (
+        <a
+          href={`tel:${contacts.phoneA1.number}`}
+          className={styles.navTextLink}
+          onClick={(e) => {
+            handlePhoneClick(e);
+            closeMobileMenu();
+          }}
+        >
+          Позвонить
+        </a>
+      )}
     </div>
   );
 
@@ -168,58 +228,12 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
           )
         }
 
-        {/* Навигация и кнопка «Контакты» */}
+        {/* Навигация и телефоны */}
         <nav className={styles.navbarRow} aria-label="Основная навигация">
           {isMobile && typeof window !== 'undefined' ? createPortal(navLinksContent, document.body) : navLinksContent}
 
           <div className={styles.navbarRight}>
-            <div className={styles.socials}>
-              <a
-                href="https://instagram.com/lu4ik_lida"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialIconLink}
-                aria-label="Мы в Instagram"
-              >
-                <img
-                  src="/img/socseti/inst.svg"
-                  alt="Instagram детского центра Лучик в Лиде"
-                  width={32}
-                  height={32}
-                  className={styles.socialIcon}
-                />
-              </a>
-              <a
-                href="https://vk.com/luchiklida"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialIconLink}
-                aria-label="Мы во ВКонтакте"
-              >
-                <img
-                  src="/img/socseti/vk.svg"
-                  alt="ВКонтакте"
-                  width={32}
-                  height={32}
-                  className={styles.socialIcon}
-                />
-              </a>
-              <a
-                href="https://ok.ru/luchiklida"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialIconLink}
-                aria-label="Мы в Одноклассниках"
-              >
-                <img
-                  src="/img/socseti/ok.svg"
-                  alt="Одноклассники детского центра Лучик в Лиде"
-                  width={32}
-                  height={32}
-                  className={styles.socialIcon}
-                />
-              </a>
-            </div>
+            {phonesBlock}
           </div>
         </nav>
 
