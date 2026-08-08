@@ -95,7 +95,7 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
       // Отслеживание конверсии - заполнение формы
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-17904651267',
+          'send_to': 'AW-18090541332',
           'event_category': 'form',
           'event_label': 'enrollment_form_submit',
           'value': 1.0,

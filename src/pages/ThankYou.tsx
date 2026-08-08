@@ -8,20 +8,21 @@ import styles from './ThankYou.module.css';
 
 const ThankYou = () => {
   useEffect(() => {
-    // Google Ads conversion tracking
-    // Event snippet for "Отправка формы для потенциальных клиентов" conversion page
+    // Event snippet for «Просмотр страницы (1)» conversion page
     const sendConversion = () => {
-      // Проверяем наличие gtag
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-17904651267/VnyECNSD8-0bEIOYzdlC'
+          send_to: 'AW-18090541332/BGf0CJz26cIcEJSCn7JD',
+          value: 1.0,
+          currency: 'USD',
         });
       } else {
-        // Если gtag еще не загружен, ждем немного и пробуем снова
         setTimeout(() => {
           if (typeof window !== 'undefined' && (window as any).gtag) {
             (window as any).gtag('event', 'conversion', {
-              'send_to': 'AW-17904651267/VnyECNSD8-0bEIOYzdlC'
+              send_to: 'AW-18090541332/BGf0CJz26cIcEJSCn7JD',
+              value: 1.0,
+              currency: 'USD',
             });
           }
         }, 1000);

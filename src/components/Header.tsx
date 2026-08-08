@@ -47,7 +47,7 @@ const Header = ({ onContactsClick, hideDecorations = false }: HeaderProps) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       const phoneNumber = e.currentTarget.getAttribute('href')?.replace('tel:', '') || 'unknown';
       (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17904651267',
+        'send_to': 'AW-18090541332',
         'event_category': 'phone',
         'event_label': 'header_phone_click',
         'phone_number': phoneNumber,
