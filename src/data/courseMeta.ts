@@ -16,19 +16,19 @@ const DEFAULT_GALLERY = '/gallery';
 export const courseMeta: Record<string, CourseMeta> = {
   'mama-malysh': {
     price: DEFAULT_PRICE,
-    priceDisplay: '12 руб за занятие в абонементе/мес',
+    priceDisplay: '13 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/developing',
   },
   'lego-razvivayka': {
     price: DEFAULT_PRICE,
-    priceDisplay: '12 руб за занятие в абонементе/мес',
+    priceDisplay: '13 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/lego-razvivayka',
   },
   'complex': {
     price: DEFAULT_PRICE,
     priceDisplayLines: [
-      '60 мин — 13 руб за занятие в абонементе/мес',
-      '90 мин — 19 руб за занятие в абонементе/мес',
+      '60 мин — 14 руб за занятие в абонементе/мес',
+      '90 мин — 20 руб за занятие в абонементе/мес',
     ],
     galleryPath: '/gallery/developing',
   },
@@ -40,42 +40,42 @@ export const courseMeta: Record<string, CourseMeta> = {
   },
   'art-studio': {
     price: DEFAULT_PRICE,
-    priceDisplay: '12 руб за занятие в абонементе/мес',
+    priceDisplay: '13 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/art-studio',
   },
   'lego-logoped': {
     price: DEFAULT_PRICE,
-    priceDisplay: '12 руб за занятие в абонементе/мес',
+    priceDisplay: '13 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/lego-razvivayka',
   },
   'prep-2year': {
     price: DEFAULT_PRICE,
-    priceDisplay: '13 руб за занятие в абонементе/мес',
+    priceDisplay: '14 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/developing',
   },
-  'prep-school': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
-  'prep-express': { price: DEFAULT_PRICE, priceDisplay: '13 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
+  'prep-school': { price: DEFAULT_PRICE, priceDisplay: '14 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
+  'prep-express': { price: DEFAULT_PRICE, priceDisplay: '14 руб за занятие в абонементе/мес', galleryPath: '/gallery/prep-school' },
   'lego-math': {
     price: DEFAULT_PRICE,
-    priceDisplay: '12 руб за занятие в абонементе/мес',
+    priceDisplay: '13 руб за занятие в абонементе/мес',
     galleryPath: '/gallery/lego-matematika',
   },
   'logic-speed-reading': {
-    price: '15',
-    priceDisplay: '15 руб за занятие в абонементе/мес',
+    price: '16',
+    priceDisplay: '16 руб за занятие в абонементе/мес',
     galleryPath: DEFAULT_GALLERY,
   },
   'english': {
     price: DEFAULT_PRICE,
     priceDisplayLines: [
-      '60 мин — 15 руб за занятие в абонементе/мес',
-      '75 мин — 18 руб за занятие в абонементе/мес',
+      '60 мин — 17 руб за занятие в абонементе/мес',
+      '75 мин — 20 руб за занятие в абонементе/мес',
     ],
     galleryPath: '/gallery/english',
   },
   'chess': {
-    price: '14',
-    priceDisplay: '14 руб за занятие в абонементе/мес',
+    price: '60',
+    priceDisplay: '60 руб/мес',
     galleryPath: '/gallery/chess',
   },
   'programming-scratch': { price: DEFAULT_PRICE, galleryPath: '/gallery/programming' },
