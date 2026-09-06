@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { contacts } from '@/data/contacts';
 import styles from './Footer.module.css';
 
 interface FooterProps {
@@ -192,46 +193,44 @@ const Footer = ({ onContactsClick: _onContactsClick }: FooterProps) => {
             </div>
             <div className={styles.footerNavDivider}></div>
             <div className={styles.footerNavRight}>
-              <div className={styles.footerAddress}>
-                <div>Замковая, 4</div>
-                <a href="tel:+375445523267" className={styles.footerPhone} onClick={handlePhoneClick}>+37544 552-32-67</a>
-              </div>
-              <div className={styles.footerAddress}>
-                <div>Кооперативная, 36</div>
-                <a href="tel:+375298667663" className={styles.footerPhone} onClick={handlePhoneClick}>+37529 866-76-63</a>
-              </div>
+              {contacts.addresses.map((addr) => {
+                const phone = contacts.phones.find((p) => p.number === addr.phone);
+                return (
+                  <div key={addr.phone} className={styles.footerAddress}>
+                    <div>{addr.street}</div>
+                    <a
+                      href={`tel:${addr.phone}`}
+                      className={styles.footerPhone}
+                      onClick={handlePhoneClick}
+                    >
+                      {phone?.displayCompact ?? phone?.display ?? addr.phone}
+                    </a>
+                  </div>
+                );
+              })}
               <div className={styles.footerSchedule}>
-                <div>Пн-Пт с 9.00 до 20.00</div>
-                <div>Сб, Вс с 10.00 до 18.00</div>
+                <div>{contacts.schedule.weekdays}</div>
+                <div>{contacts.schedule.weekend}</div>
               </div>
               <div className={styles.footerSocials}>
-                <a href="https://instagram.com/lu4ik_lida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы в Instagram">
-                  <img
-                    src="/img/socseti/inst.svg"
-                    alt="Instagram детского центра Лучик в Лиде"
-                    width={32}
-                    height={32}
-                    className={styles.footerSocialIcon}
-                  />
-                </a>
-                <a href="https://vk.com/luchiklida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы во ВКонтакте">
-                  <img
-                    src="/img/socseti/vk.svg"
-                    alt="ВКонтакте детского центра Лучик в Лиде"
-                    width={32}
-                    height={32}
-                    className={styles.footerSocialIcon}
-                  />
-                </a>
-                <a href="https://ok.ru/luchiklida" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink} aria-label="Мы в Одноклассниках">
-                  <img
-                    src="/img/socseti/ok.svg"
-                    alt="Одноклассники детского центра Лучик в Лиде"
-                    width={32}
-                    height={32}
-                    className={styles.footerSocialIcon}
-                  />
-                </a>
+                {contacts.socials.map((social) => (
+                  <a
+                    key={social.id}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.footerSocialLink}
+                    aria-label={`Мы в ${social.name}`}
+                  >
+                    <img
+                      src={social.icon}
+                      alt={`${social.name} детского центра Лучик в Лиде`}
+                      width={32}
+                      height={32}
+                      className={styles.footerSocialIcon}
+                    />
+                  </a>
+                ))}
               </div>
               <img
                 src="/img/footer/oblako3.svg"

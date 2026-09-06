@@ -40,6 +40,9 @@
   AddType application/xml .xml
 </IfModule>
 
+# DirectoryIndex для prerendered маршрутов (/course/foo/index.html)
+DirectoryIndex index.html
+
 # КРИТИЧЕСКИ ВАЖНО: Разрешаем доступ к папке img ДО всех остальных правил
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -54,16 +57,21 @@
   RewriteCond %{REQUEST_URI} ^/(placeholder|favicon)\.svg$
   RewriteRule ^ - [L]
   
-  # ВАЖНО: Сначала проверяем и разрешаем доступ к статическим файлам
-  # Если запрашивается существующий файл (изображение, CSS, JS и т.д.), отдаем его напрямую
+  # Статические файлы (CSS, JS, изображения) — как есть
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
-  
-  # Если запрашивается существующая директория, отдаем её
+
+  # Prerender: /course/foo → /course/foo/index.html (если есть)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+
+  # Существующая директория (с DirectoryIndex index.html)
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
-  
-  # Перенаправляем все остальные запросы на index.html для SPA
+
+  # SPA fallback
   RewriteRule . /index.html [L]
 </IfModule>
 

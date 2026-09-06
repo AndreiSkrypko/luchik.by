@@ -90,7 +90,6 @@ const DirectionProgramsList = ({ ageRange }: DirectionProgramsListProps) => {
 
   const handleFormSuccess = () => {
     setIsFormOpen(false);
-    navigate('/thank-you');
   };
 
   const handleProgramClick = (program: DirectionProgram) => {

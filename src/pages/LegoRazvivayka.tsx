@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -15,8 +14,7 @@ import legoRazvivaykaImg from '@/assets/directions/lego-razvivayka.webp';
 import styles from './LegoRazvivayka.module.css';
 
 const LegoRazvivayka = () => {
-  const navigate = useNavigate();
-  const [isContactsOpen, setIsContactsOpen] = useState(false);
+    const [isContactsOpen, setIsContactsOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
@@ -27,7 +25,6 @@ const LegoRazvivayka = () => {
   const closeContacts = () => setIsContactsOpen(false);
   const handleFormSuccess = () => {
     setIsFormOpen(false);
-    navigate('/thank-you');
   };
 
   return (

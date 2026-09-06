@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useState } from 'react';
 import Header from '@/components/Header';
@@ -20,8 +20,7 @@ const messengerColors: Record<string, { from: string; to: string; shadow: string
 
 const Contacts = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const navigate = useNavigate();
-
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
@@ -42,7 +41,6 @@ const Contacts = () => {
 
   const handleFormSuccess = () => {
     setIsFormOpen(false);
-    navigate('/thank-you');
   };
 
   return (

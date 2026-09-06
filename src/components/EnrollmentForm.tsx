@@ -14,7 +14,7 @@ const validateBelarusPhone = (phone: string): boolean => {
   return digits.startsWith('375') && digits.length === 12;
 };
 
-const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к школе', compact = false }: EnrollmentFormProps) => {
+const EnrollmentForm = ({ onSuccess, courseName = 'занятие в центре Лучик', compact = false }: EnrollmentFormProps) => {
   const [formData, setFormData] = useState({
     fullName: '',
     dateOfBirth: '',
@@ -111,12 +111,11 @@ const EnrollmentForm = ({ onSuccess, courseName = 'подготовку к шк�
         message: ''
       });
       
+      // Сначала закрываем модалку (если есть), затем thank-you с курсом
       if (onSuccess) {
         onSuccess();
-      } else {
-        // Перенаправляем на страницу благодарности для отслеживания конверсий
-        navigate('/thank-you');
       }
+      navigate(`/thank-you?course=${encodeURIComponent(courseName)}`);
     } catch (error) {
       alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
       setIsSubmitting(false);

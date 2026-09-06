@@ -6,7 +6,7 @@
 const SITE_URL = 'https://luchik.by';
 const SITE_NAME = 'Детский центр Лучик';
 const LOCATION = 'Лида';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/img/main/logo.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/img/og-share.webp`;
 
 export interface SeoConfig {
   title: string;
@@ -455,6 +455,17 @@ export const courseToAge: Record<string, { range: string; title: string }> = {
   'programming-roblox-10-17': { range: '10-17', title: 'Программы для детей 10-17 лет' },
   'circuit-design': { range: '10-17', title: 'Программы для детей 10-17 лет' },
   'artificial-intelligence': { range: '10-17', title: 'Программы для детей 10-17 лет' },
+};
+
+/** Короткое название курса для формы записи (из SEO title). */
+export const getCourseDisplayName = (pathname: string): string | null => {
+  if (!pathname.startsWith('/course/')) return null;
+  const seo = seoConfig[pathname];
+  if (!seo) return null;
+  return seo.title
+    .split('|')[0]
+    .replace(/\s+в Лиде\s*$/i, '')
+    .trim();
 };
 
 export { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE };

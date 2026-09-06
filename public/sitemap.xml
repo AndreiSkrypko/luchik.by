@@ -1,101 +1,321 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://luchik.by/</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://luchik.by/about</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://luchik.by/gallery</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://luchik.by/gallery/masterclass</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/developing</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/robotics</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/english</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/prep-school</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/programming</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/electronics</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/lego</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/lego-razvivayka</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/chess</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/lego-matematika</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/3d-modeling</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/programming-vr</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://luchik.by/gallery/art-studio</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url>
+    <loc>https://luchik.by/gallery/robotics</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/programming</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/english</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/electronics</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/lego</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/lego-razvivayka</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/chess</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/lego-matematika</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/3d-modeling</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/programming-vr</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/masterclass</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/art-studio</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/developing</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/gallery/prep-school</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
   <url>
     <loc>https://luchik.by/contacts</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://luchik.by/enrollment</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://luchik.by/age/1-5</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://luchik.by/age/5-10</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://luchik.by/age/10-17</loc>
-    <lastmod>2025-03-12</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  <!-- Курсы 1-5 лет -->
-  <url><loc>https://luchik.by/course/mama-malysh</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/lego-razvivayka</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/complex</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/logoped</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/art-studio</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/lego-logoped</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/prep-2year</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/prep-school</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/lego-math</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- Курсы 5-10 лет -->
-  <url><loc>https://luchik.by/course/logic-speed-reading</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/english</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/chess</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-scratch</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-minecraft</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-roblox</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-vr</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/robotics</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/mental-arithmetic</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/tutor</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/3d-modeling</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <!-- Курсы 10-17 лет -->
-  <url><loc>https://luchik.by/course/robotics-10-17</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/arduino-electronics</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-python</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-javascript</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/web-development</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/3d-blender</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-vr-10-17</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/programming-roblox-10-17</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/circuit-design</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://luchik.by/course/artificial-intelligence</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url>
+    <loc>https://luchik.by/course/mama-malysh</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/lego-razvivayka</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/complex</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/logoped</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/art-studio</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/lego-logoped</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/prep-2year</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/prep-school</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/prep-express</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/lego-math</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/logic-speed-reading</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/english</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/chess</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-scratch</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-minecraft</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-roblox</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-vr</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/robotics</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/mental-arithmetic</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/tutor</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/3d-modeling</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/robotics-10-17</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/arduino-electronics</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-python</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-javascript</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/web-development</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/3d-blender</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-vr-10-17</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/programming-roblox-10-17</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/circuit-design</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luchik.by/course/artificial-intelligence</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

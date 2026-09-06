@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import EnrollmentForm from '@/components/EnrollmentForm';
 import styles from './HeroSection.module.css';
@@ -10,12 +9,10 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
-  const navigate = useNavigate();
-  const [isFormOpen, setIsFormOpen] = useState(false);
+    const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleFormSuccess = () => {
     setIsFormOpen(false);
-    navigate('/thank-you');
   };
 
   return (

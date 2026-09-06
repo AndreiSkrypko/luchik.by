@@ -31,7 +31,7 @@
     <meta property="og:url" content="https://luchik.by/" />
     <meta property="og:title" content="Детский центр Лучик в Лиде | Скорочтение, ментальная арифметика, подготовка к школе, логопед, робототехника, программирование" />
     <meta property="og:description" content="Детский развивающий центр Лучик в Лиде, Гродненская область. Скорочтение, ментальная арифметика, подготовка к школе, логопед, робототехника, программирование для детей от 1 до 17 лет. Профессиональные педагоги, современные методики." />
-    <meta property="og:image" content="https://luchik.by/img/main/logo.webp" />
+    <meta property="og:image" content="https://luchik.by/img/og-share.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="ru_RU" />
@@ -42,7 +42,7 @@
     <meta name="twitter:url" content="https://luchik.by/" />
     <meta name="twitter:title" content="Детский центр Лучик в Лиде | Скорочтение, ментальная арифметика, подготовка к школе, логопед, робототехника, программирование" />
     <meta name="twitter:description" content="Детский развивающий центр Лучик в Лиде, Гродненская область. Скорочтение, ментальная арифметика, подготовка к школе, логопед, робототехника, программирование для детей от 1 до 17 лет." />
-    <meta name="twitter:image" content="https://luchik.by/img/main/logo.webp" />
+    <meta name="twitter:image" content="https://luchik.by/img/og-share.webp" />
     
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#E5F5FF" />
@@ -57,49 +57,115 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://luchik.by/" />
     
-    <!-- Organization JSON-LD (LocalBusiness) for local SEO -->
+    <!-- Structured Data: EducationalOrganization + 2 филиала -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Детский центр Лучик",
-      "url": "https://luchik.by",
-      "logo": "https://luchik.by/img/main/logo.webp",
-      "image": "https://luchik.by/img/main/logo.webp",
-      "telephone": "+375291234567",
-      "priceRange": "₽₽",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Замковая 4, Кооперативная 36",
-        "addressLocality": "Лида",
-        "addressRegion": "Гродненская область",
-        "addressCountry": "BY"
-      },
-      "openingHours": "Mo-Fr 09:00-20:00",
-      "sameAs": [
-        "https://instagram.com/lu4ik_lida",
-        "https://vk.com/luchiklida",
-        "https://ok.ru/luchiklida"
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://luchik.by/#organization",
+          "name": "Детский центр Лучик",
+          "alternateName": "Лучик",
+          "url": "https://luchik.by",
+          "logo": "https://luchik.by/img/main/logo.webp",
+          "image": "https://luchik.by/img/og-share.webp",
+          "email": "robotlida2025@gmail.com",
+          "telephone": ["+375445523267", "+375298667663"],
+          "description": "Детский развивающий центр Лучик в Лиде. Занятия для детей от 1 до 17 лет: подготовка к школе, робототехника, программирование, скорочтение, логопед.",
+          "areaServed": {
+            "@type": "City",
+            "name": "Лида",
+            "containedInPlace": {
+              "@type": "AdministrativeArea",
+              "name": "Гродненская область"
+            }
+          },
+          "sameAs": [
+            "https://instagram.com/lu4ik_lida",
+            "https://vk.com/luchiklida",
+            "https://ok.ru/luchiklida"
+          ],
+          "department": [
+            { "@id": "https://luchik.by/#branch-zamkovaya" },
+            { "@id": "https://luchik.by/#branch-kooperativnaya" }
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://luchik.by/#branch-zamkovaya",
+          "name": "Детский центр Лучик — Замковая, 4",
+          "parentOrganization": { "@id": "https://luchik.by/#organization" },
+          "url": "https://luchik.by/contacts",
+          "image": "https://luchik.by/img/og-share.webp",
+          "telephone": "+375445523267",
+          "email": "robotlida2025@gmail.com",
+          "priceRange": "BYN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Замковая улица, 4",
+            "addressLocality": "Лида",
+            "addressRegion": "Гродненская область",
+            "postalCode": "231300",
+            "addressCountry": "BY"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.887889,
+            "longitude": 25.301733
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            }
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://luchik.by/#branch-kooperativnaya",
+          "name": "Детский центр Лучик — Кооперативная, 36",
+          "parentOrganization": { "@id": "https://luchik.by/#organization" },
+          "url": "https://luchik.by/contacts",
+          "image": "https://luchik.by/img/og-share.webp",
+          "telephone": "+375298667663",
+          "email": "robotlida2025@gmail.com",
+          "priceRange": "BYN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Кооперативная улица, 36",
+            "addressLocality": "Лида",
+            "addressRegion": "Гродненская область",
+            "postalCode": "231300",
+            "addressCountry": "BY"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            }
+          ]
+        }
       ]
     }
     </script>
-    <!-- Performance optimizations -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    
-    <!-- Preload critical resources for LCP -->
-    <link rel="preload" href="/img/main/logo.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link rel="preload" href="/img/main/clouds.webp" as="image" type="image/webp" fetchpriority="high" />
-    
-    <!-- Preload critical fonts with font-display swap -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" />
-    </noscript>
-    
+
     <!-- Critical inline CSS for immediate rendering -->
     <style>
       * {
@@ -156,180 +222,6 @@
     <!-- Manifest for PWA -->
     <link rel="manifest" href="/site.webmanifest" />
     
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Детский центр современных знаний Лучик",
-      "alternateName": "Лучик",
-      "url": "https://luchik.by",
-      "logo": "https://luchik.by/img/main/logo.webp",
-      "description": "Детский развивающий центр Лучик в Лиде, Гродненская область. Развивающие занятия для детей от 1 до 17 лет: скорочтение, ментальная арифметика, подготовка к школе, логопед, робототехника, программирование для детей.",
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "Замковая улица, 4",
-          "addressLocality": "Лида",
-          "addressRegion": "Гродненская область",
-          "addressCountry": "BY",
-          "postalCode": "231300"
-        },
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "Кооперативная улица, 36",
-          "addressLocality": "Лида",
-          "addressRegion": "Гродненская область",
-          "addressCountry": "BY",
-          "postalCode": "231300"
-        }
-      ],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "53.887889",
-        "longitude": "25.301733"
-      },
-      "telephone": ["+375445523267", "+375298667663"],
-      "email": "robotlida2025@gmail.com",
-      "areaServed": {
-        "@type": "City",
-        "name": "Лида",
-        "containedIn": {
-          "@type": "State",
-          "name": "Гродненская область"
-        }
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Образовательные программы",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Скорочтение",
-              "description": "Тренажеры для развития быстрого чтения, концентрации внимания и улучшения памяти"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Ментальная арифметика",
-              "description": "Тренажеры для тренировки устного счёта и развития математических навыков"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Подготовка к школе",
-              "description": "Комплексная подготовка детей к школе: чтение, письмо, математика, развитие речи и логического мышления"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Логопед",
-              "description": "Логопедические занятия для коррекции речи, развития звукопроизношения, исправления дефектов речи у детей"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Робототехника",
-              "description": "Курсы робототехники для детей: конструирование, программирование роботов, развитие инженерного мышления"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Программирование для детей",
-              "description": "Обучение программированию для детей: основы кодирования, создание игр и приложений, развитие логического мышления"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Развивающие занятия для детей 1-5 лет",
-              "description": "Комплексные развивающие занятия для дошкольников: развитие речи, моторики, памяти, внимания"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Развивающие занятия для детей 5-10 лет",
-              "description": "Развивающие программы для младших школьников: развитие интеллекта, творческих способностей, социальных навыков"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Развивающие занятия для детей 10-17 лет",
-              "description": "Программы развития для подростков: развитие критического мышления, подготовка к экзаменам, профориентация"
-            }
-          }
-        ]
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday", "Sunday"],
-          "opens": "10:00",
-          "closes": "18:00"
-        }
-      ],
-      "sameAs": [
-        "https://instagram.com/lu4ik_lida",
-        "https://vk.com/luchiklida",
-        "https://ok.ru/luchiklida"
-      ]
-    }
-    </script>
-    
-    <!-- LocalBusiness Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Детский центр современных знаний Лучик",
-      "image": "https://luchik.by/img/main/logo.webp",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Замковая улица, 4",
-        "addressLocality": "Лида",
-        "addressRegion": "Гродненская область",
-        "postalCode": "231300",
-        "addressCountry": "BY"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 53.887889,
-        "longitude": 25.301733
-      },
-      "url": "https://luchik.by",
-      "telephone": "+375445523267",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    }
-    </script>
   </head>
 
   <body>

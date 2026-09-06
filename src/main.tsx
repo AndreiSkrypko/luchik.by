@@ -1,5 +1,9 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/nunito/700.css";
+import "@fontsource/nunito/800.css";
 import "./index.css";
 
 // Ensure root exists and handle errors
@@ -11,7 +15,8 @@ if (!rootElement) {
 // Mark as React root for fallback detection
 rootElement.classList.add("react-root");
 
-// Clear any fallback content before rendering
+// Clear any fallback / prerender SEO content before rendering
+rootElement.querySelectorAll('[data-prerender-seo]').forEach((el) => el.remove());
 const fallbackContent = rootElement.querySelector('div[style*="min-height: 100vh"]');
 if (fallbackContent) {
   fallbackContent.remove();

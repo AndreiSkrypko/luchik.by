@@ -1,14 +1,17 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnrollmentCard from '@/components/EnrollmentCard';
+import { contacts } from '@/data/contacts';
 import styles from './ThankYou.module.css';
 
 const ThankYou = () => {
+  const [searchParams] = useSearchParams();
+  const courseName = searchParams.get('course')?.trim() || '';
+
   useEffect(() => {
-    // Event snippet for «Просмотр страницы (1)» conversion page
     const sendConversion = () => {
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
@@ -41,17 +44,19 @@ const ThankYou = () => {
             <div className={styles.iconWrapper}>
               <div className={styles.checkIcon}>✓</div>
             </div>
-            
+
             <h1 className={styles.title}>Спасибо за вашу заявку!</h1>
-            
+
             <p className={styles.message}>
-              Ваша заявка на подготовку к школе успешно отправлена. 
-              Мы свяжемся с вами в ближайшее время для уточнения деталей.
+              {courseName
+                ? <>Ваша заявка на «{courseName}» успешно отправлена. Мы свяжемся с вами в ближайшее время для уточнения деталей.</>
+                : <>Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время для уточнения деталей.</>}
             </p>
 
             <div className={styles.infoBox}>
               <p className={styles.infoText}>
-                📞 Если у вас есть срочные вопросы, вы можете связаться с нами по телефону
+                📞 Срочные вопросы —{' '}
+                <a href={`tel:${contacts.phoneA1.number}`}>{contacts.phoneA1.display}</a>
               </p>
             </div>
 
@@ -63,7 +68,6 @@ const ThankYou = () => {
           </div>
         </div>
       </main>
-      {/* Скрытая форма для Google Ads - автоматическое определение конверсии */}
       <form style={{ display: 'none' }} id="thank-you-form" aria-hidden="true">
         <input type="hidden" name="conversion" value="thank-you-page" />
       </form>

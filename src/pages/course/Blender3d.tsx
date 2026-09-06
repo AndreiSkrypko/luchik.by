@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+﻿import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -15,15 +14,14 @@ import blender3dImg from '@/assets/directions/3d-blender.webp';
 import styles from './CoursePage.module.css';
 
 const Blender3d = () => {
-  const navigate = useNavigate();
-  const [isContactsOpen, setIsContactsOpen] = useState(false);
+    const [isContactsOpen, setIsContactsOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, []);
 
   const toggleContacts = () => setIsContactsOpen(!isContactsOpen);
   const closeContacts = () => setIsContactsOpen(false);
-  const handleFormSuccess = () => { setIsFormOpen(false); navigate('/thank-you'); };
+  const handleFormSuccess = () => { setIsFormOpen(false); };
 
   return (
     <div className={styles.coursePage}>
