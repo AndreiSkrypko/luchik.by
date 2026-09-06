@@ -34,14 +34,14 @@ const ProgrammingRoblox10_17 = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Разработка игр в Roblox</h1>
-            <p className={styles.pageDescription}>Roblox Studio и Lua — многопользовательские игры</p>
+            <h1 className={styles.pageTitle}>Разработка игр в Roblox для подростков</h1>
+            <p className={styles.pageDescription}>Roblox Studio и Lua — многопользовательские игры, 10–17 лет, Лида</p>
           </div>
 
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingRoblox10_17Img} alt="Программирование Roblox в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
+                <img src={programmingRoblox10_17Img} alt="Разработка игр в Roblox для подростков в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Продвинутый курс Roblox для подростков — создание многопользовательских игр с механиками, 

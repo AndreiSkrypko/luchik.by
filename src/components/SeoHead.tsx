@@ -127,8 +127,25 @@ const SeoHead = () => {
           '@type': 'Organization',
           name: SITE_NAME,
           url: SITE_URL,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Лида',
+            addressRegion: 'Гродненская область',
+            addressCountry: 'BY',
+          },
         },
         url: `${SITE_URL}${pathname}`,
+        inLanguage: 'ru',
+        ...(ageInfo
+          ? {
+              educationalLevel: ageInfo.title,
+              audience: {
+                '@type': 'EducationalAudience',
+                educationalRole: 'student',
+                audienceType: ageInfo.range === '10-17' ? 'Подростки' : 'Дети',
+              },
+            }
+          : {}),
       };
 
       const jsonLd = JSON.stringify([breadcrumbSchema, courseSchema]);

@@ -34,8 +34,8 @@ const ArduinoElectronics = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Электроника и Arduino</h1>
-            <p className={styles.pageDescription}>Основы электроники, микроконтроллеры, умные устройства</p>
+            <h1 className={styles.pageTitle}>Электроника и Arduino для подростков</h1>
+            <p className={styles.pageDescription}>Основы электроники, микроконтроллеры, умные устройства — Лида</p>
           </div>
 
           <div className={styles.topGrid}>

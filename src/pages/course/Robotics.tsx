@@ -34,14 +34,14 @@ const Robotics = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Робототехника</h1>
-            <p className={styles.pageDescription}>Сборка роботов, механика и программирование — 5–10 лет</p>
+            <h1 className={styles.pageTitle}>Робототехника для детей 5–10 лет</h1>
+            <p className={styles.pageDescription}>Сборка роботов, механика и программирование — Лида</p>
           </div>
 
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={roboticsImg} alt="Робототехника в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
+                <img src={roboticsImg} alt="Робототехника для детей 5–10 лет в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 Робототехника объединяет конструирование, механику и программирование. Дети собирают роботов 

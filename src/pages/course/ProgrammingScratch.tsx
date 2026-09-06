@@ -34,8 +34,8 @@ const ProgrammingScratch = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование Scratch</h1>
-            <p className={styles.pageDescription}>Визуальное программирование — игры и анимации для начинающих</p>
+            <h1 className={styles.pageTitle}>Программирование Scratch для детей</h1>
+            <p className={styles.pageDescription}>Визуальное программирование — игры и анимации, 5–10 лет, Лида</p>
           </div>
 
           <div className={styles.topGrid}>

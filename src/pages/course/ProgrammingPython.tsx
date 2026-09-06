@@ -34,8 +34,8 @@ const ProgrammingPython = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование на Python</h1>
-            <p className={styles.pageDescription}>Синтаксис, алгоритмы, практические проекты</p>
+            <h1 className={styles.pageTitle}>Программирование на Python для подростков</h1>
+            <p className={styles.pageDescription}>Синтаксис, алгоритмы, практические проекты — 10–17 лет, Лида</p>
           </div>
 
           <div className={styles.topGrid}>

@@ -34,14 +34,14 @@ const ProgrammingVr10_17 = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Разработка VR-игр</h1>
-            <p className={styles.pageDescription}>Создание приложений виртуальной реальности — 3D-мир и интерактив</p>
+            <h1 className={styles.pageTitle}>Разработка VR-игр для подростков</h1>
+            <p className={styles.pageDescription}>Создание приложений виртуальной реальности — 10–17 лет, Лида</p>
           </div>
 
           <div className={styles.topGrid}>
             <div className={styles.leftColumn}>
               <div className={styles.heroImage}>
-                <img src={programmingVr10_17Img} alt="VR-программирование в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
+                <img src={programmingVr10_17Img} alt="Разработка VR-игр для подростков в Лиде, детский центр Лучик" loading="lazy" decoding="async" />
               </div>
               <p className={styles.aboutText}>
                 VR-разработка — создание приложений и игр для шлемов виртуальной реальности. Подростки 

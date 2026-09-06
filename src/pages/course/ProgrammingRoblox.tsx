@@ -34,8 +34,8 @@ const ProgrammingRoblox = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование Roblox</h1>
-            <p className={styles.pageDescription}>Создание игр в Roblox Studio на Lua — 5–10 лет</p>
+            <h1 className={styles.pageTitle}>Программирование Roblox для детей</h1>
+            <p className={styles.pageDescription}>Создание игр в Roblox Studio на Lua — 5–10 лет, Лида</p>
           </div>
 
           <div className={styles.topGrid}>

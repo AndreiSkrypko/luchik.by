@@ -34,8 +34,8 @@ const ProgrammingMinecraft = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование Minecraft</h1>
-            <p className={styles.pageDescription}>Программирование в игровой среде — логика и креативность</p>
+            <h1 className={styles.pageTitle}>Программирование Minecraft для детей</h1>
+            <p className={styles.pageDescription}>Программирование в игровой среде — логика и креативность, Лида</p>
           </div>
 
           <div className={styles.topGrid}>

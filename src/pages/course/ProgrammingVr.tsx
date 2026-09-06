@@ -34,8 +34,8 @@ const ProgrammingVr = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/5-10" label="К программам 5-10 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование VR-игр</h1>
-            <p className={styles.pageDescription}>3D-мир и интерактивные игры в виртуальной реальности</p>
+            <h1 className={styles.pageTitle}>Программирование VR-игр для детей</h1>
+            <p className={styles.pageDescription}>3D-мир и интерактивные игры в виртуальной реальности, Лида</p>
           </div>
 
           <div className={styles.topGrid}>

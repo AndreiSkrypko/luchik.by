@@ -34,8 +34,8 @@ const ProgrammingJavascript = () => {
             <div className={styles.breadcrumbWrapper}>
               <CourseBreadcrumb to="/age/10-17" label="К программам 10-17 лет" />
             </div>
-            <h1 className={styles.pageTitle}>Программирование на JavaScript</h1>
-            <p className={styles.pageDescription}>Интерактивность веб-страниц, логика приложений</p>
+            <h1 className={styles.pageTitle}>Программирование на JavaScript для подростков</h1>
+            <p className={styles.pageDescription}>Интерактивность веб-страниц, логика приложений — Лида</p>
           </div>
 
           <div className={styles.topGrid}>
