@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import EnrollmentForm from '@/components/EnrollmentForm';
+import {
+  fallbackOnOptimizedImageError,
+  optimizedImageSrc,
+} from '@/lib/optimizedImage';
 import styles from './WhyUsSection.module.css';
 import modalStyles from './EnrollmentModal.module.css';
+
+const BOY_ORIGINAL = '/img/why_we/boy.svg';
+const BOY_OPTIMIZED = optimizedImageSrc(BOY_ORIGINAL);
 
 const WhyUsSection = () => {
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -21,9 +28,12 @@ const WhyUsSection = () => {
             className={styles.whyUsCards}
           />
           <img
-            src="/img/why_we/boy.svg"
+            src={BOY_OPTIMIZED}
             alt="Ребёнок на занятиях в детском центре Лучик"
             className={styles.whyUsBoy}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => fallbackOnOptimizedImageError(e, BOY_ORIGINAL)}
           />
           <button 
             className={styles.ctaButton} 
@@ -40,7 +50,14 @@ const WhyUsSection = () => {
       <div className={styles.mobileWhyUs}>
         <h2 className={styles.mobileWhyTitle}>Почему мы</h2>
         <div className={styles.mobileInner}>
-          <img src="/img/why_we/boy.svg" alt="Ребёнок в детском центре Лучик, Лида" className={styles.mobileBoy} />
+          <img
+            src={BOY_OPTIMIZED}
+            alt="Ребёнок в детском центре Лучик, Лида"
+            className={styles.mobileBoy}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => fallbackOnOptimizedImageError(e, BOY_ORIGINAL)}
+          />
           <div className={styles.mobileWhyText}>
             <ul className={styles.mobileWhyList}>
               <li>Практические проекты</li>

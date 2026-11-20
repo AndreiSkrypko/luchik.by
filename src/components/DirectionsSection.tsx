@@ -1,5 +1,27 @@
 import { useNavigate } from 'react-router-dom';
+import {
+  fallbackOnOptimizedImageError,
+  optimizedImageSrc,
+} from '@/lib/optimizedImage';
 import styles from './DirectionsSection.module.css';
+
+const CARD_DECORATIONS = [
+  {
+    webp: optimizedImageSrc('/img/directions/card-1.svg'),
+    original: '/img/directions/card-1.svg',
+    alt: 'Возрастная категория: 1-5 лет',
+  },
+  {
+    webp: optimizedImageSrc('/img/directions/card-2.svg'),
+    original: '/img/directions/card-2.svg',
+    alt: 'Возрастная категория: 5-10 лет',
+  },
+  {
+    webp: optimizedImageSrc('/img/directions/card-3.svg'),
+    original: '/img/directions/card-3.svg',
+    alt: 'Возрастная категория: 10-17 лет',
+  },
+] as const;
 
 const DirectionsSection = () => {
   const navigate = useNavigate();
@@ -7,6 +29,11 @@ const DirectionsSection = () => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.error('Failed to load image:', e.currentTarget.src);
   };
+
+  const handleCardDecorationError =
+    (original: string) => (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+      fallbackOnOptimizedImageError(e, original);
+    };
 
   const handleCardClick = (ageRange: string) => {
     navigate(`/age/${ageRange}`);
@@ -51,11 +78,12 @@ const DirectionsSection = () => {
               onError={handleImageError}
             />
             <img
-              src="/img/directions/card-1.svg"
-              alt="Возрастная категория: 1-5 лет"
+              src={CARD_DECORATIONS[0].webp}
+              alt={CARD_DECORATIONS[0].alt}
               className={styles.cardDecoration}
-              onError={handleImageError}
+              onError={handleCardDecorationError(CARD_DECORATIONS[0].original)}
               loading="lazy"
+              decoding="async"
             />
           </div>
           <div className={styles.directionCard} onClick={() => handleCardClick('5-10')} style={{ cursor: 'pointer' }}>
@@ -90,11 +118,12 @@ const DirectionsSection = () => {
               onError={handleImageError}
             />
             <img
-              src="/img/directions/card-2.svg"
-              alt="Возрастная категория: 5-10 лет"
+              src={CARD_DECORATIONS[1].webp}
+              alt={CARD_DECORATIONS[1].alt}
               className={styles.cardDecoration}
-              onError={handleImageError}
+              onError={handleCardDecorationError(CARD_DECORATIONS[1].original)}
               loading="lazy"
+              decoding="async"
             />
           </div>
           <div className={styles.directionCard} onClick={() => handleCardClick('10-17')} style={{ cursor: 'pointer' }}>
@@ -129,11 +158,12 @@ const DirectionsSection = () => {
               onError={handleImageError}
             />
             <img
-              src="/img/directions/card-3.svg"
-              alt="Возрастная категория: 10-17 лет"
+              src={CARD_DECORATIONS[2].webp}
+              alt={CARD_DECORATIONS[2].alt}
               className={styles.cardDecoration}
-              onError={handleImageError}
+              onError={handleCardDecorationError(CARD_DECORATIONS[2].original)}
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -143,4 +173,3 @@ const DirectionsSection = () => {
 };
 
 export default DirectionsSection;
-

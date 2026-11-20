@@ -76,7 +76,7 @@ const Enrollment = () => {
                         <strong>💝 Интересный формат</strong> — живые занятия без скуки, с понятным прогрессом.
                       </p>
                       <p className={styles.textParagraph}>
-                        <strong>📍 Два адреса в Лиде</strong> — Замковая, 4 и Кооперативная, 36.
+                        <strong>📍 Два адреса в Лиде</strong> — Замковая, 4 и Тухачевского, 49А.
                       </p>
                       <p className={styles.textHighlight}>
                         <strong>Готовы начать?</strong> Оставьте заявку на «{courseName}» — мы перезвоним и подберём удобное время.

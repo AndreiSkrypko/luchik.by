@@ -32,7 +32,7 @@ export const contacts = {
   ],
   addresses: [
     { street: 'Замковая, 4', phone: PHONE_A1 },
-    { street: 'Кооперативная, 36', phone: PHONE_MTS },
+    { street: 'Тухачевского, 49А', phone: PHONE_MTS },
   ],
   messengers: [
     {
@@ -74,7 +74,7 @@ export const contacts = {
       name: 'Одноклассники',
       href: 'https://ok.ru/luchiklida',
       username: 'luchiklida',
-      icon: '/img/socseti/ok.svg',
+      icon: '/img/socseti/ok_opt.webp',
     },
   ],
   schedule: {

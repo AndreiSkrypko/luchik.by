@@ -1,4 +1,11 @@
+import {
+  fallbackOnOptimizedImageError,
+  optimizedImageSrc,
+} from '@/lib/optimizedImage';
 import styles from './InfoBlocks.module.css';
+
+const ABOUT_CENTER_ORIGINAL = '/img/cards/about-center.webp';
+const ABOUT_CENTER_OPTIMIZED = optimizedImageSrc(ABOUT_CENTER_ORIGINAL);
 
 const InfoBlocks = () => {
   return (
@@ -22,13 +29,14 @@ const InfoBlocks = () => {
 
         <div className={styles.infoBlock}>
           <img
-            src="/img/cards/about-center.webp"
+            src={ABOUT_CENTER_OPTIMIZED}
             alt="Детский центр Лучик — занятия и развивающие кружки в Лиде"
             className={styles.infoBlockImage}
             width={570}
             height={428}
             loading="lazy"
             decoding="async"
+            onError={(e) => fallbackOnOptimizedImageError(e, ABOUT_CENTER_ORIGINAL)}
           />
         </div>
 

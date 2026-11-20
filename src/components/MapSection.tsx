@@ -1,49 +1,69 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './MapSection.module.css';
 
-// API ключ Яндекс.Карт из переменных окружения или используйте свой
 const YANDEX_MAP_API_KEY = import.meta.env.VITE_YANDEX_MAP_API_KEY || '';
 
-// Адреса
 const ADDRESS_1 = 'Замковая улица, 4, Лида, Гродненская область, Беларусь';
-const ADDRESS_2 = 'Кооперативная улица, 36, Лида, Гродненская область, Беларусь';
+const ADDRESS_2 = 'улица Тухачевского, 49А, Лида, Гродненская область, Беларусь';
 
-// Точные координаты
-const COORDINATES_1: [number, number] = [53.887889, 25.301733]; // Замковая, 4
-const COORDINATES_2: [number, number] = [53.902119, 25.252918]; // Кооперативная, 36
+const COORDINATES_1: [number, number] = [53.887889, 25.301733];
+const COORDINATES_2: [number, number] = [53.898, 25.2643];
 
-// Адрес центра (по умолчанию)
 const MAP_ADDRESS = ADDRESS_1;
-const FALLBACK_CENTER: [number, number] = COORDINATES_1;
+const DEFAULT_CENTER: [number, number] = COORDINATES_1;
+
+let ymapsLoadPromise: Promise<void> | null = null;
+
+function loadYmapsScript(): Promise<void> {
+  if (typeof window !== 'undefined' && window.ymaps) {
+    return Promise.resolve();
+  }
+  if (ymapsLoadPromise) return ymapsLoadPromise;
+
+  ymapsLoadPromise = new Promise((resolve, reject) => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[data-yandex-maps="luchik"]',
+    );
+    if (existing) {
+      existing.addEventListener('load', () => resolve(), { once: true });
+      existing.addEventListener('error', () => reject(new Error('ymaps load failed')), {
+        once: true,
+      });
+      return;
+    }
+
+    const script = document.createElement('script');
+    const apiKeyParam = YANDEX_MAP_API_KEY ? `&apikey=${YANDEX_MAP_API_KEY}` : '';
+    script.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU${apiKeyParam}`;
+    script.async = true;
+    script.dataset.yandexMaps = 'luchik';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('ymaps load failed'));
+    document.head.appendChild(script);
+  });
+
+  return ymapsLoadPromise;
+}
 
 const MapSection = () => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const placemarkRef = useRef<any>(null);
+  const [mapInView, setMapInView] = useState(false);
 
-  // Функция для перехода к адресу и установки маркера
   const goToAddress = (coordinates: [number, number], address: string) => {
-    if (!mapInstanceRef.current) return;
+    if (!mapInstanceRef.current || !window.ymaps) return;
 
-    // Удаляем предыдущий маркер, если есть
     if (placemarkRef.current) {
       mapInstanceRef.current.geoObjects.remove(placemarkRef.current);
     }
 
-    // Перемещаем карту к координатам
-    mapInstanceRef.current.setCenter(coordinates, 17, {
-      duration: 500,
-    });
+    mapInstanceRef.current.setCenter(coordinates, 17, { duration: 500 });
 
-    // Создаем новый маркер
     const placemark = new window.ymaps.Placemark(
       coordinates,
-      {
-        balloonContent: `Детский центр "Лучик"<br>${address}`,
-      },
-      {
-        preset: 'islands#redIcon',
-      }
+      { balloonContent: `Детский центр "Лучик"<br>${address}` },
+      { preset: 'islands#redIcon' },
     );
 
     mapInstanceRef.current.geoObjects.add(placemark);
@@ -51,133 +71,74 @@ const MapSection = () => {
   };
 
   useEffect(() => {
-    const initMap = (coordinates: [number, number]) => {
-      if (mapRef.current && !mapInstanceRef.current) {
-        mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
-          center: coordinates,
-          zoom: 16,
-          controls: ['zoomControl', 'fullscreenControl'],
-        });
+    const el = mapRef.current;
+    if (!el) return;
 
-        // Добавляем маркер
-        const placemark = new window.ymaps.Placemark(
-          coordinates,
-          {
-            balloonContent: `Детский центр "Лучик"<br>${MAP_ADDRESS}`,
-          },
-          {
-            preset: 'islands#redIcon',
-          }
-        );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setMapInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px' },
+    );
 
-        mapInstanceRef.current.geoObjects.add(placemark);
-        placemarkRef.current = placemark;
-      }
-    };
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-    // Проверяем, загружена ли уже библиотека Яндекс.Карт
-    if (window.ymaps) {
-      window.ymaps.ready(() => {
-        // Пытаемся геокодировать адрес
-        window.ymaps.geocode(MAP_ADDRESS)
-          .then((result: any) => {
-            const firstGeoObject = result.geoObjects.get(0);
-            if (firstGeoObject) {
-              const coordinates = firstGeoObject.geometry.getCoordinates();
-              initMap(coordinates);
-            } else {
-              initMap(FALLBACK_CENTER);
-            }
-          })
-          .catch(() => {
-            // Если геокодирование не сработало, используем запасные координаты
-            initMap(FALLBACK_CENTER);
-          });
+  useEffect(() => {
+    if (!mapInView) return;
+
+    let cancelled = false;
+
+    const initMap = () => {
+      if (cancelled || !mapRef.current || mapInstanceRef.current || !window.ymaps) return;
+
+      mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
+        center: DEFAULT_CENTER,
+        zoom: 16,
+        controls: ['zoomControl', 'fullscreenControl'],
       });
-      return;
-    }
 
-    // Загружаем скрипт Яндекс.Карт
-    const script = document.createElement('script');
-    const apiKeyParam = YANDEX_MAP_API_KEY ? `&apikey=${YANDEX_MAP_API_KEY}` : '';
-    script.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU${apiKeyParam}`;
-    script.async = true;
-    script.onload = () => {
-      if (window.ymaps && mapRef.current) {
-        window.ymaps.ready(() => {
-          const initMap = (coordinates: [number, number]) => {
-            if (mapRef.current && !mapInstanceRef.current) {
-              mapInstanceRef.current = new window.ymaps.Map(mapRef.current, {
-                center: coordinates,
-                zoom: 16,
-                controls: ['zoomControl', 'fullscreenControl'],
-              });
+      const placemark = new window.ymaps.Placemark(
+        DEFAULT_CENTER,
+        { balloonContent: `Детский центр "Лучик"<br>${MAP_ADDRESS}` },
+        { preset: 'islands#redIcon' },
+      );
 
-              // Добавляем маркер
-              const placemark = new window.ymaps.Placemark(
-                coordinates,
-                {
-                  balloonContent: `Детский центр "Лучик"<br>${MAP_ADDRESS}`,
-                },
-                {
-                  preset: 'islands#redIcon',
-                }
-              );
-
-              mapInstanceRef.current.geoObjects.add(placemark);
-              placemarkRef.current = placemark;
-            }
-          };
-
-          // Пытаемся геокодировать адрес
-          window.ymaps.geocode(MAP_ADDRESS)
-            .then((result: any) => {
-              const firstGeoObject = result.geoObjects.get(0);
-              if (firstGeoObject) {
-                const coordinates = firstGeoObject.geometry.getCoordinates();
-                initMap(coordinates);
-              } else {
-                initMap(FALLBACK_CENTER);
-              }
-            })
-            .catch(() => {
-              // Если геокодирование не сработало, используем запасные координаты
-              initMap(FALLBACK_CENTER);
-            });
-        });
-      }
+      mapInstanceRef.current.geoObjects.add(placemark);
+      placemarkRef.current = placemark;
     };
-    document.head.appendChild(script);
+
+    loadYmapsScript()
+      .then(() => {
+        if (cancelled) return;
+        window.ymaps.ready(initMap);
+      })
+      .catch(() => {
+        /* карта не критична для страницы */
+      });
 
     return () => {
-      // Очистка при размонтировании
+      cancelled = true;
       if (mapInstanceRef.current) {
         mapInstanceRef.current.destroy();
         mapInstanceRef.current = null;
       }
       placemarkRef.current = null;
     };
-  }, []);
+  }, [mapInView]);
 
-  // Обработчики кликов на адреса
   const handleAddress1Click = () => {
-    if (window.ymaps && mapInstanceRef.current) {
-      window.ymaps.ready(() => {
-        goToAddress(COORDINATES_1, ADDRESS_1);
-      });
-    } else if (mapInstanceRef.current) {
-      goToAddress(COORDINATES_1, ADDRESS_1);
-    }
+    if (!mapInView) setMapInView(true);
+    window.ymaps?.ready(() => goToAddress(COORDINATES_1, ADDRESS_1));
   };
 
   const handleAddress2Click = () => {
-    if (window.ymaps && mapInstanceRef.current) {
-      window.ymaps.ready(() => {
-        goToAddress(COORDINATES_2, ADDRESS_2);
-      });
-    } else if (mapInstanceRef.current) {
-      goToAddress(COORDINATES_2, ADDRESS_2);
-    }
+    if (!mapInView) setMapInView(true);
+    window.ymaps?.ready(() => goToAddress(COORDINATES_2, ADDRESS_2));
   };
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -194,6 +155,8 @@ const MapSection = () => {
             alt="Самолёт — детский центр Лучик на карте Лиды"
             className={styles.airplane}
             onError={handleImageError}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div ref={mapRef} className={styles.map}>
@@ -209,17 +172,11 @@ const MapSection = () => {
               </div>
               <div className={styles.cityName}>г. Лида</div>
               <div className={styles.addressFields}>
-                <div 
-                  className={styles.addressField}
-                  onClick={handleAddress1Click}
-                >
+                <div className={styles.addressField} onClick={handleAddress1Click}>
                   ул. Замковая, 4
                 </div>
-                <div 
-                  className={styles.addressField}
-                  onClick={handleAddress2Click}
-                >
-                  ул. Кооперативная, 36
+                <div className={styles.addressField} onClick={handleAddress2Click}>
+                  ул. Тухачевского, 49А
                 </div>
               </div>
             </div>
@@ -230,6 +187,8 @@ const MapSection = () => {
               alt="Божья коровка — символ детского центра Лучик в Лиде"
               className={styles.cowImage}
               onError={handleImageError}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className={styles.boyWrapper}>
@@ -238,6 +197,8 @@ const MapSection = () => {
               alt="Ребёнок — детский центр Лучик в Лиде"
               className={styles.boyImage}
               onError={handleImageError}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -248,10 +209,8 @@ const MapSection = () => {
 
 export default MapSection;
 
-// Расширяем интерфейс Window для TypeScript
 declare global {
   interface Window {
     ymaps: any;
   }
 }
-

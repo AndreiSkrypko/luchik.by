@@ -14,7 +14,8 @@
     "images:convert-webp": "node scripts/convert-to-webp.js",
     "images:organize": "node scripts/organize-images.js",
     "report:large-images": "node scripts/report-large-images.js",
-    "images:opt-large": "node scripts/auto-optimize-large.js"
+    "images:opt-large": "node scripts/auto-optimize-large.js",
+    "images:direction-cards": "node scripts/extract-card-webp.mjs"
   },
   "dependencies": {
     "@fontsource/nunito": "^5.3.0",
@@ -70,6 +71,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.16.5",
     "@types/react": "^18.3.23",

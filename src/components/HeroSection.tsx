@@ -39,8 +39,9 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
           width={144}
           height={144}
           className={styles.ladybug}
-          loading="lazy"
-         
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 
@@ -57,7 +58,7 @@ const HeroSection = ({ onContactsClick }: HeroSectionProps) => {
             width={371}
             height={82}
             className={styles.ctaButtonImage}
-            loading="lazy"
+            loading="eager"
             decoding="async"
             
           />

@@ -167,7 +167,7 @@ const Contacts = () => {
                   aria-label={`${s.name}: ${s.username}`}
                 >
                   <img
-                    src={`/img/socseti/${s.id === 'instagram' ? 'inst' : s.id}.svg`}
+                    src={s.icon}
                     alt=""
                     width={44}
                     height={44}

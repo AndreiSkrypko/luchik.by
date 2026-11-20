@@ -228,6 +228,13 @@ const Footer = ({ onContactsClick: _onContactsClick }: FooterProps) => {
                       width={32}
                       height={32}
                       className={styles.footerSocialIcon}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        if (social.id !== 'ok' || e.currentTarget.dataset.fallbackTried === '1') return;
+                        e.currentTarget.dataset.fallbackTried = '1';
+                        e.currentTarget.src = '/img/socseti/ok.svg';
+                      }}
                     />
                   </a>
                 ))}
